@@ -1,0 +1,553 @@
+---
+title: "Syllabus"
+sidebar: false
+editor: 
+  markdown: 
+    wrap: 72
+---
+
+::: {.grid .course-details .course-details-smaller}
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+### Instructor
+
+-   {{< fa user >}}  
+    [{{< var instructor.name >}}](%7B%7B%3C%20var%20instructor.url%20%3E%7D%7D)
+-   {{< fa university >}}   {{< var instructor.office >}}
+-   {{< fa envelope >}}  
+    <a href="mailto:{{< var instructor.email >}}">{{< var instructor.email >}}</a>
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+### Course details
+
+-   {{< fa calendar >}}   {{< var course.days >}}
+-   {{< fa calendar-alt >}}   {{< var course.dates >}}
+-   {{< fa clock >}}   {{< var course.time >}}
+-   {{< fa location-dot >}}   {{< var course.location >}}
+:::
+
+::: {.g-col-12 .g-col-md-4 .contact-policy}
+### Office Hours
+
+-   {{< fa clock >}}   {{< var course.offhours >}}
+-   {{< fa calendar-check >}}   [Schedule an
+    appointment](%7B%7B%3C%20var%20instructor.appointment_url%20%3E%7D%7D)
+:::
+:::
+
+## Course Description
+
+This first course in econometrics at the graduate level will build on the knowledge you gained in your undergraduate econometrics classes. Some of the topics we cover will be advanced versions of things you already know, while others will be completely new. The goal is to build a foundation in economic statistics for those who want pursue a career in data analysis and also those who will continue to study economics at the PhD level. While the course will cover both theoretical and empirical aspects of econometrics, it will have an applied focus. What this means operationally is that assignments and exams are geared towards applying your knowledge to real world economic situations, estimating models using data, and discussing model intuition.
+
+## Lectures
+
+The scheduling details of the course are as follows
+
+| Section |       Time       | Location |
+|:-------:|:----------------:|:--------:|
+|    A    | MW 10:00-11:20am |  LH4096  |
+
+Lectures are in person, unless university rules change and force us into
+remote instruction. In the event that I need to isolate for COVID
+symptoms, the affected lectures will take place over Zoom.
+
+
+## Course Material
+
+### Textbook
+
+**There is no required textbook** for this course, but many supplemental readings will be drawn from the following list:
+
+-   (AP1) Angrist, Joshua D. and Jörn-Steffen Pischke, *Mostly Harmless
+    Econometrics: An Empiricist's Companion*. Princeton: Princeton
+    University Press, 2009.
+
+-   (AP2) Angrist, Joshua D. and Jörn-Steffen Pischke, *Mastering
+    Metrics: The Path From Cause to Effect*. Princeton: Princeton
+    University Press, 2015.
+
+-   (CT) Cameron, A. Colin and Pravin K. Trivedi, *Microeconometrics*.
+    New York: Cambridge University Press, 2005.
+
+-   \(C\) Cunningham, Scott, Causal Inference: The Mixtape. Available
+    at: <https://mixtape.scunning.com>, 2021.
+
+-   (HK) Huntington-Klein, Nick, The Effect. Available at
+    <https://theeffectbook.net>, 2021
+
+-   \(K\) Kennedy, Peter, *A Guide to Econometrics* 6E. Malden:
+    Blackwell Publishing, 2008.
+
+-   (SW) Stock, James H., and Mark M. Watson (2015). *Introduction to
+    Econometrics*, 4^th^ Edition. Pearson Education.
+
+-   (W1) Wooldridge, Jeffrey M., *Econometric Analysis of Cross-Section
+    and Panel Data*, Second Edition. Cambridge: MIT Press, 2010.
+
+-   (W2) Wooldridge, Jeffrey M., Introductory *Econometrics: A Modern
+    Approach Analysis of Cross-Section and Panel Data*, Seventh Edition.
+    Mason: South-Western, Cengage, 2019.
+
+### R Statistical Software
+
+All assignments require you to manipulate data using the statistical software R alongside a user interface called R Studio. Both of these programs are free, and available on all computer platforms. You can use R without R Studio, but I would only recommend this is you have prior experience with the program or have a computer programming background. I will give instructions on how to access these materials in class.
+
+## Evaluation
+
+You will be evaluated on three equally weighted assignments, one midterm, and one final exam. The weights and due dates for each assessment are as follows:
+
+| Assessment   | Due Date                              | Weight |
+|:-------------|:--------------------------------------|:-------|
+| Assignment 1 | Friday, October 7, 2022 at 9:00pm     | 16.67% |
+| Assignment 2 | Friday, November 4, 2022 at 9:00pm    | 16.67% |
+| Midterm      | Wednesday, November 9, 2022, in class | 20%    |
+| Assignment 3 | Friday December 2, 2022 at 12:00pm    | 16.67% |
+| Final Exam   | TBA                                   | 30%    |
+
+Assignments will ask you to manipulate and interpret data using the statistical software R. Instructions will be posted to MLS at least one week prior to the due date.
+
+Both the midterm and final exam will be in person. The midterm will take place in the classroom where the lectures take place at the scheduled lecture time. The final exam schedule is posted roughly half way through the term.
+
+
+
+## Topics
+
+Below is a list of tentative topics covered in the course. I may add or remove items depending on how quickly the course proceeds. A reading list for each topic is available at the end of this syllabus.
+
+1.  Review of Matrix Algebra for Econometrics
+
+2.  Linear Regression Model and OLS
+
+    a.  Rubin Causal Model
+
+    b.  Review of Linear Regression and OLS
+
+3.  Causal Inference
+
+    -   Instrumental Variables
+
+    -   Difference in Differences
+
+    -   Regression Discontinuity
+
+4.  Panel Data Methods
+
+    -   Fixed Effects
+
+    -   Random Effects
+
+    -   Clustering
+
+5.  Qualitative Dependent Variable Models
+
+    -   Probit/Logit
+
+    -   Tobit
+
+    -   Sample Selection
+
+    -   Count Data
+
+6.  Additional Topics
+
+
+## Missed Midterms
+
+Students who miss a midterm will be given reasonable accommodation for the following reasons:
+
+1)  [Religious conflict]{.underline}: If you have a religious commitment
+    that interferes with the midterm exam, university policy is that
+    **you must alert me within the first two weeks** **of the start of
+    the term** and fill out the [Student Request for Accommodation for
+    Religious Observances form](https://web.wlu.ca/accommodations/). If
+    those conditions are met, we will work together to provide a
+    reasonable accommodation.
+
+2)  [Course conflict]{.underline}: If your midterm overlaps with another
+    scheduled course, please inform me as soon as you know about the
+    conflict and we will work out a reasonable accommodation.
+
+3)  [Varsity Sports]{.underline}: If a varsity sporting event interferes
+    with the midterm, you must contact your coach, who will arrange for
+    an alternative time to write the test. Note that this policy applies
+    only to *varsity* sports; students who have non-varsity sports
+    conflicts are not eligible for a deferred midterm
+
+> Students who miss a midterm and have an acceptable medical or
+> compassionate reason will have the weight of the midterm transferred
+> to the final exam. In the case of medical reasons, I require that
+> students complete the [Absence for Medical Reasons Self-Declaration
+> Form](https://web.wlu.ca/illness/).
+>
+> In all other circumstances, students who miss a midterm will receive a
+> grade of zero on the test.
+
+-   **Late Assignments**
+
+> Late assignments and quizzes for religious conflicts, course
+> conflicts, or medical/compassionate reasons as defined above will be
+> given reasonable accommodation. In all other circumstances, students
+> who submit late assignments or quizzes will receive a grade of zero.
+
+-   **Deferred Final Examinations**
+
+> Students who miss a final examination can submit a petition to the
+> Faculty of Graduate and Postdoctoral Studies for a deferred exam.
+> Students who miss the exam due to illness must submit the petition no
+> later than 5 days after the missed exam with original supporting
+> documentation. Students requesting a deferred exam for reasons other
+> than personal illness or bereavement must submit a petition at the
+> time of the exam schedule posting to allow the committee to reach a
+> decision before the scheduled date.
+>
+> Students are strongly urged not to make any commitments (e.g.,
+> vacation) during the examination period. Students are required to be
+> available for examinations during the examination periods of all terms
+> in which they register. Refer to the Handbook on Undergraduate Course
+> Management for more information
+
+-   **Academic Integrity**
+
+> You are reminded that the University will levy sanctions on students
+> who are found to have committed, or have attempted to commit, acts of
+> academic or research misconduct. You are expected to know what
+> constitutes an academic offense, to avoid committing such offenses,
+> and to take responsibility for your academic actions. For information
+> on categories of offenses and types of penalty, please consult the
+> relevant section of the Undergraduate Academic Calendar. If you need
+> clarification of aspects of University policy on Academic and Research
+> Misconduct, please consult your instructor.
+>
+> Wilfrid Laurier University uses software that can check for
+> plagiarism. Students may be required to submit their written work in
+> electronic form and have it checked for plagiarism.
+
+-   **Accessible Learning**
+
+> Students with disabilities or special needs are advised to contact
+> Laurier's Accessible Learning Centre for information regarding its
+> services and resources. Students should review the Calendar for
+> information regarding all services available on campus.
+
+-   **Student Privacy**
+
+> Wilfrid Laurier University uses a range of technologies to facilitate
+> in-person and remote instruction. Zoom is currently used for remote
+> course delivery, including lectures, seminars, and group office hours,
+> which may be recorded, stored and shared through MyLearningSpace for
+> access by students in the course. For these course activities,
+> ​students are permitted to turn off their cameras or use an alternative
+> name to maintain their privacy after they have confirmed this with
+> their instructor. Student personal information is collected and used
+> in the course in accordance with University policies and the [Notice
+> of Collection, Use or Disclosure of Personal
+> Information](https://www.wlu.ca/about/public-accountability/privacy/notice-of-collection.html).
+>
+> Some synchronous (live) class sessions will be delivered in this
+> course through a video conferencing platform supported by the
+> university \[Zoom, Teams, Virtual Classroom\]. Steps have been taken
+> to protect the security of the information shared. For more
+> information about Zoom and Office365 (including Teams), please visit
+> ICT's Tech Support and Services page. Class sessions will be recorded
+> with the video and audio (and in some cases transcription) made
+> available to students in the course in MyLearningSpace for the
+> duration of the term. The recordings may capture your name, image or
+> voice through the video and audio recordings. By attending in these
+> live classes, you are consenting to the collection of this information
+> for the purposes of administering the class and associated course
+> work. If you are concerned about the use or collection of your name
+> and other personal information in the class, please contact the course
+> instructor to identify possible alternatives. To learn more about how
+> your personal information is collected, used and disclosed by the
+> University, please see Laurier's Notice of Collection, Use and
+> Disclosure of Personal Information.
+
+-   **COVID Information**
+
+> The [university face covering
+> policy](https://www.wlu.ca/about/governance/assets/resources/7.22-covid-19-face-covering-policy.html)
+> says that students are required to wear a face covering in all
+> "designated face covering areas," which includes classrooms. Unless
+> you have an accommodation as per section 4.07 of the policy, you are
+> expected to wear your face covering at all times in the classroom, and
+> also while transitioning to and from classrooms. If you have an
+> accommodation, please tell me in advance (no details needed - just
+> tell me you have an accommodation). If any student is not wearing or
+> not properly wearing their face covering, I will ask them politely to
+> please wear it according to the university policy. If at that point
+> any student refuses, I will leave the classroom and continue
+> instruction remotely until everyone agrees to abide by the university
+> policy.
+
+-   **Intellectual Property**
+
+> The educational materials developed for this course, including, but
+> not limited to, lecture notes and slides, handout materials,
+> examinations and assignments, and any materials posted to
+> MyLearningSpace, are the intellectual property of the course
+> instructor. These materials have been developed for student use only
+> and they are not intended for wider dissemination and/or communication
+> outside of a given course. Posting or providing unauthorized audio,
+> video, or textual material of lecture content to third-party websites
+> violates an instructor's intellectual property rights, and the
+> Canadian Copyright Act. Recording lectures in any way is prohibited in
+> this course unless specific permission has been granted by the
+> instructor. Failure to follow these instructions may be in
+> contravention of the university's Student Non-Academic Code of Conduct
+> and/or Code of Academic Conduct, and will result in appropriate
+> penalties. Participation in this course constitutes an agreement by
+> all parties to abide by the relevant University Policies, and to
+> respect the intellectual property of others during and after their
+> association with Wilfrid Laurier University.
+
+-   **Foot Patrol, the Wellness Centre, and the Student Food Bank**
+
+The University approved the inclusion of information about select
+wellness and safety services and supports on campus in the course
+information provided to students. (Approved by Senate November 28,
+2011.) Specific language (by campus) is provided below.
+
+> **Multi-campus Resource:**
+
+-   Good2Talk is a postsecondary school helpline that provides free,
+    professional and confidential counselling support for students in
+    Ontario. Call 1-866-925-5454 or through 2-1-1. Available 24-7.
+
+> **Kitchener/Waterloo Resources:**
+
+-   [Waterloo Student Food \>
+    Bank](http://yourstudentsunion.ca/service/food-bank/): All \>
+    students are eligible to use this service to ensure they're eating
+    \> healthy when overwhelmed, stressed or financially strained. \>
+    Anonymously request a package online 24-7. All dietary \>
+    restrictions accommodated.
+
+-   [Waterloo Foot \>
+    Patrol](http://yourstudentsunion.ca/service/foot-patrol/): \>
+    519.886.FOOT (3668). A volunteer operated safe-walk program, \>
+    available Fall and Winter daily from 6:30 pm to 3 am. Teams of two
+    \> are assigned to escort students to and from campus by foot or by
+    \> van.
+
+-   [Waterloo Student Wellness \>
+    Centre](https://students.wlu.ca/wellness-and-recreation/health-and-wellness/index.html):
+    \> 519-884-0710, x3146. The Centre supports the physical, emotional,
+    \> and mental health needs of students. Located on the 2^nd^ floor
+    of \> the Student Services Building, booked and same-day
+    appointments \> are available Mondays and Wednesdays from 8:30 am to
+    7:30 pm, and \> Tuesdays, Thursdays and Fridays from 8:30 am to 4:15
+    pm. Contact \> the Centre at x3146,
+    [wellness\@wlu.ca](mailto:wellness@wlu.ca){.email} or
+    \@LaurierWellness. After \> hours crisis support available 24/7.
+    Call 1-844-437-3247 \> (HERE247).
+
+> **Brantford Resources:**
+
+-   [Brantford Student Food \>
+    Bank](http://yourstudentsunion.ca/service/food-bank/): All \>
+    students are eligible to use this service to ensure they're eating
+    \> healthy when overwhelmed, stressed or financially strained. \>
+    Anonymously request a package online 24-7. All dietary \>
+    restrictions accommodated.
+
+-   [Brantford Foot \>
+    Patrol](https://students.wlu.ca/wellness-and-recreation/safety/foot-patrol.html):
+    \> 519-751-PTRL (7875). A volunteer operated safe-walk program, \>
+    available Fall and Winter, Monday through Thursday from 6:30 pm to
+    \> 1 am; Friday through Sunday 6:30 pm to 11 pm. Teams of two are \>
+    assigned to escort students to and from campus by foot or by van.
+
+-   [Brantford Wellness \>
+    Centre](https://students.wlu.ca/wellness-and-recreation/health-and-wellness/index.html):
+    \> 519-756-8228, x5803. Students have access to support for all
+    their \> physical, emotional, and mental health needs at the
+    Wellness \> Centre. Location: Student Centre, 2nd floor. Hours: 8:30
+    am to \> 4:15 pm Monday through Friday. After hours crisis support
+    \> available 24/7. Call 1-884-437-3247 (HERE247).
+
+<!-- -->
+
+-   **Supplemental Readings**
+
+> Below is a list of tentative list of supplemental readings for each
+> topic in the course. This is subject to change during the semester.
+
+1.  Review of Matrix Algebra for Econometrics
+
+> *Supplemental Readings*
+
+-   SW Chapter 19.1
+
+-   W2 Appendix D
+
+2.  Review of Linear Regression Model and OLS
+
+    -   Rubin Causal Model
+
+> *Supplemental Readings*
+
+-   AP1 Chapter 3
+
+-   C Chapter "Potential Outcomes Causal Model"
+
+-   Review of Linear Regression Model and OLS
+
+> *Supplemental Readings*
+
+-   AP1 Chapter 3
+
+-   AP2 Chapter 2
+
+-   C Chapter "Properties of Regression"
+
+-   CT Chapter 4
+
+-   HK Chapter 13
+
+-   K Chapter 3
+
+-   SW Chapters 4,5,6,7,8
+
+-   W1 Chapter 4
+
+-   W2 Appendix E
+
+3.  Causal Inference
+
+    -   Instrumental Variables
+
+> *Supplemental Readings*
+
+-   AP1 Chapter 4
+
+-   AP2 Chapter 3
+
+-   C Chapter "Instrumental Variables"
+
+-   HK Chapter 19
+
+-   K Chapter 9
+
+-   SW Chapter 12
+
+-   W1 Chapter 5
+
+-   W2 Chapter 15
+
+    -   Difference in Differences
+
+> *Supplemental Readings*
+
+-   AP1 Chapter 5
+
+-   AP2 Chapter 5
+
+-   C Chapter "Difference in Differences"
+
+-   HK Chapter 18
+
+-   W1 Chapter 6.5
+
+-   W2 Chapter 13
+
+    -   Regression Discontinuity
+
+> *Supplemental Readings*
+
+-   AP1 Chapter 6
+
+-   AP2 Chapter 4
+
+-   C Chapter "Regression Discontinuity"
+
+-   HK Chapter 20
+
+-   W1 Chapter 21.5
+
+4.  Panel Data Methods
+
+    -   Fixed Effects
+
+> *Supplemental Readings*
+
+-   AP1 Chapter 5
+
+-   C Chapter "Panel Data"
+
+-   HK Chapter 16
+
+-   K Chapter 18
+
+-   SW Chapter 12
+
+-   W1 Chapter 10
+
+-   W2 Chapter 14
+
+    -   Random Effects
+
+> *Supplemental Readings*
+
+-   K Chapter 18
+
+-   W1 Chapter 10
+
+-   W2 Chapter 14
+
+    -   Clustering
+
+> *Supplemental Readings*
+
+-   AP1 Chapter 8
+
+5.  Qualitative Dependent Variable Models
+
+    -   Probit/Logit
+
+> *Supplemental Readings*
+
+-   CT Chapter 14
+
+-   K Chapter 16.1
+
+-   SW Chapter 11
+
+-   W1 Chapter 15
+
+-   W2 Chapter 17
+
+    -   Tobit
+
+> *Supplemental Readings*
+
+-   CT Chapter 16
+
+-   K Chapter 17.2
+
+-   W1 Chapter 17
+
+-   W2 Chapter 17
+
+    -   Sample Selection
+
+> *Supplemental Readings*
+
+-   CT Chapter 16
+
+-   K Chapter 17.3
+
+-   W Chapter 19
+
+-   W2 Chapter 17
+
+    -   Count Data
+
+> *Supplemental Readings*
+
+-   CT Chapter 20
+
+-   K Chapter 16.4
+
+-   W1 Chapter 18
+
+6.  Additional Topics

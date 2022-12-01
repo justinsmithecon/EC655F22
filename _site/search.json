@@ -1,0 +1,359 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "E655 - Econometrics",
+    "section": "",
+    "text": "Instructor\n\n   Prof. Justin Smith\n   Lazaridis Hall 3091\n   jusmith@wlu.ca\n\n\n\nCourse details\n\n   Mon/Wed\n   Sept-Dec 2022\n   10:00 - 11:20 AM\n   LH4096\n\n\n\nOffice Hours\n\n   Tue 10:00 AM - 12:00 PM\n   Schedule an appointment"
+  },
+  {
+    "objectID": "slides/index.html#introduction-1",
+    "href": "slides/index.html#introduction-1",
+    "title": "Matrix Review",
+    "section": "Introduction",
+    "text": "Introduction\n\nUndergrad metrics normally uses scalar notation\n\nMore accessible for students without advanced math background\n\nAt the graduate level, it is often taught using matrix algebra\nSome advantages to matrix notation\n\nMore compact\nEasier to express some estimators\n\nIn this section, we review matrix algebra essentials for econometrics\n\nNot a comprehensive review\n\nWe will switch between scalar and matrix notation in the course\n\nDepending on which is clearer in each context"
+  },
+  {
+    "objectID": "slides/index.html#matrix",
+    "href": "slides/index.html#matrix",
+    "title": "Matrix Review",
+    "section": "Matrix",
+    "text": "Matrix\n\nA matrix is a rectangular array of numbers organized in rows and columns\nFor example, matrix \\(\\mathbf{A}\\) with 2 rows and 3 columns could be\n\n\\[\\mathbf{A} =\n\\begin{bmatrix}\n1 & 2  & 3 \\\\\n4 &5 & 6\n\\end{bmatrix}\\]\n\nMore generally, matrix \\(\\mathbf{A}\\) with m rows and n columns is\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mn}\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#vectors",
+    "href": "slides/index.html#vectors",
+    "title": "Matrix Review",
+    "section": "Vectors",
+    "text": "Vectors\n\nA vector is a matrix with one column or one row\nA row vector \\(\\mathbf{a}\\) with n elements is\n\n\\[\\mathbf{a}=\n\\begin{bmatrix}\na_{1}& a_{2} &\\cdots & a_{n}\n\\end{bmatrix}\\]\n\nA .red[column vector] \\(\\mathbf{a}\\) with m elements is\n\n\\[\\mathbf{a}=\n\\begin{bmatrix}\na_{1}\\\\\na_{2}\\\\\n\\vdots \\\\\na_{m}\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#special-matrices",
+    "href": "slides/index.html#special-matrices",
+    "title": "Matrix Review",
+    "section": "Special Matrices",
+    "text": "Special Matrices\n\nA Square Matrix has the same number of rows and columns\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1m} \\\\\na_{21}& a_{22} &\\cdots & a_{2m} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mm}\n\\end{bmatrix}\\]\n\nA Diagonal Matrix is a square matrix with zeroes for all off-diagonal elements\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& 0&\\cdots & 0 \\\\\n0& a_{22} &\\cdots & 0 \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n0& 0&\\cdots & a_{mm}\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#special-matrices-1",
+    "href": "slides/index.html#special-matrices-1",
+    "title": "Matrix Review",
+    "section": "Special Matrices",
+    "text": "Special Matrices\n\nThe Identity Matrix is a square matrix with ones on the diagonal and zeroes on the off-diagonals\n\n\\[\\mathbf{I}=\n\\begin{bmatrix}\n1& 0&\\cdots & 0 \\\\\n0& 1 &\\cdots & 0 \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n0& 0&\\cdots & 1\n\\end{bmatrix}\\]\n\nThe Zero Matrix is a matrix with zeroes for all elements\n\n\\[\\mathbf{0}=\n\\begin{bmatrix}\n0& 0&\\cdots & 0 \\\\\n0& 0 &\\cdots & 0 \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n0& 0&\\cdots & 0\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#matrix-addition",
+    "href": "slides/index.html#matrix-addition",
+    "title": "Matrix Review",
+    "section": "Matrix Addition",
+    "text": "Matrix Addition\n\nYou can add and subtract matrices with the same dimensions\n\nMatrices with different dimensions are not conformable for addition or subtraction\n\nThe sum of matrices \\(\\mathbf{A}\\) and \\(\\mathbf{B}\\) with dimension \\(m \\times n\\) is\n\n\\[\\mathbf{A} + \\mathbf{B}=\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mn}\n\\end{bmatrix}\n+\n\\begin{bmatrix}\nb_{11}& b_{12} &\\cdots & b_{1n} \\\\\nb_{21}& b_{22} &\\cdots & b_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\nb_{m1}& b_{m2} &\\cdots & b_{mn}\n\\end{bmatrix}\\]\n\\[=\n\\begin{bmatrix}\na_{11} + b_{11}& a_{12} + b_{12} &\\cdots & a_{1n}+ b_{1n} \\\\\na_{21} + b_{21}& a_{22} + b_{22} &\\cdots & a_{2n}+ b_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1} + b_{m1}& a_{m2} +b_{m2} &\\cdots & a_{mn}+ b_{mn} \\\\\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#matrix-subtraction",
+    "href": "slides/index.html#matrix-subtraction",
+    "title": "Matrix Review",
+    "section": "Matrix Subtraction",
+    "text": "Matrix Subtraction\n\nSimilarly, the difference between matrices \\(\\mathbf{A}\\) and \\(\\mathbf{B}\\) is\n\n\\[\\mathbf{A} - \\mathbf{B}=\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mn}\n\\end{bmatrix}\n-\n\\begin{bmatrix}\nb_{11}& b_{12} &\\cdots & b_{1n} \\\\\nb_{21}& b_{22} &\\cdots & b_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\nb_{m1}& b_{m2} &\\cdots & b_{mn}\n\\end{bmatrix}\\]\n\\[=\n\\begin{bmatrix}\na_{11} - b_{11}& a_{12} - b_{12} &\\cdots & a_{1n}- b_{1n} \\\\\na_{21} - b_{21}& a_{22} - b_{22} &\\cdots & a_{2n}- b_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1} - b_{m1}& a_{m2} -b_{m2} &\\cdots & a_{mn}- b_{mn} \\\\\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#rules-for-addition-and-subtraction",
+    "href": "slides/index.html#rules-for-addition-and-subtraction",
+    "title": "Matrix Review",
+    "section": "Rules for Addition and Subtraction",
+    "text": "Rules for Addition and Subtraction\n\nThe following rules apply to matrix addition and subtraction\n\nCommutativity \\[\\mathbf{A + B = B + A}\\]\nAssociativity \\[\\mathbf{A + (B + C) = (A+B) + C}\\]\n\nEffectively, both rules mean order does not matter\n\nSimilar to scalar math\n\nFor subtraction, replace plus sign with minus sign and same rules apply"
+  },
+  {
+    "objectID": "slides/index.html#matrix-multiplication",
+    "href": "slides/index.html#matrix-multiplication",
+    "title": "Matrix Review",
+    "section": "Matrix Multiplication",
+    "text": "Matrix Multiplication\n\nTo multiply matrix \\(\\mathbf{A}\\) and \\(\\mathbf{B}\\), the number of columns in \\(\\mathbf{A}\\) must equal the number of rows in \\(\\mathbf{B}\\)\nSuppose matrix \\(\\mathbf{A}\\) is \\(m \\times n\\) and matrix \\(\\mathbf{B}\\) is \\(n \\times p\\)\nDefine product as \\(\\mathbf{C}\\)= \\(\\mathbf{AB}\\)\n\nThe \\(ij\\) element of \\(\\mathbf{C}\\) is the sum of the product of the corresponding elements along the \\(i\\)th row of \\(\\mathbf{A}\\) and \\(j\\)th column of \\(\\mathbf{B}\\)\n\\[c_{ij} = \\sum_{k} a_{ik}b_{kj}\\]\nThe product matrix \\(\\mathbf{C}\\) will have dimension \\(m \\times p\\)\n\nThe number of rows of \\(\\textbf{A}\\) and number of columns of \\(\\textbf{B}\\)"
+  },
+  {
+    "objectID": "slides/index.html#matrix-multiplication-1",
+    "href": "slides/index.html#matrix-multiplication-1",
+    "title": "Matrix Review",
+    "section": "Matrix Multiplication",
+    "text": "Matrix Multiplication\n\nThe product \\(\\mathbf{AB}\\) is\n\n\\[\\mathbf{AB}=\n    \\begin{bmatrix}\n    a_{11}& a_{12} &\\cdots & a_{1n} \\\\\n    a_{21}& a_{22} &\\cdots & a_{2n} \\\\\n    \\vdots & \\vdots &\\ddots & \\vdots \\\\\n    a_{m1}& a_{m2} &\\cdots & a_{mn}\n    \\end{bmatrix}\n    \\times\n    \\begin{bmatrix}\n    b_{11}& b_{12} &\\cdots & b_{1p} \\\\\n    b_{21}& b_{22} &\\cdots & b_{2p} \\\\\n    \\vdots & \\vdots &\\ddots & \\vdots \\\\\n    b_{n1}& b_{n2} &\\cdots & b_{np}\n    \\end{bmatrix}\\]\n\n\\[=\n\\begin{bmatrix}\na_{11} b_{11} + a_{12} b_{21}  + \\cdots + a_{1n} b_{n1}  &a_{11} b_{12} + a_{12} b_{22}  + \\cdots + a_{1n} b_{n2} &\\cdots&a_{11} b_{1p} + a_{12} b_{2p}  + \\cdots + a_{1n} b_{np}\\\\\na_{21} b_{11} + a_{22} b_{21}  + \\cdots + a_{2n} b_{n1}  &a_{21} b_{12} + a_{22} b_{22}  + \\cdots + a_{2n} b_{n2} &\\cdots&a_{21} b_{1p} + a_{22} b_{2p}  + \\cdots + a_{2n} b_{np}\\\\\n\\vdots &\\ddots & \\vdots \\\\\na_{m1} b_{11} + a_{m2} b_{21}  + \\cdots + a_{mn} b_{n1}  &a_{m1} b_{12} + a_{m2} b_{22}  + \\cdots + a_{mn} b_{n2} &\\cdots&a_{m1} b_{1p} + a_{m2} b_{2p}  + \\cdots + a_{mn} b_{np}\\\\\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#matrix-multiplication-2",
+    "href": "slides/index.html#matrix-multiplication-2",
+    "title": "Matrix Review",
+    "section": "Matrix Multiplication",
+    "text": "Matrix Multiplication\n\nAs an illustration suppose we have the following matrices \\[\\mathbf{A}=\n\\begin{bmatrix}\n1& 2\\\\\n3& 4 \\\\\n\\end{bmatrix}\n\\mathbf{B}=\n\\begin{bmatrix}\n5&6&7  \\\\\n8&9 &10\n\\end{bmatrix}\\]\nWe can multiply \\(\\mathbf{AB}\\) because \\(\\mathbf{A}\\) has 2 columns, and \\(\\mathbf{B}\\) has 2 rows\nThe product \\(\\mathbf{C}\\) = \\(\\mathbf{AB}\\) is\n\n\\[\\mathbf{C}=\n\\begin{bmatrix}\n1& 2\\\\\n3& 4 \\\\\n\\end{bmatrix}\n\\times\n\\begin{bmatrix}\n5&6&7  \\\\\n8&9 &10\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n1 \\times 5 + 2\\times 8&1 \\times 6 + 2 \\times 9 & 1 \\times 7 + 2 \\times 10  \\\\\n3 \\times 5 + 4\\times 8&3 \\times 6 + 4 \\times 9 & 3 \\times 7 + 4 \\times 10  \n\\end{bmatrix}\\]\n\\[=\n\\begin{bmatrix}\n21& 24& 27 \\\\\n47&54&  61\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#scalar-multiplication",
+    "href": "slides/index.html#scalar-multiplication",
+    "title": "Matrix Review",
+    "section": "Scalar Multiplication",
+    "text": "Scalar Multiplication\n\nA scalar is a single real number\nYou can also multiply a scalar by a matrix\nIf \\(\\gamma\\) is a scalar, and \\(\\mathbf{A}\\) is a matrix, then\n\n\\[\\mathbf{\\gamma A}= \\gamma\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mn}\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n\\gamma a_{11}&\\gamma  a_{12} &\\cdots & \\gamma a_{1n} \\\\\n\\gamma a_{21}& \\gamma a_{22} &\\cdots & \\gamma a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n\\gamma a_{m1}& \\gamma a_{m2} &\\cdots & \\gamma a_{mn}\n\\end{bmatrix}\\]\n\nYou multiply the scalar by each element of the matrix"
+  },
+  {
+    "objectID": "slides/index.html#transpose",
+    "href": "slides/index.html#transpose",
+    "title": "Matrix Review",
+    "section": "Transpose",
+    "text": "Transpose\n\nThe transpose of a matrix is one where the rows and columns are switched\nSuppose matrix \\(\\mathbf{A}\\) is\n\n\\[\\mathbf{A}=\n    \\begin{bmatrix}\n    a_{11}& a_{12} &\\cdots & a_{1n} \\\\\n    a_{21}& a_{22} &\\cdots & a_{2n} \\\\\n    \\vdots & \\vdots &\\ddots & \\vdots \\\\\n    a_{m1}& a_{m2} &\\cdots & a_{mn}\n    \\end{bmatrix}\\]\n\nThen its transpose \\(\\mathbf{A'}\\) is\n\n\\[\\mathbf{A'}=\n\\begin{bmatrix}\na_{11}& a_{21} &\\cdots & a_{m1} \\\\\na_{12}& a_{22} &\\cdots & a_{m2} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{1n}& a_{2n} &\\cdots & a_{mn}\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#transpose-1",
+    "href": "slides/index.html#transpose-1",
+    "title": "Matrix Review",
+    "section": "Transpose",
+    "text": "Transpose\n\nThe transpose has the following properties\n\n\\[\\mathbf{(A')' = A }\\] \\[\\mathbf{(\\alpha A)' = \\alpha A' }\\] \\[\\mathbf{(A + B)' = A' + B' }\\] \\[\\mathbf{(AB)' = B'A' }\\]\n\nThere are additional rules for different types of matrices that we will cover below"
+  },
+  {
+    "objectID": "slides/index.html#partitioned-matrix-multiplication",
+    "href": "slides/index.html#partitioned-matrix-multiplication",
+    "title": "Matrix Review",
+    "section": "Partitioned Matrix Multiplication",
+    "text": "Partitioned Matrix Multiplication\n\nYou may sometimes want to break matrices into vectors before you multiply\nMultiplication works the same way, but notation can be cleaner and more intuitive\nSuppose we have the following matrices \\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mn}\n\\end{bmatrix}\n\\mathbf{B}=\n\\begin{bmatrix}\nb_{11}& b_{12} &\\cdots & b_{1p} \\\\\nb_{21}& b_{22} &\\cdots & b_{2p} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\nb_{n1}& b_{n2} &\\cdots & b_{np}\n\\end{bmatrix}\\]\nWe are interested in the product \\(\\mathbf{AB}\\)"
+  },
+  {
+    "objectID": "slides/index.html#partitioned-matrix-multiplication-1",
+    "href": "slides/index.html#partitioned-matrix-multiplication-1",
+    "title": "Matrix Review",
+    "section": "Partitioned Matrix Multiplication",
+    "text": "Partitioned Matrix Multiplication\n\nBreak these matrices into vectors conformable for multiplication\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\n\\mathbf{a_{1}}&\\mathbf{a_{2}} & \\cdots & \\mathbf{a_{n}}\n\\end{bmatrix}\n\\mathbf{B}=\n\\begin{bmatrix}\n\\mathbf{b_{1}}\\\\\n\\mathbf{b_{2} }\\\\\n\\vdots  \\\\\n\\mathbf{b_{n}}\n\\end{bmatrix}\\]\n\nWhere\n\n\\[\\mathbf{a_{1}}=\n\\begin{bmatrix}\na_{11}\\\\\na_{21}\\\\\n\\cdots\\\\\na_{m1}\n\\end{bmatrix}\n\\mathbf{b_{1}}=\n\\begin{bmatrix}\nb_{11}&b_{12} & \\cdots & b_{1p}\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#partitioned-matrix-multiplication-2",
+    "href": "slides/index.html#partitioned-matrix-multiplication-2",
+    "title": "Matrix Review",
+    "section": "Partitioned Matrix Multiplication",
+    "text": "Partitioned Matrix Multiplication\n\nMultiply the vectors to get\n\n\\[\\mathbf{AB} = \\sum_{i=1}^{n} \\mathbf{a_{i}b_{i}}\\]\n\nThis breaks the product \\(\\mathbf{AB}\\) into the sum of \\(n\\) sub-matrices\n\nEach sub-matrix is product of corresponding vectors\nAlso each sub-matrix will have dimension \\(m \\times p\\)\n\nThis will be useful for some econometric estimators we derive\n\nMakes notation simpler and more intuitive\n\nAgain, note that you get the same answer as doing straight matrix multiplication"
+  },
+  {
+    "objectID": "slides/index.html#rules-for-matrix-multiplication",
+    "href": "slides/index.html#rules-for-matrix-multiplication",
+    "title": "Matrix Review",
+    "section": "Rules for Matrix Multiplication",
+    "text": "Rules for Matrix Multiplication\n\nThere are several useful properties for matrix (and scalar) multiplication\n\n\\[(\\alpha + \\beta)\\mathbf{A} = \\alpha \\mathbf{A} + \\beta\\mathbf{A}\\] \\[\\alpha (\\mathbf{A} +\\mathbf{B}) =\\alpha \\mathbf{A} +\\alpha\\mathbf{B}\\] \\[(\\alpha\\beta) \\mathbf{A}  =\\alpha(\\beta \\mathbf{A})\\] \\[\\alpha (\\mathbf{A}\\mathbf{B}) =(\\alpha \\mathbf{A}) \\mathbf{B}\\] \\[(\\mathbf{A}\\mathbf{B} )\\mathbf{C} =\\mathbf{A}(\\mathbf{B} \\mathbf{C})\\] \\[\\mathbf{A}(\\mathbf{B} +\\mathbf{C}) =\\mathbf{A}\\mathbf{B} +\\mathbf{A} \\mathbf{C}\\] \\[(\\mathbf{A}+\\mathbf{B} )\\mathbf{C} =\\mathbf{A}\\mathbf{C} +\\mathbf{B} \\mathbf{C}\\] \\[\\mathbf{A}\\mathbf{I}  =\\mathbf{I}\\mathbf{A} = \\mathbf{A}\\] \\[\\mathbf{A}\\mathbf{0}  =\\mathbf{0}\\mathbf{A} = \\mathbf{0}\\] \\[\\mathbf{A}\\mathbf{B}  \\neq\\mathbf{B}\\mathbf{A}\\] —"
+  },
+  {
+    "objectID": "slides/index.html#trace",
+    "href": "slides/index.html#trace",
+    "title": "Matrix Review",
+    "section": "Trace",
+    "text": "Trace\n\nThe trace of a square matrix is the sum of the diagonal elements\nIf square matrix \\(\\mathbf{A}\\) is\n\n\\[\\mathbf{A}=\n    \\begin{bmatrix}\n    a_{11}& a_{12} &\\cdots & a_{1n} \\\\\n    a_{21}& a_{22} &\\cdots & a_{2n} \\\\\n    \\vdots & \\vdots &\\ddots & \\vdots \\\\\n    a_{n1}& a_{n2} &\\cdots & a_{nn}\n    \\end{bmatrix}\\]\n\nThen its trace is\n\n\\[tr(\\mathbf{A})= \\sum_{i=1}^{n} a_{ii}\\]"
+  },
+  {
+    "objectID": "slides/index.html#trace-1",
+    "href": "slides/index.html#trace-1",
+    "title": "Matrix Review",
+    "section": "Trace",
+    "text": "Trace\n\nImportant properties of the trace are\n\n\\[tr(\\mathbf{I_{n}})= n\\] \\[tr(\\mathbf{A}')=tr(\\mathbf{A})\\] \\[tr(\\mathbf{A +B})=tr(\\mathbf{A}) + tr(\\mathbf{B})\\] \\[tr(\\alpha \\mathbf{A})=\\alpha tr(\\mathbf{A})\\] \\[tr(\\mathbf{AB})=tr(\\mathbf{BA})\\]"
+  },
+  {
+    "objectID": "slides/index.html#marix-determinant",
+    "href": "slides/index.html#marix-determinant",
+    "title": "Matrix Review",
+    "section": "Marix Determinant",
+    "text": "Marix Determinant\n\nThe determinant is a scalar value associated with a square matrix\n\nHelpful concept for several things in matrix algebra\nFor econometrics, most useful for solving systems of equations and finding inverse of a matrix\n\nFor \\(2 \\times 2\\) matrix \\(\\mathbf{A}\\) \\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& a_{12} \\\\\na_{21}& a_{22}  \\\\\n\\end{bmatrix}\\]\nThe determinant is\n\n\\[|\\mathbf{A}|=a_{11}a_{22} - a_{12}a_{21}\\]"
+  },
+  {
+    "objectID": "slides/index.html#marix-determinant-1",
+    "href": "slides/index.html#marix-determinant-1",
+    "title": "Matrix Review",
+    "section": "Marix Determinant",
+    "text": "Marix Determinant\n\nFor \\(3 \\times 3\\) matrix \\(\\mathbf{A}\\)\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& a_{12} & a_{13} \\\\\na_{21}& a_{22} & a_{23} \\\\\na_{31}& a_{32} & a_{33} \\\\\n\\end{bmatrix}\\]\n\nThe determinant is\n\n\\[|\\mathbf{A}|=a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} +a_{13}a_{21}a_{32}\\] \\[-(a_{12}a_{21}a_{33} + a_{11}a_{23}a_{32} +a_{13}a_{22}a_{31})\\]\n\\[=a_{11}(a_{22}a_{33} - a_{23}a_{32}) + a_{12}(a_{23}a_{31} -a_{21}a_{33} )  +a_{13}(a_{21}a_{32} - a_{22}a_{31} )\\]"
+  },
+  {
+    "objectID": "slides/index.html#marix-determinant-2",
+    "href": "slides/index.html#marix-determinant-2",
+    "title": "Matrix Review",
+    "section": "Marix Determinant",
+    "text": "Marix Determinant\n\nFor \\(n \\times n\\) matrix \\(\\mathbf{A}\\) the determinant is\n\n\\[|\\mathbf{A}|=a_{i1}c_{i1} + a_{i2}c_{i2} + \\cdots + a_{in}c_{in} \\text{   for choice of any row i}\\]\n\nWhere\n\n\\(a_{ij}\\) is the \\(ij\\) element of matrix \\(\\mathbf{A}\\)\n\\(c_{ij}\\) is the \\(ij\\) cofactor of matrix \\(\\mathbf{A}\\) defined as \\[c_{ij} = (-1)^{i+j}|\\mathbf{A}_{ij}|\\]\n\\(|\\mathbf{A}_{ij}|\\) is the minor of matrix \\(\\mathbf{A}\\)\n\nDeterminant of the sub-matrix formed by deleting the \\(i\\)th row and \\(j\\)th column of \\(\\mathbf{A}\\)\n\n\nProcess is long and tedious for large matrices"
+  },
+  {
+    "objectID": "slides/index.html#marix-determinant-3",
+    "href": "slides/index.html#marix-determinant-3",
+    "title": "Matrix Review",
+    "section": "Marix Determinant",
+    "text": "Marix Determinant\n\nExample of \\(3 \\times 3\\) matrix\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\n1& 2 & 3 \\\\\n4& 5&6   \\\\\n7& 8 &9  \n\\end{bmatrix}\\]\n\nChoose any row to find cofactors and compute determinant\n\nDoes not matter which\n\nLet us expand along row 1\n\n\\[|\\mathbf{A}|=1(-1)^{1+1}\n\\begin{vmatrix}\n  5&6   \\\\\n8 &9  \n\\end{vmatrix}\n+2(-1)^{1+2}\n\\begin{vmatrix}\n  4&6   \\\\\n7 &9  \n\\end{vmatrix}\n+3(-1)^{1+3}\n\\begin{vmatrix}\n  4&5   \\\\\n7 &8  \n\\end{vmatrix}\\]\n\\[|\\mathbf{A}|= -3 +12 -9 = 0\\]"
+  },
+  {
+    "objectID": "slides/index.html#matrix-inverse",
+    "href": "slides/index.html#matrix-inverse",
+    "title": "Matrix Review",
+    "section": "Matrix Inverse",
+    "text": "Matrix Inverse\n\nThe inverse of a square matrix \\(\\mathbf{A}\\) is defined such that\n\n\\[\\mathbf{A}\\mathbf{A}^{-1} = \\mathbf{A}^{-1}\\mathbf{A} = \\mathbf{I}\\]\n\nIt is roughly the equivalent of taking the reciprocal in scalar math\n\nBut it is not generally the reciprocal of the elements of a matrix\n\nThe formula for the inverse is\n\n\\[\\mathbf{A}^{-1}= \\frac{1}{|\\mathbf{A}|}\n\\begin{bmatrix}\nc_{11}& c_{12} &\\cdots & c_{1n} \\\\\nc_{21}& c_{22} &\\cdots & c_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\nc_{n1}& c_{n2} &\\cdots & c_{nn}\n\\end{bmatrix}\\]\n\nwhere \\(c_{ij}\\) are the cofactors defined above"
+  },
+  {
+    "objectID": "slides/index.html#matrix-inverse-1",
+    "href": "slides/index.html#matrix-inverse-1",
+    "title": "Matrix Review",
+    "section": "Matrix Inverse",
+    "text": "Matrix Inverse\n\nThe inverse exists only when \\(|\\mathbf{A}| \\neq 0\\)\n\nThis is why it is important to know the determinant\nIn example above, inverse does not exist\n\nWe will see later that it is because the columns are linearly dependent\n\n\nA matrix that cannot be inverted is singular\nA matrix that has an inverse is nonsingular\nInverse matrices have the following properties\n\n\\[\\mathbf{(\\alpha A)^{-1} = \\frac{1}{\\alpha} A^{-1} }\\] \\[\\mathbf{(A')^{-1}} = \\mathbf{(A^{-1})' }\\] \\[\\mathbf{(A^{-1})^{-1}} = \\mathbf{A}\\] \\[\\mathbf{(AB)^{-1}= B^{-1}A^{-1} }\\]"
+  },
+  {
+    "objectID": "slides/index.html#summary",
+    "href": "slides/index.html#summary",
+    "title": "Matrix Review",
+    "section": "Summary",
+    "text": "Summary\n\nNow that we can manipulate matrices, we can move to more advanced topics\nMatrix algebra is useful for expressing and solving systems of equations\n\nThis is how we will use it in econometrics\n\nWe will learn you can solve for the OLS estimator when regressors are linearly independent\n\nThey are not linear functions of one another\n\nTo check linear independence, we use the concept of rank\nThe rank of a matrix is the maximum number of independent rows or columns\n\nFor non-square matrices, the maximum rank is the lesser of the number or rows or columns"
+  },
+  {
+    "objectID": "slides/index.html#linear-independence",
+    "href": "slides/index.html#linear-independence",
+    "title": "Matrix Review",
+    "section": "Linear Independence",
+    "text": "Linear Independence\n\nA set of vectors are linearly independent if you cannot express any of them as linear functions the others\nMathematically, suppose that \\(\\mathbf{A}=\\begin{bmatrix} \\mathbf{a}_{1}& \\mathbf{a}_{2} &\\cdots & \\mathbf{a}_{m} \\end{bmatrix}\\)\n\nwhere \\(\\mathbf{a}_{1}, \\mathbf{a}_{2}, \\cdots,\\mathbf{a}_{m}\\) are \\(n \\times 1\\) vectors\n\nThe vectors are independent if the only solution to\n\n\\[\\alpha_{1}\\mathbf{a}_{1}+ \\alpha_{2}\\mathbf{a}_{2}+ \\cdots+\\alpha_{m}\\mathbf{a}_{m}= 0\\]\n\nis\n\n\\[\\alpha_{1} = \\alpha_{2}= \\cdots=\\alpha_{m}= 0\\] - If at least one \\(\\alpha_{i} \\neq 0\\), then the vectors are linearly dependent"
+  },
+  {
+    "objectID": "slides/index.html#rank-of-a-matrix",
+    "href": "slides/index.html#rank-of-a-matrix",
+    "title": "Matrix Review",
+    "section": "Rank of a Matrix",
+    "text": "Rank of a Matrix\n\nThe rank of a matrix is the maximum number of linearly independent rows or columns\n\nThe rank of the rows will always equal the rank of the columns\nIf the number of rows is less than columns, the highest rank is the number of rows\nVice versa if the number of columns is less than the number of rows\n\nA matrix has full rank if rank equals the minimum of the number of rows/columns\nIn econometrics, we mostly deal with matrices with more rows than columns\n\nSo the matrix will be full rank if the rank equals the number of columns\n\nWe will see later we need our matrix of regressors to have full rank\n\nNone of the regressors can be linear functions of each other (no multicollinearity)"
+  },
+  {
+    "objectID": "slides/index.html#rank-of-a-matrix-1",
+    "href": "slides/index.html#rank-of-a-matrix-1",
+    "title": "Matrix Review",
+    "section": "Rank of a Matrix",
+    "text": "Rank of a Matrix\n\nSome useful properties of the rank of a matrix\n\nThe rank of a matrix and transpose are the same \\[rank(\\mathbf{A'}) = rank(\\mathbf{A})\\]\nIf \\(\\mathbf{A}\\) is \\(n \\times m\\) then \\[rank(\\mathbf{A}) \\le min(n,m)\\]\nIf \\(\\mathbf{A}\\) is \\(n \\times n\\) and \\(rank(\\mathbf{A}) =n\\) then \\(\\mathbf{A}\\) is nonsingular (invertible)"
+  },
+  {
+    "objectID": "slides/index.html#quadratic-form",
+    "href": "slides/index.html#quadratic-form",
+    "title": "Matrix Review",
+    "section": "Quadratic Form",
+    "text": "Quadratic Form\n\nIf \\(\\mathbf{A}\\) is \\(n \\times n\\) and symmetric, and \\(\\mathbf{x}\\) is \\(n \\times 1\\), the quadratic form for \\(\\mathbf{A}\\) is\n\n\\[\\mathbf{x'Ax}=\n\\begin{bmatrix}\nx_{1}& x_{2} &\\cdots & x_{n}\n\\end{bmatrix}\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{n1}& a_{n2} &\\cdots & a_{nn}\n\\end{bmatrix}\n\\begin{bmatrix}\nx_{1}\\\\\nx_{2} \\\\\n\\vdots \\\\\n  x_{n}\n\\end{bmatrix}\\]\n\\[=\\sum_{i=1}^n a_{ii}x_{i}^2 + 2\\sum_{i=1}^n \\sum_{j>i}a_{ij}x_{i}x_{j}\\]\n\nA matrix is positive definite if for all \\(\\mathbf{x} \\neq 0\\)\n\n\\[\\mathbf{x'Ax} > 0\\]"
+  },
+  {
+    "objectID": "slides/index.html#positive-definite-matrices",
+    "href": "slides/index.html#positive-definite-matrices",
+    "title": "Matrix Review",
+    "section": "Positive Definite Matrices",
+    "text": "Positive Definite Matrices\n\nA matrix is positive semidefinite if for all \\(\\mathbf{x} \\neq 0\\)\n\n\\[\\mathbf{x'Ax} \\ge 0\\] - Positive definite matrices have diagonal elements that are strictly positive\n\nPositive semidefinite matrices have diagonal elements that are nonnegative\nSome other useful properties of positive definite/semidefinite matrices\n\nIf \\(\\mathbf{A}\\) is positive definite, then \\(\\mathbf{A}^{-1}\\) exists and is also positive definite\nIf \\(\\mathbf{A}\\) is \\(n \\times m\\), then \\(\\mathbf{A'A}\\) and \\(\\mathbf{AA'}\\) are positive definite\nIf \\(\\mathbf{A}\\) is \\(n \\times m\\) and \\(rank(\\mathbf{A}) = m\\) then \\(\\mathbf{A'A}\\) is positive definite\n\nThese concepts are used mostly for variance-covariance matrices in econometrics"
+  },
+  {
+    "objectID": "slides/index.html#idempotent-matrices",
+    "href": "slides/index.html#idempotent-matrices",
+    "title": "Matrix Review",
+    "section": "Idempotent Matrices",
+    "text": "Idempotent Matrices\n\nAn idempotent matrix is one that does not change when multiplied by itself\nMathematically, \\(\\mathbf{A}\\) is idempotent when\n\n\\[\\mathbf{AA} = \\mathbf{A}\\]\n\nWhen we discuss OLS, we will work with the following idempotent matrices\n\nSuppose \\(\\mathbf{X}\\) is \\(n \\times k\\) with full rank. Define\n\n\n\\[\\mathbf{P} = \\mathbf{X(X'X)^{-1}X'}\\] \\[\\mathbf{M} =\\mathbf{I_{n}} - \\mathbf{X(X'X)^{-1}X'}\\]\n\nYou can verify they are idempotent my multiplying each by itself\nSome important properties of idempotent matrices are\n\n\\(rank(\\mathbf{A}) = tr(\\mathbf{A})\\)\n\\(\\mathbf{A}\\) is positive semidefinite"
+  },
+  {
+    "objectID": "slides/index.html#expected-value",
+    "href": "slides/index.html#expected-value",
+    "title": "Matrix Review",
+    "section": "Expected Value",
+    "text": "Expected Value\n\nThe expected value of a random matrix is the matrix of expected values\nIf \\(\\mathbf{X}\\) is an \\(n \\times m\\) matrix, then\n\n\\[\\mathbf{E}(\\mathbf{X})=\n\\begin{bmatrix}\n\\mathbf{E}(x_{11}) & \\mathbf{E}(x_{12}) & \\cdots & \\mathbf{E}(x_{1m})\\\\\n\\mathbf{E}(x_{21}) & \\mathbf{E}(x_{22}) & \\cdots &\\mathbf{E}(x_{2m})\\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n\\mathbf{E}(x_{n1}) & \\mathbf{E}(x_{n2}) & \\cdots &\\mathbf{E}(x_{nm})\\\\\n\\end{bmatrix}\\]\n\nProperties of expected values are similar to those in scalar math\n\nIf \\(\\mathbf{x}\\) is a random vector, \\(\\mathbf{b}\\) is a nonrandom vector, and \\(\\mathbf{A}\\) is a nonrandom matrix, then \\(\\mathbf{E}(\\mathbf{Ax+b}) = \\mathbf{A}\\mathbf{E}(\\mathbf{x})+\\mathbf{b}\\)\nIf \\(\\mathbf{X}\\) is a random matrix, and \\(\\mathbf{B}\\) and \\(\\mathbf{A}\\) are nonrandom matrices, then \\(\\mathbf{E}(\\mathbf{AXB}) = \\mathbf{A}\\mathbf{E}(\\mathbf{X})\\mathbf{B}\\)"
+  },
+  {
+    "objectID": "slides/index.html#variance-covariance-matrix",
+    "href": "slides/index.html#variance-covariance-matrix",
+    "title": "Matrix Review",
+    "section": "Variance-Covariance Matrix",
+    "text": "Variance-Covariance Matrix\n\nThe variance-covariance matrix of random vector \\(\\mathbf{y}\\) has variances on the diagonal, covariances in the off-diagonal\nIf \\(\\mathbf{y}\\) is an \\(n \\times 1\\) random vector, then\n\n\\[var(\\mathbf{y})= \\mathbf{\\sigma_{y}} = \\mathbf{E[(y-E[y])(y-E[y])']}\\] \\[=\n\\begin{bmatrix}\n\\text{var}(y_{1}) & \\text{cov}(y_{1},y_{2}) & \\cdots &\\text{cov}(y_{1},y_{n}) \\\\\n\\text{cov}(y_{2},y_{1}) & \\text{var}(y_{2}) & \\cdots &\\text{cov}(y_{2},y_{n}) \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n\\text{cov}(y_{n},y_{1})  & \\text{cov}(y_{n},y_{2}) & \\cdots &\\text{var}(y_{n})\\\\\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#variance-covariance-matrix-1",
+    "href": "slides/index.html#variance-covariance-matrix-1",
+    "title": "Matrix Review",
+    "section": "Variance-Covariance Matrix",
+    "text": "Variance-Covariance Matrix\n\nUseful properties of variance-covariance matrices are\n\nIf \\(\\mathbf{a}\\) is a nonrandom vector, then \\(\\text{var}(\\mathbf{a'y}) =\\mathbf{a'}\\text{var}\\mathbf{(y)a}\\)\nIf \\(\\text{var}(\\mathbf{a'y})>0\\) for all \\(\\mathbf{a>0}\\), \\(\\text{var}(\\mathbf{y})\\) is positive definite\nIf \\(\\mathbf{A}\\) is a nonrandom matrix, \\(\\mathbf{b}\\) is a nonrandom vector, then \\(\\text{var}(\\mathbf{Ay + b}) =\\mathbf{A'}\\text{var}\\mathbf{(y)A}\\)\nIf \\(\\text{var}(y_{j})=\\sigma^{2}\\) for all \\(j=1,2,...,n\\), and the elements of \\(\\textbf{y}\\) are uncorrelated, then \\(\\text{var}(\\mathbf{y})=\\sigma^{2}\\mathbf{I_{n}}\\)"
+  },
+  {
+    "objectID": "slides/index.html#scalar-functions",
+    "href": "slides/index.html#scalar-functions",
+    "title": "Matrix Review",
+    "section": "Scalar Functions",
+    "text": "Scalar Functions\n\nA scalar function of a vector is a single function with respect to several variables\n\nA vector function is a set of one or more scalar functions, each with respect to several variables\nWe will not cover these\n\nConsider the scalar function \\(y = f(\\mathbf{x}) =f(x_{1}, x_{2},...,x_{n})\\)\n\nThe function takes the vector \\(\\mathbf{x}\\) and returns a scalar\nThis is just another way to write a multivariate function\n\nThe derivative of this function is\n\n\\[\\frac{\\partial f(\\mathbf{x})}{\\mathbf{x}}=\n\\begin{bmatrix}\n\\frac{\\partial f(\\mathbf{x})}{x_{1}} & \\frac{\\partial f(\\mathbf{x})}{x_{2}} & \\cdots & \\frac{\\partial f(\\mathbf{x})}{x_{n}}  \n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#derivative-of-scalar-function",
+    "href": "slides/index.html#derivative-of-scalar-function",
+    "title": "Matrix Review",
+    "section": "Derivative of Scalar Function",
+    "text": "Derivative of Scalar Function\n\nWe simply collect the derivative with respect to each element of \\(\\mathbf{x}\\) in a vector\nEx: linear function of \\(\\mathbf{x}\\)\n\nSuppose \\(\\mathbf{a}\\) is an \\(n \\times 1\\) vector and \\[y = f(\\mathbf{x}) = \\mathbf{a'x} = \\sum_{i=1}^{n} a_{i}x_{i}\\]\nThe derivative is\n\n\\[\\frac{\\partial f(\\mathbf{x})}{\\partial \\mathbf{x}}=\\frac{\\partial \\mathbf{a'x} }{\\partial \\mathbf{x}}= \\mathbf{a'} =\n    \\begin{bmatrix}\n    a_{1}& a_{2}& \\cdots & a_{n}\n    \\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/index.html#derivative-of-scalar-function-1",
+    "href": "slides/index.html#derivative-of-scalar-function-1",
+    "title": "Matrix Review",
+    "section": "Derivative of Scalar Function",
+    "text": "Derivative of Scalar Function\n\nEx: Quadratic form of \\(\\mathbf{x}\\)\n\nSuppose \\(\\mathbf{A}\\) is an \\(n \\times n\\) symmetric matrix. The quadratic form is \\[y = f(\\mathbf{x}) = \\mathbf{x'Ax} =\\sum_{i=1}^n a_{ii}x_{i}^2 + 2\\sum_{i=1}^n \\sum_{j>i}a_{ij}x_{i}x_{j}\\]\nThe derivative is \\[\\frac{\\partial f(\\mathbf{x})}{\\partial \\mathbf{x}}=\\frac{\\partial \\mathbf{x'Ax} }{\\partial \\mathbf{x}}= \\mathbf{2x'A}\\]"
+  },
+  {
+    "objectID": "slides/index.html#population-regression-model",
+    "href": "slides/index.html#population-regression-model",
+    "title": "Matrix Review",
+    "section": "Population Regression Model",
+    "text": "Population Regression Model\n\nIn undergraduate textbooks, the population linear regression model is written as\n\n\\[y= \\beta_{0} + \\beta_{1}x_{1} + \\beta_{2}x_{2} + \\cdots + \\beta_{k}x_{k} + u\\]\n\n\\(y\\) and \\(x_{1},...,x_{k}\\) are observable random variables\n\\(u\\) is an unobservable random variable\nWe can write more compactly in vector form as\n\n\\[y=  \\mathbf{x}\\boldsymbol{\\beta}  + u\\]\n\n\\(\\mathbf{x}\\) is a \\(1 \\times (k+1)\\) vector of independent variables\n\nThere are \\(k\\) independent variables, plus an intercept\n\n\\(\\boldsymbol{\\beta}\\) is a \\((k+1) \\times 1\\) vector of slope parameters"
+  },
+  {
+    "objectID": "slides/index.html#population-regression-model-1",
+    "href": "slides/index.html#population-regression-model-1",
+    "title": "Matrix Review",
+    "section": "Population Regression Model",
+    "text": "Population Regression Model\n\nNow suppose we take a random sample of \\(n\\) people from the population\nThe population model holds for each member of the sample\n\n\\[y_{i}=  \\mathbf{x_{i}}\\boldsymbol{\\beta}  + u_{i}, \\forall i=1,...,n\\]\n\nWe can express this more compactly with full matrix notation\n\n\\[\\mathbf{y}=  \\mathbf{X}\\boldsymbol{\\beta}  + \\mathbf{u}\\]\n\n\\(\\mathbf{X}\\) is an \\(n \\times (k+1)\\) matrix of observations on each regressor\n\\(\\boldsymbol{\\beta}\\) is still a \\((k+1) \\times 1\\) vector of slope parameters\n\\(\\mathbf{y}\\) is an \\(n \\times 1\\) vector of observations on the dependent variable\n\\(\\mathbf{u}\\) is an \\(n \\times 1\\) vector of error terms"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Prof. Justin Smith\n   Lazaridis Hall 3091\n   jusmith@wlu.ca\n\n\n\n\n\n   Mon/Wed\n   Sept-Dec 2022\n   10:00 - 11:20 AM\n   LH4096\n\n\n\n\n\n   Tue 10:00 AM - 12:00 PM\n   Schedule an appointment"
+  },
+  {
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "Course Description",
+    "text": "Course Description\nThis first course in econometrics at the graduate level will build on the knowledge you gained in your undergraduate econometrics classes. Some of the topics we cover will be advanced versions of things you already know, while others will be completely new. The goal is to build a foundation in economic statistics for those who want pursue a career in data analysis and also those who will continue to study economics at the PhD level. While the course will cover both theoretical and empirical aspects of econometrics, it will have an applied focus. What this means operationally is that assignments and exams are geared towards applying your knowledge to real world economic situations, estimating models using data, and discussing model intuition."
+  },
+  {
+    "objectID": "syllabus.html#lectures",
+    "href": "syllabus.html#lectures",
+    "title": "Syllabus",
+    "section": "Lectures",
+    "text": "Lectures\nThe scheduling details of the course are as follows\n\n\n\nSection\nTime\nLocation\n\n\n\n\nA\nMW 10:00-11:20am\nLH4096\n\n\n\nLectures are in person, unless university rules change and force us into remote instruction. In the event that I need to isolate for COVID symptoms, the affected lectures will take place over Zoom."
+  },
+  {
+    "objectID": "syllabus.html#course-material",
+    "href": "syllabus.html#course-material",
+    "title": "Syllabus",
+    "section": "Course Material",
+    "text": "Course Material\n\nTextbook\nThere is no required textbook for this course, but many supplemental readings will be drawn from the following list:\n\n(AP1) Angrist, Joshua D. and Jörn-Steffen Pischke, Mostly Harmless Econometrics: An Empiricist’s Companion. Princeton: Princeton University Press, 2009.\n(AP2) Angrist, Joshua D. and Jörn-Steffen Pischke, Mastering Metrics: The Path From Cause to Effect. Princeton: Princeton University Press, 2015.\n(CT) Cameron, A. Colin and Pravin K. Trivedi, Microeconometrics. New York: Cambridge University Press, 2005.\n(C) Cunningham, Scott, Causal Inference: The Mixtape. Available at: https://mixtape.scunning.com, 2021.\n(HK) Huntington-Klein, Nick, The Effect. Available at https://theeffectbook.net, 2021\n(K) Kennedy, Peter, A Guide to Econometrics 6E. Malden: Blackwell Publishing, 2008.\n(SW) Stock, James H., and Mark M. Watson (2015). Introduction to Econometrics, 4th Edition. Pearson Education.\n(W1) Wooldridge, Jeffrey M., Econometric Analysis of Cross-Section and Panel Data, Second Edition. Cambridge: MIT Press, 2010.\n(W2) Wooldridge, Jeffrey M., Introductory Econometrics: A Modern Approach Analysis of Cross-Section and Panel Data, Seventh Edition. Mason: South-Western, Cengage, 2019.\n\n\n\nR Statistical Software\nAll assignments require you to manipulate data using the statistical software R alongside a user interface called R Studio. Both of these programs are free, and available on all computer platforms. You can use R without R Studio, but I would only recommend this is you have prior experience with the program or have a computer programming background. I will give instructions on how to access these materials in class."
+  },
+  {
+    "objectID": "syllabus.html#evaluation",
+    "href": "syllabus.html#evaluation",
+    "title": "Syllabus",
+    "section": "Evaluation",
+    "text": "Evaluation\nYou will be evaluated on three equally weighted assignments, one midterm, and one final exam. The weights and due dates for each assessment are as follows:\n\n\n\nAssessment\nDue Date\nWeight\n\n\n\n\nAssignment 1\nFriday, October 7, 2022 at 9:00pm\n16.67%\n\n\nAssignment 2\nFriday, November 4, 2022 at 9:00pm\n16.67%\n\n\nMidterm\nWednesday, November 9, 2022, in class\n20%\n\n\nAssignment 3\nFriday December 2, 2022 at 12:00pm\n16.67%\n\n\nFinal Exam\nTBA\n30%\n\n\n\nAssignments will ask you to manipulate and interpret data using the statistical software R. Instructions will be posted to MLS at least one week prior to the due date.\nBoth the midterm and final exam will be in person. The midterm will take place in the classroom where the lectures take place at the scheduled lecture time. The final exam schedule is posted roughly half way through the term."
+  },
+  {
+    "objectID": "syllabus.html#topics",
+    "href": "syllabus.html#topics",
+    "title": "Syllabus",
+    "section": "Topics",
+    "text": "Topics\nBelow is a list of tentative topics covered in the course. I may add or remove items depending on how quickly the course proceeds. A reading list for each topic is available at the end of this syllabus.\n\nReview of Matrix Algebra for Econometrics\nLinear Regression Model and OLS\n\nRubin Causal Model\nReview of Linear Regression and OLS\n\nCausal Inference\n\nInstrumental Variables\nDifference in Differences\nRegression Discontinuity\n\nPanel Data Methods\n\nFixed Effects\nRandom Effects\nClustering\n\nQualitative Dependent Variable Models\n\nProbit/Logit\nTobit\nSample Selection\nCount Data\n\nAdditional Topics"
+  },
+  {
+    "objectID": "syllabus.html#missed-midterms",
+    "href": "syllabus.html#missed-midterms",
+    "title": "Syllabus",
+    "section": "Missed Midterms",
+    "text": "Missed Midterms\nStudents who miss a midterm will be given reasonable accommodation for the following reasons:\n\nReligious conflict: If you have a religious commitment that interferes with the midterm exam, university policy is that you must alert me within the first two weeks of the start of the term and fill out the Student Request for Accommodation for Religious Observances form. If those conditions are met, we will work together to provide a reasonable accommodation.\nCourse conflict: If your midterm overlaps with another scheduled course, please inform me as soon as you know about the conflict and we will work out a reasonable accommodation.\nVarsity Sports: If a varsity sporting event interferes with the midterm, you must contact your coach, who will arrange for an alternative time to write the test. Note that this policy applies only to varsity sports; students who have non-varsity sports conflicts are not eligible for a deferred midterm\n\n\nStudents who miss a midterm and have an acceptable medical or compassionate reason will have the weight of the midterm transferred to the final exam. In the case of medical reasons, I require that students complete the Absence for Medical Reasons Self-Declaration Form.\nIn all other circumstances, students who miss a midterm will receive a grade of zero on the test.\n\n\nLate Assignments\n\n\nLate assignments and quizzes for religious conflicts, course conflicts, or medical/compassionate reasons as defined above will be given reasonable accommodation. In all other circumstances, students who submit late assignments or quizzes will receive a grade of zero.\n\n\nDeferred Final Examinations\n\n\nStudents who miss a final examination can submit a petition to the Faculty of Graduate and Postdoctoral Studies for a deferred exam. Students who miss the exam due to illness must submit the petition no later than 5 days after the missed exam with original supporting documentation. Students requesting a deferred exam for reasons other than personal illness or bereavement must submit a petition at the time of the exam schedule posting to allow the committee to reach a decision before the scheduled date.\nStudents are strongly urged not to make any commitments (e.g., vacation) during the examination period. Students are required to be available for examinations during the examination periods of all terms in which they register. Refer to the Handbook on Undergraduate Course Management for more information\n\n\nAcademic Integrity\n\n\nYou are reminded that the University will levy sanctions on students who are found to have committed, or have attempted to commit, acts of academic or research misconduct. You are expected to know what constitutes an academic offense, to avoid committing such offenses, and to take responsibility for your academic actions. For information on categories of offenses and types of penalty, please consult the relevant section of the Undergraduate Academic Calendar. If you need clarification of aspects of University policy on Academic and Research Misconduct, please consult your instructor.\nWilfrid Laurier University uses software that can check for plagiarism. Students may be required to submit their written work in electronic form and have it checked for plagiarism.\n\n\nAccessible Learning\n\n\nStudents with disabilities or special needs are advised to contact Laurier’s Accessible Learning Centre for information regarding its services and resources. Students should review the Calendar for information regarding all services available on campus.\n\n\nStudent Privacy\n\n\nWilfrid Laurier University uses a range of technologies to facilitate in-person and remote instruction. Zoom is currently used for remote course delivery, including lectures, seminars, and group office hours, which may be recorded, stored and shared through MyLearningSpace for access by students in the course. For these course activities, ​students are permitted to turn off their cameras or use an alternative name to maintain their privacy after they have confirmed this with their instructor. Student personal information is collected and used in the course in accordance with University policies and the Notice of Collection, Use or Disclosure of Personal Information.\nSome synchronous (live) class sessions will be delivered in this course through a video conferencing platform supported by the university [Zoom, Teams, Virtual Classroom]. Steps have been taken to protect the security of the information shared. For more information about Zoom and Office365 (including Teams), please visit ICT’s Tech Support and Services page. Class sessions will be recorded with the video and audio (and in some cases transcription) made available to students in the course in MyLearningSpace for the duration of the term. The recordings may capture your name, image or voice through the video and audio recordings. By attending in these live classes, you are consenting to the collection of this information for the purposes of administering the class and associated course work. If you are concerned about the use or collection of your name and other personal information in the class, please contact the course instructor to identify possible alternatives. To learn more about how your personal information is collected, used and disclosed by the University, please see Laurier’s Notice of Collection, Use and Disclosure of Personal Information.\n\n\nCOVID Information\n\n\nThe university face covering policy says that students are required to wear a face covering in all “designated face covering areas,” which includes classrooms. Unless you have an accommodation as per section 4.07 of the policy, you are expected to wear your face covering at all times in the classroom, and also while transitioning to and from classrooms. If you have an accommodation, please tell me in advance (no details needed - just tell me you have an accommodation). If any student is not wearing or not properly wearing their face covering, I will ask them politely to please wear it according to the university policy. If at that point any student refuses, I will leave the classroom and continue instruction remotely until everyone agrees to abide by the university policy.\n\n\nIntellectual Property\n\n\nThe educational materials developed for this course, including, but not limited to, lecture notes and slides, handout materials, examinations and assignments, and any materials posted to MyLearningSpace, are the intellectual property of the course instructor. These materials have been developed for student use only and they are not intended for wider dissemination and/or communication outside of a given course. Posting or providing unauthorized audio, video, or textual material of lecture content to third-party websites violates an instructor’s intellectual property rights, and the Canadian Copyright Act. Recording lectures in any way is prohibited in this course unless specific permission has been granted by the instructor. Failure to follow these instructions may be in contravention of the university’s Student Non-Academic Code of Conduct and/or Code of Academic Conduct, and will result in appropriate penalties. Participation in this course constitutes an agreement by all parties to abide by the relevant University Policies, and to respect the intellectual property of others during and after their association with Wilfrid Laurier University.\n\n\nFoot Patrol, the Wellness Centre, and the Student Food Bank\n\nThe University approved the inclusion of information about select wellness and safety services and supports on campus in the course information provided to students. (Approved by Senate November 28, 2011.) Specific language (by campus) is provided below.\n\nMulti-campus Resource:\n\n\nGood2Talk is a postsecondary school helpline that provides free, professional and confidential counselling support for students in Ontario. Call 1-866-925-5454 or through 2-1-1. Available 24-7.\n\n\nKitchener/Waterloo Resources:\n\n\nWaterloo Student Food > Bank: All > students are eligible to use this service to ensure they’re eating > healthy when overwhelmed, stressed or financially strained. > Anonymously request a package online 24-7. All dietary > restrictions accommodated.\nWaterloo Foot > Patrol: > 519.886.FOOT (3668). A volunteer operated safe-walk program, > available Fall and Winter daily from 6:30 pm to 3 am. Teams of two > are assigned to escort students to and from campus by foot or by > van.\nWaterloo Student Wellness > Centre: > 519-884-0710, x3146. The Centre supports the physical, emotional, > and mental health needs of students. Located on the 2nd floor of > the Student Services Building, booked and same-day appointments > are available Mondays and Wednesdays from 8:30 am to 7:30 pm, and > Tuesdays, Thursdays and Fridays from 8:30 am to 4:15 pm. Contact > the Centre at x3146, wellness@wlu.ca or @LaurierWellness. After > hours crisis support available 24/7. Call 1-844-437-3247 > (HERE247).\n\n\nBrantford Resources:\n\n\nBrantford Student Food > Bank: All > students are eligible to use this service to ensure they’re eating > healthy when overwhelmed, stressed or financially strained. > Anonymously request a package online 24-7. All dietary > restrictions accommodated.\nBrantford Foot > Patrol: > 519-751-PTRL (7875). A volunteer operated safe-walk program, > available Fall and Winter, Monday through Thursday from 6:30 pm to > 1 am; Friday through Sunday 6:30 pm to 11 pm. Teams of two are > assigned to escort students to and from campus by foot or by van.\nBrantford Wellness > Centre: > 519-756-8228, x5803. Students have access to support for all their > physical, emotional, and mental health needs at the Wellness > Centre. Location: Student Centre, 2nd floor. Hours: 8:30 am to > 4:15 pm Monday through Friday. After hours crisis support > available 24/7. Call 1-884-437-3247 (HERE247).\n\n\n\nSupplemental Readings\n\n\nBelow is a list of tentative list of supplemental readings for each topic in the course. This is subject to change during the semester.\n\n\nReview of Matrix Algebra for Econometrics\n\n\nSupplemental Readings\n\n\nSW Chapter 19.1\nW2 Appendix D\n\n\nReview of Linear Regression Model and OLS\n\nRubin Causal Model\n\n\n\nSupplemental Readings\n\n\nAP1 Chapter 3\nC Chapter “Potential Outcomes Causal Model”\nReview of Linear Regression Model and OLS\n\n\nSupplemental Readings\n\n\nAP1 Chapter 3\nAP2 Chapter 2\nC Chapter “Properties of Regression”\nCT Chapter 4\nHK Chapter 13\nK Chapter 3\nSW Chapters 4,5,6,7,8\nW1 Chapter 4\nW2 Appendix E\n\n\nCausal Inference\n\nInstrumental Variables\n\n\n\nSupplemental Readings\n\n\nAP1 Chapter 4\nAP2 Chapter 3\nC Chapter “Instrumental Variables”\nHK Chapter 19\nK Chapter 9\nSW Chapter 12\nW1 Chapter 5\nW2 Chapter 15\n\nDifference in Differences\n\n\n\nSupplemental Readings\n\n\nAP1 Chapter 5\nAP2 Chapter 5\nC Chapter “Difference in Differences”\nHK Chapter 18\nW1 Chapter 6.5\nW2 Chapter 13\n\nRegression Discontinuity\n\n\n\nSupplemental Readings\n\n\nAP1 Chapter 6\nAP2 Chapter 4\nC Chapter “Regression Discontinuity”\nHK Chapter 20\nW1 Chapter 21.5\n\n\nPanel Data Methods\n\nFixed Effects\n\n\n\nSupplemental Readings\n\n\nAP1 Chapter 5\nC Chapter “Panel Data”\nHK Chapter 16\nK Chapter 18\nSW Chapter 12\nW1 Chapter 10\nW2 Chapter 14\n\nRandom Effects\n\n\n\nSupplemental Readings\n\n\nK Chapter 18\nW1 Chapter 10\nW2 Chapter 14\n\nClustering\n\n\n\nSupplemental Readings\n\n\nAP1 Chapter 8\n\n\nQualitative Dependent Variable Models\n\nProbit/Logit\n\n\n\nSupplemental Readings\n\n\nCT Chapter 14\nK Chapter 16.1\nSW Chapter 11\nW1 Chapter 15\nW2 Chapter 17\n\nTobit\n\n\n\nSupplemental Readings\n\n\nCT Chapter 16\nK Chapter 17.2\nW1 Chapter 17\nW2 Chapter 17\n\nSample Selection\n\n\n\nSupplemental Readings\n\n\nCT Chapter 16\nK Chapter 17.3\nW Chapter 19\nW2 Chapter 17\n\nCount Data\n\n\n\nSupplemental Readings\n\n\nCT Chapter 20\nK Chapter 16.4\nW1 Chapter 18\n\n\nAdditional Topics"
+  },
+  {
+    "objectID": "content/index.html",
+    "href": "content/index.html",
+    "title": "content",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "content/matrixrev.html#slides",
+    "href": "content/matrixrev.html#slides",
+    "title": "Matrix Algebra Review",
+    "section": "Slides",
+    "text": "Slides\nThe slides are embedded in this page, and you can scroll through them with the arrow keys. If you prefer you can instead pop them out in a new window\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nFun fact: If you type ? (or shift + /) while going through the slides, you can see a list of special slide-specific commands."
+  }
+]

@@ -1,0 +1,44 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+
+execute:
+  freeze: auto
+
+website:
+  title: "E655 - Econometrics"
+  navbar:
+    pinned: true
+    background: "#9e32a8"
+    left:
+      - href: index.qmd
+        text: Home
+      - syllabus.qmd
+      - text: "Content"
+        file: content/index.qmd
+
+  sidebar:
+    - title: "Content"
+      style: "docked"
+      search: false
+      background: dark
+      contents:
+        - section: "Overview"
+          contents:
+            - content/index.qmd
+        - section: "Course content"
+          contents:
+            - text: "Rubin Model"
+            - text: "Matrix Review"
+              file: content/matrixrev.qmd
+
+format:
+  html:
+    theme: 
+      - litera
+      - html/custom.scss
+    toc: true
+    highlight-style: monokai
+
+

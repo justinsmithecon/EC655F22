@@ -1,0 +1,30 @@
+author: Justin Smith
+
+instructor:
+  name: Prof. Justin Smith
+  name_no_title: Justin Smith
+  email: jusmith@wlu.ca
+  url: "https://justinsmithecon.github.io"
+  twitter: justinsmithecon
+  github: justinsmithecon
+  office: "Lazaridis Hall 3091"
+  appointment_url: https://outlook.office365.com/owa/calendar/BookaTimewithDrJustinSmith@wlu.ca/bookings/
+
+
+course:
+  number: "EC655"
+  semester: "Fall 2022"
+  days: "Mon/Wed"
+  time: "10:00 - 11:20 AM"
+  location: "LH4096"
+  dates: "Sept-Dec 2022"
+  copyright_year: "2022"
+  offhours: "Tue 10:00 AM - 12:00 PM"
+
+university:
+  name: Wilfrid Laurier University
+  url: "https://www.wlu.ca"
+
+school:
+  name: Lazaridis School of Business and Economics
+  url: "https://www.wlu.ca/academics/faculties/lazaridis-school-of-business-and-economics/index.html"
