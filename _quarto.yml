@@ -3,9 +3,6 @@ project:
   render:
     - "*.qmd"
 
-execute:
-  freeze: auto
-
 website:
   title: "E655 - Econometrics"
   navbar:
