@@ -2,7 +2,7 @@
 title: "Econometrics"
 subtitle: "Masters econometrics with an applied focus"
 details: |
-  EC655 • Fall 2022<br>Lazaridis School of Business and Economics<br>Wilfrid Laurier University
+  EC655 • Fall 2023<br>Department of Economics<br>Lazaridis School of Business and Economics<br>Wilfrid Laurier University
 sidebar: false
 toc: false
 page-layout: full
