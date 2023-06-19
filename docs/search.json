@@ -361,14 +361,14 @@
     "href": "content/introtor.html",
     "title": "Introduction to R",
     "section": "",
-    "text": "Readings here"
+    "text": "Hanck, C., Arnold, M., Gerber, A., & Schmelzer, M. (2019). Introduction to Econometrics with R. University of Duisburg-Essen. Url: https://www.econometrics-with-r.org\nOswald, F., Viers, V., Robin, J.- M., Villedieu, P., Kenedi, G. (2020). Introduction to Econometrics with R. Department of Economics, Sciences Po. Url: https://scpoecon.github.io/ScPoEconometrics/"
   },
   {
     "objectID": "content/introtor.html#readings",
     "href": "content/introtor.html#readings",
     "title": "Introduction to R",
     "section": "",
-    "text": "Readings here"
+    "text": "Hanck, C., Arnold, M., Gerber, A., & Schmelzer, M. (2019). Introduction to Econometrics with R. University of Duisburg-Essen. Url: https://www.econometrics-with-r.org\nOswald, F., Viers, V., Robin, J.- M., Villedieu, P., Kenedi, G. (2020). Introduction to Econometrics with R. Department of Economics, Sciences Po. Url: https://scpoecon.github.io/ScPoEconometrics/"
   },
   {
     "objectID": "content/introtor.html#slides",
@@ -382,6 +382,20 @@
     "href": "content/introtor.html#other-resources",
     "title": "Introduction to R",
     "section": "Other Resources",
-    "text": "Other Resources\n\n\n\n\n\n\n\nTip\n\n\n\nFun fact: If you type ? (or shift + /) while going through the slides, you can see a list of special slide-specific commands."
+    "text": "Other Resources\n\nThe swirl package teaches R within R. See here to get started: https://swirlstats.com/students.html"
+  },
+  {
+    "objectID": "content/introtor.html#videos",
+    "href": "content/introtor.html#videos",
+    "title": "Introduction to R",
+    "section": "Videos",
+    "text": "Videos\n\nIntroduction to R by Nick Huntington-Klein\nEconomist Nick Huntington-Klein has produced a series of videos that cover how to use R for economists. The series is broken into beginner, intermediate, and advanced levels."
+  },
+  {
+    "objectID": "content/introtor.html#tutorial",
+    "href": "content/introtor.html#tutorial",
+    "title": "Introduction to R",
+    "section": "Tutorial",
+    "text": "Tutorial\nBelow is a tutorial you can use to learn the very basics of R. It does not cover everything, but enough so that we can do most of the things we need for this class. If you prefer you can instead pop them out in a new window"
   }
 ]

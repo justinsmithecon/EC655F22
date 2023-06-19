@@ -38,8 +38,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -149,7 +147,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#readings" id="toc-readings" class="nav-link active" data-scroll-target="#readings">Readings</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#tutorial" id="toc-tutorial" class="nav-link" data-scroll-target="#tutorial">Tutorial</a></li>
+  <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a>
+  <ul class="collapse">
+  <li><a href="#introduction-to-r-by-nick-huntington-klein" id="toc-introduction-to-r-by-nick-huntington-klein" class="nav-link" data-scroll-target="#introduction-to-r-by-nick-huntington-klein">Introduction to R by Nick Huntington-Klein</a></li>
+  </ul></li>
   <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources">Other Resources</a></li>
   </ul>
 </nav>
@@ -176,31 +178,29 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="readings" class="level2">
 <h2 class="anchored" data-anchor-id="readings">Readings</h2>
-<p>Readings here</p>
+<p>Hanck, C., Arnold, M., Gerber, A., &amp; Schmelzer, M. (2019). Introduction to Econometrics with R. University of Duisburg-Essen. Url: <a href="https://www.econometrics-with-r.org" class="uri">https://www.econometrics-with-r.org</a></p>
+<p>Oswald, F., Viers, V., Robin, J.- M., Villedieu, P., Kenedi, G. (2020). Introduction to Econometrics with R. Department of Economics, Sciences Po. Url: <a href="https://scpoecon.github.io/ScPoEconometrics/" class="uri">https://scpoecon.github.io/ScPoEconometrics/</a></p>
 </section>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<p>The slides are embedded in this page, and you can scroll through them with the arrow keys. If you prefer you can instead <a href="../slides/index.html" target="_blank">pop them out in a new window</a></p>
+<section id="tutorial" class="level2">
+<h2 class="anchored" data-anchor-id="tutorial">Tutorial</h2>
+<p>Below is a tutorial you can use to learn the very basics of R. It does not cover everything, but enough so that we can do most of the things we need for this class. If you prefer you can instead <a href=" https://justinsmithecon.shinyapps.io/ec655learnr/" target="_blank">pop them out in a new window</a></p>
 <div>
-<p align="center"><iframe width="780" height="500" class="slide-deck" src="../slides/"></iframe></p>
+<p align="center"><iframe height="500" width="100%" frameborder="no" src="https://justinsmithecon.shinyapps.io/ec655learnr/"> </iframe></p>
 </div>
+</section>
+<section id="videos" class="level2">
+<h2 class="anchored" data-anchor-id="videos">Videos</h2>
+<section id="introduction-to-r-by-nick-huntington-klein" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-to-r-by-nick-huntington-klein">Introduction to R by Nick Huntington-Klein</h3>
+<p>Economist Nick Huntington-Klein has produced a series of videos that cover how to use R for economists. The series is broken into beginner, intermediate, and advanced levels.</p>
+<div class="quarto-video"><iframe data-external="1" src="https://www.youtube.com/embed/kD1qq5tBrLg" width="400" height="300" title="Intro to R for Economists by Nick H-K" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
 </section>
 <section id="other-resources" class="level2">
 <h2 class="anchored" data-anchor-id="other-resources">Other Resources</h2>
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" width="780" height="500" class="video-js vjs-default-skin " controls="" preload="auto" data-setup="{}" title=""><source src="https://www.youtube.com/playlist?list=PLcTBLulJV_AIuXCxr__V8XAzWZosMQIfW"></video></div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Fun fact</strong>: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.</p>
-</div>
-</div>
+<ul>
+<li>The <strong>swirl</strong> package teaches R within R. See here to get started: <a href="https://swirlstats.com/students.html" class="uri">https://swirlstats.com/students.html</a></li>
+</ul>
 
 
 </section>
@@ -440,7 +440,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 

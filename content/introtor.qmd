@@ -4,26 +4,39 @@ title: "Introduction to R"
 
 ## Readings
 
-Readings here
+Hanck, C., Arnold, M., Gerber, A., & Schmelzer, M. (2019). Introduction to Econometrics with R. University of Duisburg-Essen. Url: <https://www.econometrics-with-r.org>
 
-## Slides
+Oswald, F., Viers, V., Robin, J.- M., Villedieu, P., Kenedi, G. (2020). Introduction to Econometrics with R. Department of Economics, Sciences Po. Url: <https://scpoecon.github.io/ScPoEconometrics/>
 
-The slides are embedded in this page, and you can scroll through them with the arrow keys.  If you prefer you can instead <a href="/slides/index.html" target="_blank">pop them out in a new window</a>
+## Tutorial
+
+Below is a tutorial you can use to learn the very basics of R.  It does not cover everything, but enough so that we can do most of the things we need for this class.  If you prefer you can instead <a href=" https://justinsmithecon.shinyapps.io/ec655learnr/" target="_blank">pop them out in a new window</a>
 
 
 <div>
 
 ```{=html}
-<p align="center"><iframe width="780" height="500" class="slide-deck" src="/slides/"></iframe></p>
+<p align="center"><iframe height="500" width="100%" frameborder="no" src="https://justinsmithecon.shinyapps.io/ec655learnr/"> </iframe></p>
 ```
 
 </div>
 
 
+
+## Videos
+
+### Introduction to R by Nick Huntington-Klein
+
+Economist Nick Huntington-Klein has produced a series of videos that cover how to use R for economists.  The series is broken into beginner, intermediate, and advanced levels.
+
+{{< video https://www.youtube.com/watch?v=kD1qq5tBrLg&list=PLcTBLulJV_AIuXCxr__V8XAzWZosMQIfW&index=1 
+    width="400" 
+    height="300"
+    title="Intro to R for Economists by Nick H-K"
+>}}
+
 ## Other Resources
 
-{{< video https://www.youtube.com/playlist?list=PLcTBLulJV_AIuXCxr__V8XAzWZosMQIfW width="780" height="500" >}}
+- The **swirl** package teaches R within R.  See here to get started: <https://swirlstats.com/students.html> 
 
-::: callout-tip
-**Fun fact**: If you type <kbd>?</kbd> (or <kbd>shift</kbd> + <kbd>/</kbd>) while going through the slides, you can see a list of special slide-specific commands.
-:::
+

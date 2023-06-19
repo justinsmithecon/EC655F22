@@ -12,6 +12,8 @@ format:
       - html/home/title-block.html
 course-logo: /files/img/analytics.png
 slide-format: revealjs
+bibliography: 
+      - files/bib/site.bib
 ---
 
 ```{r echo=FALSE}
