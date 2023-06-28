@@ -10,8 +10,7 @@ Oswald, F., Viers, V., Robin, J.- M., Villedieu, P., Kenedi, G. (2020). Introduc
 
 ## Tutorial
 
-Below is a tutorial you can use to learn the very basics of R.  It does not cover everything, but enough so that we can do most of the things we need for this class.  If you prefer you can instead <a href=" https://justinsmithecon.shinyapps.io/ec655learnr/" target="_blank">pop them out in a new window</a>
-
+Below is a tutorial you can use to learn the very basics of R. It does not cover everything, but enough so that we can do most of the things we need for this class. If you prefer you can instead <a href=" https://justinsmithecon.shinyapps.io/ec655learnr/" target="_blank">pop them out in a new window</a>
 
 <div>
 
@@ -21,22 +20,20 @@ Below is a tutorial you can use to learn the very basics of R.  It does not cove
 
 </div>
 
-
-
 ## Videos
 
 ### Introduction to R by Nick Huntington-Klein
 
-Economist Nick Huntington-Klein has produced a series of videos that cover how to use R for economists.  The series is broken into beginner, intermediate, and advanced levels.
+Economist Nick Huntington-Klein has produced a series of videos that cover how to use R for economists. The series is broken into beginner, intermediate, and advanced levels.
 
-{{< video https://www.youtube.com/watch?v=kD1qq5tBrLg&list=PLcTBLulJV_AIuXCxr__V8XAzWZosMQIfW&index=1 
-    width="400" 
-    height="300"
-    title="Intro to R for Economists by Nick H-K"
->}}
+{{< video https://www.youtube.com/watch?v=kD1qq5tBrLg&list=PLcTBLulJV_AIuXCxr__V8XAzWZosMQIfW&index=1 width="400" height="300" title="Intro to R for Economists by Nick H-K" >}}
 
 ## Other Resources
 
-- The **swirl** package teaches R within R.  See here to get started: <https://swirlstats.com/students.html> 
+- [R Studio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
 
+These provide a quick reference sheet for common packages in R, with examples on how to use them.  A very valuable resources for both beginners and more advanced users.
 
+- [Swirl Package](https://swirlstats.com/students.html)
+
+This package is designed to help you learn R within R itself.  There are several tutorials available that guide you throught the various topics.
