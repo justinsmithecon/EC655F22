@@ -22,12 +22,20 @@ website:
       search: false
       background: dark
       contents:
+      
+        - section: "Overview"
+          contents:
+            - content/index.qmd
         - section: "Course content"
           contents:
             - text: "Introduction to R"
               file: content/introtor.qmd
             - text: "Matrix Review"
               file: content/matrixrev.qmd
+            - text: "Regression"
+              file: content/regression.qmd
+            - text: "Causality"
+              file: content/causality.qmd
 
 format:
   html:

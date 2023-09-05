@@ -1,11 +1,5 @@
 ---
-title: "content"
+title: "Summary"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
-```{r}
-1 + 1
-```
+Here you will find lecture notes, recommended readings, and other useful materials for each section of the course.  Use the sidebar to navigate to the appropriate section.  You can go through the lecture slides directly on the page, or pop them out to a separate page.  Please review each section before the lecture to familiarize yourself with the material.

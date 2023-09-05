@@ -10,7 +10,7 @@ format:
   html:
     template-partials:
       - html/home/title-block.html
-course-logo: /files/img/analytics.png
+course-logo: /files/img/hexEC655.png
 slide-format: revealjs
 bibliography: 
       - files/bib/site.bib

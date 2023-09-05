@@ -1,21 +1,30 @@
 ---
-title: "Matrix Review"
-subtitle: "EC655"
-author: "Justin Smith"
-institute: "Wilfrid Laurier University"
-date: "Fall 2022"
 format: 
   revealjs:
     theme: [default, hygge.scss]
-    smaller: true
+    center-title-slide: false
     slide-number: true
+    height: 900
+    width: 1600
     chalkboard:
       theme: whiteboard
       src: drawings.json
 editor: visual
-title-slide-attributes:
-  data-background-color: "#43464B"
 ---
+
+<h1>Matrix Review</h1>
+
+<hr>
+
+<h2>EC655 - Econometrics</h2>
+
+<h2>Justin Smith</h2>
+
+<h2>Wilfrid Laurier University</h2>
+
+<h2>Fall 2023</h2>
+
+![](/files/img/hexEC655.png){.absolute top="300" left="900" width="550"}
 
 # Introduction
 
