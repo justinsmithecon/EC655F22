@@ -730,287 +730,287 @@
   {
     "objectID": "slides/matrixrev/index.html#introduction-1",
     "href": "slides/matrixrev/index.html#introduction-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Introduction",
     "text": "Introduction\n\nUndergrad metrics normally uses scalar notation\n\nMore accessible for students without advanced math background\n\nAt the graduate level, it is often taught using matrix algebra\nSome advantages to matrix notation\n\nMore compact\nEasier to express some estimators\n\nIn this section, we review matrix algebra essentials for econometrics\n\nNot a comprehensive review\n\nWe will switch between scalar and matrix notation in the course\n\nDepending on which is clearer in each context"
   },
   {
     "objectID": "slides/matrixrev/index.html#matrix",
     "href": "slides/matrixrev/index.html#matrix",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Matrix",
     "text": "Matrix\n\nA matrix is a rectangular array of numbers organized in rows and columns\nFor example, matrix \\(\\mathbf{A}\\) with 2 rows and 3 columns could be\n\n\\[\\mathbf{A} =\n\\begin{bmatrix}\n1 & 2  & 3 \\\\\n4 &5 & 6\n\\end{bmatrix}\\]\n\nMore generally, matrix \\(\\mathbf{A}\\) with m rows and n columns is\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mn}\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#vectors",
     "href": "slides/matrixrev/index.html#vectors",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Vectors",
     "text": "Vectors\n\nA vector is a matrix with one column or one row\nA row vector \\(\\mathbf{a}\\) with n elements is\n\n\\[\\mathbf{a}=\n\\begin{bmatrix}\na_{1}& a_{2} &\\cdots & a_{n}\n\\end{bmatrix}\\]\n\nA .red[column vector] \\(\\mathbf{a}\\) with m elements is\n\n\\[\\mathbf{a}=\n\\begin{bmatrix}\na_{1}\\\\\na_{2}\\\\\n\\vdots \\\\\na_{m}\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#special-matrices",
     "href": "slides/matrixrev/index.html#special-matrices",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Special Matrices",
     "text": "Special Matrices\n\nA Square Matrix has the same number of rows and columns\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1m} \\\\\na_{21}& a_{22} &\\cdots & a_{2m} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mm}\n\\end{bmatrix}\\]\n\nA Diagonal Matrix is a square matrix with zeroes for all off-diagonal elements\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& 0&\\cdots & 0 \\\\\n0& a_{22} &\\cdots & 0 \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n0& 0&\\cdots & a_{mm}\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#special-matrices-1",
     "href": "slides/matrixrev/index.html#special-matrices-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Special Matrices",
     "text": "Special Matrices\n\nThe Identity Matrix is a square matrix with ones on the diagonal and zeroes on the off-diagonals\n\n\\[\\mathbf{I}=\n\\begin{bmatrix}\n1& 0&\\cdots & 0 \\\\\n0& 1 &\\cdots & 0 \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n0& 0&\\cdots & 1\n\\end{bmatrix}\\]\n\nThe Zero Matrix is a matrix with zeroes for all elements\n\n\\[\\mathbf{0}=\n\\begin{bmatrix}\n0& 0&\\cdots & 0 \\\\\n0& 0 &\\cdots & 0 \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n0& 0&\\cdots & 0\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#matrix-addition",
     "href": "slides/matrixrev/index.html#matrix-addition",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Matrix Addition",
     "text": "Matrix Addition\n\nYou can add and subtract matrices with the same dimensions\n\nMatrices with different dimensions are not conformable for addition or subtraction\n\nThe sum of matrices \\(\\mathbf{A}\\) and \\(\\mathbf{B}\\) with dimension \\(m \\times n\\) is\n\n\\[\\mathbf{A} + \\mathbf{B}=\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mn}\n\\end{bmatrix}\n+\n\\begin{bmatrix}\nb_{11}& b_{12} &\\cdots & b_{1n} \\\\\nb_{21}& b_{22} &\\cdots & b_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\nb_{m1}& b_{m2} &\\cdots & b_{mn}\n\\end{bmatrix}\\]\n\\[=\n\\begin{bmatrix}\na_{11} + b_{11}& a_{12} + b_{12} &\\cdots & a_{1n}+ b_{1n} \\\\\na_{21} + b_{21}& a_{22} + b_{22} &\\cdots & a_{2n}+ b_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1} + b_{m1}& a_{m2} +b_{m2} &\\cdots & a_{mn}+ b_{mn} \\\\\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#matrix-subtraction",
     "href": "slides/matrixrev/index.html#matrix-subtraction",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Matrix Subtraction",
     "text": "Matrix Subtraction\n\nSimilarly, the difference between matrices \\(\\mathbf{A}\\) and \\(\\mathbf{B}\\) is\n\n\\[\\mathbf{A} - \\mathbf{B}=\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mn}\n\\end{bmatrix}\n-\n\\begin{bmatrix}\nb_{11}& b_{12} &\\cdots & b_{1n} \\\\\nb_{21}& b_{22} &\\cdots & b_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\nb_{m1}& b_{m2} &\\cdots & b_{mn}\n\\end{bmatrix}\\]\n\\[=\n\\begin{bmatrix}\na_{11} - b_{11}& a_{12} - b_{12} &\\cdots & a_{1n}- b_{1n} \\\\\na_{21} - b_{21}& a_{22} - b_{22} &\\cdots & a_{2n}- b_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1} - b_{m1}& a_{m2} -b_{m2} &\\cdots & a_{mn}- b_{mn} \\\\\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#rules-for-addition-and-subtraction",
     "href": "slides/matrixrev/index.html#rules-for-addition-and-subtraction",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Rules for Addition and Subtraction",
     "text": "Rules for Addition and Subtraction\n\nThe following rules apply to matrix addition and subtraction\n\nCommutativity \\[\\mathbf{A + B = B + A}\\]\nAssociativity \\[\\mathbf{A + (B + C) = (A+B) + C}\\]\n\nEffectively, both rules mean order does not matter\n\nSimilar to scalar math\n\nFor subtraction, replace plus sign with minus sign and same rules apply"
   },
   {
     "objectID": "slides/matrixrev/index.html#matrix-multiplication",
     "href": "slides/matrixrev/index.html#matrix-multiplication",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Matrix Multiplication",
     "text": "Matrix Multiplication\n\nTo multiply matrix \\(\\mathbf{A}\\) and \\(\\mathbf{B}\\), the number of columns in \\(\\mathbf{A}\\) must equal the number of rows in \\(\\mathbf{B}\\)\nSuppose matrix \\(\\mathbf{A}\\) is \\(m \\times n\\) and matrix \\(\\mathbf{B}\\) is \\(n \\times p\\)\nDefine product as \\(\\mathbf{C}\\)= \\(\\mathbf{AB}\\)\n\nThe \\(ij\\) element of \\(\\mathbf{C}\\) is the sum of the product of the corresponding elements along the \\(i\\)th row of \\(\\mathbf{A}\\) and \\(j\\)th column of \\(\\mathbf{B}\\)\n\\[c_{ij} = \\sum_{k} a_{ik}b_{kj}\\]\nThe product matrix \\(\\mathbf{C}\\) will have dimension \\(m \\times p\\)\n\nThe number of rows of \\(\\textbf{A}\\) and number of columns of \\(\\textbf{B}\\)"
   },
   {
     "objectID": "slides/matrixrev/index.html#matrix-multiplication-1",
     "href": "slides/matrixrev/index.html#matrix-multiplication-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Matrix Multiplication",
     "text": "Matrix Multiplication\n\nThe product \\(\\mathbf{AB}\\) is\n\n\\[\\mathbf{AB}=\n    \\begin{bmatrix}\n    a_{11}& a_{12} &\\cdots & a_{1n} \\\\\n    a_{21}& a_{22} &\\cdots & a_{2n} \\\\\n    \\vdots & \\vdots &\\ddots & \\vdots \\\\\n    a_{m1}& a_{m2} &\\cdots & a_{mn}\n    \\end{bmatrix}\n    \\times\n    \\begin{bmatrix}\n    b_{11}& b_{12} &\\cdots & b_{1p} \\\\\n    b_{21}& b_{22} &\\cdots & b_{2p} \\\\\n    \\vdots & \\vdots &\\ddots & \\vdots \\\\\n    b_{n1}& b_{n2} &\\cdots & b_{np}\n    \\end{bmatrix}\\]\n\n\\[=\n\\begin{bmatrix}\na_{11} b_{11} + a_{12} b_{21}  + \\cdots + a_{1n} b_{n1}  &a_{11} b_{12} + a_{12} b_{22}  + \\cdots + a_{1n} b_{n2} &\\cdots&a_{11} b_{1p} + a_{12} b_{2p}  + \\cdots + a_{1n} b_{np}\\\\\na_{21} b_{11} + a_{22} b_{21}  + \\cdots + a_{2n} b_{n1}  &a_{21} b_{12} + a_{22} b_{22}  + \\cdots + a_{2n} b_{n2} &\\cdots&a_{21} b_{1p} + a_{22} b_{2p}  + \\cdots + a_{2n} b_{np}\\\\\n\\vdots &\\ddots & \\vdots \\\\\na_{m1} b_{11} + a_{m2} b_{21}  + \\cdots + a_{mn} b_{n1}  &a_{m1} b_{12} + a_{m2} b_{22}  + \\cdots + a_{mn} b_{n2} &\\cdots&a_{m1} b_{1p} + a_{m2} b_{2p}  + \\cdots + a_{mn} b_{np}\\\\\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#matrix-multiplication-2",
     "href": "slides/matrixrev/index.html#matrix-multiplication-2",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Matrix Multiplication",
     "text": "Matrix Multiplication\n\nAs an illustration suppose we have the following matrices \\[\\mathbf{A}=\n\\begin{bmatrix}\n1& 2\\\\\n3& 4 \\\\\n\\end{bmatrix}\n\\mathbf{B}=\n\\begin{bmatrix}\n5&6&7  \\\\\n8&9 &10\n\\end{bmatrix}\\]\nWe can multiply \\(\\mathbf{AB}\\) because \\(\\mathbf{A}\\) has 2 columns, and \\(\\mathbf{B}\\) has 2 rows\nThe product \\(\\mathbf{C}\\) = \\(\\mathbf{AB}\\) is\n\n\\[\\mathbf{C}=\n\\begin{bmatrix}\n1& 2\\\\\n3& 4 \\\\\n\\end{bmatrix}\n\\times\n\\begin{bmatrix}\n5&6&7  \\\\\n8&9 &10\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n1 \\times 5 + 2\\times 8&1 \\times 6 + 2 \\times 9 & 1 \\times 7 + 2 \\times 10  \\\\\n3 \\times 5 + 4\\times 8&3 \\times 6 + 4 \\times 9 & 3 \\times 7 + 4 \\times 10  \n\\end{bmatrix}\\]\n\\[=\n\\begin{bmatrix}\n21& 24& 27 \\\\\n47&54&  61\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#scalar-multiplication",
     "href": "slides/matrixrev/index.html#scalar-multiplication",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Scalar Multiplication",
     "text": "Scalar Multiplication\n\nA scalar is a single real number\nYou can also multiply a scalar by a matrix\nIf \\(\\gamma\\) is a scalar, and \\(\\mathbf{A}\\) is a matrix, then\n\n\\[\\mathbf{\\gamma A}= \\gamma\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mn}\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n\\gamma a_{11}&\\gamma  a_{12} &\\cdots & \\gamma a_{1n} \\\\\n\\gamma a_{21}& \\gamma a_{22} &\\cdots & \\gamma a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n\\gamma a_{m1}& \\gamma a_{m2} &\\cdots & \\gamma a_{mn}\n\\end{bmatrix}\\]\n\nYou multiply the scalar by each element of the matrix"
   },
   {
     "objectID": "slides/matrixrev/index.html#transpose",
     "href": "slides/matrixrev/index.html#transpose",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Transpose",
     "text": "Transpose\n\nThe transpose of a matrix is one where the rows and columns are switched\nSuppose matrix \\(\\mathbf{A}\\) is\n\n\\[\\mathbf{A}=\n    \\begin{bmatrix}\n    a_{11}& a_{12} &\\cdots & a_{1n} \\\\\n    a_{21}& a_{22} &\\cdots & a_{2n} \\\\\n    \\vdots & \\vdots &\\ddots & \\vdots \\\\\n    a_{m1}& a_{m2} &\\cdots & a_{mn}\n    \\end{bmatrix}\\]\n\nThen its transpose \\(\\mathbf{A'}\\) is\n\n\\[\\mathbf{A'}=\n\\begin{bmatrix}\na_{11}& a_{21} &\\cdots & a_{m1} \\\\\na_{12}& a_{22} &\\cdots & a_{m2} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{1n}& a_{2n} &\\cdots & a_{mn}\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#transpose-1",
     "href": "slides/matrixrev/index.html#transpose-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Transpose",
     "text": "Transpose\n\nThe transpose has the following properties\n\n\\[\\mathbf{(A')' = A }\\] \\[\\mathbf{(\\alpha A)' = \\alpha A' }\\] \\[\\mathbf{(A + B)' = A' + B' }\\] \\[\\mathbf{(AB)' = B'A' }\\]\n\nThere are additional rules for different types of matrices that we will cover below"
   },
   {
     "objectID": "slides/matrixrev/index.html#partitioned-matrix-multiplication",
     "href": "slides/matrixrev/index.html#partitioned-matrix-multiplication",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Partitioned Matrix Multiplication",
     "text": "Partitioned Matrix Multiplication\n\nYou may sometimes want to break matrices into vectors before you multiply\nMultiplication works the same way, but notation can be cleaner and more intuitive\nSuppose we have the following matrices \\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{m1}& a_{m2} &\\cdots & a_{mn}\n\\end{bmatrix}\n\\mathbf{B}=\n\\begin{bmatrix}\nb_{11}& b_{12} &\\cdots & b_{1p} \\\\\nb_{21}& b_{22} &\\cdots & b_{2p} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\nb_{n1}& b_{n2} &\\cdots & b_{np}\n\\end{bmatrix}\\]\nWe are interested in the product \\(\\mathbf{AB}\\)"
   },
   {
     "objectID": "slides/matrixrev/index.html#partitioned-matrix-multiplication-1",
     "href": "slides/matrixrev/index.html#partitioned-matrix-multiplication-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Partitioned Matrix Multiplication",
     "text": "Partitioned Matrix Multiplication\n\nBreak these matrices into vectors conformable for multiplication\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\n\\mathbf{a_{1}}&\\mathbf{a_{2}} & \\cdots & \\mathbf{a_{n}}\n\\end{bmatrix}\n\\mathbf{B}=\n\\begin{bmatrix}\n\\mathbf{b_{1}}\\\\\n\\mathbf{b_{2} }\\\\\n\\vdots  \\\\\n\\mathbf{b_{n}}\n\\end{bmatrix}\\]\n\nWhere\n\n\\[\\mathbf{a_{1}}=\n\\begin{bmatrix}\na_{11}\\\\\na_{21}\\\\\n\\cdots\\\\\na_{m1}\n\\end{bmatrix}\n\\mathbf{b_{1}}=\n\\begin{bmatrix}\nb_{11}&b_{12} & \\cdots & b_{1p}\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#partitioned-matrix-multiplication-2",
     "href": "slides/matrixrev/index.html#partitioned-matrix-multiplication-2",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Partitioned Matrix Multiplication",
     "text": "Partitioned Matrix Multiplication\n\nMultiply the vectors to get\n\n\\[\\mathbf{AB} = \\sum_{i=1}^{n} \\mathbf{a_{i}b_{i}}\\]\n\nThis breaks the product \\(\\mathbf{AB}\\) into the sum of \\(n\\) sub-matrices\n\nEach sub-matrix is product of corresponding vectors\nAlso each sub-matrix will have dimension \\(m \\times p\\)\n\nThis will be useful for some econometric estimators we derive\n\nMakes notation simpler and more intuitive\n\nAgain, note that you get the same answer as doing straight matrix multiplication"
   },
   {
     "objectID": "slides/matrixrev/index.html#rules-for-matrix-multiplication",
     "href": "slides/matrixrev/index.html#rules-for-matrix-multiplication",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Rules for Matrix Multiplication",
     "text": "Rules for Matrix Multiplication\n\nThere are several useful properties for matrix (and scalar) multiplication\n\n\\[(\\alpha + \\beta)\\mathbf{A} = \\alpha \\mathbf{A} + \\beta\\mathbf{A}\\] \\[\\alpha (\\mathbf{A} +\\mathbf{B}) =\\alpha \\mathbf{A} +\\alpha\\mathbf{B}\\] \\[(\\alpha\\beta) \\mathbf{A}  =\\alpha(\\beta \\mathbf{A})\\] \\[\\alpha (\\mathbf{A}\\mathbf{B}) =(\\alpha \\mathbf{A}) \\mathbf{B}\\] \\[(\\mathbf{A}\\mathbf{B} )\\mathbf{C} =\\mathbf{A}(\\mathbf{B} \\mathbf{C})\\] \\[\\mathbf{A}(\\mathbf{B} +\\mathbf{C}) =\\mathbf{A}\\mathbf{B} +\\mathbf{A} \\mathbf{C}\\] \\[(\\mathbf{A}+\\mathbf{B} )\\mathbf{C} =\\mathbf{A}\\mathbf{C} +\\mathbf{B} \\mathbf{C}\\] \\[\\mathbf{A}\\mathbf{I}  =\\mathbf{I}\\mathbf{A} = \\mathbf{A}\\] \\[\\mathbf{A}\\mathbf{0}  =\\mathbf{0}\\mathbf{A} = \\mathbf{0}\\] \\[\\mathbf{A}\\mathbf{B}  \\neq\\mathbf{B}\\mathbf{A}\\] —"
   },
   {
     "objectID": "slides/matrixrev/index.html#trace",
     "href": "slides/matrixrev/index.html#trace",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Trace",
     "text": "Trace\n\nThe trace of a square matrix is the sum of the diagonal elements\nIf square matrix \\(\\mathbf{A}\\) is\n\n\\[\\mathbf{A}=\n    \\begin{bmatrix}\n    a_{11}& a_{12} &\\cdots & a_{1n} \\\\\n    a_{21}& a_{22} &\\cdots & a_{2n} \\\\\n    \\vdots & \\vdots &\\ddots & \\vdots \\\\\n    a_{n1}& a_{n2} &\\cdots & a_{nn}\n    \\end{bmatrix}\\]\n\nThen its trace is\n\n\\[tr(\\mathbf{A})= \\sum_{i=1}^{n} a_{ii}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#trace-1",
     "href": "slides/matrixrev/index.html#trace-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Trace",
     "text": "Trace\n\nImportant properties of the trace are\n\n\\[tr(\\mathbf{I_{n}})= n\\] \\[tr(\\mathbf{A}')=tr(\\mathbf{A})\\] \\[tr(\\mathbf{A +B})=tr(\\mathbf{A}) + tr(\\mathbf{B})\\] \\[tr(\\alpha \\mathbf{A})=\\alpha tr(\\mathbf{A})\\] \\[tr(\\mathbf{AB})=tr(\\mathbf{BA})\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#marix-determinant",
     "href": "slides/matrixrev/index.html#marix-determinant",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Marix Determinant",
     "text": "Marix Determinant\n\nThe determinant is a scalar value associated with a square matrix\n\nHelpful concept for several things in matrix algebra\nFor econometrics, most useful for solving systems of equations and finding inverse of a matrix\n\nFor \\(2 \\times 2\\) matrix \\(\\mathbf{A}\\) \\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& a_{12} \\\\\na_{21}& a_{22}  \\\\\n\\end{bmatrix}\\]\nThe determinant is\n\n\\[|\\mathbf{A}|=a_{11}a_{22} - a_{12}a_{21}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#marix-determinant-1",
     "href": "slides/matrixrev/index.html#marix-determinant-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Marix Determinant",
     "text": "Marix Determinant\n\nFor \\(3 \\times 3\\) matrix \\(\\mathbf{A}\\)\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\na_{11}& a_{12} & a_{13} \\\\\na_{21}& a_{22} & a_{23} \\\\\na_{31}& a_{32} & a_{33} \\\\\n\\end{bmatrix}\\]\n\nThe determinant is\n\n\\[|\\mathbf{A}|=a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} +a_{13}a_{21}a_{32}\\] \\[-(a_{12}a_{21}a_{33} + a_{11}a_{23}a_{32} +a_{13}a_{22}a_{31})\\]\n\\[=a_{11}(a_{22}a_{33} - a_{23}a_{32}) + a_{12}(a_{23}a_{31} -a_{21}a_{33} )  +a_{13}(a_{21}a_{32} - a_{22}a_{31} )\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#marix-determinant-2",
     "href": "slides/matrixrev/index.html#marix-determinant-2",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Marix Determinant",
     "text": "Marix Determinant\n\nFor \\(n \\times n\\) matrix \\(\\mathbf{A}\\) the determinant is\n\n\\[|\\mathbf{A}|=a_{i1}c_{i1} + a_{i2}c_{i2} + \\cdots + a_{in}c_{in} \\text{   for choice of any row i}\\]\n\nWhere\n\n\\(a_{ij}\\) is the \\(ij\\) element of matrix \\(\\mathbf{A}\\)\n\\(c_{ij}\\) is the \\(ij\\) cofactor of matrix \\(\\mathbf{A}\\) defined as \\[c_{ij} = (-1)^{i+j}|\\mathbf{A}_{ij}|\\]\n\\(|\\mathbf{A}_{ij}|\\) is the minor of matrix \\(\\mathbf{A}\\)\n\nDeterminant of the sub-matrix formed by deleting the \\(i\\)th row and \\(j\\)th column of \\(\\mathbf{A}\\)\n\n\nProcess is long and tedious for large matrices"
   },
   {
     "objectID": "slides/matrixrev/index.html#marix-determinant-3",
     "href": "slides/matrixrev/index.html#marix-determinant-3",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Marix Determinant",
     "text": "Marix Determinant\n\nExample of \\(3 \\times 3\\) matrix\n\n\\[\\mathbf{A}=\n\\begin{bmatrix}\n1& 2 & 3 \\\\\n4& 5&6   \\\\\n7& 8 &9  \n\\end{bmatrix}\\]\n\nChoose any row to find cofactors and compute determinant\n\nDoes not matter which\n\nLet us expand along row 1\n\n\\[|\\mathbf{A}|=1(-1)^{1+1}\n\\begin{vmatrix}\n  5&6   \\\\\n8 &9  \n\\end{vmatrix}\n+2(-1)^{1+2}\n\\begin{vmatrix}\n  4&6   \\\\\n7 &9  \n\\end{vmatrix}\n+3(-1)^{1+3}\n\\begin{vmatrix}\n  4&5   \\\\\n7 &8  \n\\end{vmatrix}\\]\n\\[|\\mathbf{A}|= -3 +12 -9 = 0\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#matrix-inverse",
     "href": "slides/matrixrev/index.html#matrix-inverse",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Matrix Inverse",
     "text": "Matrix Inverse\n\nThe inverse of a square matrix \\(\\mathbf{A}\\) is defined such that\n\n\\[\\mathbf{A}\\mathbf{A}^{-1} = \\mathbf{A}^{-1}\\mathbf{A} = \\mathbf{I}\\]\n\nIt is roughly the equivalent of taking the reciprocal in scalar math\n\nBut it is not generally the reciprocal of the elements of a matrix\n\nThe formula for the inverse is\n\n\\[\\mathbf{A}^{-1}= \\frac{1}{|\\mathbf{A}|}\n\\begin{bmatrix}\nc_{11}& c_{12} &\\cdots & c_{1n} \\\\\nc_{21}& c_{22} &\\cdots & c_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\nc_{n1}& c_{n2} &\\cdots & c_{nn}\n\\end{bmatrix}\\]\n\nwhere \\(c_{ij}\\) are the cofactors defined above"
   },
   {
     "objectID": "slides/matrixrev/index.html#matrix-inverse-1",
     "href": "slides/matrixrev/index.html#matrix-inverse-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Matrix Inverse",
     "text": "Matrix Inverse\n\nThe inverse exists only when \\(|\\mathbf{A}| \\neq 0\\)\n\nThis is why it is important to know the determinant\nIn example above, inverse does not exist\n\nWe will see later that it is because the columns are linearly dependent\n\n\nA matrix that cannot be inverted is singular\nA matrix that has an inverse is nonsingular\nInverse matrices have the following properties\n\n\\[\\mathbf{(\\alpha A)^{-1} = \\frac{1}{\\alpha} A^{-1} }\\] \\[\\mathbf{(A')^{-1}} = \\mathbf{(A^{-1})' }\\] \\[\\mathbf{(A^{-1})^{-1}} = \\mathbf{A}\\] \\[\\mathbf{(AB)^{-1}= B^{-1}A^{-1} }\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#summary",
     "href": "slides/matrixrev/index.html#summary",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Summary",
     "text": "Summary\n\nNow that we can manipulate matrices, we can move to more advanced topics\nMatrix algebra is useful for expressing and solving systems of equations\n\nThis is how we will use it in econometrics\n\nWe will learn you can solve for the OLS estimator when regressors are linearly independent\n\nThey are not linear functions of one another\n\nTo check linear independence, we use the concept of rank\nThe rank of a matrix is the maximum number of independent rows or columns\n\nFor non-square matrices, the maximum rank is the lesser of the number or rows or columns"
   },
   {
     "objectID": "slides/matrixrev/index.html#linear-independence",
     "href": "slides/matrixrev/index.html#linear-independence",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Linear Independence",
     "text": "Linear Independence\n\nA set of vectors are linearly independent if you cannot express any of them as linear functions the others\nMathematically, suppose that \\(\\mathbf{A}=\\begin{bmatrix} \\mathbf{a}_{1}& \\mathbf{a}_{2} &\\cdots & \\mathbf{a}_{m} \\end{bmatrix}\\)\n\nwhere \\(\\mathbf{a}_{1}, \\mathbf{a}_{2}, \\cdots,\\mathbf{a}_{m}\\) are \\(n \\times 1\\) vectors\n\nThe vectors are independent if the only solution to\n\n\\[\\alpha_{1}\\mathbf{a}_{1}+ \\alpha_{2}\\mathbf{a}_{2}+ \\cdots+\\alpha_{m}\\mathbf{a}_{m}= 0\\]\n\nis\n\n\\[\\alpha_{1} = \\alpha_{2}= \\cdots=\\alpha_{m}= 0\\] - If at least one \\(\\alpha_{i} \\neq 0\\), then the vectors are linearly dependent"
   },
   {
     "objectID": "slides/matrixrev/index.html#rank-of-a-matrix",
     "href": "slides/matrixrev/index.html#rank-of-a-matrix",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Rank of a Matrix",
     "text": "Rank of a Matrix\n\nThe rank of a matrix is the maximum number of linearly independent rows or columns\n\nThe rank of the rows will always equal the rank of the columns\nIf the number of rows is less than columns, the highest rank is the number of rows\nVice versa if the number of columns is less than the number of rows\n\nA matrix has full rank if rank equals the minimum of the number of rows/columns\nIn econometrics, we mostly deal with matrices with more rows than columns\n\nSo the matrix will be full rank if the rank equals the number of columns\n\nWe will see later we need our matrix of regressors to have full rank\n\nNone of the regressors can be linear functions of each other (no multicollinearity)"
   },
   {
     "objectID": "slides/matrixrev/index.html#rank-of-a-matrix-1",
     "href": "slides/matrixrev/index.html#rank-of-a-matrix-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Rank of a Matrix",
     "text": "Rank of a Matrix\n\nSome useful properties of the rank of a matrix\n\nThe rank of a matrix and transpose are the same \\[rank(\\mathbf{A'}) = rank(\\mathbf{A})\\]\nIf \\(\\mathbf{A}\\) is \\(n \\times m\\) then \\[rank(\\mathbf{A}) \\le min(n,m)\\]\nIf \\(\\mathbf{A}\\) is \\(n \\times n\\) and \\(rank(\\mathbf{A}) =n\\) then \\(\\mathbf{A}\\) is nonsingular (invertible)"
   },
   {
     "objectID": "slides/matrixrev/index.html#quadratic-form",
     "href": "slides/matrixrev/index.html#quadratic-form",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Quadratic Form",
     "text": "Quadratic Form\n\nIf \\(\\mathbf{A}\\) is \\(n \\times n\\) and symmetric, and \\(\\mathbf{x}\\) is \\(n \\times 1\\), the quadratic form for \\(\\mathbf{A}\\) is\n\n\\[\\mathbf{x'Ax}=\n\\begin{bmatrix}\nx_{1}& x_{2} &\\cdots & x_{n}\n\\end{bmatrix}\n\\begin{bmatrix}\na_{11}& a_{12} &\\cdots & a_{1n} \\\\\na_{21}& a_{22} &\\cdots & a_{2n} \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\na_{n1}& a_{n2} &\\cdots & a_{nn}\n\\end{bmatrix}\n\\begin{bmatrix}\nx_{1}\\\\\nx_{2} \\\\\n\\vdots \\\\\n  x_{n}\n\\end{bmatrix}\\]\n\\[=\\sum_{i=1}^n a_{ii}x_{i}^2 + 2\\sum_{i=1}^n \\sum_{j&gt;i}a_{ij}x_{i}x_{j}\\]\n\nA matrix is positive definite if for all \\(\\mathbf{x} \\neq 0\\)\n\n\\[\\mathbf{x'Ax} &gt; 0\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#positive-definite-matrices",
     "href": "slides/matrixrev/index.html#positive-definite-matrices",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Positive Definite Matrices",
     "text": "Positive Definite Matrices\n\nA matrix is positive semidefinite if for all \\(\\mathbf{x} \\neq 0\\)\n\n\\[\\mathbf{x'Ax} \\ge 0\\] - Positive definite matrices have diagonal elements that are strictly positive\n\nPositive semidefinite matrices have diagonal elements that are nonnegative\nSome other useful properties of positive definite/semidefinite matrices\n\nIf \\(\\mathbf{A}\\) is positive definite, then \\(\\mathbf{A}^{-1}\\) exists and is also positive definite\nIf \\(\\mathbf{A}\\) is \\(n \\times m\\), then \\(\\mathbf{A'A}\\) and \\(\\mathbf{AA'}\\) are positive definite\nIf \\(\\mathbf{A}\\) is \\(n \\times m\\) and \\(rank(\\mathbf{A}) = m\\) then \\(\\mathbf{A'A}\\) is positive definite\n\nThese concepts are used mostly for variance-covariance matrices in econometrics"
   },
   {
     "objectID": "slides/matrixrev/index.html#idempotent-matrices",
     "href": "slides/matrixrev/index.html#idempotent-matrices",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Idempotent Matrices",
     "text": "Idempotent Matrices\n\nAn idempotent matrix is one that does not change when multiplied by itself\nMathematically, \\(\\mathbf{A}\\) is idempotent when\n\n\\[\\mathbf{AA} = \\mathbf{A}\\]\n\nWhen we discuss OLS, we will work with the following idempotent matrices\n\nSuppose \\(\\mathbf{X}\\) is \\(n \\times k\\) with full rank. Define\n\n\n\\[\\mathbf{P} = \\mathbf{X(X'X)^{-1}X'}\\] \\[\\mathbf{M} =\\mathbf{I_{n}} - \\mathbf{X(X'X)^{-1}X'}\\]\n\nYou can verify they are idempotent my multiplying each by itself\nSome important properties of idempotent matrices are\n\n\\(rank(\\mathbf{A}) = tr(\\mathbf{A})\\)\n\\(\\mathbf{A}\\) is positive semidefinite"
   },
   {
     "objectID": "slides/matrixrev/index.html#expected-value",
     "href": "slides/matrixrev/index.html#expected-value",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Expected Value",
     "text": "Expected Value\n\nThe expected value of a random matrix is the matrix of expected values\nIf \\(\\mathbf{X}\\) is an \\(n \\times m\\) matrix, then\n\n\\[\\mathbf{E}(\\mathbf{X})=\n\\begin{bmatrix}\n\\mathbf{E}(x_{11}) & \\mathbf{E}(x_{12}) & \\cdots & \\mathbf{E}(x_{1m})\\\\\n\\mathbf{E}(x_{21}) & \\mathbf{E}(x_{22}) & \\cdots &\\mathbf{E}(x_{2m})\\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n\\mathbf{E}(x_{n1}) & \\mathbf{E}(x_{n2}) & \\cdots &\\mathbf{E}(x_{nm})\\\\\n\\end{bmatrix}\\]\n\nProperties of expected values are similar to those in scalar math\n\nIf \\(\\mathbf{x}\\) is a random vector, \\(\\mathbf{b}\\) is a nonrandom vector, and \\(\\mathbf{A}\\) is a nonrandom matrix, then \\(\\mathbf{E}(\\mathbf{Ax+b}) = \\mathbf{A}\\mathbf{E}(\\mathbf{x})+\\mathbf{b}\\)\nIf \\(\\mathbf{X}\\) is a random matrix, and \\(\\mathbf{B}\\) and \\(\\mathbf{A}\\) are nonrandom matrices, then \\(\\mathbf{E}(\\mathbf{AXB}) = \\mathbf{A}\\mathbf{E}(\\mathbf{X})\\mathbf{B}\\)"
   },
   {
     "objectID": "slides/matrixrev/index.html#variance-covariance-matrix",
     "href": "slides/matrixrev/index.html#variance-covariance-matrix",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Variance-Covariance Matrix",
     "text": "Variance-Covariance Matrix\n\nThe variance-covariance matrix of random vector \\(\\mathbf{y}\\) has variances on the diagonal, covariances in the off-diagonal\nIf \\(\\mathbf{y}\\) is an \\(n \\times 1\\) random vector, then\n\n\\[var(\\mathbf{y})= \\mathbf{\\sigma_{y}} = \\mathbf{E[(y-E[y])(y-E[y])']}\\] \\[=\n\\begin{bmatrix}\n\\text{var}(y_{1}) & \\text{cov}(y_{1},y_{2}) & \\cdots &\\text{cov}(y_{1},y_{n}) \\\\\n\\text{cov}(y_{2},y_{1}) & \\text{var}(y_{2}) & \\cdots &\\text{cov}(y_{2},y_{n}) \\\\\n\\vdots & \\vdots &\\ddots & \\vdots \\\\\n\\text{cov}(y_{n},y_{1})  & \\text{cov}(y_{n},y_{2}) & \\cdots &\\text{var}(y_{n})\\\\\n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#variance-covariance-matrix-1",
     "href": "slides/matrixrev/index.html#variance-covariance-matrix-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Variance-Covariance Matrix",
     "text": "Variance-Covariance Matrix\n\nUseful properties of variance-covariance matrices are\n\nIf \\(\\mathbf{a}\\) is a nonrandom vector, then \\(\\text{var}(\\mathbf{a'y}) =\\mathbf{a'}\\text{var}\\mathbf{(y)a}\\)\nIf \\(\\text{var}(\\mathbf{a'y})&gt;0\\) for all \\(\\mathbf{a&gt;0}\\), \\(\\text{var}(\\mathbf{y})\\) is positive definite\nIf \\(\\mathbf{A}\\) is a nonrandom matrix, \\(\\mathbf{b}\\) is a nonrandom vector, then \\(\\text{var}(\\mathbf{Ay + b}) =\\mathbf{A'}\\text{var}\\mathbf{(y)A}\\)\nIf \\(\\text{var}(y_{j})=\\sigma^{2}\\) for all \\(j=1,2,...,n\\), and the elements of \\(\\textbf{y}\\) are uncorrelated, then \\(\\text{var}(\\mathbf{y})=\\sigma^{2}\\mathbf{I_{n}}\\)"
   },
   {
     "objectID": "slides/matrixrev/index.html#scalar-functions",
     "href": "slides/matrixrev/index.html#scalar-functions",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Scalar Functions",
     "text": "Scalar Functions\n\nA scalar function of a vector is a single function with respect to several variables\n\nA vector function is a set of one or more scalar functions, each with respect to several variables\nWe will not cover these\n\nConsider the scalar function \\(y = f(\\mathbf{x}) =f(x_{1}, x_{2},...,x_{n})\\)\n\nThe function takes the vector \\(\\mathbf{x}\\) and returns a scalar\nThis is just another way to write a multivariate function\n\nThe derivative of this function is\n\n\\[\\frac{\\partial f(\\mathbf{x})}{\\mathbf{x}}=\n\\begin{bmatrix}\n\\frac{\\partial f(\\mathbf{x})}{x_{1}} & \\frac{\\partial f(\\mathbf{x})}{x_{2}} & \\cdots & \\frac{\\partial f(\\mathbf{x})}{x_{n}}  \n\\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#derivative-of-scalar-function",
     "href": "slides/matrixrev/index.html#derivative-of-scalar-function",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Derivative of Scalar Function",
     "text": "Derivative of Scalar Function\n\nWe simply collect the derivative with respect to each element of \\(\\mathbf{x}\\) in a vector\nEx: linear function of \\(\\mathbf{x}\\)\n\nSuppose \\(\\mathbf{a}\\) is an \\(n \\times 1\\) vector and \\[y = f(\\mathbf{x}) = \\mathbf{a'x} = \\sum_{i=1}^{n} a_{i}x_{i}\\]\nThe derivative is\n\n\\[\\frac{\\partial f(\\mathbf{x})}{\\partial \\mathbf{x}}=\\frac{\\partial \\mathbf{a'x} }{\\partial \\mathbf{x}}= \\mathbf{a'} =\n    \\begin{bmatrix}\n    a_{1}& a_{2}& \\cdots & a_{n}\n    \\end{bmatrix}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#derivative-of-scalar-function-1",
     "href": "slides/matrixrev/index.html#derivative-of-scalar-function-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Derivative of Scalar Function",
     "text": "Derivative of Scalar Function\n\nEx: Quadratic form of \\(\\mathbf{x}\\)\n\nSuppose \\(\\mathbf{A}\\) is an \\(n \\times n\\) symmetric matrix. The quadratic form is \\[y = f(\\mathbf{x}) = \\mathbf{x'Ax} =\\sum_{i=1}^n a_{ii}x_{i}^2 + 2\\sum_{i=1}^n \\sum_{j&gt;i}a_{ij}x_{i}x_{j}\\]\nThe derivative is \\[\\frac{\\partial f(\\mathbf{x})}{\\partial \\mathbf{x}}=\\frac{\\partial \\mathbf{x'Ax} }{\\partial \\mathbf{x}}= \\mathbf{2x'A}\\]"
   },
   {
     "objectID": "slides/matrixrev/index.html#population-regression-model",
     "href": "slides/matrixrev/index.html#population-regression-model",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Population Regression Model",
     "text": "Population Regression Model\n\nIn undergraduate textbooks, the population linear regression model is written as\n\n\\[y= \\beta_{0} + \\beta_{1}x_{1} + \\beta_{2}x_{2} + \\cdots + \\beta_{k}x_{k} + u\\]\n\n\\(y\\) and \\(x_{1},...,x_{k}\\) are observable random variables\n\\(u\\) is an unobservable random variable\nWe can write more compactly in vector form as\n\n\\[y=  \\mathbf{x}\\boldsymbol{\\beta}  + u\\]\n\n\\(\\mathbf{x}\\) is a \\(1 \\times (k+1)\\) vector of independent variables\n\nThere are \\(k\\) independent variables, plus an intercept\n\n\\(\\boldsymbol{\\beta}\\) is a \\((k+1) \\times 1\\) vector of slope parameters"
   },
   {
     "objectID": "slides/matrixrev/index.html#population-regression-model-1",
     "href": "slides/matrixrev/index.html#population-regression-model-1",
-    "title": "\nMatrix Review\n",
+    "title": "E655 - Econometrics",
     "section": "Population Regression Model",
     "text": "Population Regression Model\n\nNow suppose we take a random sample of \\(n\\) people from the population\nThe population model holds for each member of the sample\n\n\\[y_{i}=  \\mathbf{x_{i}}\\boldsymbol{\\beta}  + u_{i}, \\forall i=1,...,n\\]\n\nWe can express this more compactly with full matrix notation\n\n\\[\\mathbf{y}=  \\mathbf{X}\\boldsymbol{\\beta}  + \\mathbf{u}\\]\n\n\\(\\mathbf{X}\\) is an \\(n \\times (k+1)\\) matrix of observations on each regressor\n\\(\\boldsymbol{\\beta}\\) is still a \\((k+1) \\times 1\\) vector of slope parameters\n\\(\\mathbf{y}\\) is an \\(n \\times 1\\) vector of observations on the dependent variable\n\\(\\mathbf{u}\\) is an \\(n \\times 1\\) vector of error terms"
   },
@@ -1227,133 +1227,133 @@
   {
     "objectID": "slides/causality/index.html#model-with-one-binary-regressor",
     "href": "slides/causality/index.html#model-with-one-binary-regressor",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model with One Binary Regressor",
     "text": "Model with One Binary Regressor\n\nIn the last section we defined the underlying potential outcomes as\n\n\\[y_{0} = \\alpha + \\eta\\] \\[y_{1} = y_{0} + \\rho\\]\n\nWith the observed outcome\n\n\\[y = \\alpha + \\rho w + \\eta\\]\n\nThis regression model is structural because \\(\\rho\\) is the causal effect\nWe derived that the difference in conditional expectations is\n\n\\[E(y|w=1) - E(y|w=0) = \\rho  + E(\\eta |w=1) - E(\\eta |w=0)\\]"
   },
   {
     "objectID": "slides/causality/index.html#model-with-one-binary-regressor-1",
     "href": "slides/causality/index.html#model-with-one-binary-regressor-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model with One Binary Regressor",
     "text": "Model with One Binary Regressor\n\nThe population regression function with a binary regressor is\n\n\\[y = \\beta_{0} + \\beta_{1}w + u\\]\n\nThe population least squares slope \\(\\beta_{1}\\) from minimizing the MSPE is\n\n\\[\\beta_{1} =  E(y|w=1) - E(y|w=0)\\]\n\nCombining this equation with the structural model\n\n\\[\\beta_{1}  = \\rho  + E(\\eta |w=1) - E(\\eta |w=0)\\]"
   },
   {
     "objectID": "slides/causality/index.html#model-with-one-binary-regressor-2",
     "href": "slides/causality/index.html#model-with-one-binary-regressor-2",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model with One Binary Regressor",
     "text": "Model with One Binary Regressor\n\nThe regression slope \\(\\beta_{1}\\) equals the treatment effect \\(\\rho\\) when\n\\[E(\\eta |w=1) - E(\\eta |w=0)\\]\nWe saw cases when this is true\n\nRandomization\nMean independence of \\(\\eta\\)\n\nIf none of these are true, then \\(\\beta_{1} \\neq \\rho\\) and \\(\\beta_{1}\\) is not a causal effect"
   },
   {
     "objectID": "slides/causality/index.html#model-with-continuous-regressor",
     "href": "slides/causality/index.html#model-with-continuous-regressor",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model with Continuous Regressor",
     "text": "Model with Continuous Regressor\n\nWith a continuous independent variable \\(s\\), suppose the structural model is\n\n\\[y = \\alpha + \\rho s + \\eta\\]\n\nWhere the definition of \\(\\rho\\) is\n\\[\\rho = E(y_{s_{0}}|s=s_{0}) - E(y_{s_{0}-1}|s = s_{0} - 1)\\]\nWhere \\(y_{s_{0}}\\) and \\(y_{s_{0}-1}\\) are potential outcomes with two different levels of \\(s\\)\n\n\\(\\rho\\) is the causal effect of a one-unit increase in \\(s\\)\n\nIf we set the population regression function as\n\n\\[y = \\beta_{0} + \\beta_{1}s + u\\]"
   },
   {
     "objectID": "slides/causality/index.html#model-with-continuous-regressor-1",
     "href": "slides/causality/index.html#model-with-continuous-regressor-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model with Continuous Regressor",
     "text": "Model with Continuous Regressor\n\nThe regression slope is\n\n\\[\\beta_{1} = \\frac{cov(y,s)}{var(s)}\\]\n\nTo relate \\(\\beta_{1}\\) to \\(\\rho\\), sub in the structural model for \\(y\\)\n\n\\[\\beta_{1} = \\frac{cov(\\alpha + \\rho s + \\eta ,s)}{var(s)}\\]\n\nSimplifying we get\n\n\\[\\beta_{1} = \\rho + \\frac{cov(\\eta ,s)}{var(s)}\\]"
   },
   {
     "objectID": "slides/causality/index.html#model-with-continuous-regressor-2",
     "href": "slides/causality/index.html#model-with-continuous-regressor-2",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model with Continuous Regressor",
     "text": "Model with Continuous Regressor\n\n\\(\\beta_{1}\\) equals \\(\\rho\\) when \\(\\eta\\) and \\(s\\) are uncorrelated\n\nRandomization, mean independence both mean this is true\n\nSo if we assume\n\n\\[E(\\eta | s) = 0\\]\n\nThen the second term in equation above is zero and the population slope is the causal effect"
   },
   {
     "objectID": "slides/causality/index.html#model-with-continuous-regressor-3",
     "href": "slides/causality/index.html#model-with-continuous-regressor-3",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model with Continuous Regressor",
     "text": "Model with Continuous Regressor\n\nNow imagine that the structural model is\n\n\\[y = \\alpha + \\rho s + \\gamma x + \\eta\\]\n\nThe definition of \\(\\rho\\) is\n\n\\[\\rho = E(y_{s_{0}}|x, s=s_{0}) - E(y_{s_{0}-1}|x, s = s_{0} - 1)\\]\n\nIf we set the population regression function as\n\n\\[y = \\beta_{0} + \\beta_{1}s +  \\beta_{2} x+ u\\]"
   },
   {
     "objectID": "slides/causality/index.html#model-with-continuous-regressor-4",
     "href": "slides/causality/index.html#model-with-continuous-regressor-4",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model with Continuous Regressor",
     "text": "Model with Continuous Regressor\n\nThen \\(\\beta_{1}\\) equals \\(\\rho\\) if we assume\n\nConditional independence of \\(\\eta\\)\nConditional mean independence of \\(\\eta\\)\n\nConditional mean independence means\n\n\\[E(\\eta | s, x) = E(\\eta | x)\\]\n\nIn words, this means \\(s\\) is related to potential outcomes only through \\(x\\)\n\nSo holding \\(x\\) constant breaks this relationship\n\nEven though \\(\\beta_{1}\\) equals \\(\\rho\\), it is important to note that \\(\\beta_{0} \\neq \\alpha\\) and \\(\\beta_{2} \\neq \\gamma\\)\n\nWith regression we do not measure the structural intercept or effect of \\(x\\)"
   },
   {
     "objectID": "slides/causality/index.html#model-with-continuous-regressor-5",
     "href": "slides/causality/index.html#model-with-continuous-regressor-5",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model with Continuous Regressor",
     "text": "Model with Continuous Regressor\n\nTo see this, take expectation of \\(y\\) in structural model\n\n\\[E[y|s,x] = \\alpha + \\rho s + \\gamma x + E[\\eta|s,x]\\]\n\nIf we impose conditional mean independence, then \\(E(\\eta | s, x) = E(\\eta | x)\\)\n\n\\[E[y|s,x] = \\alpha + \\rho s + \\gamma x + E[\\eta|x]\\]\n\nThe error is not a function of \\(s\\) anymore, but it is a function of \\(x\\)\nFor example, suppose\n\n\\[\\eta = \\theta_{0} + \\theta_{1} x + \\epsilon\\]"
   },
   {
     "objectID": "slides/causality/index.html#model-with-continuous-regressor-6",
     "href": "slides/causality/index.html#model-with-continuous-regressor-6",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model with Continuous Regressor",
     "text": "Model with Continuous Regressor\n\nAssume that \\(\\epsilon\\) is just a random error unrelated to \\(x\\) and \\(s\\)\nSub into structural model\n\n\\[y = \\alpha + \\rho s + \\gamma x +  \\theta_{0} + \\theta_{1} x + \\epsilon\\] \\[y = (\\alpha +\\theta_{0})+ \\rho s + (\\gamma + \\theta_{1})x \\epsilon\\] \\[y = \\lambda + \\rho s + \\pi x + \\epsilon\\]\n\nThe intercept and slope on \\(x\\) are now redefined\n\nThe are no longer causal effects\n\nSlope on \\(s\\) is still the causal effect \\(\\rho\\)"
   },
   {
     "objectID": "slides/causality/index.html#model-with-continuous-regressor-7",
     "href": "slides/causality/index.html#model-with-continuous-regressor-7",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model with Continuous Regressor",
     "text": "Model with Continuous Regressor\n\nIf the regression function is\n\n\\[y = \\beta_{0} + \\beta_{1}s +  \\beta_{2} x+ u\\]\n\nThen if \\(E[\\epsilon|s,x] = 0\\)\n\n\\[\\beta_{0} = \\lambda\\] \\[\\beta_{1} = \\rho\\] \\[\\beta_{2} = \\pi\\]"
   },
   {
     "objectID": "slides/causality/index.html#omitted-variables-bias",
     "href": "slides/causality/index.html#omitted-variables-bias",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Omitted Variables Bias",
     "text": "Omitted Variables Bias\n\nIn the regression model above, what happens if we leave out \\(x\\)?\nContinue to assume conditional mean independence\n\n\\[y = \\beta_{0} + \\beta_{1}s  + u\\]\n\nRemember the regression slope is\n\n\\[\\beta_{1} =  \\frac{cov(y ,s)}{var(s)}\\]\n\nSub in the structural model\n\n\\[\\beta_{1} =  \\frac{cov(\\lambda + \\rho s + \\pi x + \\epsilon ,s)}{var(s)}\\]"
   },
   {
     "objectID": "slides/causality/index.html#omitted-variables-bias-1",
     "href": "slides/causality/index.html#omitted-variables-bias-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Omitted Variables Bias",
     "text": "Omitted Variables Bias\n\\[\\beta_{1} =  \\rho + \\pi* \\frac{cov( x ,s)}{var(s)} +  \\frac{cov( \\epsilon ,s)}{var(s)}\\]\n\nThe last term is zero because we assume \\(\\epsilon\\) is unrelated to \\(x\\) and \\(s\\)\n\\[\\beta_{1} =  \\rho + \\pi* \\frac{cov( x ,s)}{var(s)}\\]\nThe regression slope does not measure the causal effect in this case\nThe bias is\n\n\\[\\pi* \\frac{cov( x ,s)}{var(s)}\\]"
   },
   {
     "objectID": "slides/causality/index.html#omitted-variables-bias-2",
     "href": "slides/causality/index.html#omitted-variables-bias-2",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Omitted Variables Bias",
     "text": "Omitted Variables Bias\n\nBias has two parts\n\n\\(\\pi \\rightarrow\\) the effect of \\(x\\) on \\(y\\)\n\\(\\frac{cov( x ,s)}{var(s)} \\rightarrow\\) the effect of \\(s\\) on \\(x\\)\n\nIf \\(x\\) is related to \\(y\\) and \\(x\\) is related to \\(s\\), we have bias\nDirection of bias depends on signs of each term\n\nIf both positive or both negative \\(\\rightarrow\\) positive bias\nIf one positive and one negative \\(\\rightarrow\\) negative bias\n\nIf either \\(y\\) or \\(s\\) is unrelated to \\(x\\), there is no bias\nIn vector notation, restate the structural model as\n\n\\[y = \\mathbf{x_{1}}\\boldsymbol{\\alpha_{1}} + \\mathbf{x_{2}}\\boldsymbol{\\alpha_{2}} + \\eta\\]"
   },
   {
     "objectID": "slides/causality/index.html#omitted-variables-bias-3",
     "href": "slides/causality/index.html#omitted-variables-bias-3",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Omitted Variables Bias",
     "text": "Omitted Variables Bias\n\nIf we try to approximate it with the population regression function\n\n\\[y = \\mathbf{x_{1}}\\boldsymbol{\\beta_{1}} + u\\]\n\nWe get the population regression slope as\n\n\\[\\boldsymbol{\\beta_{1}}=\\left (  E[\\mathbf{x_{1}'x_{1}}\\right] )^{-1}  E[\\mathbf{x_{1}'}y]\\]\n\nSub the structural model into the population slope function\n\n\\[\\boldsymbol{\\beta_{1}}=\\left (  E[\\mathbf{x_{1}'x_{1}}\\right] )^{-1}  E[\\mathbf{x_{1}'}( \\mathbf{x_{1}}\\boldsymbol{\\alpha_{1}} + \\mathbf{x_{2}}\\boldsymbol{\\alpha_{2}} + \\eta )]\\] \\[=\\left (  E[\\mathbf{x_{1}'x_{1}}\\right] )^{-1}  E[\\mathbf{x_{1}'} \\mathbf{x_{1}}\\boldsymbol{\\alpha_{1}} + \\mathbf{x_{1}'x_{2}}\\boldsymbol{\\alpha_{2}} + \\mathbf{x_{1}'}\\eta ]\\] \\[=\\left (  E[\\mathbf{x_{1}'x_{1}}\\right] )^{-1}  E[\\mathbf{x_{1}'} \\mathbf{x_{1}}]\\boldsymbol{\\alpha_{1}} + \\left (  E[\\mathbf{x_{1}'x_{1}}\\right] )^{-1}E[\\mathbf{x_{1}'x_{2}}]\\boldsymbol{\\alpha_{2}} + \\left (  E[\\mathbf{x_{1}'x_{1}}\\right] )^{-1}E[\\mathbf{x_{1}'}\\eta ]\\]"
   },
   {
     "objectID": "slides/causality/index.html#omitted-variables-bias-4",
     "href": "slides/causality/index.html#omitted-variables-bias-4",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Omitted Variables Bias",
     "text": "Omitted Variables Bias\n\\[=\\boldsymbol{\\alpha_{1}} + \\left (  E[\\mathbf{x_{1}'x_{1}}\\right] )^{-1}E[\\mathbf{x_{1}'x_{2}}]\\boldsymbol{\\alpha_{2}}\\]\n\nThe population slope vector on \\(\\mathbf{x_{1}}\\) equals the sum of\n\nThe causal slope vector \\(\\boldsymbol{\\alpha_{1}}\\)\nA bias term containing\n\nthe regression of \\(\\mathbf{x_{2}}\\) on \\(\\mathbf{x_{1}}\\)\nthe slope on \\(\\mathbf{x_{2}}\\) in the structural for \\(y\\)\n\n\nA key lesson here is that a single omitted variable will bias all population slopes \\(\\boldsymbol{\\beta_{1}}\\)\n\nUnless it is unrelated to y\nOr it is uncorrelated with all but one included regressor, and that regressor is uncorrelated with the others"
   },
   {
     "objectID": "slides/causality/index.html#introduction-1",
     "href": "slides/causality/index.html#introduction-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Introduction",
     "text": "Introduction\n\nEmpirical economists are often interested in a causal effect\n\nThe independent effect of a particular variable on the outcome\n\nIt is important for policy\n\nE.g. a school district looking to implement pre-kindergarten program\nNeed to know if pre-k has independent effects on current and future outcomes\n\nDo not want estimate confounded with parent background\n\n\nCan we interpret regression slopes as causal?\nFirst, we attempt to understand the underlying concept of causality"
   },
   {
     "objectID": "slides/causality/index.html#model-setup",
     "href": "slides/causality/index.html#model-setup",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Model Setup",
-    "text": "Model Setup\n\nEconomists often study causality within the Rubin Causal Model\nImagine an individual either gets a “treatment” or “no treatment”\n\nGetting a drug, or placebo\nGoing to university, or stopping at high school\nBeing in a small class, or large class\n\nDefine the following potential outcomes\n\n\\(y_{1}\\) is the outcome with treatment\n\\(y_{0}\\) is the outcome without treatment\n\\(w\\) is a binary variable with 1 denoting treatment, and 0 no treatment\n\n\n\n\n\n\n\n\nImportant\n\n\n\nWe only observe one potential outcome, and the other is hypothetical. For a treated person we see \\(y_{1}\\), and for an untreated person we see \\(y_{0}\\)"
+    "text": "Model Setup\n\nEconomists often study causality within the Rubin Causal Model\nImagine an individual either gets a “treatment” or “no treatment”\n\nGetting a drug, or placebo\nGoing to university, or stopping at high school\nBeing in a small class, or large class\n\nDefine the following potential outcomes\n\n\\(y_{1}\\) is the outcome with treatment\n\\(y_{0}\\) is the outcome without treatment\n\\(w\\) is a binary variable with 1 denoting treatment, and 0 no treatment\n\n\n\n\n\n\n\n\nImportant\n\n\nWe only observe one potential outcome, and the other is hypothetical. For a treated person we see \\(y_{1}\\), and for an untreated person we see \\(y_{0}\\)"
   },
   {
     "objectID": "slides/causality/index.html#treatment-effects",
     "href": "slides/causality/index.html#treatment-effects",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Treatment Effects",
     "text": "Treatment Effects\n\nWe would like to know the treatment effect \\(y_{1} - y_{0}\\) for an individual\n\nThis is the causal effect of the treatment\nEffect differs from person to person in the population\n\nFundamental problem of causal inference: we never observe both \\(y_{1}\\) and \\(y_{0}\\)\nWe only observe \\((y, w)\\), where\n\\[y = y_{0} + (y_{1} -y_{0})w\\]\n\nWe observe treatment status, potential outcome given that treatment status\n\nThe counterfactual outcome with opposite treatment is never observed"
   },
@@ -1374,21 +1374,21 @@
   {
     "objectID": "slides/causality/index.html#randomization-and-independence-of-treatment",
     "href": "slides/causality/index.html#randomization-and-independence-of-treatment",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Randomization and Independence of Treatment",
     "text": "Randomization and Independence of Treatment\n\nA common way to isolate treatment effects is to randomize \\(w\\)\n\nBlindly put people into treatment or control group\nEnsures that on average the two groups are similar at baseline\n\nWhen treatment is randomized, potential outcomes are independent from treatment \\[(y_{0}, y_{1}) \\perp w\\]\nIndependence implies conditioning on \\(w\\) has no effect on expectation\n\\[E(y_{0}|w=1) =E(y_{0}|w=0)\\] \\[E(y_{0}|w) = E(y_{0})\\] \\[E(y_{1}|w) = E(y_{1})\\]"
   },
   {
     "objectID": "slides/causality/index.html#randomization-and-treatment-effects",
     "href": "slides/causality/index.html#randomization-and-treatment-effects",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Randomization and Treatment Effects",
-    "text": "Randomization and Treatment Effects\n\nWith randomization, selection bias is zero\n\\[E(y_{0}|w=1) - E(y_{0}|w=0) = E(y_{0}|w=1) - E(y_{0}|w=1) = 0\\]\nAs a result the population regression slope is \\[\\beta = E(y|w=1) - E(y|w=0)\\] \\[= E(y_{1}|w=1) - E(y_{0}|w=0)\\] \\[= E(y_{1}) - E(y_{0})\\]\nThe second term is the Average Treatment Effect (ATE)\n\n\n\n\n\n\n\nNote\n\n\n\nThe ATE is the treatment effect averaged across everyone in the population, whereas the ATT is the treatment effect among only people in the treatment group (i.e. excludes people in the control group)."
+    "text": "Randomization and Treatment Effects\n\nWith randomization, selection bias is zero\n\\[E(y_{0}|w=1) - E(y_{0}|w=0) = E(y_{0}|w=1) - E(y_{0}|w=1) = 0\\]\nAs a result the population regression slope is \\[\\beta = E(y|w=1) - E(y|w=0)\\] \\[= E(y_{1}|w=1) - E(y_{0}|w=0)\\] \\[= E(y_{1}) - E(y_{0})\\]\nThe second term is the Average Treatment Effect (ATE)\n\n\n\n\n\n\n\nNote\n\n\nThe ATE is the treatment effect averaged across everyone in the population, whereas the ATT is the treatment effect among only people in the treatment group (i.e. excludes people in the control group)."
   },
   {
     "objectID": "slides/causality/index.html#recent-example-in-economics-literature",
     "href": "slides/causality/index.html#recent-example-in-economics-literature",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Recent Example in Economics Literature",
     "text": "Recent Example in Economics Literature\n\nRandomization is the standard way to measure the effects of medical treatments\nIt is becoming more popular in economics\nEx: Bangladesh mask study (Abaluck et. al., 2021)\n\nRandomized promoting mask use in rural Bangladesh\nCompare COVID rates between treatment and control\nFind some positive effect of masks, especially for age 50+\n\nNext we will show how to model this in a regression framework"
   },
@@ -1416,35 +1416,35 @@
   {
     "objectID": "slides/causality/index.html#mean-independence-of-treatment",
     "href": "slides/causality/index.html#mean-independence-of-treatment",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Mean Independence of Treatment",
     "text": "Mean Independence of Treatment\n\nMost economic data do not come from randomized experiments\nWe can still uncover causal effects without experiments\nOne way is through Mean Independence\n\\[E(y_{0}|w) = E(y_{0})\\] \\[E(y_{1}|w) = E(y_{1})\\]\nSays average potential outcomes do not depend on treatment status\n\nWeaker assumption than full statistical independence\nFull independence means one event has no effect on probability of another"
   },
   {
     "objectID": "slides/causality/index.html#mean-independence-of-treatment-1",
     "href": "slides/causality/index.html#mean-independence-of-treatment-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Mean Independence of Treatment",
     "text": "Mean Independence of Treatment\n\nWith mean independence, we get\n\\[\\beta = E(y|w=1) - E(y|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ] + E(y_{0}|w=1) - E(y_{0}|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ]\\] \\[=  E(y_{1}) - E(y_{0})\\]\nRegression slope equals ATE (and ATT in this case)\nIs this assumption realistic?\n\nMeans both potential outcomes unrelated to treatment\nWhether this is realistic depends on context"
   },
   {
     "objectID": "slides/causality/index.html#mean-independence-of-y_0",
     "href": "slides/causality/index.html#mean-independence-of-y_0",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Mean Independence of \\(y_{0}\\)",
     "text": "Mean Independence of \\(y_{0}\\)\n\nA variation if this assumption is mean independence of \\(\\mathbf{y_{0}}\\)\n\\[E(y_{0}|w) = E(y_{0})\\]\nThe regression slope in this case is\n\\[\\beta = E(y|w=1) - E(y|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ] + E(y_{0}|w=1) - E(y_{0}|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ]\\]\nWith this assumption, we only measure the ATT (Not ATE)\nIs this realistic?\n\nMeans there are no baseline differences between groups on average\nPuts no restriction on differences in treated outcome"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence",
     "href": "slides/causality/index.html#conditional-mean-independence",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean Independence",
-    "text": "Conditional Mean Independence\n\nMore commonly, we can use other variables to control for selection bias\nSuppose we observe a set of pre-treatment characteristics \\(\\mathbf{x}\\)\n\nEx: gender, parental education, school test scores, etc.\nKey is they are determined before treatment\n\nConditional Mean Independence is when the mean of the potential outcomes is independent of treatment conditional on \\(\\mathbf{x}\\)\n\\[E(y_{0}|w=1, \\mathbf{x}) =E(y_{0}|w=0, \\mathbf{x})\\] \\[E(y_{0}|w, \\mathbf{x}) = E(y_{0}| \\mathbf{x})\\] \\[E(y_{1}|w, \\mathbf{x}) = E(y_{1}|\\mathbf{x})\\]\n\n\n\n\n\n\n\nNote\n\n\n\nA stronger assumption is conditional independence \\((y_{0}, y_{1}) \\perp w |\\mathbf{x}\\), where each potential outcome is fully independent of treatment conditional on \\(\\mathbf{x}\\)"
+    "text": "Conditional Mean Independence\n\nMore commonly, we can use other variables to control for selection bias\nSuppose we observe a set of pre-treatment characteristics \\(\\mathbf{x}\\)\n\nEx: gender, parental education, school test scores, etc.\nKey is they are determined before treatment\n\nConditional Mean Independence is when the mean of the potential outcomes is independent of treatment conditional on \\(\\mathbf{x}\\)\n\\[E(y_{0}|w=1, \\mathbf{x}) =E(y_{0}|w=0, \\mathbf{x})\\] \\[E(y_{0}|w, \\mathbf{x}) = E(y_{0}| \\mathbf{x})\\] \\[E(y_{1}|w, \\mathbf{x}) = E(y_{1}|\\mathbf{x})\\]\n\n\n\n\n\n\n\nNote\n\n\nA stronger assumption is conditional independence \\((y_{0}, y_{1}) \\perp w |\\mathbf{x}\\), where each potential outcome is fully independent of treatment conditional on \\(\\mathbf{x}\\)"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-1",
     "href": "slides/causality/index.html#conditional-mean-independence-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean Independence",
     "text": "Conditional Mean Independence\n\nImagine running a regression of \\(y\\) on \\(w\\) and \\(\\mathbf{x}\\)\nThe population regression slope is\n\\[\\beta = E(y|w=1,  \\mathbf{x}) - E(y|w=0,  \\mathbf{x})\\]\nWhen this assumption is true we can get treatment effects at each \\(\\mathbf{x}\\) \\[E(y|w=1,  \\mathbf{x}) - E(y|w=0,  \\mathbf{x})\\] \\[= E(y_{1}|w=1,  \\mathbf{x}) - E(y_{0}|w=1,  \\mathbf{x})= E(y_{1} | \\mathbf{x}) - E(y_{0}| \\mathbf{x})\\] \\[= ATT( \\mathbf{x}) =ATE( \\mathbf{x})\\]\nThese treatment effects hold \\(\\mathbf{x}\\) constant\n\nThey are an average of the treatment effects across different values of \\(\\mathbf{x}\\)"
   },
@@ -1493,175 +1493,175 @@
   {
     "objectID": "slides/causality/index.html#data-setup",
     "href": "slides/causality/index.html#data-setup",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Data Setup",
-    "text": "Data Setup\n\n\n\nTo help understand the Rubin model we will demonstrate with simulated data\nCode to the right creates potential outcomes\nFor simplicity the treatment effect is set to 5 for everyone\nOutcomes \\(y_{0}\\) and \\(y_{1}\\) have a Normal distribution\n\n\n\ndata &lt;- data.frame(eta=rnorm(100000,0,1)) %&gt;%\n  mutate(y0 = 2 + eta, y1 = y0 + 5, \n         treat_eff = y1 - y0)\n\nsumtable(data, summ=c('notNA(x)','mean(x)','min(x)', 'max(x)'), summ.names = c('N', 'Mean', 'Min', 'Max' ))\n\n\nSummary Statistics\n\n\nVariable\nN\nMean\nMin\nMax\n\n\n\n\neta\n100000\n0.0031\n-4.5\n4.1\n\n\ny0\n100000\n2\n-2.5\n6.1\n\n\ny1\n100000\n7\n2.5\n11\n\n\ntreat_eff\n100000\n5\n5\n5"
+    "text": "Data Setup\n\n\n\nTo help understand the Rubin model we will demonstrate with simulated data\nCode to the right creates potential outcomes\nFor simplicity the treatment effect is set to 5 for everyone\nOutcomes \\(y_{0}\\) and \\(y_{1}\\) have a Normal distribution\n\n\n\ndata &lt;- data.frame(eta=rnorm(100000,0,1)) %&gt;%\n  mutate(y0 = 2 + eta, y1 = y0 + 5, \n         treat_eff = y1 - y0)\n\nsumtable(data, summ=c('notNA(x)','mean(x)','min(x)', 'max(x)'), summ.names = c('N', 'Mean', 'Min', 'Max' ))\n\n\nSummary Statistics\n\n\nVariable\nN\nMean\nMin\nMax\n\n\n\n\neta\n100000\n0.0072\n-4.4\n4.7\n\n\ny0\n100000\n2\n-2.4\n6.7\n\n\ny1\n100000\n7\n2.6\n12\n\n\ntreat_eff\n100000\n5\n5\n5"
   },
   {
     "objectID": "slides/causality/index.html#random-assignment-to-treatment",
     "href": "slides/causality/index.html#random-assignment-to-treatment",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Random Assignment to Treatment",
-    "text": "Random Assignment to Treatment\n\n\n\nNext assign treatment \\(w\\) using randomization\nIn the code, \\(w=1\\) randomly with probability 0.5\nCompute observed \\(y\\) based on treatment status\n\n\n\ndata %&lt;&gt;% mutate(w = if_else(runif(100000) &gt; .5,1,0), \n                 y = y0 + (y1-y0)*w) %&gt;% \n  group_by(w)\n\nhead(data)\n## # A tibble: 6 × 6\n## # Groups:   w [2]\n##       eta    y0    y1 treat_eff     w     y\n##     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n## 1  1.41    3.41  8.41         5     1  8.41\n## 2  0.223   2.22  7.22         5     1  7.22\n## 3  2.93    4.93  9.93         5     1  9.93\n## 4 -0.820   1.18  6.18         5     0  1.18\n## 5 -0.0226  1.98  6.98         5     0  1.98\n## 6  1.01    3.01  8.01         5     0  3.01"
+    "text": "Random Assignment to Treatment\n\n\n\nNext assign treatment \\(w\\) using randomization\nIn the code, \\(w=1\\) randomly with probability 0.5\nCompute observed \\(y\\) based on treatment status\n\n\n\ndata %&lt;&gt;% mutate(w = if_else(runif(100000) &gt; .5,1,0), \n                 y = y0 + (y1-y0)*w) %&gt;% \n  group_by(w)\n\nhead(data)\n## # A tibble: 6 × 6\n## # Groups:   w [2]\n##       eta     y0    y1 treat_eff     w      y\n##     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n## 1  1.03   3.03    8.03         5     0 3.03  \n## 2 -0.0329 1.97    6.97         5     0 1.97  \n## 3  0.923  2.92    7.92         5     1 7.92  \n## 4 -1.91   0.0930  5.09         5     0 0.0930\n## 5 -0.690  1.31    6.31         5     0 1.31  \n## 6 -0.156  1.84    6.84         5     0 1.84"
   },
   {
     "objectID": "slides/causality/index.html#random-assignment-to-treatment-1",
     "href": "slides/causality/index.html#random-assignment-to-treatment-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Random Assignment to Treatment",
-    "text": "Random Assignment to Treatment\n\n\n\nWith random assignment we know\n\n\\(y_{0}\\) is independent of \\(w\\)\n\\(y_{1}\\) is independent of \\(w\\)\n\nSo the distributions of \\(y_{0}\\) and \\(y_{1}\\) are the same when \\(w=0\\) and when \\(w=1\\)\nTo the right we show the distribution of \\(y_{0}\\)\n\n\n\nggplot(data, aes(x=y0, color=as.factor(w))) +\n  geom_density(alpha = .4, size=2) +\n  theme_pander(nomargin=FALSE, boxes=TRUE) +\n  labs(title = \"Distribution of Y0\")\n## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\n## ℹ Please use `linewidth` instead."
+    "text": "Random Assignment to Treatment\n\n\n\nWith random assignment we know\n\n\\(y_{0}\\) is independent of \\(w\\)\n\\(y_{1}\\) is independent of \\(w\\)\n\nSo the distributions of \\(y_{0}\\) and \\(y_{1}\\) are the same when \\(w=0\\) and when \\(w=1\\)\nTo the right we show the distribution of \\(y_{0}\\)\n\n\n\nggplot(data, aes(x=y0, color=as.factor(w))) +\n  geom_density(alpha = .4, size=2) +\n  theme_pander(nomargin=FALSE, boxes=TRUE) +\n  labs(title = \"Distribution of Y0\")"
   },
   {
     "objectID": "slides/causality/index.html#random-assignment-to-treatment-2",
     "href": "slides/causality/index.html#random-assignment-to-treatment-2",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Random Assignment to Treatment",
-    "text": "Random Assignment to Treatment\n\n\n\nRandomization ensures difference in average \\(y\\) between groups equals the ATE and ATT\nOn the right we show the difference in mean of \\(y\\) equals 5\n\n(it’s not exactly 5 due to sampling error)\n\n\n\n\nsummarize(data, mean(y))\n## # A tibble: 2 × 2\n##       w `mean(y)`\n##   &lt;dbl&gt;     &lt;dbl&gt;\n## 1     0      2.01\n## 2     1      6.99\nsummarize(data,mean(y))$`mean(y)`[2] - \n  summarize(data,mean(y))$`mean(y)`[1]\n## [1] 4.981945"
+    "text": "Random Assignment to Treatment\n\n\n\nRandomization ensures difference in average \\(y\\) between groups equals the ATE and ATT\nOn the right we show the difference in mean of \\(y\\) equals 5\n\n(it’s not exactly 5 due to sampling error)\n\n\n\n\nsummarize(data, mean(y))\n## # A tibble: 2 × 2\n##       w `mean(y)`\n##   &lt;dbl&gt;     &lt;dbl&gt;\n## 1     0      2.01\n## 2     1      7.01\nsummarize(data,mean(y))$`mean(y)`[2] - \n  summarize(data,mean(y))$`mean(y)`[1]\n## [1] 5.001218"
   },
   {
     "objectID": "slides/causality/index.html#random-assignment-to-treatment-3",
     "href": "slides/causality/index.html#random-assignment-to-treatment-3",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Random Assignment to Treatment",
-    "text": "Random Assignment to Treatment\n\n\n\nCan implement difference in means as a regression\nRecall slope in OLS regression of \\(y\\) on dummy variable is difference in means of \\(y\\)\n\n\n\nlm(y ~ w, data)\n## \n## Call:\n## lm(formula = y ~ w, data = data)\n## \n## Coefficients:\n## (Intercept)            w  \n##       2.012        4.982"
+    "text": "Random Assignment to Treatment\n\n\n\nCan implement difference in means as a regression\nRecall slope in OLS regression of \\(y\\) on dummy variable is difference in means of \\(y\\)\n\n\n\nlm(y ~ w, data)\n## \n## Call:\n## lm(formula = y ~ w, data = data)\n## \n## Coefficients:\n## (Intercept)            w  \n##       2.007        5.001"
   },
   {
     "objectID": "slides/causality/index.html#selection-into-treatment",
     "href": "slides/causality/index.html#selection-into-treatment",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Selection into Treatment",
     "text": "Selection into Treatment\n\n\n\nNow simulate selection into treatment based on \\(y_{0}\\)\n\nTreatment now related to value of \\(y_{0}\\)\n\nWe know \\(\\eta\\) determines value of \\(y_{0}\\)\n\nIf we make \\(w=\\) with higher values of \\(\\eta\\) then \\(w\\) is related to \\(y_{0}\\)\n\n\n\n\ndata2 &lt;- data %&gt;% \n  ungroup() %&gt;% \n  select(eta, y0,y1) %&gt;%\n  mutate(w = if_else(eta + runif(100000,-1,1) &gt; 0,1,0), \n         y = y0 + (y1-y0)*w) %&gt;%\n  group_by(w)\n\nsumtable(data2, \n         summ=c('notNA(x)','mean(x)','sd(x)'), \n         group=\"w\",\n         group.long = TRUE)"
   },
   {
     "objectID": "slides/causality/index.html#selection-into-treatment-1",
     "href": "slides/causality/index.html#selection-into-treatment-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Selection into Treatment",
-    "text": "Selection into Treatment\n\n\n\nThe means of \\(y_{0}\\) and \\(y_{1}\\) are now different by group\nBecause of selection bias\n\nTreated group has better non-treated outcomes\n\n\n\n\nsumtable(data2, \n         summ=c('notNA(x)','mean(x)','sd(x)'), \n         group=\"w\",\n         group.long = TRUE)\n\n\nSummary Statistics\n\n\nVariable\nNotNA\nMean\nSd\n\n\n\n\nw: 0\n\n\n\n\n\neta\n49939\n-0.68\n0.73\n\n\ny0\n49939\n1.3\n0.73\n\n\ny1\n49939\n6.3\n0.73\n\n\ny\n49939\n1.3\n0.73\n\n\nw: 1\n\n\n\n\n\neta\n50061\n0.69\n0.73\n\n\ny0\n50061\n2.7\n0.73\n\n\ny1\n50061\n7.7\n0.73\n\n\ny\n50061\n7.7\n0.73"
+    "text": "Selection into Treatment\n\n\n\nThe means of \\(y_{0}\\) and \\(y_{1}\\) are now different by group\nBecause of selection bias\n\nTreated group has better non-treated outcomes\n\n\n\n\n\n\nSummary Statistics\n\n\nVariable\nNotNA\nMean\nSd\n\n\n\n\nw: 0\n\n\n\n\n\neta\n49602\n-0.68\n0.73\n\n\ny0\n49602\n1.3\n0.73\n\n\ny1\n49602\n6.3\n0.73\n\n\ny\n49602\n1.3\n0.73\n\n\nw: 1\n\n\n\n\n\neta\n50398\n0.68\n0.73\n\n\ny0\n50398\n2.7\n0.73\n\n\ny1\n50398\n7.7\n0.73\n\n\ny\n50398\n7.7\n0.73"
   },
   {
     "objectID": "slides/causality/index.html#selection-into-treatment-2",
     "href": "slides/causality/index.html#selection-into-treatment-2",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Selection into Treatment",
     "text": "Selection into Treatment\n\n\n\nThe distribution of \\(y_{0}\\) differs by \\(w\\)\n\nTreated group has better baseline outcomes\n\nThis creates selection bias\n\n\n\nggplot(data2, aes(x=y0, color=as.factor(w))) +\n  geom_density(alpha = .4, size=2) +\n  theme_pander(nomargin=FALSE, boxes=TRUE) +\n  labs(title = \"Distribution of Y0\")"
   },
   {
     "objectID": "slides/causality/index.html#selection-into-treatment-3",
     "href": "slides/causality/index.html#selection-into-treatment-3",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Selection into Treatment",
-    "text": "Selection into Treatment\n\n\n\nSelction bias shows up when you take difference in mean \\(y\\)\n\nWe know the true treatment effect is 5\nBut difference in \\(y\\) is larger\nThere is positive selection bias\nBias is about 1.4\n\n\n\n\nsummarize(data2, mean(y))\n## # A tibble: 2 × 2\n##       w `mean(y)`\n##   &lt;dbl&gt;     &lt;dbl&gt;\n## 1     0      1.32\n## 2     1      7.69\nsummarize(data2,mean(y))$`mean(y)`[2] - \n  summarize(data2,mean(y))$`mean(y)`[1]\n## [1] 6.369495"
+    "text": "Selection into Treatment\n\n\n\nSelction bias shows up when you take difference in mean \\(y\\)\n\nWe know the true treatment effect is 5\nBut difference in \\(y\\) is larger\nThere is positive selection bias\nBias is about 1.4\n\n\n\n\nsummarize(data2, mean(y))\n## # A tibble: 2 × 2\n##       w `mean(y)`\n##   &lt;dbl&gt;     &lt;dbl&gt;\n## 1     0      1.32\n## 2     1      7.68\nsummarize(data2,mean(y))$`mean(y)`[2] - \n  summarize(data2,mean(y))$`mean(y)`[1]\n## [1] 6.358604"
   },
   {
     "objectID": "slides/causality/index.html#selection-into-treatment-4",
     "href": "slides/causality/index.html#selection-into-treatment-4",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Selection into Treatment",
-    "text": "Selection into Treatment\n\n\n\nYou can implement this as a regression\nOLS estimates biased treatment effect\nRemember the intercept is mean of \\(y\\) when \\(w=0\\)\n\n\n\nlm(y ~ w, data2)\n## \n## Call:\n## lm(formula = y ~ w, data = data2)\n## \n## Coefficients:\n## (Intercept)            w  \n##       1.318        6.369"
+    "text": "Selection into Treatment\n\n\n\nYou can implement this as a regression\nOLS estimates biased treatment effect\nRemember the intercept is mean of \\(y\\) when \\(w=0\\)\n\n\n\nlm(y ~ w, data2)\n## \n## Call:\n## lm(formula = y ~ w, data = data2)\n## \n## Coefficients:\n## (Intercept)            w  \n##       1.322        6.359"
   },
   {
     "objectID": "slides/causality/index.html#mean-independence-of-y_0-1",
     "href": "slides/causality/index.html#mean-independence-of-y_0-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Mean Independence of \\(y_{0}\\)",
     "text": "Mean Independence of \\(y_{0}\\)\n\n\n\nRandomization ensures entire distribution of \\(y_{0}\\) is the same for treatment and control\nWe do not need this to estimate average treatment effects\nIf the mean of \\(y_{0}\\) is the same between treatment and control we can estimate treatment effect with difference in means\nCode makes mean of \\(y_{0}\\) the same, but variance bigger for \\(w=1\\)\n\n\n\ndata3 &lt;- data %&gt;% \n  ungroup() %&gt;% \n  select(eta, y0,y1) %&gt;%\n  mutate(w =  if_else(between(percent_rank(y0),.25,.75),0,1), \n         y = y0 + (y1-y0)*w) %&gt;%\n  group_by(w)\n\nsumtable(data3, \n         summ=c('notNA(x)','mean(x)','sd(x)'), \n         group=\"w\",\n         group.long = TRUE)"
   },
   {
     "objectID": "slides/causality/index.html#mean-independence-of-y_0-2",
     "href": "slides/causality/index.html#mean-independence-of-y_0-2",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Mean Independence of \\(y_{0}\\)",
-    "text": "Mean Independence of \\(y_{0}\\)\n\n\n\nRandomization ensures entire distribution of \\(y_{0}\\) is the same for treatment and control\nWe do not need this to estimate average treatment effects\nIf the mean of \\(y_{0}\\) is the same between treatment and control we can estimate treatment effect with difference in means\nCode makes mean of \\(y_{0}\\) the same, but variance bigger for \\(w=1\\)\n\n\n\nsumtable(data3, \n         summ=c('notNA(x)','mean(x)','sd(x)'), \n         group=\"w\",\n         group.long = TRUE)\n\n\nSummary Statistics\n\n\nVariable\nNotNA\nMean\nSd\n\n\n\n\nw: 0\n\n\n\n\n\neta\n50000\n0.0038\n0.38\n\n\ny0\n50000\n2\n0.38\n\n\ny1\n50000\n7\n0.38\n\n\ny\n50000\n2\n0.38\n\n\nw: 1\n\n\n\n\n\neta\n50000\n0.0024\n1.4\n\n\ny0\n50000\n2\n1.4\n\n\ny1\n50000\n7\n1.4\n\n\ny\n50000\n7\n1.4"
+    "text": "Mean Independence of \\(y_{0}\\)\n\n\n\nRandomization ensures entire distribution of \\(y_{0}\\) is the same for treatment and control\nWe do not need this to estimate average treatment effects\nIf the mean of \\(y_{0}\\) is the same between treatment and control we can estimate treatment effect with difference in means\nCode makes mean of \\(y_{0}\\) the same, but variance bigger for \\(w=1\\)\n\n\n\n\n\nSummary Statistics\n\n\nVariable\nNotNA\nMean\nSd\n\n\n\n\nw: 0\n\n\n\n\n\neta\n50000\n0.0078\n0.37\n\n\ny0\n50000\n2\n0.37\n\n\ny1\n50000\n7\n0.37\n\n\ny\n50000\n2\n0.37\n\n\nw: 1\n\n\n\n\n\neta\n50000\n0.0065\n1.4\n\n\ny0\n50000\n2\n1.4\n\n\ny1\n50000\n7\n1.4\n\n\ny\n50000\n7\n1.4"
   },
   {
     "objectID": "slides/causality/index.html#mean-independence-of-y_0-3",
     "href": "slides/causality/index.html#mean-independence-of-y_0-3",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Mean Independence of \\(y_{0}\\)",
     "text": "Mean Independence of \\(y_{0}\\)\n\n\n\nThe distribution of \\(y_{0}\\) is plotted on the right\nThe spread is larger for \\(w=1\\)\nThis does not affect estimate of the average treatment effect\n\n\n\nggplot(data3, aes(x=y0, color=as.factor(w))) +\n  geom_density(alpha = .4, size=2) +\n  theme_pander(nomargin=FALSE, boxes=TRUE) +\n  labs(title = \"Distribution of Y0\")"
   },
   {
     "objectID": "slides/causality/index.html#mean-independence-of-y_0-4",
     "href": "slides/causality/index.html#mean-independence-of-y_0-4",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Mean Independence of \\(y_{0}\\)",
-    "text": "Mean Independence of \\(y_{0}\\)\n\n\n\nTake difference in mean \\(y\\)\n\nThis equals the treatment effect\nDifference in variance did not create bias\n\n\n\n\nsummarize(data2, mean(y))\n## # A tibble: 2 × 2\n##       w `mean(y)`\n##   &lt;dbl&gt;     &lt;dbl&gt;\n## 1     0      1.32\n## 2     1      7.69\nsummarize(data2,mean(y))$`mean(y)`[2] - \n  summarize(data2,mean(y))$`mean(y)`[1]\n## [1] 6.369495"
+    "text": "Mean Independence of \\(y_{0}\\)\n\n\n\nTake difference in mean \\(y\\)\n\nThis equals the treatment effect\nDifference in variance did not create bias\n\n\n\n\nsummarize(data2, mean(y))\n## # A tibble: 2 × 2\n##       w `mean(y)`\n##   &lt;dbl&gt;     &lt;dbl&gt;\n## 1     0      1.32\n## 2     1      7.68\nsummarize(data2,mean(y))$`mean(y)`[2] - \n  summarize(data2,mean(y))$`mean(y)`[1]\n## [1] 6.358604"
   },
   {
     "objectID": "slides/causality/index.html#mean-independence-of-y_0-5",
     "href": "slides/causality/index.html#mean-independence-of-y_0-5",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Mean Independence of \\(y_{0}\\)",
-    "text": "Mean Independence of \\(y_{0}\\)\n\n\n\nRunning regression produces same result\nThe variance in \\(y_{1}\\) affects the standard error\n\nBut we are not concerned with that right now\n\n\n\n\nlm(y ~ w, data3)\n## \n## Call:\n## lm(formula = y ~ w, data = data3)\n## \n## Coefficients:\n## (Intercept)            w  \n##       2.004        4.999"
+    "text": "Mean Independence of \\(y_{0}\\)\n\n\n\nRunning regression produces same result\nThe variance in \\(y_{1}\\) affects the standard error\n\nBut we are not concerned with that right now\n\n\n\n\nlm(y ~ w, data3)\n## \n## Call:\n## lm(formula = y ~ w, data = data3)\n## \n## Coefficients:\n## (Intercept)            w  \n##       2.008        4.999"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-2",
     "href": "slides/causality/index.html#conditional-mean-independence-2",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean Independence",
     "text": "Conditional Mean Independence\n\n\n\nFinally consider conditional mean independence\nTreatment is related to \\(y_{0}\\), but only through \\(x\\)\n\nFor people with the same \\(x\\), \\(y_{0}\\) is unrelated to \\(w\\)\n\nEx: Education and wages\n\nSmart people \\((x = 1)\\) earn higher wages regardless of schooling \\((y_0)\\)\nSmart people are more likely to go to university \\((w = 1)\\)\nPeople at university will have higher \\(y_0\\)\n\n\n\n\ndata4 &lt;- data %&gt;% \n  ungroup() %&gt;% \n  select(eta) %&gt;%\n  mutate(x = if_else(runif(100000) &gt; .5,1,0),\n         w = if_else(x + runif(100000, -1,1) &gt; .5,1,0),\n         y0 = 2 + 3*x + eta,\n         y1 = y0 + 5,\n         y = y0 + (y1-y0)*w) %&gt;%\n  group_by(w)\n\nsumtable(data4, \n         summ=c('notNA(x)','mean(x)','sd(x)'), \n         group=\"w\",\n         group.long = TRUE)"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-3",
     "href": "slides/causality/index.html#conditional-mean-independence-3",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean Independence",
-    "text": "Conditional Mean Independence\n\n\n\nComparing treatment and control, \\(y_{0}\\) is bigger when \\(w=1\\)\nThis is because\n\n\\(y_{0}\\) is bigger when \\(x=1\\)\n\\(w\\) more likely to be \\(1\\) when \\(x=1\\)\n\n\n\n\nsumtable(data4, \n         summ=c('notNA(x)','mean(x)','sd(x)'), \n         group=\"w\",\n         group.long = TRUE)\n\n\nSummary Statistics\n\n\nVariable\nNotNA\nMean\nSd\n\n\n\n\nw: 0\n\n\n\n\n\neta\n49928\n0.0063\n1\n\n\nx\n49928\n0.25\n0.43\n\n\ny0\n49928\n2.8\n1.6\n\n\ny1\n49928\n7.8\n1.6\n\n\ny\n49928\n2.8\n1.6\n\n\nw: 1\n\n\n\n\n\neta\n50072\n-0.000069\n1\n\n\nx\n50072\n0.75\n0.43\n\n\ny0\n50072\n4.2\n1.6\n\n\ny1\n50072\n9.2\n1.6\n\n\ny\n50072\n9.2\n1.6"
+    "text": "Conditional Mean Independence\n\n\n\nComparing treatment and control, \\(y_{0}\\) is bigger when \\(w=1\\)\nThis is because\n\n\\(y_{0}\\) is bigger when \\(x=1\\)\n\\(w\\) more likely to be \\(1\\) when \\(x=1\\)\n\n\n\n\n\n\nSummary Statistics\n\n\nVariable\nNotNA\nMean\nSd\n\n\n\n\nw: 0\n\n\n\n\n\neta\n50073\n0.0032\n1\n\n\nx\n50073\n0.25\n0.44\n\n\ny0\n50073\n2.8\n1.6\n\n\ny1\n50073\n7.8\n1.6\n\n\ny\n50073\n2.8\n1.6\n\n\nw: 1\n\n\n\n\n\neta\n49927\n0.011\n1\n\n\nx\n49927\n0.75\n0.43\n\n\ny0\n49927\n4.3\n1.6\n\n\ny1\n49927\n9.3\n1.6\n\n\ny\n49927\n9.3\n1.6"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-4",
     "href": "slides/causality/index.html#conditional-mean-independence-4",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean Independence",
-    "text": "Conditional Mean Independence\n\n\n\nWhat if we focus only on people with \\(x=1\\)?\nNo difference in \\(y_{0}\\) between treated and control\n\nBecause \\(x\\) is only reason why they differed\nThis is holding \\(x\\) fixed\n\n\n\n\nsumtable(filter(data4, x==1), \n         summ=c('notNA(x)','mean(x)','sd(x)'), \n         group=\"w\")\n\n\nSummary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nw\n\n\n0\n\n\n1\n\n\n\nVariable\nNotNA\nMean\nSd\nNotNA\nMean\nSd\n\n\n\n\neta\n12472\n0.0043\n1\n37498\n-0.0029\n1\n\n\nx\n12472\n1\n0\n37498\n1\n0\n\n\ny0\n12472\n5\n1\n37498\n5\n1\n\n\ny1\n12472\n10\n1\n37498\n10\n1\n\n\ny\n12472\n5\n1\n37498\n10\n1"
+    "text": "Conditional Mean Independence\n\n\n\nWhat if we focus only on people with \\(x=1\\)?\nNo difference in \\(y_{0}\\) between treated and control\n\nBecause \\(x\\) is only reason why they differed\nThis is holding \\(x\\) fixed\n\n\n\n\nsumtable(filter(data4, x==1), \n         summ=c('notNA(x)','mean(x)','sd(x)'), \n         group=\"w\")\n\n\nSummary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nw\n\n\n0\n\n\n1\n\n\n\nVariable\nNotNA\nMean\nSd\nNotNA\nMean\nSd\n\n\n\n\neta\n12727\n0.011\n1\n37490\n0.013\n1\n\n\nx\n12727\n1\n0\n37490\n1\n0\n\n\ny0\n12727\n5\n1\n37490\n5\n1\n\n\ny1\n12727\n10\n1\n37490\n10\n1\n\n\ny\n12727\n5\n1\n37490\n10\n1"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-5",
     "href": "slides/causality/index.html#conditional-mean-independence-5",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean Independence",
-    "text": "Conditional Mean Independence\n\n\n\nSame result if we hold \\(x=0\\)?\n\nAgain because \\(x\\) is only reason why they differed\n\n\n\n\nsumtable(filter(data4, x==0), \n         summ=c('notNA(x)','mean(x)','sd(x)'), \n         group=\"w\")\n\n\nSummary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nw\n\n\n0\n\n\n1\n\n\n\nVariable\nNotNA\nMean\nSd\nNotNA\nMean\nSd\n\n\n\n\neta\n37456\n0.007\n1\n12574\n0.0084\n1\n\n\nx\n37456\n0\n0\n12574\n0\n0\n\n\ny0\n37456\n2\n1\n12574\n2\n1\n\n\ny1\n37456\n7\n1\n12574\n7\n1\n\n\ny\n37456\n2\n1\n12574\n7\n1"
+    "text": "Conditional Mean Independence\n\n\n\nSame result if we hold \\(x=0\\)?\n\nAgain because \\(x\\) is only reason why they differed\n\n\n\n\nsumtable(filter(data4, x==0), \n         summ=c('notNA(x)','mean(x)','sd(x)'), \n         group=\"w\")\n\n\nSummary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nw\n\n\n0\n\n\n1\n\n\n\nVariable\nNotNA\nMean\nSd\nNotNA\nMean\nSd\n\n\n\n\neta\n37346\n0.00052\n0.99\n12437\n0.0044\n0.99\n\n\nx\n37346\n0\n0\n12437\n0\n0\n\n\ny0\n37346\n2\n0.99\n12437\n2\n0.99\n\n\ny1\n37346\n7\n0.99\n12437\n7\n0.99\n\n\ny\n37346\n2\n0.99\n12437\n7\n0.99"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-6",
     "href": "slides/causality/index.html#conditional-mean-independence-6",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean Independence",
-    "text": "Conditional Mean Independence\n\n\n\nRegression of \\(y\\) on \\(w\\) is biased\n\nBecause \\(w\\) is correlated with error\n\nBut regression of \\(y\\) on \\(w\\) and \\(x\\) generates actual treatment effect\nThis is conditional mean independence\n\nHolding \\(x\\) fixed, potential outcomes no longer related to treatment\n\n\n\n\nlm(y ~ w, data4)\n## \n## Call:\n## lm(formula = y ~ w, data = data4)\n## \n## Coefficients:\n## (Intercept)            w  \n##       2.756        6.491\nlm(y ~ w + x, data4)\n## \n## Call:\n## lm(formula = y ~ w + x, data = data4)\n## \n## Coefficients:\n## (Intercept)            w            x  \n##       2.008        4.997        2.993"
+    "text": "Conditional Mean Independence\n\n\n\nRegression of \\(y\\) on \\(w\\) is biased\n\nBecause \\(w\\) is correlated with error\n\nBut regression of \\(y\\) on \\(w\\) and \\(x\\) generates actual treatment effect\nThis is conditional mean independence\n\nHolding \\(x\\) fixed, potential outcomes no longer related to treatment\n\n\n\n\nlm(y ~ w, data4)\n## \n## Call:\n## lm(formula = y ~ w, data = data4)\n## \n## Coefficients:\n## (Intercept)            w  \n##       2.766        6.498\nlm(y ~ w + x, data4)\n## \n## Call:\n## lm(formula = y ~ w + x, data = data4)\n## \n## Coefficients:\n## (Intercept)            w            x  \n##       2.001        5.003        3.010"
   },
   {
     "objectID": "slides/causality/index.html#regression-slopes-and-potential-outcomes",
     "href": "slides/causality/index.html#regression-slopes-and-potential-outcomes",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Regression Slopes and Potential Outcomes",
-    "text": "Regression Slopes and Potential Outcomes\n\nSuppose we regress \\(y\\) on \\(w\\)\nThe slope in this regression is \\(\\beta = E(y|w=1) - E(y|w=0)\\)\nExpress in terms of potential outcomes\n\\[E(y|w=1) - E(y|w=0)\\] \\[=  E(y_{1}|w=1) - E(y_{0}|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ] + E(y_{0}|w=1) - E(y_{0}|w=0)\\]\nThe first term is called the Average Treatment Effect on the Treated (ATT)\n\nAverage effect of the treatment for those in the treatment group\n\n\n\n\n\n\n\n\nNote\n\n\n\nGroups in the population can have different treatment effects, so there isn’t necessarily a single treatment or causal effect."
+    "text": "Regression Slopes and Potential Outcomes\n\nSuppose we regress \\(y\\) on \\(w\\)\nThe slope in this regression is \\(\\beta = E(y|w=1) - E(y|w=0)\\)\nExpress in terms of potential outcomes\n\\[E(y|w=1) - E(y|w=0)\\] \\[=  E(y_{1}|w=1) - E(y_{0}|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ] + E(y_{0}|w=1) - E(y_{0}|w=0)\\]\nThe first term is called the Average Treatment Effect on the Treated (ATT)\n\nAverage effect of the treatment for those in the treatment group\n\n\n\n\n\n\n\n\nNote\n\n\nGroups in the population can have different treatment effects, so there isn’t necessarily a single treatment or causal effect."
   },
   {
     "objectID": "slides/causality/index.html#selection-bias",
     "href": "slides/causality/index.html#selection-bias",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Selection bias",
     "text": "Selection bias\n\nThe second term is Selection Bias\n\nPreexisting difference between treatment and control groups\n\nExample: \\(y\\) is income, and \\(w\\) is going to university\n\nSelection bias is potential income difference in absence of university\nWould happen if people who end up in university are already smarter\n\nIf selection bias exists, regression slope is a combination of treatment effect and bias\nThere are some cases where there is no selection bias, and regression slope is only causal effect\nWe outline those below"
   },
   {
     "objectID": "slides/causality/index.html#continuous-treatment",
     "href": "slides/causality/index.html#continuous-treatment",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Continuous Treatment",
     "text": "Continuous Treatment\n\nWe can also apply this model to a continuous treatment variable\nAll of the intuition we have discussed at the same\n\nJust slightly more complex because treatment is continuous"
   },
   {
     "objectID": "slides/causality/index.html#summary-of-rubin-model",
     "href": "slides/causality/index.html#summary-of-rubin-model",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Summary of Rubin Model",
     "text": "Summary of Rubin Model\n\nRegression will identify a causal effect if\n\nTreatment comes from a randomized experiment\nPotential outcomes are mean independent of treatment\nPotential outcomes are mean independent of treatment conditional on \\(\\mathbf{x}\\)\n\nWithout one of these, we could have selection bias\n\nRegression does not provide a causal effect\n\nUnfortunately, these assumptions are generally not met\n\nWe will cover other methods to uncover the causal effect in this case"
   },
   {
     "objectID": "slides/causality/index.html#introduction-2",
     "href": "slides/causality/index.html#introduction-2",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Introduction",
     "text": "Introduction\n\nThe Rubin framework is one way to understand causality\nAnother popular method is a Directed Acyclic Graph (DAG)\nA DAG is a graphical tool to show relationships between variables\nIt can make a complex model easier to understand\nFor econometrics, it can highlight bias in our estimates\n\nAnd how to overcome the bias\n\nIn this section we will introduce DAGs, and expand on it in further sections"
   },
@@ -1675,14 +1675,14 @@
   {
     "objectID": "slides/causality/index.html#basic-dag",
     "href": "slides/causality/index.html#basic-dag",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Basic DAG",
     "text": "Basic DAG\n\n\n\nSuppose we are interested in the direct effect of \\(x\\) on \\(y\\)\n\n\\(x\\) is the treatment\n\\(y\\) is the outcome\n\nThe DAG to the right shows how \\(x\\) and \\(y\\) could be related\n\\(z\\) is another factor that is related to both \\(x\\) and \\(y\\)\nThe dots (with variable names) are nodes\nThe lines connecting nodes are edges\nDirection of the arrows is the direction of the relationship"
   },
   {
     "objectID": "slides/causality/index.html#basic-dag-1",
     "href": "slides/causality/index.html#basic-dag-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Basic DAG",
     "text": "Basic DAG\n\n\n\nWe want to find all the paths that can lead from \\(x\\) to \\(y\\)\nIn this DAG there are two\n\nA direct path \\(x \\rightarrow y\\)\nAn indirect path \\(x \\leftarrow z \\rightarrow y\\)\n\nA correlation between \\(y\\) on \\(x\\) would reflect both paths\n\n\\(x\\) can directly cause \\(y\\)\n\\(z\\) could change \\(x\\) and \\(y\\) simultaneously creating a spurious correlation between them"
   },
@@ -1696,9 +1696,9 @@
   {
     "objectID": "slides/causality/index.html#types-of-paths",
     "href": "slides/causality/index.html#types-of-paths",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Types of Paths",
-    "text": "Types of Paths\n\n\n\nIn a DAG you may find two types of paths\n\nFront Door: arrows point away from treatment and toward to outcome\nBack Door: arrows point toward treatment\n\nWe are usually interested in front door paths\n\nShow how \\(x\\) causes changes in \\(y\\)\n\nBack door paths are usually bad\n\nShow ways that a correlation between treatment and outcome are biased\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nThere can be multiple front door paths in a DAG, and we might not be interested in all of them."
+    "text": "Types of Paths\n\n\n\nIn a DAG you may find two types of paths\n\nFront Door: arrows point away from treatment and toward to outcome\nBack Door: arrows point toward treatment\n\nWe are usually interested in front door paths\n\nShow how \\(x\\) causes changes in \\(y\\)\n\nBack door paths are usually bad\n\nShow ways that a correlation between treatment and outcome are biased\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\nThere can be multiple front door paths in a DAG, and we might not be interested in all of them."
   },
   {
     "objectID": "slides/causality/index.html#basic-dag-2",
@@ -1710,14 +1710,14 @@
   {
     "objectID": "slides/causality/index.html#open-and-closed-paths",
     "href": "slides/causality/index.html#open-and-closed-paths",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Open and Closed Paths",
     "text": "Open and Closed Paths\n\n\n\nPaths between treatment and outcome can be open or closed\n\nOpen: all variables along the path are allowed to vary\nClosed: at least one variable along the path cannot vary, or there is a collider along the path\n\nIf you regress \\(y\\) on \\(x\\) both paths are open\n\n\\(x\\) and \\(y\\) can vary, so direct path is open\nWe are not holding \\(z\\) fixed, so indirect path is also open\n\nYou can close the backdoor path by controlling for \\(z\\)\n\nRegress \\(y\\) on \\(x\\) and \\(z\\)"
   },
   {
     "objectID": "slides/causality/index.html#open-and-closed-paths-1",
     "href": "slides/causality/index.html#open-and-closed-paths-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Open and Closed Paths",
     "text": "Open and Closed Paths\n\n\n\nSuppose we are interested in the causal effect of \\(x\\) on \\(y\\)\nIn a DAG, this means we only want the path \\(x \\rightarrow y\\)\nWe need to leave this path open, but close all others\nThe regression of \\(y\\) on \\(x\\) and \\(z\\) does this\nIt works in this case because \\(z\\) is a confounder\nControlling for other variables does not always identify a causal effect"
   },
@@ -1731,7 +1731,7 @@
   {
     "objectID": "slides/causality/index.html#different-associations-in-dag",
     "href": "slides/causality/index.html#different-associations-in-dag",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Different Associations in DAG",
     "text": "Different Associations in DAG\n\n\n\n\n\n\n\n\n\n\n\n\nConfounder\n\n\n\n\n\n\n\n\n\n\n\n\nMediator\n\n\n\n\n\n\n\n\n\n\n\n\nCollider"
   },
@@ -1745,56 +1745,56 @@
   {
     "objectID": "slides/causality/index.html#confounder",
     "href": "slides/causality/index.html#confounder",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Confounder",
     "text": "Confounder\n\n\n\nThe DAG we have been working with has \\(z\\) as a confounder\nConfounder: The treatment and outcome have a common cause\nIn this example\n\n\\(z\\) changes \\(x\\) and \\(y\\) simultaneously\nMakes it look like \\(x\\) and \\(y\\) are related, but it is spurious\n\nExample: Returns to Schooling\n\n\\(y\\) is wages, \\(x\\) is years of schooling\nA confounder \\(z\\) would be intelligence\n\nCan close the backdoor path by controlling for \\(z\\)"
   },
   {
     "objectID": "slides/causality/index.html#mediator",
     "href": "slides/causality/index.html#mediator",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Mediator",
     "text": "Mediator\n\n\n\nIn this DAG we have two paths\n\n\\[x \\rightarrow y\\] \\[x \\rightarrow z \\rightarrow y\\]\n\nBoth are front door paths\nIn this example \\(z\\) acts as a mediator\nMediator: A variable within a causal pathway between treatment and outcome\nIn this example\n\n\\(x\\) causes \\(y\\) directly\nBut also indirectly through \\(z\\)"
   },
   {
     "objectID": "slides/causality/index.html#mediator-1",
     "href": "slides/causality/index.html#mediator-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Mediator",
     "text": "Mediator\n\n\n\nThis is not the same as omitted variables bias\nA regression of \\(y\\) on \\(x\\) measures the causal effect\n\nTwo causal paths between \\(x\\) and \\(y\\)\n\nWe can still close the indirect path by controlling for \\(z\\)\nThis would leave only the direct path\nWhether we want to do this depends on the research question\n\nIf you want only direct effect, control for \\(z\\)\nFor total effect, do not control"
   },
   {
     "objectID": "slides/causality/index.html#mediator-2",
     "href": "slides/causality/index.html#mediator-2",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Mediator",
     "text": "Mediator\n\n\n\nExample: Effect of drinking on lifespan\n\\(x\\) is drinking, \\(y\\) is lifespan, \\(z\\) is drug use\nIf drug use is a mediator then\n\n\\[drinking \\rightarrow lifespan\\] \\[drinking \\rightarrow drugs \\rightarrow lifespan\\]\n\nDrinking has direct effect on lifespan, and also through drug use\nRegression of \\(lifespan\\) on \\(drinking\\) measures total effect\nRegression of \\(lifespan\\) on \\(drinking\\) and \\(drug\\) use measures only direct effect"
   },
   {
     "objectID": "slides/causality/index.html#collider",
     "href": "slides/causality/index.html#collider",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Collider",
     "text": "Collider\n\n\n\nFinal association is trickier\nCollider: a variable that is influenced by two or more variables\nIn this DAG, \\(z\\) is a collider\n\nBoth \\(y\\) and \\(x\\) point to it\n\nPaths that contain a collider are closed\nIn this case, you could regress \\(y\\) on \\(x\\) and get causal effect"
   },
   {
     "objectID": "slides/causality/index.html#collider-1",
     "href": "slides/causality/index.html#collider-1",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Collider",
     "text": "Collider\n\n\n\nControlling for a collider opens the path\nRegression of \\(y\\) on \\(x\\) and \\(z\\) does not measure causal effect\nCollider Bias: bias induced by controlling for collider\nCollider bias can\n\nCreate an association between \\(x\\) and \\(y\\) when there is no direct one\nHide a direct association\n\nEasiest way to understand is through example"
   },
   {
     "objectID": "slides/causality/index.html#collider-2",
     "href": "slides/causality/index.html#collider-2",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Collider",
     "text": "Collider\n\n\n\nExample: talent and effort\n\\(x\\) is talent, \\(y\\) is effort, \\(z\\) is being in elite school\nAssume no direct link between talent and effort\nBoth talented and hard working students make it to elite schools\nControlling for school, talent and effort look negatively related\n\nYou need to be smart or work hard to get into Harvard\nLow-effort students must be smart, and un-smart students must be hard working"
   },
   {
     "objectID": "slides/causality/index.html#collider-3",
     "href": "slides/causality/index.html#collider-3",
-    "title": "\nCausality and Regression\n",
+    "title": "E655 - Econometrics",
     "section": "Collider",
     "text": "Collider\n\n\n\nExample: gender pay gap\n\\(x\\) is gender, \\(y\\) is ability, \\(z\\) is occupation\nAssume no direct link between gender and ability\nHigh ability people make it into certain occupations\nIf discrimination against women, they might also be selected into those jobs\nControlling for occupation, gender and ability look negatively related\nThis could lead to gender pay gap being larger within jobs"
   }
