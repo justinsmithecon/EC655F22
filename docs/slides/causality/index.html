@@ -727,13 +727,13 @@ Fall 2023
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p>Suppose we are interested in the direct effect of <span class="math inline">\(x\)</span> on <span class="math inline">\(y\)</span></p>
+<li><p>Suppose we are interested in the direct effect of <span class="math inline">\(w\)</span> on <span class="math inline">\(y\)</span></p>
 <ul>
-<li><p><span class="math inline">\(x\)</span> is the treatment</p></li>
+<li><p><span class="math inline">\(w\)</span> is the treatment</p></li>
 <li><p><span class="math inline">\(y\)</span> is the outcome</p></li>
 </ul></li>
-<li><p>The DAG to the right shows how <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> could be related</p></li>
-<li><p><span class="math inline">\(z\)</span> is another factor that is related to both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span></p></li>
+<li><p>The DAG to the right shows how <span class="math inline">\(w\)</span> and <span class="math inline">\(y\)</span> could be related</p></li>
+<li><p><span class="math inline">\(x\)</span> is another factor that is related to both <span class="math inline">\(w\)</span> and <span class="math inline">\(y\)</span></p></li>
 <li><p>The dots (with variable names) are <strong>nodes</strong></p></li>
 <li><p>The lines connecting nodes are <strong>edges</strong></p></li>
 <li><p>Direction of the arrows is the direction of the relationship</p></li>
@@ -756,16 +756,16 @@ Fall 2023
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p>We want to find all the <strong>paths</strong> that can lead from <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span></p></li>
+<li><p>We want to find all the <strong>paths</strong> that can lead from <span class="math inline">\(w\)</span> to <span class="math inline">\(y\)</span></p></li>
 <li><p>In this DAG there are two</p>
 <ul>
-<li><p>A direct path <span class="math inline">\(x \rightarrow y\)</span></p></li>
-<li><p>An indirect path <span class="math inline">\(x \leftarrow z \rightarrow y\)</span></p></li>
+<li><p>A direct path <span class="math inline">\(w \rightarrow y\)</span></p></li>
+<li><p>An indirect path <span class="math inline">\(w \leftarrow x \rightarrow y\)</span></p></li>
 </ul></li>
-<li><p>A correlation between <span class="math inline">\(y\)</span> on <span class="math inline">\(x\)</span> would reflect both paths</p>
+<li><p>A correlation between <span class="math inline">\(y\)</span> on <span class="math inline">\(w\)</span> would reflect both paths</p>
 <ul>
-<li><p><span class="math inline">\(x\)</span> can directly cause <span class="math inline">\(y\)</span></p></li>
-<li><p><span class="math inline">\(z\)</span> could change <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> simultaneously creating a spurious correlation between them</p></li>
+<li><p><span class="math inline">\(w\)</span> can directly cause <span class="math inline">\(y\)</span></p></li>
+<li><p><span class="math inline">\(x\)</span> could change <span class="math inline">\(w\)</span> and <span class="math inline">\(y\)</span> simultaneously creating a spurious correlation between them</p></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -793,7 +793,7 @@ Fall 2023
 </ol></li>
 <li><p>We are usually interested in front door paths</p>
 <ul>
-<li>Show how <span class="math inline">\(x\)</span> causes changes in <span class="math inline">\(y\)</span></li>
+<li>Show how <span class="math inline">\(w\)</span> causes changes in <span class="math inline">\(y\)</span></li>
 </ul></li>
 <li><p>Back door paths are usually bad</p>
 <ul>
@@ -834,16 +834,16 @@ Fall 2023
 <li><p>Paths between treatment and outcome can be open or closed</p>
 <ol type="1">
 <li><strong>Open</strong>: all variables along the path are allowed to vary</li>
-<li><strong>Closed</strong>: at least one variable along the path cannot vary, or there is a collider along the path</li>
+<li><strong>Closed</strong>: at least one variable along the path cannot vary, or there is a collider on the path</li>
 </ol></li>
-<li><p>If you regress <span class="math inline">\(y\)</span> on <span class="math inline">\(x\)</span> both paths are open</p>
+<li><p>If you regress <span class="math inline">\(y\)</span> on <span class="math inline">\(w\)</span> both paths are open</p>
 <ul>
-<li><p><span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can vary, so direct path is open</p></li>
-<li><p>We are not holding <span class="math inline">\(z\)</span> fixed, so indirect path is also open</p></li>
+<li><p><span class="math inline">\(w\)</span> and <span class="math inline">\(y\)</span> can vary, so direct path is open</p></li>
+<li><p>We are not holding <span class="math inline">\(x\)</span> fixed, so indirect path is also open</p></li>
 </ul></li>
-<li><p>You can close the backdoor path by controlling for <span class="math inline">\(z\)</span></p>
+<li><p>You can close the backdoor path by controlling for <span class="math inline">\(x\)</span></p>
 <ul>
-<li>Regress <span class="math inline">\(y\)</span> on <span class="math inline">\(x\)</span> <strong>and</strong> <span class="math inline">\(z\)</span></li>
+<li>Regress <span class="math inline">\(y\)</span> on <span class="math inline">\(w\)</span> <strong>and</strong> <span class="math inline">\(x\)</span></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -864,11 +864,11 @@ Fall 2023
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p>Suppose we are interested in the causal effect of <span class="math inline">\(x\)</span> on <span class="math inline">\(y\)</span></p></li>
-<li><p>In a DAG, this means we only want the path <span class="math inline">\(x \rightarrow y\)</span></p></li>
+<li><p>Suppose we are interested in the causal effect of <span class="math inline">\(w\)</span> on <span class="math inline">\(y\)</span></p></li>
+<li><p>In a DAG, this means we only want the path <span class="math inline">\(w \rightarrow y\)</span></p></li>
 <li><p>We need to leave this path open, but close all others</p></li>
-<li><p>The regression of <span class="math inline">\(y\)</span> on <span class="math inline">\(x\)</span> and <span class="math inline">\(z\)</span> does this</p></li>
-<li><p>It works in this case because <span class="math inline">\(z\)</span> is a <strong>confounder</strong></p></li>
+<li><p>The regression of <span class="math inline">\(y\)</span> on <span class="math inline">\(w\)</span> and <span class="math inline">\(x\)</span> does this</p></li>
+<li><p>It works in this case because <span class="math inline">\(x\)</span> is a <strong>confounder</strong></p></li>
 <li><p>Controlling for other variables <strong>does not</strong> always identify a causal effect</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -934,19 +934,19 @@ Fall 2023
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
-<li><p>The DAG we have been working with has <span class="math inline">\(z\)</span> as a confounder</p></li>
+<li><p>The DAG we have been working with has <span class="math inline">\(x\)</span> as a confounder</p></li>
 <li><p><strong>Confounder</strong>: The treatment and outcome have a common cause</p></li>
 <li><p>In this example</p>
 <ul>
-<li><p><span class="math inline">\(z\)</span> changes <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> simultaneously</p></li>
-<li><p>Makes it look like <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are related, but it is spurious</p></li>
+<li><p><span class="math inline">\(x\)</span> changes <span class="math inline">\(w\)</span> and <span class="math inline">\(y\)</span> simultaneously</p></li>
+<li><p>Makes it look like <span class="math inline">\(w\)</span> and <span class="math inline">\(y\)</span> are related, but it is spurious</p></li>
 </ul></li>
 <li><p>Example: Returns to Schooling</p>
 <ul>
-<li><p><span class="math inline">\(y\)</span> is wages, <span class="math inline">\(x\)</span> is years of schooling</p></li>
-<li><p>A confounder <span class="math inline">\(z\)</span> would be intelligence</p></li>
+<li><p><span class="math inline">\(y\)</span> is wages, <span class="math inline">\(w\)</span> is years of schooling</p></li>
+<li><p>A confounder <span class="math inline">\(x\)</span> would be intelligence</p></li>
 </ul></li>
-<li><p>Can close the backdoor path by controlling for <span class="math inline">\(z\)</span></p></li>
+<li><p>Can close the backdoor path by controlling for <span class="math inline">\(x\)</span></p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
@@ -968,15 +968,15 @@ Fall 2023
 <ul>
 <li>In this DAG we have two paths</li>
 </ul>
-<p><span class="math display">\[x \rightarrow y\]</span> <span class="math display">\[x \rightarrow z \rightarrow y\]</span></p>
+<p><span class="math display">\[w \rightarrow y\]</span> <span class="math display">\[w \rightarrow x \rightarrow y\]</span></p>
 <ul>
 <li><p>Both are front door paths</p></li>
-<li><p>In this example <span class="math inline">\(z\)</span> acts as a mediator</p></li>
+<li><p>In this example <span class="math inline">\(x\)</span> acts as a mediator</p></li>
 <li><p><strong>Mediator</strong>: A variable within a causal pathway between treatment and outcome</p></li>
 <li><p>In this example</p>
 <ul>
-<li><p><span class="math inline">\(x\)</span> causes <span class="math inline">\(y\)</span> directly</p></li>
-<li><p>But also indirectly through <span class="math inline">\(z\)</span></p></li>
+<li><p><span class="math inline">\(w\)</span> causes <span class="math inline">\(y\)</span> directly</p></li>
+<li><p>But also indirectly through <span class="math inline">\(x\)</span></p></li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:50%;">
@@ -998,15 +998,15 @@ Fall 2023
 <div class="column" style="width:50%;">
 <ul>
 <li><p>This is not the same as omitted variables bias</p></li>
-<li><p>A regression of <span class="math inline">\(y\)</span> on <span class="math inline">\(x\)</span> measures the causal effect</p>
+<li><p>A regression of <span class="math inline">\(y\)</span> on <span class="math inline">\(w\)</span> measures the causal effect</p>
 <ul>
-<li>Two causal paths between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span></li>
+<li>Two causal paths between <span class="math inline">\(w\)</span> and <span class="math inline">\(y\)</span></li>
 </ul></li>
-<li><p>We can still close the indirect path by controlling for <span class="math inline">\(z\)</span></p></li>
+<li><p>We can still close the indirect path by controlling for <span class="math inline">\(x\)</span></p></li>
 <li><p>This would leave only the direct path</p></li>
 <li><p>Whether we want to do this depends on the research question</p>
 <ul>
-<li><p>If you want only direct effect, control for <span class="math inline">\(z\)</span></p></li>
+<li><p>If you want only direct effect, control for <span class="math inline">\(x\)</span></p></li>
 <li><p>For total effect, do not control</p></li>
 </ul></li>
 </ul>
@@ -1029,7 +1029,7 @@ Fall 2023
 <div class="column" style="width:50%;">
 <ul>
 <li><p>Example: Effect of drinking on lifespan</p></li>
-<li><p><span class="math inline">\(x\)</span> is drinking, <span class="math inline">\(y\)</span> is lifespan, <span class="math inline">\(z\)</span> is drug use</p></li>
+<li><p><span class="math inline">\(w\)</span> is drinking, <span class="math inline">\(y\)</span> is lifespan, <span class="math inline">\(x\)</span> is drug use</p></li>
 <li><p>If drug use is a mediator then</p></li>
 </ul>
 <p><span class="math display">\[drinking \rightarrow lifespan\]</span> <span class="math display">\[drinking \rightarrow drugs \rightarrow lifespan\]</span></p>
@@ -1058,12 +1058,12 @@ Fall 2023
 <ul>
 <li><p>Final association is trickier</p></li>
 <li><p><strong>Collider</strong>: a variable that is influenced by two or more variables</p></li>
-<li><p>In this DAG, <span class="math inline">\(z\)</span> is a collider</p>
+<li><p>In this DAG, <span class="math inline">\(x\)</span> is a collider</p>
 <ul>
-<li>Both <span class="math inline">\(y\)</span> and <span class="math inline">\(x\)</span> point to it</li>
+<li>Both <span class="math inline">\(y\)</span> and <span class="math inline">\(w\)</span> point to it</li>
 </ul></li>
 <li><p>Paths that contain a collider are closed</p></li>
-<li><p>In this case, you could regress <span class="math inline">\(y\)</span> on <span class="math inline">\(x\)</span> and get causal effect</p></li>
+<li><p>In this case, you could regress <span class="math inline">\(y\)</span> on <span class="math inline">\(w\)</span> and get causal effect</p></li>
 </ul>
 </div><div class="column" style="width:50%;">
 <div class="cell" data-layout-align="center">
@@ -1084,11 +1084,11 @@ Fall 2023
 <div class="column" style="width:50%;">
 <ul>
 <li><p>Controlling for a collider opens the path</p></li>
-<li><p>Regression of <span class="math inline">\(y\)</span> on <span class="math inline">\(x\)</span> and <span class="math inline">\(z\)</span> does not measure causal effect</p></li>
+<li><p>Regression of <span class="math inline">\(y\)</span> on <span class="math inline">\(w\)</span> and <span class="math inline">\(x\)</span> does not measure causal effect</p></li>
 <li><p><strong>Collider Bias</strong>: bias induced by controlling for collider</p></li>
 <li><p>Collider bias can</p>
 <ul>
-<li><p>Create an association between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> when there is no direct one</p></li>
+<li><p>Create an association between <span class="math inline">\(w\)</span> and <span class="math inline">\(y\)</span> when there is no direct one</p></li>
 <li><p>Hide a direct association</p></li>
 </ul></li>
 <li><p>Easiest way to understand is through example</p></li>
@@ -1112,7 +1112,7 @@ Fall 2023
 <div class="column" style="width:50%;">
 <ul>
 <li><p>Example: talent and effort</p></li>
-<li><p><span class="math inline">\(x\)</span> is talent, <span class="math inline">\(y\)</span> is effort, <span class="math inline">\(z\)</span> is being in elite school</p></li>
+<li><p><span class="math inline">\(w\)</span> is talent, <span class="math inline">\(y\)</span> is effort, <span class="math inline">\(x\)</span> is being in elite school</p></li>
 <li><p>Assume no direct link between talent and effort</p></li>
 <li><p>Both talented and hard working students make it to elite schools</p></li>
 <li><p>Controlling for school, talent and effort look negatively related</p>
@@ -1159,6 +1159,32 @@ Fall 2023
 </div>
 </div>
 </div>
+</section>
+<section id="a-more-complicated-dag" class="slide level2">
+<h2>A More Complicated DAG</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p>Example: gender pay gap</p></li>
+<li><p><span class="math inline">\(x\)</span> is gender, <span class="math inline">\(y\)</span> is ability, <span class="math inline">\(z\)</span> is occupation</p></li>
+<li><p>Assume no direct link between gender and ability</p></li>
+<li><p>High ability people make it into certain occupations</p></li>
+<li><p>If discrimination against women, they might also be selected into those jobs</p></li>
+<li><p>Controlling for occupation, gender and ability look negatively related</p></li>
+<li><p>This could lead to gender pay gap being larger within jobs</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-18-1.png" style="width:90.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="simulation-examples" class="title-slide slide level1">
@@ -1198,23 +1224,23 @@ Fall 2023
 <tr class="odd">
 <td style="text-align: left;">eta</td>
 <td style="text-align: left;">100000</td>
-<td style="text-align: left;">0.0072</td>
-<td style="text-align: left;">-4.4</td>
-<td style="text-align: left;">4.7</td>
+<td style="text-align: left;">-0.002</td>
+<td style="text-align: left;">-4.6</td>
+<td style="text-align: left;">4.4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">y0</td>
 <td style="text-align: left;">100000</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">-2.4</td>
-<td style="text-align: left;">6.7</td>
+<td style="text-align: left;">-2.6</td>
+<td style="text-align: left;">6.4</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y1</td>
 <td style="text-align: left;">100000</td>
 <td style="text-align: left;">7</td>
-<td style="text-align: left;">2.6</td>
-<td style="text-align: left;">12</td>
+<td style="text-align: left;">2.4</td>
+<td style="text-align: left;">11</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">treat_eff</td>
@@ -1250,14 +1276,14 @@ Fall 2023
 <span id="cb2-5"><a href="#cb2-5"></a><span class="fu">head</span>(data)</span>
 <span id="cb2-6"><a href="#cb2-6"></a><span class="do">## # A tibble: 6 × 6</span></span>
 <span id="cb2-7"><a href="#cb2-7"></a><span class="do">## # Groups:   w [2]</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="do">##       eta     y0    y1 treat_eff     w      y</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="do">##     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="do">## 1  1.03   3.03    8.03         5     0 3.03  </span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="do">## 2 -0.0329 1.97    6.97         5     0 1.97  </span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="do">## 3  0.923  2.92    7.92         5     1 7.92  </span></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="do">## 4 -1.91   0.0930  5.09         5     0 0.0930</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="do">## 5 -0.690  1.31    6.31         5     0 1.31  </span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="do">## 6 -0.156  1.84    6.84         5     0 1.84</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="do">##      eta    y0    y1 treat_eff     w     y</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="do">##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="do">## 1 -0.613 1.39   6.39         5     1 6.39 </span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="do">## 2 -0.486 1.51   6.51         5     1 6.51 </span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="do">## 3 -0.192 1.81   6.81         5     0 1.81 </span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="do">## 4 -1.02  0.980  5.98         5     0 0.980</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="do">## 5 -0.337 1.66   6.66         5     0 1.66 </span></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="do">## 6  0.220 2.22   7.22         5     1 7.22</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1284,7 +1310,7 @@ Fall 2023
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-20-1.png" style="width:90.0%"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-21-1.png" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
@@ -1309,11 +1335,11 @@ Fall 2023
 <span id="cb4-2"><a href="#cb4-2"></a><span class="do">## # A tibble: 2 × 2</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="do">##       w `mean(y)`</span></span>
 <span id="cb4-4"><a href="#cb4-4"></a><span class="do">##   &lt;dbl&gt;     &lt;dbl&gt;</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="do">## 1     0      2.01</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="do">## 1     0      1.99</span></span>
 <span id="cb4-6"><a href="#cb4-6"></a><span class="do">## 2     1      7.01</span></span>
 <span id="cb4-7"><a href="#cb4-7"></a><span class="fu">summarize</span>(data,<span class="fu">mean</span>(y))<span class="sc">$</span><span class="st">`</span><span class="at">mean(y)</span><span class="st">`</span>[<span class="dv">2</span>] <span class="sc">-</span> </span>
 <span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">summarize</span>(data,<span class="fu">mean</span>(y))<span class="sc">$</span><span class="st">`</span><span class="at">mean(y)</span><span class="st">`</span>[<span class="dv">1</span>]</span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="do">## [1] 5.001218</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="do">## [1] 5.018184</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1335,7 +1361,7 @@ Fall 2023
 <span id="cb5-5"><a href="#cb5-5"></a><span class="do">## </span></span>
 <span id="cb5-6"><a href="#cb5-6"></a><span class="do">## Coefficients:</span></span>
 <span id="cb5-7"><a href="#cb5-7"></a><span class="do">## (Intercept)            w  </span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="do">##       2.007        5.001</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="do">##       1.989        5.018</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1404,25 +1430,25 @@ Fall 2023
 </tr>
 <tr class="even">
 <td style="text-align: left;">eta</td>
-<td style="text-align: left;">49602</td>
+<td style="text-align: left;">49949</td>
 <td style="text-align: left;">-0.68</td>
 <td style="text-align: left;">0.73</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y0</td>
-<td style="text-align: left;">49602</td>
+<td style="text-align: left;">49949</td>
 <td style="text-align: left;">1.3</td>
 <td style="text-align: left;">0.73</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">y1</td>
-<td style="text-align: left;">49602</td>
+<td style="text-align: left;">49949</td>
 <td style="text-align: left;">6.3</td>
 <td style="text-align: left;">0.73</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y</td>
-<td style="text-align: left;">49602</td>
+<td style="text-align: left;">49949</td>
 <td style="text-align: left;">1.3</td>
 <td style="text-align: left;">0.73</td>
 </tr>
@@ -1434,27 +1460,27 @@ Fall 2023
 </tr>
 <tr class="odd">
 <td style="text-align: left;">eta</td>
-<td style="text-align: left;">50398</td>
+<td style="text-align: left;">50051</td>
 <td style="text-align: left;">0.68</td>
-<td style="text-align: left;">0.73</td>
+<td style="text-align: left;">0.74</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">y0</td>
-<td style="text-align: left;">50398</td>
+<td style="text-align: left;">50051</td>
 <td style="text-align: left;">2.7</td>
-<td style="text-align: left;">0.73</td>
+<td style="text-align: left;">0.74</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y1</td>
-<td style="text-align: left;">50398</td>
+<td style="text-align: left;">50051</td>
 <td style="text-align: left;">7.7</td>
-<td style="text-align: left;">0.73</td>
+<td style="text-align: left;">0.74</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">y</td>
-<td style="text-align: left;">50398</td>
+<td style="text-align: left;">50051</td>
 <td style="text-align: left;">7.7</td>
-<td style="text-align: left;">0.73</td>
+<td style="text-align: left;">0.74</td>
 </tr>
 </tbody>
 </table>
@@ -1485,7 +1511,7 @@ Fall 2023
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-25-1.png" style="width:90.0%"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-1.png" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
@@ -1516,7 +1542,7 @@ Fall 2023
 <span id="cb8-6"><a href="#cb8-6"></a><span class="do">## 2     1      7.68</span></span>
 <span id="cb8-7"><a href="#cb8-7"></a><span class="fu">summarize</span>(data2,<span class="fu">mean</span>(y))<span class="sc">$</span><span class="st">`</span><span class="at">mean(y)</span><span class="st">`</span>[<span class="dv">2</span>] <span class="sc">-</span> </span>
 <span id="cb8-8"><a href="#cb8-8"></a>  <span class="fu">summarize</span>(data2,<span class="fu">mean</span>(y))<span class="sc">$</span><span class="st">`</span><span class="at">mean(y)</span><span class="st">`</span>[<span class="dv">1</span>]</span>
-<span id="cb8-9"><a href="#cb8-9"></a><span class="do">## [1] 6.358604</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="do">## [1] 6.363735</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1539,7 +1565,7 @@ Fall 2023
 <span id="cb9-5"><a href="#cb9-5"></a><span class="do">## </span></span>
 <span id="cb9-6"><a href="#cb9-6"></a><span class="do">## Coefficients:</span></span>
 <span id="cb9-7"><a href="#cb9-7"></a><span class="do">## (Intercept)            w  </span></span>
-<span id="cb9-8"><a href="#cb9-8"></a><span class="do">##       1.322        6.359</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="do">##       1.315        6.364</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1604,26 +1630,26 @@ Fall 2023
 <tr class="even">
 <td style="text-align: left;">eta</td>
 <td style="text-align: left;">50000</td>
-<td style="text-align: left;">0.0078</td>
-<td style="text-align: left;">0.37</td>
+<td style="text-align: left;">-0.0023</td>
+<td style="text-align: left;">0.38</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y0</td>
 <td style="text-align: left;">50000</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">0.37</td>
+<td style="text-align: left;">0.38</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">y1</td>
 <td style="text-align: left;">50000</td>
 <td style="text-align: left;">7</td>
-<td style="text-align: left;">0.37</td>
+<td style="text-align: left;">0.38</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y</td>
 <td style="text-align: left;">50000</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">0.37</td>
+<td style="text-align: left;">0.38</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">w: 1</td>
@@ -1634,7 +1660,7 @@ Fall 2023
 <tr class="odd">
 <td style="text-align: left;">eta</td>
 <td style="text-align: left;">50000</td>
-<td style="text-align: left;">0.0065</td>
+<td style="text-align: left;">-0.0018</td>
 <td style="text-align: left;">1.4</td>
 </tr>
 <tr class="even">
@@ -1682,7 +1708,7 @@ Fall 2023
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-30-1.png" style="width:90.0%"></p>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-31-1.png" style="width:90.0%"></p>
 </figure>
 </div>
 </div>
@@ -1711,7 +1737,7 @@ Fall 2023
 <span id="cb12-6"><a href="#cb12-6"></a><span class="do">## 2     1      7.68</span></span>
 <span id="cb12-7"><a href="#cb12-7"></a><span class="fu">summarize</span>(data2,<span class="fu">mean</span>(y))<span class="sc">$</span><span class="st">`</span><span class="at">mean(y)</span><span class="st">`</span>[<span class="dv">2</span>] <span class="sc">-</span> </span>
 <span id="cb12-8"><a href="#cb12-8"></a>  <span class="fu">summarize</span>(data2,<span class="fu">mean</span>(y))<span class="sc">$</span><span class="st">`</span><span class="at">mean(y)</span><span class="st">`</span>[<span class="dv">1</span>]</span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="do">## [1] 6.358604</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="do">## [1] 6.363735</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1736,7 +1762,7 @@ Fall 2023
 <span id="cb13-5"><a href="#cb13-5"></a><span class="do">## </span></span>
 <span id="cb13-6"><a href="#cb13-6"></a><span class="do">## Coefficients:</span></span>
 <span id="cb13-7"><a href="#cb13-7"></a><span class="do">## (Intercept)            w  </span></span>
-<span id="cb13-8"><a href="#cb13-8"></a><span class="do">##       2.008        4.999</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="do">##       1.998        5.001</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1812,32 +1838,32 @@ Fall 2023
 </tr>
 <tr class="even">
 <td style="text-align: left;">eta</td>
-<td style="text-align: left;">50073</td>
-<td style="text-align: left;">0.0032</td>
+<td style="text-align: left;">49822</td>
+<td style="text-align: left;">-0.0035</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">x</td>
-<td style="text-align: left;">50073</td>
-<td style="text-align: left;">0.25</td>
-<td style="text-align: left;">0.44</td>
+<td style="text-align: left;">49822</td>
+<td style="text-align: left;">0.24</td>
+<td style="text-align: left;">0.43</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">y0</td>
-<td style="text-align: left;">50073</td>
-<td style="text-align: left;">2.8</td>
+<td style="text-align: left;">49822</td>
+<td style="text-align: left;">2.7</td>
 <td style="text-align: left;">1.6</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y1</td>
-<td style="text-align: left;">50073</td>
-<td style="text-align: left;">7.8</td>
+<td style="text-align: left;">49822</td>
+<td style="text-align: left;">7.7</td>
 <td style="text-align: left;">1.6</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">y</td>
-<td style="text-align: left;">50073</td>
-<td style="text-align: left;">2.8</td>
+<td style="text-align: left;">49822</td>
+<td style="text-align: left;">2.7</td>
 <td style="text-align: left;">1.6</td>
 </tr>
 <tr class="odd">
@@ -1848,31 +1874,31 @@ Fall 2023
 </tr>
 <tr class="even">
 <td style="text-align: left;">eta</td>
-<td style="text-align: left;">49927</td>
-<td style="text-align: left;">0.011</td>
+<td style="text-align: left;">50178</td>
+<td style="text-align: left;">-0.00059</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">x</td>
-<td style="text-align: left;">49927</td>
+<td style="text-align: left;">50178</td>
 <td style="text-align: left;">0.75</td>
 <td style="text-align: left;">0.43</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">y0</td>
-<td style="text-align: left;">49927</td>
+<td style="text-align: left;">50178</td>
 <td style="text-align: left;">4.3</td>
 <td style="text-align: left;">1.6</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y1</td>
-<td style="text-align: left;">49927</td>
+<td style="text-align: left;">50178</td>
 <td style="text-align: left;">9.3</td>
 <td style="text-align: left;">1.6</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">y</td>
-<td style="text-align: left;">49927</td>
+<td style="text-align: left;">50178</td>
 <td style="text-align: left;">9.3</td>
 <td style="text-align: left;">1.6</td>
 </tr>
@@ -1939,46 +1965,46 @@ w
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">eta</td>
-<td style="text-align: left;">12727</td>
-<td style="text-align: left;">0.011</td>
+<td style="text-align: left;">12195</td>
+<td style="text-align: left;">0.0066</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">37490</td>
-<td style="text-align: left;">0.013</td>
+<td style="text-align: left;">37710</td>
+<td style="text-align: left;">0.0017</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">x</td>
-<td style="text-align: left;">12727</td>
+<td style="text-align: left;">12195</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">37490</td>
+<td style="text-align: left;">37710</td>
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y0</td>
-<td style="text-align: left;">12727</td>
+<td style="text-align: left;">12195</td>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">37490</td>
+<td style="text-align: left;">37710</td>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">y1</td>
-<td style="text-align: left;">12727</td>
+<td style="text-align: left;">12195</td>
 <td style="text-align: left;">10</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">37490</td>
+<td style="text-align: left;">37710</td>
 <td style="text-align: left;">10</td>
 <td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y</td>
-<td style="text-align: left;">12727</td>
+<td style="text-align: left;">12195</td>
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">1</td>
-<td style="text-align: left;">37490</td>
+<td style="text-align: left;">37710</td>
 <td style="text-align: left;">10</td>
 <td style="text-align: left;">1</td>
 </tr>
@@ -2043,48 +2069,48 @@ w
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">eta</td>
-<td style="text-align: left;">37346</td>
-<td style="text-align: left;">0.00052</td>
-<td style="text-align: left;">0.99</td>
-<td style="text-align: left;">12437</td>
-<td style="text-align: left;">0.0044</td>
-<td style="text-align: left;">0.99</td>
+<td style="text-align: left;">37627</td>
+<td style="text-align: left;">-0.0067</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">12468</td>
+<td style="text-align: left;">-0.0074</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">x</td>
-<td style="text-align: left;">37346</td>
+<td style="text-align: left;">37627</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">12437</td>
+<td style="text-align: left;">12468</td>
 <td style="text-align: left;">0</td>
 <td style="text-align: left;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y0</td>
-<td style="text-align: left;">37346</td>
+<td style="text-align: left;">37627</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">0.99</td>
-<td style="text-align: left;">12437</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">12468</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">0.99</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">y1</td>
-<td style="text-align: left;">37346</td>
+<td style="text-align: left;">37627</td>
 <td style="text-align: left;">7</td>
-<td style="text-align: left;">0.99</td>
-<td style="text-align: left;">12437</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">12468</td>
 <td style="text-align: left;">7</td>
-<td style="text-align: left;">0.99</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">y</td>
-<td style="text-align: left;">37346</td>
+<td style="text-align: left;">37627</td>
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">0.99</td>
-<td style="text-align: left;">12437</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">12468</td>
 <td style="text-align: left;">7</td>
-<td style="text-align: left;">0.99</td>
+<td style="text-align: left;">1</td>
 </tr>
 </tbody>
 </table>
@@ -2119,7 +2145,7 @@ w
 <span id="cb17-5"><a href="#cb17-5"></a><span class="do">## </span></span>
 <span id="cb17-6"><a href="#cb17-6"></a><span class="do">## Coefficients:</span></span>
 <span id="cb17-7"><a href="#cb17-7"></a><span class="do">## (Intercept)            w  </span></span>
-<span id="cb17-8"><a href="#cb17-8"></a><span class="do">##       2.766        6.498</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a><span class="do">##       2.731        6.523</span></span>
 <span id="cb17-9"><a href="#cb17-9"></a><span class="fu">lm</span>(y <span class="sc">~</span> w <span class="sc">+</span> x, data4)</span>
 <span id="cb17-10"><a href="#cb17-10"></a><span class="do">## </span></span>
 <span id="cb17-11"><a href="#cb17-11"></a><span class="do">## Call:</span></span>
@@ -2127,7 +2153,7 @@ w
 <span id="cb17-13"><a href="#cb17-13"></a><span class="do">## </span></span>
 <span id="cb17-14"><a href="#cb17-14"></a><span class="do">## Coefficients:</span></span>
 <span id="cb17-15"><a href="#cb17-15"></a><span class="do">## (Intercept)            w            x  </span></span>
-<span id="cb17-16"><a href="#cb17-16"></a><span class="do">##       2.001        5.003        3.010</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-16"><a href="#cb17-16"></a><span class="do">##       1.994        4.997        3.011</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>

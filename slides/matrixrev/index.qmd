@@ -126,7 +126,7 @@ $$\mathbf{a}=
 a_{1}& a_{2} &\cdots & a_{n} 
 \end{bmatrix}$$
 
--   A .red\[column vector\] $\mathbf{a}$ with *m* elements is
+-   A [column vector{.red} $\mathbf{a}$ with *m* elements is
 
 $$\mathbf{a}= 
 \begin{bmatrix}
@@ -651,11 +651,13 @@ $$\mathbf{(\alpha A)^{-1} = \frac{1}{\alpha} A^{-1} }$$ $$\mathbf{(A')^{-1}} = \
 
 -   The vectors are independent if the only solution to
 
-$$\alpha_{1}\mathbf{a}_{1}+ \alpha_{2}\mathbf{a}_{2}+ \cdots+\alpha_{m}\mathbf{a}_{m}= 0$$
+$$\alpha_{1}\mathbf{a}_{1}+ \alpha_{2}\mathbf{a}_{2}+ \cdots+\alpha_{n}\mathbf{a}_{n}= 0$$
 
 -   is
 
-$$\alpha_{1} = \alpha_{2}= \cdots=\alpha_{m}= 0$$ - If at least one $\alpha_{i} \neq 0$, then the vectors are linearly dependent
+$$\alpha_{1} = \alpha_{2}= \cdots=\alpha_{n}= 0$$ 
+
+- If at least one $\alpha_{i} \neq 0$, then the vectors are linearly dependent
 
 ## Rank of a Matrix
 
@@ -683,7 +685,7 @@ $$\alpha_{1} = \alpha_{2}= \cdots=\alpha_{m}= 0$$ - If at least one $\alpha_{i} 
 
     -   The rank of a matrix and transpose are the same $$rank(\mathbf{A'}) = rank(\mathbf{A})$$
 
-    -   If $\mathbf{A}$ is $n \times m$ then $$rank(\mathbf{A}) \le min(n,m)$$
+    -   If $\mathbf{A}$ is $m \times n$ then $$rank(\mathbf{A}) \le min(m,n)$$
 
     -   If $\mathbf{A}$ is $n \times n$ and $rank(\mathbf{A}) =n$ then $\mathbf{A}$ is nonsingular (invertible)
 
@@ -720,7 +722,9 @@ $$\mathbf{x'Ax} > 0$$
 
 -   A matrix is [positive semidefinite]{.red} if for all $\mathbf{x} \neq 0$
 
-$$\mathbf{x'Ax} \ge 0$$ - Positive definite matrices have diagonal elements that are strictly positive
+$$\mathbf{x'Ax} \ge 0$$ 
+
+- Positive definite matrices have diagonal elements that are strictly positive
 
 -   Positive semidefinite matrices have diagonal elements that are nonnegative
 
@@ -810,9 +814,8 @@ $$var(\mathbf{y})= \mathbf{\sigma_{y}} = \mathbf{E[(y-E[y])(y-E[y])']}$$ $$=
 
 -   A scalar function of a vector is a single function with respect to several variables
 
-    -   A vector function is a set of one or more scalar functions, each with respect to several variables
+    -   A vector function is a set of one or more scalar functions, each with respect to several variables -> we will not discuss these
 
-    -   We will not cover these
 
 -   Consider the scalar function $y = f(\mathbf{x}) =f(x_{1}, x_{2},...,x_{n})$
 

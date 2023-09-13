@@ -309,15 +309,15 @@ A stronger assumption is conditional independence $(y_{0}, y_{1}) \perp w |\math
 
 ::: columns
 ::: {.column width="50%"}
--   Suppose we are interested in the direct effect of $x$ on $y$
+-   Suppose we are interested in the direct effect of $w$ on $y$
 
-    -   $x$ is the treatment
+    -   $w$ is the treatment
 
     -   $y$ is the outcome
 
--   The DAG to the right shows how $x$ and $y$ could be related
+-   The DAG to the right shows how $w$ and $y$ could be related
 
--   $z$ is another factor that is related to both $x$ and $y$
+-   $x$ is another factor that is related to both $w$ and $y$
 
 -   The dots (with variable names) are **nodes**
 
@@ -328,9 +328,9 @@ A stronger assumption is conditional independence $(y_{0}, y_{1}) \perp w |\math
 
 ::: {.column width="50%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(y~x + z, x ~z, coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(y~w + x, w ~x, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_point() +
@@ -345,26 +345,26 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 
 ::: columns
 ::: {.column width="50%"}
--   We want to find all the **paths** that can lead from $x$ to $y$
+-   We want to find all the **paths** that can lead from $w$ to $y$
 
 -   In this DAG there are two
 
-    -   A direct path $x \rightarrow y$
+    -   A direct path $w \rightarrow y$
 
-    -   An indirect path $x \leftarrow z \rightarrow y$
+    -   An indirect path $w \leftarrow x \rightarrow y$
 
--   A correlation between $y$ on $x$ would reflect both paths
+-   A correlation between $y$ on $w$ would reflect both paths
 
-    -   $x$ can directly cause $y$
+    -   $w$ can directly cause $y$
 
-    -   $z$ could change $x$ and $y$ simultaneously creating a spurious correlation between them
+    -   $x$ could change $w$ and $y$ simultaneously creating a spurious correlation between them
 :::
 
 ::: {.column width="50%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(y~x + z, x ~z, coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(y~w + x, w ~x, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_point() +
@@ -386,7 +386,7 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 
 -   We are usually interested in front door paths
 
-    -   Show how $x$ causes changes in $y$
+    -   Show how $w$ causes changes in $y$
 
 -   Back door paths are usually bad
 
@@ -395,9 +395,9 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 
 ::: {.column width="50%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(y~x + z, x ~z, coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(y~w + x, w ~x, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_point() +
@@ -419,24 +419,24 @@ There can be multiple front door paths in a DAG, and we might not be interested 
 -   Paths between treatment and outcome can be open or closed
 
     1.  **Open**: all variables along the path are allowed to vary
-    2.  **Closed**: at least one variable along the path cannot vary, or there is a collider along the path
+    2.  **Closed**: at least one variable along the path cannot vary, or there is a collider on the path
 
--   If you regress $y$ on $x$ both paths are open
+-   If you regress $y$ on $w$ both paths are open
 
-    -   $x$ and $y$ can vary, so direct path is open
+    -   $w$ and $y$ can vary, so direct path is open
 
-    -   We are not holding $z$ fixed, so indirect path is also open
+    -   We are not holding $x$ fixed, so indirect path is also open
 
--   You can close the backdoor path by controlling for $z$
+-   You can close the backdoor path by controlling for $x$
 
-    -   Regress $y$ on $x$ **and** $z$
+    -   Regress $y$ on $w$ **and** $x$
 :::
 
 ::: {.column width="50%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(y~x + z, x ~z, coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(y~w + x, w ~x, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_point() +
@@ -451,24 +451,24 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 
 ::: columns
 ::: {.column width="50%"}
--   Suppose we are interested in the causal effect of $x$ on $y$
+-   Suppose we are interested in the causal effect of $w$ on $y$
 
--   In a DAG, this means we only want the path $x \rightarrow y$
+-   In a DAG, this means we only want the path $w \rightarrow y$
 
 -   We need to leave this path open, but close all others
 
--   The regression of $y$ on $x$ and $z$ does this
+-   The regression of $y$ on $w$ and $x$ does this
 
--   It works in this case because $z$ is a **confounder**
+-   It works in this case because $x$ is a **confounder**
 
 -   Controlling for other variables **does not** always identify a causal effect
 :::
 
 ::: {.column width="50%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(y~x + z, x ~z, coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(y~w + x, w ~x, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_point() +
@@ -479,14 +479,14 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 :::
 :::
 
-## Different Associations in DAG 
+## Different Associations in DAG
 
 ::: columns
 ::: {.column width="33%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(y~x + z, x ~z, coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(y~w + x, w ~x, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_point() +
@@ -504,8 +504,8 @@ Confounder
 
 ::: {.column width="33%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(y~x , z ~ x, y~z ,coords = coord_dag) %>% 
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(y~w + x, x ~w, coords = coord_dag) %>% 
   tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
@@ -524,9 +524,9 @@ Mediator
 
 ::: {.column width="33%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(z~y, z~x, y~ x, coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(x~y, x~w, y~ w, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_point() +
@@ -543,36 +543,34 @@ Collider
 :::
 :::
 
-
-
 ## Confounder
 
 ::: columns
 ::: {.column width="50%"}
--   The DAG we have been working with has $z$ as a confounder
+-   The DAG we have been working with has $x$ as a confounder
 
-- **Confounder**: The treatment and outcome have a common cause
+-   **Confounder**: The treatment and outcome have a common cause
 
-- In this example
+-   In this example
 
-    - $z$ changes $x$ and $y$ simultaneously
-    
-    - Makes it look like $x$ and $y$ are related, but it is spurious
-    
-- Example: Returns to Schooling
+    -   $x$ changes $w$ and $y$ simultaneously
 
-    - $y$ is wages, $x$ is years of schooling
-    
-    - A confounder $z$ would be intelligence
-    
-- Can close the backdoor path by controlling for $z$
+    -   Makes it look like $w$ and $y$ are related, but it is spurious
+
+-   Example: Returns to Schooling
+
+    -   $y$ is wages, $w$ is years of schooling
+
+    -   A confounder $x$ would be intelligence
+
+-   Can close the backdoor path by controlling for $x$
 :::
 
 ::: {.column width="50%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(y~x + z, x ~z, coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(y~w + x, w ~x, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_point() +
@@ -582,7 +580,6 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 ```
 :::
 :::
-
 
 ## Mediator
 
@@ -590,28 +587,25 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 ::: {.column width="50%"}
 -   In this DAG we have two paths
 
-$$x \rightarrow y$$
-$$x \rightarrow z \rightarrow y$$ 
+$$w \rightarrow y$$ $$w \rightarrow x \rightarrow y$$
 
-- Both are front door paths
+-   Both are front door paths
 
-- In this example $z$ acts as a mediator
+-   In this example $x$ acts as a mediator
 
-- **Mediator**: A variable within a causal pathway between treatment and outcome
+-   **Mediator**: A variable within a causal pathway between treatment and outcome
 
-- In this example
+-   In this example
 
-    - $x$ causes $y$ directly
-    
-    - But also indirectly through $z$
+    -   $w$ causes $y$ directly
 
-
+    -   But also indirectly through $x$
 :::
 
 ::: {.column width="50%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(y~x , z ~ x, y~z ,coords = coord_dag) %>% 
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(y~w + x, x ~w, coords = coord_dag) %>% 
   tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
@@ -623,33 +617,31 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 :::
 :::
 
-
 ## Mediator
 
 ::: columns
 ::: {.column width="50%"}
 -   This is not the same as omitted variables bias
 
-- A regression of $y$ on $x$ measures the causal effect
+-   A regression of $y$ on $w$ measures the causal effect
 
-    - Two causal paths between $x$ and $y$
+    -   Two causal paths between $w$ and $y$
 
-- We can still close the indirect path by controlling for $z$
+-   We can still close the indirect path by controlling for $x$
 
-- This would leave only the direct path
+-   This would leave only the direct path
 
-- Whether we want to do this depends on the research question
+-   Whether we want to do this depends on the research question
 
-    - If you want only direct effect, control for $z$
-    
-    - For total effect, do not control
+    -   If you want only direct effect, control for $x$
 
+    -   For total effect, do not control
 :::
 
 ::: {.column width="50%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(y~x , z ~ x, y~z ,coords = coord_dag) %>% 
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(y~w + x, x ~w, coords = coord_dag) %>% 
   tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
@@ -667,132 +659,23 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 ::: {.column width="50%"}
 -   Example: Effect of drinking on lifespan
 
-- $x$ is drinking, $y$ is lifespan, $z$ is drug use
+-   $w$ is drinking, $y$ is lifespan, $x$ is drug use
 
-- If drug use is a mediator then
+-   If drug use is a mediator then
 
-$$drinking \rightarrow lifespan$$
-$$drinking \rightarrow drugs \rightarrow lifespan$$
+$$drinking \rightarrow lifespan$$ $$drinking \rightarrow drugs \rightarrow lifespan$$
 
-- Drinking has direct effect on lifespan, and also through drug use
+-   Drinking has direct effect on lifespan, and also through drug use
 
-- Regression of $lifespan$ on $drinking$ measures total effect
+-   Regression of $lifespan$ on $drinking$ measures total effect
 
-- Regression of $lifespan$ on $drinking$ and $drug$ use measures only direct effect
-
+-   Regression of $lifespan$ on $drinking$ and $drug$ use measures only direct effect
 :::
 
 ::: {.column width="50%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(y~x , z ~ x, y~z ,coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
-
-ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_dag_point() +
-  geom_dag_edges() +
-  geom_dag_text() +
-  theme_dag() 
-```
-:::
-:::
-
-
-## Collider
-
-::: columns
-::: {.column width="50%"}
-- Final association is trickier
-
-- **Collider**: a variable that is influenced by two or more variables
-
-- In this DAG, $z$ is a collider
-
-    - Both $y$ and $x$ point to it
-    
-- Paths that contain a collider are closed
-
-- In this case, you could regress $y$ on $x$ and get causal effect
-
-:::
-
-::: {.column width="50%"}
-```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(z~y, z~x, y~ x, coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
-
-ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_dag_point() +
-  geom_dag_edges() +
-  geom_dag_text() +
-  theme_dag() 
-```
-:::
-:::
-
-
-## Collider
-
-::: columns
-::: {.column width="50%"}
-- Controlling for a collider opens the path
-
-- Regression of $y$ on $x$ and $z$ does not measure causal effect
-
-- **Collider Bias**: bias induced by controlling for collider
-
-- Collider bias can
-
-    - Create an association between $x$ and $y$ when there is no direct one
-    
-    - Hide a direct association
-    
--  Easiest way to understand is through example
-
-:::
-
-::: {.column width="50%"}
-```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(z~y, z~x, y~ x, coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
-
-ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_dag_point() +
-  geom_dag_edges() +
-  geom_dag_text() +
-  theme_dag() 
-```
-:::
-:::
-
-
-## Collider
-
-::: columns
-::: {.column width="50%"}
-- Example: talent and effort
-
-- $x$ is talent, $y$ is effort, $z$ is being in elite school
-
-- Assume no direct link between talent and effort
-
-- Both talented and hard working students make it to elite schools
-
-- Controlling for school, talent and effort look negatively related
-
-    - You need to be smart or work hard to get into Harvard
-    
-    - Low-effort students must be smart, and un-smart students must be hard working
-    
-
-:::
-
-::: {.column width="50%"}
-```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(z~y, z~x,  coords = coord_dag) %>% 
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(y~w + x, x ~w, coords = coord_dag) %>% 
   tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
@@ -808,28 +691,24 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 
 ::: columns
 ::: {.column width="50%"}
-- Example: gender pay gap
+-   Final association is trickier
 
-- $x$ is gender, $y$ is ability, $z$ is occupation
+-   **Collider**: a variable that is influenced by two or more variables
 
-- Assume no direct link between gender and ability
+-   In this DAG, $x$ is a collider
 
-- High ability people make it into certain occupations
+    -   Both $y$ and $w$ point to it
 
-- If discrimination against women, they might also be selected into those jobs
+-   Paths that contain a collider are closed
 
-- Controlling for occupation, gender and ability look negatively related
-
-- This could lead to gender pay gap being larger within jobs
-    
-
+-   In this case, you could regress $y$ on $w$ and get causal effect
 :::
 
 ::: {.column width="50%"}
 ```{r echo = FALSE, fig.asp = .8}
-coord_dag<-list(x = c(z = 1, x = 0, y = 2), y = c(z = 0, x = 1, y = 1))
-dag <- dagify(z~y, z~x,  coords = coord_dag) %>% 
-  tidy_dagitty() %>% mutate(linetype = ifelse(name == "z", "dashed", "solid"))
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(x~y, x~w, y~ w, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
 
 ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_point() +
@@ -840,6 +719,141 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 :::
 :::
 
+## Collider
+
+::: columns
+::: {.column width="50%"}
+-   Controlling for a collider opens the path
+
+-   Regression of $y$ on $w$ and $x$ does not measure causal effect
+
+-   **Collider Bias**: bias induced by controlling for collider
+
+-   Collider bias can
+
+    -   Create an association between $w$ and $y$ when there is no direct one
+
+    -   Hide a direct association
+
+-   Easiest way to understand is through example
+:::
+
+::: {.column width="50%"}
+```{r echo = FALSE, fig.asp = .8}
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(x~y, x~w, y~ w, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
+
+ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_point() +
+  geom_dag_edges() +
+  geom_dag_text() +
+  theme_dag() 
+```
+:::
+:::
+
+## Collider
+
+::: columns
+::: {.column width="50%"}
+-   Example: talent and effort
+
+-   $w$ is talent, $y$ is effort, $x$ is being in elite school
+
+-   Assume no direct link between talent and effort
+
+-   Both talented and hard working students make it to elite schools
+
+-   Controlling for school, talent and effort look negatively related
+
+    -   You need to be smart or work hard to get into Harvard
+
+    -   Low-effort students must be smart, and un-smart students must be hard working
+:::
+
+::: {.column width="50%"}
+```{r echo = FALSE, fig.asp = .8}
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(x~y, x~w,  coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
+
+ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_point() +
+  geom_dag_edges() +
+  geom_dag_text() +
+  theme_dag() 
+```
+:::
+:::
+
+## Collider
+
+::: columns
+::: {.column width="50%"}
+-   Example: gender pay gap
+
+-   $x$ is gender, $y$ is ability, $z$ is occupation
+
+-   Assume no direct link between gender and ability
+
+-   High ability people make it into certain occupations
+
+-   If discrimination against women, they might also be selected into those jobs
+
+-   Controlling for occupation, gender and ability look negatively related
+
+-   This could lead to gender pay gap being larger within jobs
+:::
+
+::: {.column width="50%"}
+```{r echo = FALSE, fig.asp = .8}
+coord_dag<-list(x = c(x = 1, w = 0, y = 2), y = c(x = 0, w = 1, y = 1))
+dag <- dagify(x~y, x~w, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "x", "dashed", "solid"))
+
+ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_point() +
+  geom_dag_edges() +
+  geom_dag_text() +
+  theme_dag() 
+```
+:::
+:::
+
+## A More Complicated DAG
+
+::: columns
+::: {.column width="50%"}
+-   Example: gender pay gap
+
+-   $x$ is gender, $y$ is ability, $z$ is occupation
+
+-   Assume no direct link between gender and ability
+
+-   High ability people make it into certain occupations
+
+-   If discrimination against women, they might also be selected into those jobs
+
+-   Controlling for occupation, gender and ability look negatively related
+
+-   This could lead to gender pay gap being larger within jobs
+:::
+
+::: {.column width="50%"}
+```{r echo = FALSE, fig.asp = .8}
+coord_dag<-list(x = c(x = 1, w = 0, y = 2, u=2), y = c(x = 0, w = 1, y = 1, u=0))
+dag <- dagify(y~w+x+u, u~x, w~x, coords = coord_dag) %>% 
+  tidy_dagitty() %>% mutate(linetype = ifelse(name == "u" | to == "u", "dashed", "solid"))
+
+ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_point() +
+  geom_dag_edges(aes(edge_linetype = linetype)) +
+  geom_dag_text() +
+  theme_dag() 
+```
+:::
+:::
 
 # Simulation Examples
 
