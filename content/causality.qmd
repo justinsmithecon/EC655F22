@@ -36,4 +36,4 @@ This is a lecture from (recent Nobel Prize winner) Joshua Angrist explaining the
 
 ## Other Resources
 
-
+[daggity.net](https://dagitty.net) - Website where you can create and analyze DAGs.  Will help you determine whether you can identify direct effects by controlling for variables in a model.  Also tells you testable model implications and gives code to plot DAG in R.

@@ -34,10 +34,13 @@ website:
               file: content/matrixrev.qmd
             - text: "Regression"
               file: content/regression.qmd
+            - text: "Causality"
+              file: content/causality.qmd
 
 
 format:
   html:
+    code-overflow: wrap
     theme: 
       - litera
       - html/custom.scss
