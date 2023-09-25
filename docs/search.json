@@ -1339,21 +1339,21 @@
   {
     "objectID": "slides/causality/index.html#introduction-1",
     "href": "slides/causality/index.html#introduction-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Introduction",
     "text": "Introduction\n\nEmpirical economists are often interested in a causal effect\n\nThe independent effect of a particular variable on the outcome\n\nIt is important for policy\n\nE.g. a school district looking to implement pre-kindergarten program\nNeed to know if pre-k has independent effects on current and future outcomes\n\nDo not want estimate confounded with parent background\n\n\nCan we interpret regression slopes as causal?\nFirst, we attempt to understand the underlying concept of causality"
   },
   {
     "objectID": "slides/causality/index.html#model-setup",
     "href": "slides/causality/index.html#model-setup",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Model Setup",
-    "text": "Model Setup\n\nEconomists often study causality within the Rubin Causal Model\nImagine an individual either gets a “treatment” or “no treatment”\n\nGetting a drug, or placebo\nGoing to university, or stopping at high school\nBeing in a small class, or large class\n\nDefine the following potential outcomes\n\n\\(y_{1}\\) is the outcome with treatment\n\\(y_{0}\\) is the outcome without treatment\n\\(w\\) is a binary variable with 1 denoting treatment, and 0 no treatment\n\n\n\n\n\n\n\n\nImportant\n\n\nWe only observe one potential outcome, and the other is hypothetical. For a treated person we see \\(y_{1}\\), and for an untreated person we see \\(y_{0}\\)"
+    "text": "Model Setup\n\nEconomists often study causality within the Rubin Causal Model\nImagine an individual either gets a “treatment” or “no treatment”\n\nGetting a drug, or placebo\nGoing to university, or stopping at high school\nBeing in a small class, or large class\n\nDefine the following potential outcomes\n\n\\(y_{1}\\) is the outcome with treatment\n\\(y_{0}\\) is the outcome without treatment\n\\(w\\) is a binary variable with 1 denoting treatment, and 0 no treatment\n\n\n\n\n\n\n\n\nImportant\n\n\n\nWe only observe one potential outcome, and the other is hypothetical. For a treated person we see \\(y_{1}\\), and for an untreated person we see \\(y_{0}\\)"
   },
   {
     "objectID": "slides/causality/index.html#treatment-effects",
     "href": "slides/causality/index.html#treatment-effects",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Treatment Effects",
     "text": "Treatment Effects\n\nWe would like to know the treatment effect \\(y_{1} - y_{0}\\) for an individual\n\nThis is the causal effect of the treatment\nEffect differs from person to person in the population\n\nFundamental problem of causal inference: we never observe both \\(y_{1}\\) and \\(y_{0}\\)\nWe only observe \\((y, w)\\), where\n\\[y = y_{0} + (y_{1} -y_{0})w\\]\n\nWe observe treatment status, potential outcome given that treatment status\n\nThe counterfactual outcome with opposite treatment is never observed"
   },
@@ -1374,21 +1374,21 @@
   {
     "objectID": "slides/causality/index.html#randomization-and-independence-of-treatment",
     "href": "slides/causality/index.html#randomization-and-independence-of-treatment",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Randomization and Independence of Treatment",
     "text": "Randomization and Independence of Treatment\n\nA common way to isolate treatment effects is to randomize \\(w\\)\n\nBlindly put people into treatment or control group\nEnsures that on average the two groups are similar at baseline\n\nWhen treatment is randomized, potential outcomes are independent from treatment \\[(y_{0}, y_{1}) \\perp w\\]\nIndependence implies conditioning on \\(w\\) has no effect on expectation\n\\[E(y_{0}|w=1) =E(y_{0}|w=0)\\] \\[E(y_{0}|w) = E(y_{0})\\] \\[E(y_{1}|w) = E(y_{1})\\]"
   },
   {
     "objectID": "slides/causality/index.html#randomization-and-treatment-effects",
     "href": "slides/causality/index.html#randomization-and-treatment-effects",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Randomization and Treatment Effects",
-    "text": "Randomization and Treatment Effects\n\nWith randomization, selection bias is zero\n\\[E(y_{0}|w=1) - E(y_{0}|w=0) = E(y_{0}|w=1) - E(y_{0}|w=1) = 0\\]\nAs a result the population regression slope is \\[\\beta = E(y|w=1) - E(y|w=0)\\] \\[= E(y_{1}|w=1) - E(y_{0}|w=0)\\] \\[= E(y_{1}) - E(y_{0})\\]\nThis is the Average Treatment Effect (ATE)\n\n\n\n\n\n\n\nNote\n\n\nThe ATE is the treatment effect averaged across everyone in the population, whereas the ATT is the treatment effect among only people in the treatment group (i.e. excludes people in the control group)."
+    "text": "Randomization and Treatment Effects\n\nWith randomization, selection bias is zero\n\\[E(y_{0}|w=1) - E(y_{0}|w=0) = E(y_{0}|w=1) - E(y_{0}|w=1) = 0\\]\nAs a result the population regression slope is \\[\\beta = E(y|w=1) - E(y|w=0)\\] \\[= E(y_{1}|w=1) - E(y_{0}|w=0)\\] \\[= E(y_{1}) - E(y_{0})\\]\nThis is the Average Treatment Effect (ATE)\n\n\n\n\n\n\n\nNote\n\n\n\nThe ATE is the treatment effect averaged across everyone in the population, whereas the ATT is the treatment effect among only people in the treatment group (i.e. excludes people in the control group)."
   },
   {
     "objectID": "slides/causality/index.html#recent-example-in-economics-literature",
     "href": "slides/causality/index.html#recent-example-in-economics-literature",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Recent Example in Economics Literature",
     "text": "Recent Example in Economics Literature\n\nRandomization is the standard way to measure the effects of medical treatments\nIt is becoming more popular in economics\nEx: Bangladesh mask study (Abaluck et. al., 2021)\n\nRandomized promoting mask use in rural Bangladesh\nCompare COVID rates between treatment and control\nFind some positive effect of masks, especially for age 50+"
   },
@@ -1416,35 +1416,35 @@
   {
     "objectID": "slides/causality/index.html#mean-independence-of-treatment",
     "href": "slides/causality/index.html#mean-independence-of-treatment",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Mean Independence of Treatment",
     "text": "Mean Independence of Treatment\n\nMost economic data do not come from randomized experiments\nWe can still uncover causal effects without experiments\nOne way is through Mean Independence\n\\[E(y_{0}|w) = E(y_{0})\\] \\[E(y_{1}|w) = E(y_{1})\\]\nSays average potential outcomes do not depend on treatment status\n\nWeaker assumption than full statistical independence\nFull independence means one event has no effect on probability of another"
   },
   {
     "objectID": "slides/causality/index.html#mean-independence-of-treatment-1",
     "href": "slides/causality/index.html#mean-independence-of-treatment-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Mean Independence of Treatment",
     "text": "Mean Independence of Treatment\n\nWith mean independence, we get\n\\[\\beta = E(y|w=1) - E(y|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ] + E(y_{0}|w=1) - E(y_{0}|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ]\\] \\[=  E(y_{1}) - E(y_{0})\\]\nRegression slope equals ATE (and ATT in this case)\nIs this assumption realistic?\n\nMeans both potential outcomes unrelated to treatment\nWhether this is realistic depends on context"
   },
   {
     "objectID": "slides/causality/index.html#mean-independence-of-y_0",
     "href": "slides/causality/index.html#mean-independence-of-y_0",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Mean Independence of \\(y_{0}\\)",
     "text": "Mean Independence of \\(y_{0}\\)\n\nA variation if this assumption is mean independence of \\(\\mathbf{y_{0}}\\)\n\\[E(y_{0}|w) = E(y_{0})\\]\nThe regression slope in this case is\n\\[\\beta = E(y|w=1) - E(y|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ] + E(y_{0}|w=1) - E(y_{0}|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ]\\]\nWith this assumption, we only measure the ATT (Not ATE)\nIs this realistic?\n\nMeans there are no baseline differences between groups on average\nPuts no restriction on differences in treated outcome"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence",
     "href": "slides/causality/index.html#conditional-mean-independence",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Conditional Mean Independence",
-    "text": "Conditional Mean Independence\n\nMore commonly, we can use other variables to control for selection bias\nSuppose we observe a set of pre-treatment characteristics \\(\\mathbf{x}\\)\n\nEx: gender, parental education, school test scores, etc.\nKey is they are determined before treatment\n\nConditional Mean Independence is when the mean of the potential outcomes is independent of treatment conditional on \\(\\mathbf{x}\\)\n\\[E(y_{0}|w=1, \\mathbf{x}) =E(y_{0}|w=0, \\mathbf{x})\\] \\[E(y_{0}|w, \\mathbf{x}) = E(y_{0}| \\mathbf{x})\\] \\[E(y_{1}|w, \\mathbf{x}) = E(y_{1}|\\mathbf{x})\\]\n\n\n\n\n\n\n\nNote\n\n\nA stronger assumption is conditional independence \\((y_{0}, y_{1}) \\perp w |\\mathbf{x}\\), where each potential outcome is fully independent of treatment conditional on \\(\\mathbf{x}\\)"
+    "text": "Conditional Mean Independence\n\nMore commonly, we can use other variables to control for selection bias\nSuppose we observe a set of pre-treatment characteristics \\(\\mathbf{x}\\)\n\nEx: gender, parental education, school test scores, etc.\nKey is they are determined before treatment\n\nConditional Mean Independence is when the mean of the potential outcomes is independent of treatment conditional on \\(\\mathbf{x}\\)\n\\[E(y_{0}|w=1, \\mathbf{x}) =E(y_{0}|w=0, \\mathbf{x})\\] \\[E(y_{0}|w, \\mathbf{x}) = E(y_{0}| \\mathbf{x})\\] \\[E(y_{1}|w, \\mathbf{x}) = E(y_{1}|\\mathbf{x})\\]\n\n\n\n\n\n\n\nNote\n\n\n\nA stronger assumption is conditional independence \\((y_{0}, y_{1}) \\perp w |\\mathbf{x}\\), where each potential outcome is fully independent of treatment conditional on \\(\\mathbf{x}\\)"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-1",
     "href": "slides/causality/index.html#conditional-mean-independence-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Conditional Mean Independence",
     "text": "Conditional Mean Independence\n\nImagine running a regression of \\(y\\) on \\(w\\) and \\(\\mathbf{x}\\)\nThe population regression slope is\n\\[\\beta = E(y|w=1,  \\mathbf{x}) - E(y|w=0,  \\mathbf{x})\\]\nWhen this assumption is true we can get treatment effects at each \\(\\mathbf{x}\\) \\[E(y|w=1,  \\mathbf{x}) - E(y|w=0,  \\mathbf{x})\\] \\[= E(y_{1}|w=1,  \\mathbf{x}) - E(y_{0}|w=1,  \\mathbf{x})= E(y_{1} | \\mathbf{x}) - E(y_{0}| \\mathbf{x})\\] \\[= ATT( \\mathbf{x}) =ATE( \\mathbf{x})\\]\nThese treatment effects hold \\(\\mathbf{x}\\) constant\n\nThey are an average of the treatment effects across different values of \\(\\mathbf{x}\\)"
   },
@@ -1493,72 +1493,72 @@
   {
     "objectID": "slides/causality/index.html#data-setup",
     "href": "slides/causality/index.html#data-setup",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Data Setup",
-    "text": "Data Setup\n\n\n\nCode to the right creates potential outcomes\nFor simplicity the treatment effect is set to 5 for everyone\nOutcomes \\(y_{0}\\) and \\(y_{1}\\) created to have a Normal distribution\n\nNormality is not important for the model\n\n\n\n\ndata &lt;- data.frame(eta=rnorm(100000,0,1)) %&gt;%\n  mutate(y0 = 2 + eta, y1 = y0 + 5, \n         treat_eff = y1 - y0)\n\nsumtable(data, summ=c('notNA(x)','mean(x)','sd(x)'), \n         summ.names = c('N', 'Mean', 'SD')) \n\n\nSummary Statistics\n\n\nVariable\nN\nMean\nSD\n\n\n\n\neta\n100000\n0.0014\n1\n\n\ny0\n100000\n2\n1\n\n\ny1\n100000\n7\n1\n\n\ntreat_eff\n100000\n5\n0.00000000000000021"
+    "text": "Data Setup\n\n\n\nCode to the right creates potential outcomes\nFor simplicity the treatment effect is set to 5 for everyone\nOutcomes \\(y_{0}\\) and \\(y_{1}\\) created to have a Normal distribution\n\nNormality is not important for the model\n\n\n\n\ndata &lt;- data.frame(eta=rnorm(100000,0,1)) %&gt;%\n  mutate(y0 = 2 + eta, y1 = y0 + 5, \n         treat_eff = y1 - y0)\n\nsumtable(data, summ=c('notNA(x)','mean(x)','sd(x)'), \n         summ.names = c('N', 'Mean', 'SD')) \n\n\nSummary Statistics\n\n\nVariable\nN\nMean\nSD\n\n\n\n\neta\n100000\n-0.0034\n1\n\n\ny0\n100000\n2\n1\n\n\ny1\n100000\n7\n1\n\n\ntreat_eff\n100000\n5\n0.00000000000000021"
   },
   {
     "objectID": "slides/causality/index.html#random-assignment-to-treatment",
     "href": "slides/causality/index.html#random-assignment-to-treatment",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Random Assignment to Treatment",
-    "text": "Random Assignment to Treatment\n\n\n\nNext assign treatment \\(w\\) using randomization\nIn the code, \\(w=1\\) randomly with probability 0.5\nCompute observed \\(y\\) based on treatment status\n\n\n\ndata %&lt;&gt;% mutate(w = if_else(runif(100000) &gt; .5,1,0), \n                 y = y0 + (y1-y0)*w) %&gt;% \n  group_by(w)\n\nhead(data)\n## # A tibble: 6 × 6\n## # Groups:   w [2]\n##       eta    y0    y1 treat_eff     w     y\n##     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n## 1  0.674   2.67  7.67         5     1  7.67\n## 2  0.236   2.24  7.24         5     0  2.24\n## 3  1.61    3.61  8.61         5     1  8.61\n## 4  0.764   2.76  7.76         5     0  2.76\n## 5 -0.365   1.63  6.63         5     0  1.63\n## 6  0.0983  2.10  7.10         5     0  2.10"
+    "text": "Random Assignment to Treatment\n\n\n\nNext assign treatment \\(w\\) using randomization\nIn the code, \\(w=1\\) randomly with probability 0.5\nCompute observed \\(y\\) based on treatment status\n\n\n\ndata %&lt;&gt;% mutate(w = if_else(runif(100000) &gt; .5,1,0), \n                 y = y0 + (y1-y0)*w) %&gt;% \n  group_by(w)\n\nhead(data)\n## # A tibble: 6 × 6\n## # Groups:   w [2]\n##      eta    y0    y1 treat_eff     w     y\n##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n## 1  1.12   3.12  8.12         5     0  3.12\n## 2 -0.649  1.35  6.35         5     1  6.35\n## 3  0.349  2.35  7.35         5     1  7.35\n## 4 -0.296  1.70  6.70         5     0  1.70\n## 5 -0.433  1.57  6.57         5     1  6.57\n## 6 -0.221  1.78  6.78         5     1  6.78"
   },
   {
     "objectID": "slides/causality/index.html#random-assignment-to-treatment-1",
     "href": "slides/causality/index.html#random-assignment-to-treatment-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Random Assignment to Treatment",
-    "text": "Random Assignment to Treatment\n\n\n\nWith random assignment we know\n\n\\(y_{0}\\) is independent of \\(w\\)\n\\(y_{1}\\) is independent of \\(w\\)\n\nSo the distributions of \\(y_{0}\\) and \\(y_{1}\\) are the same when \\(w=0\\) and when \\(w=1\\)\nTo the right we show the distribution of \\(y_{0}\\)\n\n\n\nggplot(data, aes(x=y0, color=as.factor(w))) +\n  geom_density(alpha = .4, size=2) +\n  theme_pander(nomargin=FALSE, boxes=TRUE) +\n  labs(title = \"Distribution of Y0\", color = \"w\")"
+    "text": "Random Assignment to Treatment\n\n\n\nWith random assignment we know\n\n\\(y_{0}\\) is independent of \\(w\\)\n\\(y_{1}\\) is independent of \\(w\\)\n\nSo the distributions of \\(y_{0}\\) and \\(y_{1}\\) are the same when \\(w=0\\) and when \\(w=1\\)\nTo the right we show the distribution of \\(y_{0}\\)\n\n\n\nggplot(data, aes(x=y0, color=as.factor(w))) +\n  geom_density(alpha = .4, size=2) +\n  theme_pander(nomargin=FALSE, boxes=TRUE) +\n  labs(title = \"Distribution of Y0\", color = \"w\") \n## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\n## ℹ Please use `linewidth` instead."
   },
   {
     "objectID": "slides/causality/index.html#random-assignment-to-treatment-2",
     "href": "slides/causality/index.html#random-assignment-to-treatment-2",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Random Assignment to Treatment",
-    "text": "Random Assignment to Treatment\n\n\n\nRandomization ensures difference in average \\(y\\) between groups equals the ATE and ATT\nOn the right we show the difference in mean of \\(y\\) equals 5\n\n\n\nsummarize(data, my = mean(y)) %&gt;%\n  mutate(diff_y = my - lag(my))\n## # A tibble: 2 × 3\n##       w    my diff_y\n##   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n## 1     0  2.00  NA   \n## 2     1  7.00   5.01"
+    "text": "Random Assignment to Treatment\n\n\n\nRandomization ensures difference in average \\(y\\) between groups equals the ATE and ATT\nOn the right we show the difference in mean of \\(y\\) equals 5\n\n\n\nsummarize(data, my = mean(y)) %&gt;%\n  mutate(diff_y = my - lag(my))\n## # A tibble: 2 × 3\n##       w    my diff_y\n##   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n## 1     0  1.99  NA   \n## 2     1  7.00   5.00"
   },
   {
     "objectID": "slides/causality/index.html#random-assignment-to-treatment-3",
     "href": "slides/causality/index.html#random-assignment-to-treatment-3",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Random Assignment to Treatment",
-    "text": "Random Assignment to Treatment\n\n\n\nCan implement difference in means as a regression\nRecall slope in OLS regression of \\(y\\) on dummy variable is difference in means of \\(y\\)\n\n\n\nlm(y ~ w, data)\n## \n## Call:\n## lm(formula = y ~ w, data = data)\n## \n## Coefficients:\n## (Intercept)            w  \n##       1.998        5.006"
+    "text": "Random Assignment to Treatment\n\n\n\nCan implement difference in means as a regression\nRecall slope in OLS regression of \\(y\\) on dummy variable is difference in means of \\(y\\)\n\n\n\nlm(y ~ w, data)\n## \n## Call:\n## lm(formula = y ~ w, data = data)\n## \n## Coefficients:\n## (Intercept)            w  \n##       1.995        5.004"
   },
   {
     "objectID": "slides/causality/index.html#selection-into-treatment",
     "href": "slides/causality/index.html#selection-into-treatment",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Selection into Treatment",
     "text": "Selection into Treatment\n\n\n\nNow simulate selection into treatment based on \\(y_{0}\\)\n\nTreatment now related to value of \\(y_{0}\\)\n\nWe know \\(\\eta\\) determines value of \\(y_{0}\\)\n\nIf we make \\(w=1\\) with higher values of \\(\\eta\\) then \\(w\\) is related to \\(y_{0}\\)\n\n\n\n\ndata2 &lt;- data %&gt;% \n  ungroup() %&gt;% \n  select(eta, y0,y1) %&gt;%\n  mutate(w = if_else(eta + runif(100000,-1,1) &gt; 0,1,0), \n         y = y0 + (y1-y0)*w) %&gt;%\n  group_by(w)\n\nsumtable(data2, \n         summ=c('notNA(x)','mean(x)','sd(x)'),\n         summ.names = c('N', 'Mean', 'SD' ),\n         group=\"w\",\n         group.long = TRUE)"
   },
   {
     "objectID": "slides/causality/index.html#selection-into-treatment-1",
     "href": "slides/causality/index.html#selection-into-treatment-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Selection into Treatment",
-    "text": "Selection into Treatment\n\n\n\nThe means of \\(y_{0}\\) and \\(y_{1}\\) are now different by group\nBecause of selection bias\n\nTreated group has better non-treated outcomes\n\n\n\n\n\n\nSummary Statistics\n\n\nVariable\nN\nMean\nSD\n\n\n\n\nw: 0\n\n\n\n\n\neta\n49883\n-0.68\n0.73\n\n\ny0\n49883\n1.3\n0.73\n\n\ny1\n49883\n6.3\n0.73\n\n\ny\n49883\n1.3\n0.73\n\n\nw: 1\n\n\n\n\n\neta\n50117\n0.68\n0.73\n\n\ny0\n50117\n2.7\n0.73\n\n\ny1\n50117\n7.7\n0.73\n\n\ny\n50117\n7.7\n0.73"
+    "text": "Selection into Treatment\n\n\n\nThe means of \\(y_{0}\\) and \\(y_{1}\\) are now different by group\nBecause of selection bias\n\nTreated group has better non-treated outcomes\n\n\n\n\nsumtable(data2, \n         summ=c('notNA(x)','mean(x)','sd(x)'), \n         summ.names = c('N', 'Mean', 'SD' ),\n         group=\"w\",\n         group.long = TRUE)\n\n\nSummary Statistics\n\n\nVariable\nN\nMean\nSD\n\n\n\n\nw: 0\n\n\n\n\n\neta\n50366\n-0.68\n0.73\n\n\ny0\n50366\n1.3\n0.73\n\n\ny1\n50366\n6.3\n0.73\n\n\ny\n50366\n1.3\n0.73\n\n\nw: 1\n\n\n\n\n\neta\n49634\n0.69\n0.73\n\n\ny0\n49634\n2.7\n0.73\n\n\ny1\n49634\n7.7\n0.73\n\n\ny\n49634\n7.7\n0.73"
   },
   {
     "objectID": "slides/causality/index.html#selection-into-treatment-2",
     "href": "slides/causality/index.html#selection-into-treatment-2",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Selection into Treatment",
     "text": "Selection into Treatment\n\n\n\nThe distribution of \\(y_{0}\\) differs by \\(w\\)\n\nTreated group has better baseline outcomes\n\nThis creates selection bias\n\n\n\nggplot(data2, aes(x=y0, color=as.factor(w))) +\n  geom_density(alpha = .4, size=2) +\n  theme_pander(nomargin=FALSE, boxes=TRUE) +\n  labs(title = \"Distribution of Y0\", color = \"w\")"
   },
   {
     "objectID": "slides/causality/index.html#selection-into-treatment-3",
     "href": "slides/causality/index.html#selection-into-treatment-3",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Selection into Treatment",
-    "text": "Selection into Treatment\n\n\n\nSelction bias shows up when you take difference in mean \\(y\\)\n\nWe know the true treatment effect is 5\nBut difference in \\(y\\) is larger\nThere is positive selection bias\nBias is about 1.4\n\n\n\n\nsummarize(data2, my = mean(y)) %&gt;%\n  mutate(diff_y = my - lag(my))\n## # A tibble: 2 × 3\n##       w    my diff_y\n##   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n## 1     0  1.32  NA   \n## 2     1  7.68   6.37"
+    "text": "Selection into Treatment\n\n\n\nSelction bias shows up when you take difference in mean \\(y\\)\n\nWe know the true treatment effect is 5\nBut difference in \\(y\\) is larger\nThere is positive selection bias\nBias is about 1.4\n\n\n\n\nsummarize(data2, my = mean(y)) %&gt;%\n  mutate(diff_y = my - lag(my))\n## # A tibble: 2 × 3\n##       w    my diff_y\n##   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;\n## 1     0  1.32  NA   \n## 2     1  7.69   6.37"
   },
   {
     "objectID": "slides/causality/index.html#selection-into-treatment-4",
     "href": "slides/causality/index.html#selection-into-treatment-4",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Selection into Treatment",
-    "text": "Selection into Treatment\n\n\n\nYou can implement this as a regression\nOLS estimates biased treatment effect\nRemember the intercept is mean of \\(y\\) when \\(w=0\\)\n\n\n\nlm(y ~ w, data2)\n## \n## Call:\n## lm(formula = y ~ w, data = data2)\n## \n## Coefficients:\n## (Intercept)            w  \n##       1.316        6.368"
+    "text": "Selection into Treatment\n\n\n\nYou can implement this as a regression\nOLS estimates biased treatment effect\nRemember the intercept is mean of \\(y\\) when \\(w=0\\)\n\n\n\nlm(y ~ w, data2)\n## \n## Call:\n## lm(formula = y ~ w, data = data2)\n## \n## Coefficients:\n## (Intercept)            w  \n##       1.318        6.368"
   },
   {
     "objectID": "slides/causality/index.html#mean-independence-of-y_0-1",
@@ -1598,70 +1598,70 @@
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-2",
     "href": "slides/causality/index.html#conditional-mean-independence-2",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Conditional Mean Independence",
     "text": "Conditional Mean Independence\n\n\n\nFinally consider conditional mean independence\nTreatment is related to \\(y_{0}\\), but only through \\(x\\)\n\nFor people with the same \\(x\\), \\(y_{0}\\) is unrelated to \\(w\\)\n\nEx: Education and wages\n\nSmart people \\((x = 1)\\) earn higher wages regardless of schooling \\((y_0)\\)\nSmart people are more likely to go to university \\((w = 1)\\)\nPeople at university will have higher \\(y_0\\)\n\n\n\n\ndata3 &lt;- data %&gt;% \n  ungroup() %&gt;% \n  select(eta) %&gt;%\n  mutate(x = if_else(runif(100000) &gt; .5,1,0),\n         w = if_else(x + runif(100000, -1,1) &gt; .5,1,0),\n         y0 = 2 + 3*x + eta,\n         y1 = y0 + 5,\n         y = y0 + (y1-y0)*w) %&gt;%\n  group_by(w)\n\nsumtable(data3, \n         summ=c('notNA(x)','mean(x)','sd(x)'),\n         summ.names = c('N', 'Mean', 'SD' ),\n         group=\"w\",\n         group.long = TRUE)"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-3",
     "href": "slides/causality/index.html#conditional-mean-independence-3",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Conditional Mean Independence",
-    "text": "Conditional Mean Independence\n\n\n\nComparing treatment and control, \\(y_{0}\\) is bigger when \\(w=1\\)\nThis is because\n\n\\(y_{0}\\) is bigger when \\(x=1\\)\n\\(w\\) more likely to be \\(1\\) when \\(x=1\\)\n\n\n\n\n\n\nSummary Statistics\n\n\nVariable\nN\nMean\nSD\n\n\n\n\nw: 0\n\n\n\n\n\neta\n50015\n0.004\n1\n\n\nx\n50015\n0.25\n0.43\n\n\ny0\n50015\n2.8\n1.6\n\n\ny1\n50015\n7.8\n1.6\n\n\ny\n50015\n2.8\n1.6\n\n\nw: 1\n\n\n\n\n\neta\n49985\n-0.0011\n1\n\n\nx\n49985\n0.75\n0.43\n\n\ny0\n49985\n4.3\n1.6\n\n\ny1\n49985\n9.3\n1.6\n\n\ny\n49985\n9.3\n1.6"
+    "text": "Conditional Mean Independence\n\n\n\nComparing treatment and control, \\(y_{0}\\) is bigger when \\(w=1\\)\nThis is because\n\n\\(y_{0}\\) is bigger when \\(x=1\\)\n\\(w\\) more likely to be \\(1\\) when \\(x=1\\)\n\n\n\n\nsumtable(data3, \n         summ=c('notNA(x)','mean(x)','sd(x)'),\n         summ.names = c('N', 'Mean', 'SD' ),\n         group=\"w\",\n         group.long = TRUE)\n\n\nSummary Statistics\n\n\nVariable\nN\nMean\nSD\n\n\n\n\nw: 0\n\n\n\n\n\neta\n49782\n-0.0059\n1\n\n\nx\n49782\n0.25\n0.43\n\n\ny0\n49782\n2.7\n1.6\n\n\ny1\n49782\n7.7\n1.6\n\n\ny\n49782\n2.7\n1.6\n\n\nw: 1\n\n\n\n\n\neta\n50218\n-0.001\n1\n\n\nx\n50218\n0.75\n0.43\n\n\ny0\n50218\n4.3\n1.6\n\n\ny1\n50218\n9.3\n1.6\n\n\ny\n50218\n9.3\n1.6"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-4",
     "href": "slides/causality/index.html#conditional-mean-independence-4",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Conditional Mean Independence",
-    "text": "Conditional Mean Independence\n\n\n\nWhat if we focus only on people with \\(x=1\\)?\nNo difference in \\(y_{0}\\) between treated and control\n\nBecause \\(x\\) is only reason why they differed\nThis is holding \\(x\\) fixed\n\n\n\n\nsumtable(filter(data3, x==1), \n         summ=c('notNA(x)','mean(x)','sd(x)'),\n         summ.names = c('N', 'Mean', 'SD' ),\n         group=\"w\")\n\n\nSummary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nw\n\n\n0\n\n\n1\n\n\n\nVariable\nN\nMean\nSD\nN\nMean\nSD\n\n\n\n\neta\n12510\n0.0051\n1\n37607\n0.0021\n1\n\n\nx\n12510\n1\n0\n37607\n1\n0\n\n\ny0\n12510\n5\n1\n37607\n5\n1\n\n\ny1\n12510\n10\n1\n37607\n10\n1\n\n\ny\n12510\n5\n1\n37607\n10\n1"
+    "text": "Conditional Mean Independence\n\n\n\nWhat if we focus only on people with \\(x=1\\)?\nNo difference in \\(y_{0}\\) between treated and control\n\nBecause \\(x\\) is only reason why they differed\nThis is holding \\(x\\) fixed\n\n\n\n\nsumtable(filter(data3, x==1), \n         summ=c('notNA(x)','mean(x)','sd(x)'),\n         summ.names = c('N', 'Mean', 'SD' ),\n         group=\"w\")\n\n\nSummary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nw\n\n\n0\n\n\n1\n\n\n\nVariable\nN\nMean\nSD\nN\nMean\nSD\n\n\n\n\neta\n12438\n-0.0056\n1\n37742\n-0.0028\n1\n\n\nx\n12438\n1\n0\n37742\n1\n0\n\n\ny0\n12438\n5\n1\n37742\n5\n1\n\n\ny1\n12438\n10\n1\n37742\n10\n1\n\n\ny\n12438\n5\n1\n37742\n10\n1"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-5",
     "href": "slides/causality/index.html#conditional-mean-independence-5",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Conditional Mean Independence",
-    "text": "Conditional Mean Independence\n\n\n\nSame result if we hold \\(x=0\\)?\n\nAgain because \\(x\\) is only reason why they differed\n\n\n\n\nsumtable(filter(data3, x==0), \n         summ=c('notNA(x)','mean(x)','sd(x)'),\n         summ.names = c('N', 'Mean', 'SD' ),\n         group=\"w\")\n\n\nSummary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nw\n\n\n0\n\n\n1\n\n\n\nVariable\nN\nMean\nSD\nN\nMean\nSD\n\n\n\n\neta\n37505\n0.0036\n1\n12378\n-0.011\n1\n\n\nx\n37505\n0\n0\n12378\n0\n0\n\n\ny0\n37505\n2\n1\n12378\n2\n1\n\n\ny1\n37505\n7\n1\n12378\n7\n1\n\n\ny\n37505\n2\n1\n12378\n7\n1"
+    "text": "Conditional Mean Independence\n\n\n\nSame result if we hold \\(x=0\\)?\n\nAgain because \\(x\\) is only reason why they differed\n\n\n\n\nsumtable(filter(data3, x==0), \n         summ=c('notNA(x)','mean(x)','sd(x)'),\n         summ.names = c('N', 'Mean', 'SD' ),\n         group=\"w\")\n\n\nSummary Statistics\n\n\n\n\n\n\n\n\n\n\n\n\nw\n\n\n0\n\n\n1\n\n\n\nVariable\nN\nMean\nSD\nN\nMean\nSD\n\n\n\n\neta\n37344\n-0.0059\n1\n12476\n0.0042\n0.99\n\n\nx\n37344\n0\n0\n12476\n0\n0\n\n\ny0\n37344\n2\n1\n12476\n2\n0.99\n\n\ny1\n37344\n7\n1\n12476\n7\n0.99\n\n\ny\n37344\n2\n1\n12476\n7\n0.99"
   },
   {
     "objectID": "slides/causality/index.html#conditional-mean-independence-6",
     "href": "slides/causality/index.html#conditional-mean-independence-6",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Conditional Mean Independence",
-    "text": "Conditional Mean Independence\n\n\n\nRegression of \\(y\\) on \\(w\\) is biased\n\nBecause \\(w\\) is correlated with error\n\nBut regression of \\(y\\) on \\(w\\) and \\(x\\) generates actual treatment effect\nThis is conditional mean independence\n\nHolding \\(x\\) fixed, potential outcomes no longer related to treatment\n\n\n\n\nlm(y ~ w, data3)\n## \n## Call:\n## lm(formula = y ~ w, data = data3)\n## \n## Coefficients:\n## (Intercept)            w  \n##       2.754        6.502\nlm(y ~ w + x, data3)\n## \n## Call:\n## lm(formula = y ~ w + x, data = data3)\n## \n## Coefficients:\n## (Intercept)            w            x  \n##       2.002        4.991        3.007"
+    "text": "Conditional Mean Independence\n\n\n\nRegression of \\(y\\) on \\(w\\) is biased\n\nBecause \\(w\\) is correlated with error\n\nBut regression of \\(y\\) on \\(w\\) and \\(x\\) generates actual treatment effect\nThis is conditional mean independence\n\nHolding \\(x\\) fixed, potential outcomes no longer related to treatment\n\n\n\n\nlm(y ~ w, data3)\n## \n## Call:\n## lm(formula = y ~ w, data = data3)\n## \n## Coefficients:\n## (Intercept)            w  \n##       2.744        6.510\nlm(y ~ w + x, data3)\n## \n## Call:\n## lm(formula = y ~ w + x, data = data3)\n## \n## Coefficients:\n## (Intercept)            w            x  \n##       1.995        5.007        2.997"
   },
   {
     "objectID": "slides/causality/index.html#regression-slopes-and-potential-outcomes",
     "href": "slides/causality/index.html#regression-slopes-and-potential-outcomes",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Regression Slopes and Potential Outcomes",
-    "text": "Regression Slopes and Potential Outcomes\n\nSuppose we regress \\(y\\) on \\(w\\)\nThe slope in this regression is \\(\\beta = E(y|w=1) - E(y|w=0)\\)\nExpress in terms of potential outcomes\n\\[E(y|w=1) - E(y|w=0)\\] \\[=  E(y_{1}|w=1) - E(y_{0}|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ] + E(y_{0}|w=1) - E(y_{0}|w=0)\\]\nThe first term is called the Average Treatment Effect on the Treated (ATT)\n\nAverage effect of the treatment for those in the treatment group\n\n\n\n\n\n\n\n\nNote\n\n\nGroups in the population can have different treatment effects, so there isn’t necessarily a single treatment or causal effect."
+    "text": "Regression Slopes and Potential Outcomes\n\nSuppose we regress \\(y\\) on \\(w\\)\nThe slope in this regression is \\(\\beta = E(y|w=1) - E(y|w=0)\\)\nExpress in terms of potential outcomes\n\\[E(y|w=1) - E(y|w=0)\\] \\[=  E(y_{1}|w=1) - E(y_{0}|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ] + E(y_{0}|w=1) - E(y_{0}|w=0)\\]\nThe first term is called the Average Treatment Effect on the Treated (ATT)\n\nAverage effect of the treatment for those in the treatment group\n\n\n\n\n\n\n\n\nNote\n\n\n\nGroups in the population can have different treatment effects, so there isn’t necessarily a single treatment or causal effect."
   },
   {
     "objectID": "slides/causality/index.html#selection-bias",
     "href": "slides/causality/index.html#selection-bias",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Selection bias",
     "text": "Selection bias\n\nThe second term is Selection Bias\n\nPreexisting difference between treatment and control groups\n\nExample: \\(y\\) is income, and \\(w\\) is going to university\n\nSelection bias is potential income difference in absence of university\nWould happen if people who end up in university are already smarter\n\nIf selection bias exists, regression slope is a combination of treatment effect and bias\nThere are some cases where there is no selection bias, and regression slope is only causal effect\nWe outline those below"
   },
   {
     "objectID": "slides/causality/index.html#continuous-treatment",
     "href": "slides/causality/index.html#continuous-treatment",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Continuous Treatment",
     "text": "Continuous Treatment\n\nWe can also apply this model to a continuous treatment variable\nAll of the intuition we have discussed at the same\n\nJust slightly more complex because treatment is continuous"
   },
   {
     "objectID": "slides/causality/index.html#summary-of-rubin-model",
     "href": "slides/causality/index.html#summary-of-rubin-model",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Summary of Rubin Model",
     "text": "Summary of Rubin Model\n\nRegression will identify a causal effect if\n\nTreatment comes from a randomized experiment\nPotential outcomes are mean independent of treatment\nPotential outcomes are mean independent of treatment conditional on \\(\\mathbf{x}\\)\n\nWithout one of these, we could have selection bias\n\nRegression does not provide a causal effect\n\nUnfortunately, these assumptions are generally not met\n\nWe will cover other methods to uncover the causal effect in this case"
   },
   {
     "objectID": "slides/causality/index.html#introduction-2",
     "href": "slides/causality/index.html#introduction-2",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Introduction",
     "text": "Introduction\n\nThis section will demonstrate the Rubin model with simulated data\nWe will show what happens in regression under different assumptions\nUse large samples to simulate the population\n\nReplace population values with consistent estimators\n\nWe will simulate both potential outcomes\n\nEven though they would not both be observed in practice"
   },
@@ -1675,14 +1675,14 @@
   {
     "objectID": "slides/causality/index.html#basic-dag",
     "href": "slides/causality/index.html#basic-dag",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Basic DAG",
     "text": "Basic DAG\n\n\n\nSuppose we are interested in the direct effect of \\(w\\) on \\(y\\)\n\n\\(w\\) is the treatment\n\\(y\\) is the outcome\n\nThe DAG to the right shows how \\(w\\) and \\(y\\) could be related\n\\(x\\) is another factor that is related to both \\(w\\) and \\(y\\)\nThe dots (with variable names) are nodes\nThe lines connecting nodes are edges\nDirection of the arrows is the direction of the relationship"
   },
   {
     "objectID": "slides/causality/index.html#basic-dag-1",
     "href": "slides/causality/index.html#basic-dag-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Basic DAG",
     "text": "Basic DAG\n\n\n\nWe want to find all the paths that can lead from \\(w\\) to \\(y\\)\nIn this DAG there are two\n\nA direct path \\(w \\rightarrow y\\)\nAn indirect path \\(w \\leftarrow x \\rightarrow y\\)\n\nA correlation between \\(y\\) on \\(w\\) would reflect both paths\n\n\\(w\\) can directly cause \\(y\\)\n\\(x\\) could change \\(w\\) and \\(y\\) simultaneously creating a spurious correlation between them"
   },
@@ -1696,9 +1696,9 @@
   {
     "objectID": "slides/causality/index.html#types-of-paths",
     "href": "slides/causality/index.html#types-of-paths",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Types of Paths",
-    "text": "Types of Paths\n\n\n\nIn a DAG you may find two types of paths\n\nFront Door: arrows point away from treatment and toward to outcome\nBack Door: arrows point toward treatment\n\nWe are usually interested in front door paths\n\nShow how \\(w\\) causes changes in \\(y\\)\n\nBack door paths are usually bad\n\nShow ways that a correlation between treatment and outcome are biased\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\nThere can be multiple front door paths in a DAG, and we might not be interested in all of them."
+    "text": "Types of Paths\n\n\n\nIn a DAG you may find two types of paths\n\nFront Door: arrows point away from treatment and toward to outcome\nBack Door: arrows point toward treatment\n\nWe are usually interested in front door paths\n\nShow how \\(w\\) causes changes in \\(y\\)\n\nBack door paths are usually bad\n\nShow ways that a correlation between treatment and outcome are biased\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\n\nThere can be multiple front door paths in a DAG, and we might not be interested in all of them."
   },
   {
     "objectID": "slides/causality/index.html#basic-dag-2",
@@ -1710,14 +1710,14 @@
   {
     "objectID": "slides/causality/index.html#open-and-closed-paths",
     "href": "slides/causality/index.html#open-and-closed-paths",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Open and Closed Paths",
     "text": "Open and Closed Paths\n\n\n\nPaths between treatment and outcome can be open or closed\n\nOpen: all variables along the path are allowed to vary\nClosed: at least one variable along the path cannot vary, or there is a collider on the path\n\nIf you regress \\(y\\) on \\(w\\) both paths are open\n\n\\(w\\) and \\(y\\) can vary, so direct path is open\nWe are not holding \\(x\\) fixed, so indirect path is also open\n\nYou can close the backdoor path by controlling for \\(x\\)\n\nRegress \\(y\\) on \\(w\\) and \\(x\\)"
   },
   {
     "objectID": "slides/causality/index.html#open-and-closed-paths-1",
     "href": "slides/causality/index.html#open-and-closed-paths-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Open and Closed Paths",
     "text": "Open and Closed Paths\n\n\n\nSuppose we are interested in the causal effect of \\(w\\) on \\(y\\)\nIn a DAG, this means we only want the path \\(w \\rightarrow y\\)\nWe need to leave this path open, but close all others\nThe regression of \\(y\\) on \\(w\\) and \\(x\\) does this\nIt works in this case because \\(x\\) is a confounder\nControlling for other variables does not always identify a causal effect"
   },
@@ -1731,7 +1731,7 @@
   {
     "objectID": "slides/causality/index.html#different-associations-in-dag",
     "href": "slides/causality/index.html#different-associations-in-dag",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Different Associations in DAG",
     "text": "Different Associations in DAG\n\n\n\n\n\n\n\n\n\n\n\n\nConfounder\n\n\n\n\n\n\n\n\n\n\n\n\nMediator\n\n\n\n\n\n\n\n\n\n\n\n\nCollider"
   },
@@ -1745,120 +1745,134 @@
   {
     "objectID": "slides/causality/index.html#confounder",
     "href": "slides/causality/index.html#confounder",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Confounder",
     "text": "Confounder\n\n\n\nThe DAG we have been working with has \\(x\\) as a confounder\nConfounder: The treatment and outcome have a common cause\nIn this example\n\n\\(x\\) changes \\(w\\) and \\(y\\) simultaneously\nMakes it look like \\(w\\) and \\(y\\) are related, but it is spurious\n\nExample: Returns to Schooling\n\n\\(y\\) is wages, \\(w\\) is years of schooling\nA confounder \\(x\\) would be intelligence\n\nCan close the backdoor path by controlling for \\(x\\)"
   },
   {
     "objectID": "slides/causality/index.html#mediator",
     "href": "slides/causality/index.html#mediator",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Mediator",
     "text": "Mediator\n\n\n\nIn this DAG we have two paths\n\n\\[w \\rightarrow y\\] \\[w \\rightarrow x \\rightarrow y\\]\n\nBoth are front door paths\nIn this example \\(x\\) acts as a mediator\nMediator: A variable within a causal pathway between treatment and outcome\nIn this example\n\n\\(w\\) causes \\(y\\) directly\nBut also indirectly through \\(x\\)"
   },
   {
     "objectID": "slides/causality/index.html#mediator-1",
     "href": "slides/causality/index.html#mediator-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Mediator",
     "text": "Mediator\n\n\n\nThis is not the same as omitted variables bias\nA regression of \\(y\\) on \\(w\\) measures the causal effect\n\nTwo causal paths between \\(w\\) and \\(y\\)\n\nWe can still close the indirect path by controlling for \\(x\\)\nThis would leave only the direct path\nWhether we want to do this depends on the research question\n\nIf you want only direct effect, control for \\(x\\)\nFor total effect, do not control"
   },
   {
     "objectID": "slides/causality/index.html#mediator-2",
     "href": "slides/causality/index.html#mediator-2",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Mediator",
     "text": "Mediator\n\n\n\nExample: Effect of drinking on lifespan\n\\(w\\) is drinking, \\(y\\) is lifespan, \\(x\\) is drug use\nIf drug use is a mediator then\n\n\\[drinking \\rightarrow lifespan\\] \\[drinking \\rightarrow drugs \\rightarrow lifespan\\]\n\nDrinking has direct effect on lifespan, and also through drug use\nRegression of \\(lifespan\\) on \\(drinking\\) measures total effect\nRegression of \\(lifespan\\) on \\(drinking\\) and \\(drug\\) use measures only direct effect"
   },
   {
     "objectID": "slides/causality/index.html#collider",
     "href": "slides/causality/index.html#collider",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Collider",
     "text": "Collider\n\n\n\nFinal association is trickier\nCollider: a variable that is influenced by two or more variables\nIn this DAG, \\(x\\) is a collider\n\nBoth \\(y\\) and \\(w\\) point to it\n\nPaths that contain a collider are closed\nIn this case, you could regress \\(y\\) on \\(w\\) and get causal effect"
   },
   {
     "objectID": "slides/causality/index.html#collider-1",
     "href": "slides/causality/index.html#collider-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Collider",
     "text": "Collider\n\n\n\nControlling for a collider opens the path\nRegression of \\(y\\) on \\(w\\) and \\(x\\) does not measure causal effect\nCollider Bias: bias induced by controlling for collider\nCollider bias can\n\nCreate an association between \\(w\\) and \\(y\\) when there is no direct one\nHide a direct association\n\nEasiest way to understand is through example"
   },
   {
     "objectID": "slides/causality/index.html#collider-2",
     "href": "slides/causality/index.html#collider-2",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Collider",
     "text": "Collider\n\n\n\nExample: talent and effort\n\\(w\\) is talent, \\(y\\) is effort, \\(x\\) is being in elite school\nAssume no direct link between talent and effort\nBoth talented and hard working students make it to elite schools\nControlling for school, talent and effort look negatively related\n\nYou need to be smart or work hard to get into Harvard\nLow-effort students must be smart, and un-smart students must be hard working"
   },
   {
     "objectID": "slides/causality/index.html#collider-3",
     "href": "slides/causality/index.html#collider-3",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Collider",
     "text": "Collider\n\n\n\nExample: gender pay gap\n\\(w\\) is gender, \\(y\\) is ability, \\(x\\) is occupation\nAssume men and women have equal ability\nHigh ability people make it into certain occupations\nIf discrimination against women, they must be high ability to get in\nControlling for occupation, women appear to have higher ability\nThis could lead to gender pay gap being larger within jobs"
   },
   {
     "objectID": "slides/causality/index.html#a-more-complicated-dag",
     "href": "slides/causality/index.html#a-more-complicated-dag",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "A More Complicated DAG",
     "text": "A More Complicated DAG\n::: columns ::: {.column width=“50%”}\n\nDAGs are often much more complicated\nHere is a DAG with 4 variables\n\n\\(y\\) is outcome\n\\(w\\) is treatment\n\\(x\\) is confounder\n\\(u\\) is unobserved confounder\n\nThere are several paths connecting \\(w\\) and \\(y\\)\n\n\\(w \\rightarrow y\\)\n\\(w \\leftarrow x \\rightarrow y\\)\n\\(w \\leftarrow x \\rightarrow u \\rightarrow y\\)"
   },
   {
     "objectID": "slides/causality/index.html#a-more-complicated-dag-1",
     "href": "slides/causality/index.html#a-more-complicated-dag-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "A More Complicated DAG",
     "text": "A More Complicated DAG\n\n\n\nTo close a backdoor path you need to control for one variable along the path\nWe cannot control for \\(u\\) because it is unobserved\nControlling for \\(x\\) closes both backdoor paths"
   },
   {
     "objectID": "slides/causality/index.html#introduction-3",
     "href": "slides/causality/index.html#introduction-3",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Introduction",
     "text": "Introduction\n\nThe Rubin framework is one way to understand causality\nAnother popular method is a Directed Acyclic Graph (DAG)\nA DAG is a graphical tool to show relationships between variables\nIt can make a complex model easier to understand\nFor econometrics, it can highlight bias in our estimates\n\nAnd how to overcome the bias\n\nIn this section we will introduce DAGs, and expand on it in further sections"
   },
   {
     "objectID": "slides/causality/index.html#introduction-4",
     "href": "slides/causality/index.html#introduction-4",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Introduction",
     "text": "Introduction\n\nLike we did with Rubin model, we can simulate DAGs\nWe will illustrate\n\nConditional independence\nCollider bias\n\nAgain, this is meant to approximate the population"
   },
   {
     "objectID": "slides/causality/index.html#conditional-independence",
     "href": "slides/causality/index.html#conditional-independence",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Conditional Independence",
-    "text": "Conditional Independence\n\n\n\nConsider the following scenario\n\nHigher ability people get more schooling\nHigher ability people earn more\nHigher education increases earnings\nHigher ability is related to unobserved determinants of earnings\n\nWithout controlling for ability we will overestimate the effect of education\n\n\n\ndagdata &lt;- tibble(\n    ability = rnorm(10000),\n    educ = ifelse(ability + rnorm(10000, mean = 0, sd = 0.5) &gt; 1,1,0),\n    u = ability + rnorm(10000, mean = 0, sd = 2),\n    inc = educ + ability + u \n)\n\nlm(inc ~ educ, data = dagdata)\n## \n## Call:\n## lm(formula = inc ~ educ, data = dagdata)\n## \n## Coefficients:\n## (Intercept)         educ  \n##     -0.5636       4.1612"
+    "text": "Conditional Independence\n\n\n\nConsider the following scenario\n\nHigher ability people get more schooling\nHigher ability people earn more\nHigher education increases earnings\nHigher ability is related to unobserved determinants of earnings\n\nWithout controlling for ability we will overestimate the effect of education\n\n\n\ndagdata &lt;- tibble(\n    ability = rnorm(10000),\n    educ = ifelse(ability + rnorm(10000, mean = 0, sd = 0.5) &gt; 1,1,0),\n    u = ability + rnorm(10000, mean = 0, sd = 2),\n    inc = educ + ability + u \n)\n\nlm(inc ~ educ, data = dagdata)\n## \n## Call:\n## lm(formula = inc ~ educ, data = dagdata)\n## \n## Coefficients:\n## (Intercept)         educ  \n##     -0.6027       4.1649"
   },
   {
     "objectID": "slides/causality/index.html#collider-bias",
     "href": "slides/causality/index.html#collider-bias",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Collider Bias",
-    "text": "Collider Bias\n\n\n\nConsider the following scenario\n\nTalent is unrelated to effort\nBoth talent and effort are positively related to being in an elite school\nElite school admission is based on having high talent or effort\n\nWe will see that\nWithout controlling for elite school, talent and effort are unrelated\nControlling for elite school, talent and effort are negatively related\n\n\n\ndagdata2 &lt;- tibble(\n    talent = rnorm(10000),\n    effort = rnorm(10000),\n    elite = ifelse(talent + effort &gt; 1,1,0)\n)\n\nggplot(dagdata2, aes(x = effort, y = talent)) +\n  geom_point(alpha = 0.2) +\n  geom_smooth(method = \"lm\", se = FALSE)"
+    "text": "Collider Bias\n\n\n\nConsider the following scenario\n\nTalent is unrelated to effort\nBoth talent and effort are positively related to being in an elite school\nElite school admission is based on having high talent or effort\n\nWe will see that\nWithout controlling for elite school, talent and effort are unrelated\nControlling for elite school, talent and effort are negatively related\n\n\n\ndagdata2 &lt;- tibble(\n    talent = rnorm(10000),\n    effort = rnorm(10000),\n    elite = ifelse(talent + effort &gt; 1,1,0)\n)\n\nggplot(dagdata2, aes(x = effort, y = talent)) +\n  geom_point(alpha = 0.2) +\n  geom_smooth(method = \"lm\", se = FALSE)\n## `geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "slides/causality/index.html#collider-bias-1",
     "href": "slides/causality/index.html#collider-bias-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Collider Bias",
-    "text": "Collider Bias\n\n\n\nNow color the dots according to elite school status\nThen run separate regressions by elite school\nWithin school, talent and effort are negatively related\n\n\n\nggplot(dagdata2,aes(x = effort, y = talent, color = as.factor(elite)) ) +\n  geom_point(alpha = 0.2) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  theme_pander() +\n  scale_color_grey()"
+    "text": "Collider Bias\n\n\n\nNow color the dots according to elite school status\nThen run separate regressions by elite school\nWithin school, talent and effort are negatively related\n\n\n\nggplot(dagdata2,aes(x = effort, y = talent, color = as.factor(elite)) ) +\n  geom_point(alpha = 0.2) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  theme_pander() +\n  scale_color_grey()\n## `geom_smooth()` using formula = 'y ~ x'"
   },
   {
     "objectID": "slides/causality/index.html#collider-bias-2",
     "href": "slides/causality/index.html#collider-bias-2",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Collider Bias",
-    "text": "Collider Bias\n\n\n\nYou can see this in regression too\nFirst regress talent on effort\n\nNo relationship\n\nNegative relationship when controlling for elite school status\n\n\n\nlm(talent ~ effort, data = dagdata2)\n## \n## Call:\n## lm(formula = talent ~ effort, data = dagdata2)\n## \n## Coefficients:\n## (Intercept)       effort  \n##    0.003309    -0.020907\nlm(talent ~ effort + elite, data = dagdata2) \n## \n## Call:\n## lm(formula = talent ~ effort + elite, data = dagdata2)\n## \n## Coefficients:\n## (Intercept)       effort        elite  \n##     -0.3922      -0.3862       1.6600"
+    "text": "Collider Bias\n\n\n\nYou can see this in regression too\nFirst regress talent on effort\n\nNo relationship\n\nNegative relationship when controlling for elite school status\n\n\n\nlm(talent ~ effort, data = dagdata2)\n## \n## Call:\n## lm(formula = talent ~ effort, data = dagdata2)\n## \n## Coefficients:\n## (Intercept)       effort  \n##    -0.01069      0.01205\nlm(talent ~ effort + elite, data = dagdata2) \n## \n## Call:\n## lm(formula = talent ~ effort + elite, data = dagdata2)\n## \n## Coefficients:\n## (Intercept)       effort        elite  \n##     -0.4210      -0.3718       1.6924"
   },
   {
     "objectID": "slides/causality/index.html#conditional-independence-1",
     "href": "slides/causality/index.html#conditional-independence-1",
-    "title": "E655 - Econometrics",
+    "title": "\nCausality and Regression\n",
     "section": "Conditional Independence",
-    "text": "Conditional Independence\n\n\n\nIn the DAG, there are two backdoor paths from education to earnings\n\n\\(educ \\leftarrow ability \\rightarrow inc\\)\n\\(educ \\leftarrow ability \\rightarrow u \\rightarrow inc\\)\n\nControlling for ability closes both paths\n\nWe do not need to separately control for \\(u\\)\n\n\n\n\ndagdata &lt;- tibble(\n    ability = rnorm(10000),\n    educ = ifelse(ability + rnorm(10000, mean = 0, sd = 0.5) &gt; 1,1,0),\n    u = ability + rnorm(10000, mean = 0, sd = 2),\n    inc = educ + ability + u \n)\n\nlm(inc ~ educ + ability, data = dagdata)\n## \n## Call:\n## lm(formula = inc ~ educ + ability, data = dagdata)\n## \n## Coefficients:\n## (Intercept)         educ      ability  \n##     0.02874      0.96419      1.99828"
+    "text": "Conditional Independence\n\n\n\nIn the DAG, there are two backdoor paths from education to earnings\n\n\\(educ \\leftarrow ability \\rightarrow inc\\)\n\\(educ \\leftarrow ability \\rightarrow u \\rightarrow inc\\)\n\nControlling for ability closes both paths\n\nWe do not need to separately control for \\(u\\)\n\n\n\n\ndagdata &lt;- tibble(\n    ability = rnorm(10000),\n    educ = ifelse(ability + rnorm(10000, mean = 0, sd = 0.5) &gt; 1,1,0),\n    u = ability + rnorm(10000, mean = 0, sd = 2),\n    inc = educ + ability + u \n)\n\nlm(inc ~ educ + ability, data = dagdata)\n## \n## Call:\n## lm(formula = inc ~ educ + ability, data = dagdata)\n## \n## Coefficients:\n## (Intercept)         educ      ability  \n##     0.01618      0.97395      2.02514"
+  },
+  {
+    "objectID": "slides/causality/index.html#omitted-variables-bias-in-regression",
+    "href": "slides/causality/index.html#omitted-variables-bias-in-regression",
+    "title": "\nCausality and Regression\n",
+    "section": "Omitted Variables Bias in Regression",
+    "text": "Omitted Variables Bias in Regression\n\nPartition the \\(\\mathbf{x}\\) vector into two pieces\n\n\\[\\mathbf{x}=\n\\begin{bmatrix}\n\\mathbf{x_{1}}& \\mathbf{x_{2}}  \n\\end{bmatrix}\\]\n\nNow imagine running a regression of \\(\\mathbf{y}\\) on only \\(\\mathbf{x_{1}}\\)\nThe slope of that regression is\n\\[\n\\boldsymbol{\\beta^{*}} = (\\textbf{E}[\\mathbf{x_{1}'x_{1}}])^{-1} \\textbf{E}[\\mathbf{x_{1}}'y]\n\\]\nSub in for \\(\\mathbf{y}\\) using the full \\(\\mathbf{x}\\) vector\n\\[\\boldsymbol{\\beta^{*}} = (\\textbf{E}[\\mathbf{x_{1}'x_{1}}])^{-1} \\textbf{E}[\\mathbf{x_{1}}'(\\mathbf{x_{1}}\\boldsymbol{\\beta_{1}} + \\mathbf{x_{2}}\\boldsymbol{\\beta_{2}} + u)]\\]\n\\[\\boldsymbol{\\beta^{*}} = \\boldsymbol{\\beta_{1}} + (\\textbf{E}[\\mathbf{x_{1}'x_{1}}])^{-1} \\textbf{E}[\\mathbf{x_{1}}'\\mathbf{x_{2}}]\\boldsymbol{\\beta_{2}} \\]"
+  },
+  {
+    "objectID": "slides/causality/index.html#omitted-variables-bias-in-regression-1",
+    "href": "slides/causality/index.html#omitted-variables-bias-in-regression-1",
+    "title": "\nCausality and Regression\n",
+    "section": "Omitted Variables Bias in Regression",
+    "text": "Omitted Variables Bias in Regression\n\n\n\n\n\n\nImportant\n\n\n\nOmitted Variables Bias in Regression is\n\\[(\\textbf{E}[\\mathbf{x_{1}'x_{1}}])^{-1} \\textbf{E}[\\mathbf{x_{1}}'\\mathbf{x_{2}}]\\boldsymbol{\\beta_{2}} \\]\n\n\n\nOVB is a function of two things\n\nThe relationship between \\(\\mathbf{x_{2}}\\) and \\(\\mathbf{x_{1}}\\)\nThe relationship between \\(\\mathbf{x_{2}}\\) and \\(y\\)\n\nIf either of them is zero, there is no OVB\nThe sign of the bias depends on the sign of their product\n\nIf they have the same sign, bias is positive\nIf they have opposite signs, bias is negative"
   }
 ]

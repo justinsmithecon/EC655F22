@@ -180,7 +180,6 @@ The ATE is the treatment effect averaged across everyone in the population, wher
 
     -   Find some positive effect of masks, especially for age 50+
 
-
 # Causal Effects without Randomization
 
 ## Mean Independence of Treatment
@@ -286,37 +285,34 @@ A stronger assumption is conditional independence $(y_{0}, y_{1}) \perp w |\math
 -   Unfortunately, these assumptions are generally not met
 
     -   We will cover other methods to uncover the causal effect in this case
-    
-    
+
 # Simulation Examples for Rubin Model
 
 ## Introduction
 
-- This section will demonstrate the Rubin model with simulated data
+-   This section will demonstrate the Rubin model with simulated data
 
-- We will show what happens in regression under different assumptions
+-   We will show what happens in regression under different assumptions
 
-- Use large samples to simulate the population
+-   Use large samples to simulate the population
 
-    - Replace population values with consistent estimators
-    
-- We will simulate both potential outcomes
+    -   Replace population values with consistent estimators
 
-    - Even though they would not both be observed in practice
+-   We will simulate both potential outcomes
 
+    -   Even though they would not both be observed in practice
 
-## Data Setup 
+## Data Setup
 
 ::: columns
 ::: {.column width="50%"}
-
 -   Code to the right creates potential outcomes
 
 -   For simplicity the treatment effect is set to 5 for everyone
 
 -   Outcomes $y_{0}$ and $y_{1}$ created to have a Normal distribution
 
-    - Normality is not important for the model
+    -   Normality is not important for the model
 :::
 
 ::: {.column width="50%"}
@@ -331,7 +327,7 @@ sumtable(data, summ=c('notNA(x)','mean(x)','sd(x)'),
 :::
 :::
 
-## Random Assignment to Treatment 
+## Random Assignment to Treatment
 
 ::: columns
 ::: {.column width="50%"}
@@ -385,7 +381,6 @@ ggplot(data, aes(x=y0, color=as.factor(w))) +
 -   Randomization ensures difference in average $y$ between groups equals the [ATE and ATT]{.red}
 
 -   On the right we show the difference in mean of $y$ equals 5
-
 :::
 
 ::: {.column width="50%"}
@@ -396,7 +391,7 @@ summarize(data, my = mean(y)) %>%
 :::
 :::
 
-## Random Assignment to Treatment 
+## Random Assignment to Treatment
 
 ::: columns
 ::: {.column width="50%"}
@@ -412,7 +407,7 @@ lm(y ~ w, data)
 :::
 :::
 
-## Selection into Treatment 
+## Selection into Treatment
 
 ::: columns
 ::: {.column width="50%"}
@@ -443,7 +438,7 @@ sumtable(data2,
 :::
 :::
 
-## Selection into Treatment 
+## Selection into Treatment
 
 ::: columns
 ::: {.column width="50%"}
@@ -465,7 +460,7 @@ sumtable(data2,
 :::
 :::
 
-## Selection into Treatment 
+## Selection into Treatment
 
 ::: columns
 ::: {.column width="50%"}
@@ -486,7 +481,7 @@ ggplot(data2, aes(x=y0, color=as.factor(w))) +
 :::
 :::
 
-## Selection into Treatment 
+## Selection into Treatment
 
 ::: columns
 ::: {.column width="50%"}
@@ -509,7 +504,7 @@ summarize(data2, my = mean(y)) %>%
 :::
 :::
 
-## Selection into Treatment 
+## Selection into Treatment
 
 ::: columns
 ::: {.column width="50%"}
@@ -527,7 +522,7 @@ lm(y ~ w, data2)
 :::
 :::
 
-## Conditional Mean Independence 
+## Conditional Mean Independence
 
 ::: columns
 ::: {.column width="50%"}
@@ -567,7 +562,7 @@ sumtable(data3,
 :::
 :::
 
-## Conditional Mean Independence 
+## Conditional Mean Independence
 
 ::: columns
 ::: {.column width="50%"}
@@ -591,7 +586,7 @@ sumtable(data3,
 :::
 :::
 
-## Conditional Mean Independence 
+## Conditional Mean Independence
 
 ::: columns
 ::: {.column width="35%"}
@@ -614,7 +609,7 @@ sumtable(filter(data3, x==1),
 :::
 :::
 
-## Conditional Mean Independence 
+## Conditional Mean Independence
 
 ::: columns
 ::: {.column width="35%"}
@@ -634,6 +629,7 @@ sumtable(filter(data3, x==0),
 :::
 
 ## Conditional Mean Independence
+
 ::: columns
 ::: {.column width="50%"}
 -   Regression of $y$ on $w$ is biased
@@ -653,8 +649,7 @@ lm(y ~ w, data3)
 lm(y ~ w + x, data3)
 ```
 :::
-:::    
-    
+:::
 
 # Directed Acyclic Graphs (DAG)
 
@@ -1192,8 +1187,7 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 
 ## A More Complicated DAG
 
-::: columns
-::: {.column width="50%"}
+::: columns ::: {.column width="50%"}
 
 -   DAGs are often much more complicated
 
@@ -1203,23 +1197,22 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
     -   $w$ is treatment
     -   $x$ is confounder
     -   $u$ is unobserved confounder
-    
--  There are several paths connecting $w$ and $y$
 
-    - $w \rightarrow y$
-    - $w \leftarrow x \rightarrow y$
-    - $w \leftarrow x \rightarrow u \rightarrow y$
-    
-    
+-   There are several paths connecting $w$ and $y$
+
+    -   $w \rightarrow y$
+    -   $w \leftarrow x \rightarrow y$
+    -   $w \leftarrow x \rightarrow u \rightarrow y$
+
 ## A More Complicated DAG
 
 ::: columns
 ::: {.column width="50%"}
 -   To close a backdoor path you need to control for one variable along the path
 
-- We cannot control for $u$ because it is unobserved
+-   We cannot control for $u$ because it is unobserved
 
-- Controlling for $x$ closes both backdoor paths
+-   Controlling for $x$ closes both backdoor paths
 :::
 
 ::: {.column width="50%"}
@@ -1241,31 +1234,27 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 
 ## Introduction
 
-- Like we did with Rubin model, we can simulate DAGs
+-   Like we did with Rubin model, we can simulate DAGs
 
-- We will illustrate 
+-   We will illustrate
 
-    - Conditional independence
-    - Collider bias
-    
-- Again, this is meant to approximate the population
+    -   Conditional independence
+    -   Collider bias
+
+-   Again, this is meant to approximate the population
 
 ## Conditional Independence
 
 ::: columns
 ::: {.column width="50%"}
-
-
 -   Consider the following scenario
 
     -   Higher ability people get more schooling
     -   Higher ability people earn more
     -   Higher education increases earnings
     -   Higher ability is related to unobserved determinants of earnings
-    
 
-- Without controlling for ability we will overestimate the effect of education
-
+-   Without controlling for ability we will overestimate the effect of education
 :::
 
 ::: {.column width="50%"}
@@ -1282,22 +1271,18 @@ lm(inc ~ educ, data = dagdata)
 :::
 :::
 
-
-
 ## Conditional Independence
 
 ::: columns
 ::: {.column width="50%"}
-
-
 -   In the DAG, there are two backdoor paths from education to earnings
 
     -   $educ \leftarrow ability \rightarrow inc$
     -   $educ \leftarrow ability \rightarrow u \rightarrow inc$
-    
--  Controlling for ability closes both paths
 
-    - We do not need to separately control for $u$
+-   Controlling for ability closes both paths
+
+    -   We do not need to separately control for $u$
 :::
 
 ::: {.column width="50%"}
@@ -1323,11 +1308,12 @@ lm(inc ~ educ + ability, data = dagdata)
     -   Talent is unrelated to effort
     -   Both talent and effort are positively related to being in an elite school
     -   Elite school admission is based on having high talent or effort
-    
--  We will see that
 
-  - Without controlling for elite school, talent and effort are unrelated
-  - Controlling for elite school, talent and effort are negatively related
+-   We will see that
+
+-   Without controlling for elite school, talent and effort are unrelated
+
+-   Controlling for elite school, talent and effort are negatively related
 :::
 
 ::: {.column width="50%"}
@@ -1345,16 +1331,15 @@ ggplot(dagdata2, aes(x = effort, y = talent)) +
 :::
 :::
 
-
 ## Collider Bias
 
 ::: columns
 ::: {.column width="50%"}
 -   Now color the dots according to elite school status
 
--  Then run separate regressions by elite school
+-   Then run separate regressions by elite school
 
-- Within school, talent and effort are negatively related
+-   Within school, talent and effort are negatively related
 :::
 
 ::: {.column width="50%"}
@@ -1374,11 +1359,11 @@ ggplot(dagdata2,aes(x = effort, y = talent, color = as.factor(elite)) ) +
 ::: {.column width="50%"}
 -   You can see this in regression too
 
-- First regress talent on effort
+-   First regress talent on effort
 
-    - No relationship
-    
-- Negative relationship when controlling for elite school status
+    -   No relationship
+
+-   Negative relationship when controlling for elite school status
 :::
 
 ::: {.column width="50%"}
@@ -1388,3 +1373,48 @@ lm(talent ~ effort + elite, data = dagdata2)
 ```
 :::
 :::
+
+## Omitted Variables Bias in Regression
+
+-   Partition the $\mathbf{x}$ vector into two pieces
+
+$$\mathbf{x}= 
+\begin{bmatrix}
+\mathbf{x_{1}}& \mathbf{x_{2}}  
+\end{bmatrix}$$
+
+-   Now imagine running a regression of $\mathbf{y}$ on only $\mathbf{x_{1}}$
+
+-   The slope of that regression is
+
+    $$
+    \boldsymbol{\beta^{*}} = (\textbf{E}[\mathbf{x_{1}'x_{1}}])^{-1} \textbf{E}[\mathbf{x_{1}}'y]
+    $$
+
+-   Sub in for $\mathbf{y}$ using the full $\mathbf{x}$ vector
+
+    $$\boldsymbol{\beta^{*}} = (\textbf{E}[\mathbf{x_{1}'x_{1}}])^{-1} \textbf{E}[\mathbf{x_{1}}'(\mathbf{x_{1}}\boldsymbol{\beta_{1}} + \mathbf{x_{2}}\boldsymbol{\beta_{2}} + u)]$$
+
+    $$\boldsymbol{\beta^{*}} = \boldsymbol{\beta_{1}} + (\textbf{E}[\mathbf{x_{1}'x_{1}}])^{-1} \textbf{E}[\mathbf{x_{1}}'\mathbf{x_{2}}]\boldsymbol{\beta_{2}} $$
+
+## Omitted Variables Bias in Regression
+
+::: callout-important
+**Omitted Variables Bias in Regression is**
+
+$$(\textbf{E}[\mathbf{x_{1}'x_{1}}])^{-1} \textbf{E}[\mathbf{x_{1}}'\mathbf{x_{2}}]\boldsymbol{\beta_{2}} $$
+:::
+
+-   OVB is a function of two things
+
+    -   The relationship between $\mathbf{x_{2}}$ and $\mathbf{x_{1}}$
+
+    -   The relationship between $\mathbf{x_{2}}$ and $y$
+
+-   If either of them is zero, there is no OVB
+
+-   The sign of the bias depends on the sign of their product
+
+    -   If they have the same sign, bias is positive
+
+    -   If they have opposite signs, bias is negative
