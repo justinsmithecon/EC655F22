@@ -1874,5 +1874,47 @@
     "title": "E655 - Econometrics",
     "section": "Omitted Variables Bias in Regression",
     "text": "Omitted Variables Bias in Regression\n\n\n\n\n\n\nImportant\n\n\nOmitted Variables Bias in Regression is\n\\[(\\textbf{E}[\\mathbf{x_{1}'x_{1}}])^{-1} \\textbf{E}[\\mathbf{x_{1}}'\\mathbf{x_{2}}]\\boldsymbol{\\beta_{2}} \\]\n\n\n\n\nOVB is a function of two things\n\nThe relationship between \\(\\mathbf{x_{2}}\\) and \\(\\mathbf{x_{1}}\\)\nThe relationship between \\(\\mathbf{x_{2}}\\) and \\(y\\)\n\nIf either of them is zero, there is no OVB\nThe sign of the bias depends on the sign of their product\n\nIf they have the same sign, bias is positive\nIf they have opposite signs, bias is negative"
+  },
+  {
+    "objectID": "assignments/introtoquarto.html",
+    "href": "assignments/introtoquarto.html",
+    "title": "Introduction to Quarto",
+    "section": "",
+    "text": "Below is a tutorial you can use to learn the very basics of R. It does not cover everything, but enough so that we can do most of the things we need for this class. If you prefer you can instead pop them out in a new window"
+  },
+  {
+    "objectID": "assignments/introtoquarto.html#readings",
+    "href": "assignments/introtoquarto.html#readings",
+    "title": "Introduction to Quarto",
+    "section": "",
+    "text": "Hanck, C., Arnold, M., Gerber, A., & Schmelzer, M. (2019). Introduction to Econometrics with R. University of Duisburg-Essen. Url: https://www.econometrics-with-r.org\nOswald, F., Viers, V., Robin, J.- M., Villedieu, P., Kenedi, G. (2020). Introduction to Econometrics with R. Department of Economics, Sciences Po. Url: https://scpoecon.github.io/ScPoEconometrics/"
+  },
+  {
+    "objectID": "assignments/introtoquarto.html#tutorial",
+    "href": "assignments/introtoquarto.html#tutorial",
+    "title": "Introduction to Quarto",
+    "section": "",
+    "text": "Below is a tutorial you can use to learn the very basics of R. It does not cover everything, but enough so that we can do most of the things we need for this class. If you prefer you can instead pop them out in a new window"
+  },
+  {
+    "objectID": "assignments/introtoquarto.html#videos",
+    "href": "assignments/introtoquarto.html#videos",
+    "title": "Introduction to Quarto",
+    "section": "Videos",
+    "text": "Videos\n\nIntroduction to Quarto by Dr. Lyndon Walker\nA video introduction to Quarto"
+  },
+  {
+    "objectID": "assignments/introtoquarto.html#other-resources",
+    "href": "assignments/introtoquarto.html#other-resources",
+    "title": "Introduction to Quarto",
+    "section": "Other Resources",
+    "text": "Other Resources\n\nQuarto Website Reference Section\n\nThe Quarto website has a very good reference section for any type of document you want to produce. Navigate to the PDF section for help with formatting your assignments.\n\nQuarto Cheat Sheet\n\nLike with the RStudio cheat sheets, this provides a quick overview of the ways you can interact with Quarto"
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Summary",
+    "section": "",
+    "text": "Here you will find and introduction to using Quarto, the problem sets for all your assignments, and any other information related to your assignments."
   }
 ]

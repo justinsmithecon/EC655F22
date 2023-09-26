@@ -15,6 +15,8 @@ website:
       - syllabus.qmd
       - text: "Content"
         file: content/index.qmd
+      - text: "Assignments"
+        file: assignments/index.qmd
 
   sidebar:
     - title: "Content"
@@ -37,6 +39,18 @@ website:
             - text: "Causality"
               file: content/causality.qmd
 
+    - title: "Assignments"
+      style: "docked"
+      search: false
+      background: dark
+      contents:
+      
+        - section: "Overview"
+          contents:
+            - assignments/index.qmd
+        - section: "Intro to Quarto"
+          contents:
+            - assignments/introtoquarto.qmd
 
 format:
   html:
