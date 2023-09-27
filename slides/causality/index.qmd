@@ -10,7 +10,6 @@ format:
       theme: whiteboard
       src: drawings.json
 editor: visual
-highlight-style: github
 ---
 
 <h1>Causality and Regression</h1>
