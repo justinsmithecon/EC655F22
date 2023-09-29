@@ -3,6 +3,7 @@ project:
   output-dir: docs
   render:
     - "*.qmd"
+    - "!assignments/files/"
 
 website:
   title: "E655 - Econometrics"
@@ -51,6 +52,10 @@ website:
         - section: "Intro to Quarto"
           contents:
             - assignments/introtoquarto.qmd
+        - section: "Assignments"
+          contents:
+            - text: "Assignment 1"
+              file: assignments/assign1.qmd
 
 format:
   html:

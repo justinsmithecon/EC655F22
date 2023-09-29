@@ -1,0 +1,68 @@
+---
+title: "Assignment 1"
+author: "YOUR NAME HERE"
+date: "DATE GOES HERE"
+format: pdf
+---
+
+```{r include = FALSE}
+library(tidyverse)
+library(vtable)
+econmath <- read_csv("econmath.csv") 
+```
+
+## Questions
+
+1\.  Using the `vtable` package, create a table of summary statistics from the `econmath` data that includes the mean, standard deviation, minimum, and maximum for variables: *score*, *hsgpa*, *study*, *age*.
+
+```{r}
+
+```
+
+2\.  Compute the summary statistics table as you did in (1), but group the data by whether or not the student took a high school economics course. Comment on the differences across groups in the mean of these variables.
+
+INSERT COMMENTS HERE
+
+```{r}
+
+```
+
+3\.  Using the `ggplot2` package, produce a violin plot of *score* across the two values of *econhs* (note, you may need to look up violin plots to familiarize yourself with them). Create a title for the graph and relabel the x and y axes with more intuitive names. Describe the relationship between these two variables. \[NOTE: when you define the aesthetics in your plot, you will need to declare *econhs* as a factor variable using `as.factor(econhs)`\]
+
+INSERT COMMENTS HERE
+
+```{r}
+
+```
+
+4\.  Using the `ggplot2` package, produce a scatterplot with *score* on the y-axis and *hsgpa* on the x-axis. Layer on top of that a **loess** regression line (again, look up what a loess function is). Create a title for the graph and relabel the x and y axes with more intuitive names. Describe the relationship between these two variables.
+
+INSERT COMMENTS HERE
+
+```{r}
+
+```
+
+5\.  Suppose that the process that generates a set of data is $y = 1 + x + 0.5*x^2 + \epsilon$, where $\epsilon \sim \mathcal{N}(0,40^2)$, and $x \sim \mathcal{N}(30,5^2)$.  This means that the Conditional Expectation Function (CEF) is $E[y|x] = 1 + x + 0.5*x^2$.  The code below creates the data for $x$ and $y$.  Plot the conditional expectation function on top of a scatterplot of the data.
+
+
+```{r}
+data <- tibble(x = rnorm(1000,30,5),
+               y = 1 + x + 0.5*x^2 + rnorm(1000,0,40))
+```
+
+
+6\.  Suppose you are interested in the Population Regression of $y$ on $x$ as an approximation of the CEF.  Compute the population regression slope and intercept.  A useful piece of information for this question is that for a Normal random variable $x$, the covariance between $x$ and $x^2$ is $(E[x])^3 + 3E[x]Var[x] - E[x]((E[x])^2+ Var[x])$.
+
+INSERT COMMENTS HERE
+
+
+7\. Plot the Population Regression Function (PRF) with the CEF and comment on the quality of the approximation.
+
+INSERT COMMENTS HERE
+
+```{r}
+
+```
+
+
