@@ -29,7 +29,7 @@ Part of the analysis uses the following data file.  Save it in the same director
 
 A description of all of the variables in the dataset is here
 
-[{{< fa solid file-export >}} `datadesc.pdf](/assignments/files/datadesc.pdf)
+[{{< fa solid file-export >}} `datadesc.pdf`](/assignments/files/datadesc.pdf)
 
 ### Submission
 
