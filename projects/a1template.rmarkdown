@@ -1,0 +1,27 @@
+---
+title: "Assignment 1"
+author: "YOUR NAME HERE"
+date: "DATE GOES HERE"
+format: pdf
+---
+
+```{r include = FALSE}
+library(tidyverse)
+
+econmath <- read_csv(assign1data.csv)
+```
+
+
+
+## Questions
+
+1. Using the `econmath` data 
+
+blah blah blah
+
+
+
+```{r}
+
+```
+
