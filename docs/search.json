@@ -1958,5 +1958,12 @@
     "title": "Assignment 1",
     "section": "",
     "text": "In this assignment you are asked to manipulate data, estimate statistical relationships, and interpret the findings. The questions are based on course content we have covered up to now, so if you get stuck I highly recommend going back over that material because the questions are closely related. This includes both the lecture notes and the extra material posted to the course website.\nYou should start this assignment early because it will not be possible (in my opinion) to do well if you start close to the due date. There are parts that you may find difficult; you will want to identify them and leave enough time to ask questions if necessary."
+  },
+  {
+    "objectID": "content/causality.html#tutorials",
+    "href": "content/causality.html#tutorials",
+    "title": "Causality",
+    "section": "Tutorials",
+    "text": "Tutorials\nThe tutorial below covers the basics on how to plot DAGs in R."
   }
 ]
