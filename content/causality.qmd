@@ -41,7 +41,7 @@ The tutorial below covers the basics on how to plot DAGs in R.
 <div>
 
 ```{=html}
-<p align="center"><iframe height="500" width="100%" frameborder="no" src="https://justinsmithecon.shinyapps.io/EC655dag/"> </iframe></p>
+<p align="center"><iframe height="500" width="100%" frameborder="no" src="http://3.145.56.130:3838/EC655dag/"> </iframe></p>
 ```
 
 </div>
