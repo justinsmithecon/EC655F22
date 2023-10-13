@@ -34,5 +34,12 @@ The slides are embedded in this page, and you can scroll through them with the a
 
 The tutorial below covers how to run regressions and output results in R  
 
+<div>
+
+```{=html}
+<p align="center"><iframe height="500" width="100%" frameborder="no" src="http://3.145.56.130:3838/EC655regression/"> </iframe></p>
+```
+
+</div>
 
 
