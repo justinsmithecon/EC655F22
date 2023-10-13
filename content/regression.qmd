@@ -7,14 +7,14 @@ title: "Regression"
 
 - AP1 Chapter 3
 - AP2 Chapter 2
-- C "Properties of Regression"
+- C Chapter 2
 - CT Chapter 4
-- HA Chapters 2,3,4
+- HA Chapters 2
 - HK Chapter 13
 - K Chapter 3
 - SW Chapters 4,5,6,7,8
 - W1 Chapter 4
-- W2 Appendix E
+- W2 Chapters 2,3
 
 ## Slides
 

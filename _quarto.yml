@@ -39,6 +39,8 @@ website:
               file: content/regression.qmd
             - text: "Causality"
               file: content/causality.qmd
+            - text: "OLS"
+              file: content/ols.qmd              
 
     - title: "Assignments"
       style: "docked"

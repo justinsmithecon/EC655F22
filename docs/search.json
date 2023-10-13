@@ -487,14 +487,14 @@
     "href": "content/regression.html",
     "title": "Regression",
     "section": "",
-    "text": "AP1 Chapter 3\nAP2 Chapter 2\nC “Properties of Regression”\nCT Chapter 4\nHA Chapters 2,3,4\nHK Chapter 13\nK Chapter 3\nSW Chapters 4,5,6,7,8\nW1 Chapter 4\nW2 Appendix E"
+    "text": "AP1 Chapter 3\nAP2 Chapter 2\nC Chapter 2\nCT Chapter 4\nHA Chapters 2\nHK Chapter 13\nK Chapter 3\nSW Chapters 4,5,6,7,8\nW1 Chapter 4\nW2 Chapters 2,3"
   },
   {
     "objectID": "content/regression.html#readings",
     "href": "content/regression.html#readings",
     "title": "Regression",
     "section": "",
-    "text": "AP1 Chapter 3\nAP2 Chapter 2\nC “Properties of Regression”\nCT Chapter 4\nHA Chapters 2,3,4\nHK Chapter 13\nK Chapter 3\nSW Chapters 4,5,6,7,8\nW1 Chapter 4\nW2 Appendix E"
+    "text": "AP1 Chapter 3\nAP2 Chapter 2\nC Chapter 2\nCT Chapter 4\nHA Chapters 2\nHK Chapter 13\nK Chapter 3\nSW Chapters 4,5,6,7,8\nW1 Chapter 4\nW2 Chapters 2,3"
   },
   {
     "objectID": "content/regression.html#slides",
@@ -1180,14 +1180,14 @@
     "href": "content/causality.html",
     "title": "Causality",
     "section": "",
-    "text": "AP1 Chapter 3\nAP2 Chapter 2\nC “Properties of Regression”\nCT Chapter 4\nHA Chapters 2,3,4\nHK Chapter 13\nK Chapter 3\nSW Chapters 4,5,6,7,8\nW1 Chapter 4\nW2 Appendix E"
+    "text": "AP1 Chapter 3\nAP2 Chapter 2\nC Chapters 3,4\nCT Chapter 2\nHA Chapter 2\nHK Chapters 5,6,7,8,9,10,11\nK Chapter 3\nSW Chapter 4\nW1 Chapters 2,4\nW2 Chapter 3"
   },
   {
     "objectID": "content/causality.html#readings",
     "href": "content/causality.html#readings",
     "title": "Causality",
     "section": "",
-    "text": "AP1 Chapter 3\nAP2 Chapter 2\nC “Properties of Regression”\nCT Chapter 4\nHA Chapters 2,3,4\nHK Chapter 13\nK Chapter 3\nSW Chapters 4,5,6,7,8\nW1 Chapter 4\nW2 Appendix E"
+    "text": "AP1 Chapter 3\nAP2 Chapter 2\nC Chapters 3,4\nCT Chapter 2\nHA Chapter 2\nHK Chapters 5,6,7,8,9,10,11\nK Chapter 3\nSW Chapter 4\nW1 Chapters 2,4\nW2 Chapter 3"
   },
   {
     "objectID": "content/causality.html#slides",
@@ -1922,7 +1922,7 @@
     "href": "assignments/assign1.html",
     "title": "Assignment 1",
     "section": "",
-    "text": "In this assignment you are asked to manipulate data, estimate statistical relationships, and interpret the findings. The questions are based on course content we have covered up to now, so if you get stuck I highly recommend going back over that material because the questions are closely related. This includes both the lecture notes and the extra material posted to the course website.\nYou should start this assignment early because it will not be possible (in my opinion) to do well if you start close to the due date. There are parts that you may find difficult; you will want to identify them and leave enough time to ask questions if necessary."
+    "text": "Answer Key\n\n\n\nYou can download the solutions using the links below\n a1solutions.qmd\n a1solutions.pdf"
   },
   {
     "objectID": "assignments/assign1.html#assignment-description",
@@ -1956,8 +1956,8 @@
     "objectID": "assignments/assign1.html#description",
     "href": "assignments/assign1.html#description",
     "title": "Assignment 1",
-    "section": "",
-    "text": "In this assignment you are asked to manipulate data, estimate statistical relationships, and interpret the findings. The questions are based on course content we have covered up to now, so if you get stuck I highly recommend going back over that material because the questions are closely related. This includes both the lecture notes and the extra material posted to the course website.\nYou should start this assignment early because it will not be possible (in my opinion) to do well if you start close to the due date. There are parts that you may find difficult; you will want to identify them and leave enough time to ask questions if necessary."
+    "section": "Description",
+    "text": "Description\nIn this assignment you are asked to manipulate data, estimate statistical relationships, and interpret the findings. The questions are based on course content we have covered up to now, so if you get stuck I highly recommend going back over that material because the questions are closely related. This includes both the lecture notes and the extra material posted to the course website.\nYou should start this assignment early because it will not be possible (in my opinion) to do well if you start close to the due date. There are parts that you may find difficult; you will want to identify them and leave enough time to ask questions if necessary."
   },
   {
     "objectID": "content/causality.html#tutorials",
@@ -1965,5 +1965,369 @@
     "title": "Causality",
     "section": "Tutorials",
     "text": "Tutorials\nThe tutorial below covers the basics on how to plot DAGs in R."
+  },
+  {
+    "objectID": "slides/ols/index.html#estimation-by-method-of-moments",
+    "href": "slides/ols/index.html#estimation-by-method-of-moments",
+    "title": "E655 - Econometrics",
+    "section": "Estimation by Method of Moments",
+    "text": "Estimation by Method of Moments\n\nRecall that the population linear regression model is\n\\[y = \\mathbf{x}\\boldsymbol{\\beta} + u\\]\nWe wish to estimate the slope parameters of this model\nThe first step is to collect a sample \\(\\{(\\mathbf{x}_{i},y_{i}): i=1,2,...,n)\\}\\)\n\nSamples are drawn independently from the same distribution\nThis means each is independent and identically distributed (iid)\n\nThe usual method we use for estimation is Ordinary Least Squares (OLS)\n\nMinimize the sum of the squared residuals"
+  },
+  {
+    "objectID": "slides/ols/index.html#estimation-by-method-of-moments-1",
+    "href": "slides/ols/index.html#estimation-by-method-of-moments-1",
+    "title": "E655 - Econometrics",
+    "section": "Estimation by Method of Moments",
+    "text": "Estimation by Method of Moments\n\nYou get the same result with the Method of Moments\n\nReplace the unknown population moments with their sample equivalents\n\nAbove we found that the population slopes are\n\\[\\boldsymbol{\\beta}=(\\textbf{E}[\\mathbf{x'x}])^{-1} \\textbf{E}[\\mathbf{x}'y]\\]\nMOM replaces population expectations with sample means across \\(n\\) observations\n\\[\\boldsymbol{\\hat{\\beta}}=\\left ( \\frac{1}{n}\\sum_{i=1}^{n}\\mathbf{x_{i}'x_{i}} \\right )^{-1} \\left ( \\frac{1}{n} \\sum_{i=1}^{n}\\mathbf{x}_{i}'y_{i}\\right ) \\]\nHere \\(i\\) indexes the sample observation\n\\(\\mathbf{x}_{i}\\) is a \\(1 \\times (k+1)\\) vector, so \\(\\mathbf{x_{i}'x_{i}}\\) is a \\((k+1) \\times (k+1)\\) matrix"
+  },
+  {
+    "objectID": "slides/ols/index.html#estimation-by-method-of-moments-2",
+    "href": "slides/ols/index.html#estimation-by-method-of-moments-2",
+    "title": "E655 - Econometrics",
+    "section": "Estimation by Method of Moments",
+    "text": "Estimation by Method of Moments\n\nRecall partitioned matrix multiplication\nWe can rewrite\n\\[\\left ( \\sum_{i=1}^{n}\\mathbf{x_{i}'x_{i}} \\right ) = \\mathbf{X'X}\\] \\[\\left ( \\sum_{i=1}^{n}\\mathbf{x}_{i}'y_{i}\\right ) =  \\mathbf{X'y}\\]\nSubstituting in, an equivalent expression for the estimated slope\n\\[\\boldsymbol{\\hat{\\beta}}=\\left (  \\mathbf{X'X}\\right )^{-1}  \\mathbf{X'y}\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#ordinary-least-squares",
+    "href": "slides/ols/index.html#ordinary-least-squares",
+    "title": "E655 - Econometrics",
+    "section": "Ordinary Least Squares",
+    "text": "Ordinary Least Squares\n\n\n\n\n\n\nImportant\n\n\nThe Ordinary Least Squares (OLS) estimator is\n\\[\\boldsymbol{\\hat{\\beta}}=\\left (  \\mathbf{X'X}\\right )^{-1}  \\mathbf{X'y}\\]\n\n\n\n\nYou can use \\(\\boldsymbol{\\hat{\\beta}}\\) to obtain predicted values of \\(y\\)\n\\[\\hat{\\mathbf{y}} = \\mathbf{X}\\boldsymbol{\\hat{\\beta}}\\]\nBy definition, the OLS residual is the difference between \\(\\mathbf{y}\\) and its predicted value\n\\[\\mathbf{y} =  \\mathbf{X}\\boldsymbol{\\hat{\\beta}} + \\mathbf{\\hat{u}}\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#ordinary-least-squares-1",
+    "href": "slides/ols/index.html#ordinary-least-squares-1",
+    "title": "E655 - Econometrics",
+    "section": "Ordinary Least Squares",
+    "text": "Ordinary Least Squares"
+  },
+  {
+    "objectID": "slides/ols/index.html#introduction",
+    "href": "slides/ols/index.html#introduction",
+    "title": "E655 - Econometrics",
+    "section": "Introduction",
+    "text": "Introduction\n\nOLS is one way to estimate a linear regression model\nIt is important to know how well the method works\nOne way is to examine the “fit” of our regression line\n\nHow close to the line are the datapoints?\nDoes \\(\\mathbf{x}\\) explain a large fraction of variation in \\(y\\)?\n\nThese are the algebraic properties of our estimator\n\nMathematical relationships hold true in each sample\n\nDifferent from the statistical properties\n\nThe behaviour of estimators across (hypothetical) repeated samples"
+  },
+  {
+    "objectID": "slides/ols/index.html#properties-of-the-residuals",
+    "href": "slides/ols/index.html#properties-of-the-residuals",
+    "title": "E655 - Econometrics",
+    "section": "Properties of the Residuals",
+    "text": "Properties of the Residuals\n\nThe first properties relate to the OLS residuals\n\\[\\mathbf{X}'\\hat{\\mathbf{u}} =\n\\begin{bmatrix}\n\\sum_{i=1}^{n}\\hat{u}_{i}\\\\\n\\sum_{i=1}^{n}x_{1i}\\hat{u}_{i}\\\\\n\\vdots\\\\\n\\sum_{i=1}^{n}x_{ki}\\hat{u}_{i}\\\\\n\\end{bmatrix}\n= \\mathbf{0}\\]\n\nThe sum (and the mean) of the residuals is zero\nThe sample covariance between \\(x\\) and the residuals is zero\n\nThese are the sample versions of \\(\\textbf{E}[\\mathbf{x}'\\mathbf{u}]=\\mathbf{0}\\)"
+  },
+  {
+    "objectID": "slides/ols/index.html#r2",
+    "href": "slides/ols/index.html#r2",
+    "title": "E655 - Econometrics",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\n\nThe Coefficient of Determination (\\(R^2\\)) measures the fraction of the variation in \\(y\\) that is explained by the independent variables \\[R^2 = \\frac{ESS}{TSS}\\]\nTSS is the Total Sum of Squares \\[TSS = \\sum_{i=1}^{N} (y_{i} - \\bar{y})^2 = \\mathbf{(Ny)'Ny} = \\mathbf{y'Ny}\\]\n\nwhere \\(\\mathbf{N} = (\\mathbf{I} - \\frac{1}{n}\\mathbf{11'})\\) is a symmetric, idempotent matrix\n\n\\(\\mathbf{1}\\) is a vector of all ones\n\n\\(\\mathbf{N}\\) turns a vector into deviations from means"
+  },
+  {
+    "objectID": "slides/ols/index.html#r2-1",
+    "href": "slides/ols/index.html#r2-1",
+    "title": "E655 - Econometrics",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\n\nESS is the Explained Sum of Squares \\[ESS = \\sum_{i=1}^{N} (\\hat{y}_{i} - \\bar{y})^2 =\\mathbf{(N\\hat{y})'N\\hat{y}} = \\mathbf{\\hat{y}'N\\hat{y}}\\]\nAnd the Residual Sum of Squares (SSR) is \\[SSR= \\sum_{i=1}^{N} (\\hat{u}_{i})^2 = \\hat{\\mathbf{u}}'\\hat{\\mathbf{u}}\\]\n\\(R^2\\) ranges between 0 and 1\n\n\\(R^2 = 0\\) means that \\(\\mathbf{x}\\) explains none of the variation in \\(y\\)\n\\(R^2 = 1\\) means that \\(\\mathbf{x}\\) explains all of the variation in \\(y\\)"
+  },
+  {
+    "objectID": "slides/ols/index.html#r2-2",
+    "href": "slides/ols/index.html#r2-2",
+    "title": "E655 - Econometrics",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\n\n\\(R^2\\) is also equal to the square of correlation coefficient between \\(y_{i}\\) and \\(\\hat{y}_{i}\\)\nAn important relationship between sums of squares is \\[TSS=  ESS + SSR\\]\n\nMovement of \\(y_{i}\\) away from its average is explained by regression and other factors\n\nUsing matrix notation,\n\\[\\mathbf{\\hat{y}'\\mathbf{N}\\hat{y}} = (\\mathbf{X}\\boldsymbol{\\hat{\\beta}} + \\hat{\\mathbf{u}})'\\mathbf{N}(\\mathbf{X}\\boldsymbol{\\hat{\\beta} + \\hat{\\mathbf{u}}} )\\] \\[= (\\boldsymbol{\\hat{\\beta}}' \\mathbf{X}'+ \\hat{\\mathbf{u}}')(\\mathbf{N}\\mathbf{X}\\boldsymbol{\\hat{\\beta} + \\mathbf{N}\\hat{\\mathbf{u}}} )\\] \\[= \\boldsymbol{\\hat{\\beta}}' \\mathbf{X}' N\\mathbf{X}\\boldsymbol{\\hat{\\beta}} + \\boldsymbol{\\hat{\\beta}}' \\mathbf{X}' \\mathbf{N}\\hat{\\mathbf{u}} + \\hat{\\mathbf{u}}'N\\mathbf{X}\\boldsymbol{\\hat{\\beta} +\\hat{\\mathbf{u}}' \\mathbf{N}\\hat{\\mathbf{u}}}\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#r2-3",
+    "href": "slides/ols/index.html#r2-3",
+    "title": "E655 - Econometrics",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\n\nBecause \\(\\mathbf{N}\\hat{\\mathbf{u}} =\\hat{\\mathbf{u}}\\) and \\(\\mathbf{X}'\\hat{\\mathbf{u}} = \\mathbf{0}\\) we can simplify to\n\\[= \\boldsymbol{\\hat{\\beta}}' N\\mathbf{X}' \\mathbf{X}\\boldsymbol{\\hat{\\beta}} +\\hat{\\mathbf{u}}' \\hat{\\mathbf{u}} = \\mathbf{\\hat{y}'N\\hat{y}}+\\hat{\\mathbf{u}}' \\hat{\\mathbf{u}}\\]\nWe noted above that \\(ESS = \\mathbf{\\hat{y}'N\\hat{y}}\\) and \\(SSR=\\hat{\\mathbf{u}}' \\hat{\\mathbf{u}}\\)\nAs a result, you can reexpress \\[R^2 = \\frac{ESS}{TSS} = 1- \\frac{SSR}{TSS}\\]\n\n\n\n\n\n\nCaution\n\n\nBe cautious when using \\(R^2\\). In real applications, \\(R^2\\) is often very low, but this does not mean the regression is “bad” or that we haven’t measured a causal relationship. It just means we have not captured all factors that explain \\(Y\\)"
+  },
+  {
+    "objectID": "slides/ols/index.html#r2-4",
+    "href": "slides/ols/index.html#r2-4",
+    "title": "E655 - Econometrics",
+    "section": "\\(R^2\\)",
+    "text": "\\(R^2\\)\n\nA low \\(R^2\\) does not imply a poor estimate of \\(\\mathbf{\\beta}\\)\n\n\\(\\mathbf{\\beta}\\) measures effect on \\(y\\) from changing \\(\\mathbf{x}\\), all else equal\n\\(R^2\\) measures fraction of total variation in \\(y\\) is explained by \\(\\mathbf{x}\\)\nConcepts are independent of each other\n\nWhether estimate of \\(\\mathbf{\\beta}\\) is good or bad depends on statistical properties\n\nConsistency and unbiasedness\nWe cover these in detail below\n\nIn practice, researchers do not pay much attention to \\(R^2\\)"
+  },
+  {
+    "objectID": "slides/ols/index.html#standard-error-of-regression-ser",
+    "href": "slides/ols/index.html#standard-error-of-regression-ser",
+    "title": "E655 - Econometrics",
+    "section": "Standard Error of Regression (SER)",
+    "text": "Standard Error of Regression (SER)\n\nCan also measure fit with spread of data around regression line\nThe residual \\(\\hat{\\mathbf{u}}\\) is deviation of \\(\\mathbf{y}\\) from prediction \\[\\mathbf{\\hat{u}} = \\mathbf{y} -  \\mathbf{X}\\boldsymbol{\\hat{\\beta}}\\]\nThe standard error of regression (SER) is the standard deviation of \\(\\hat{u}_{i}\\)\n\nThe average distance of \\(y_{i}\\) from its prediction \\(\\hat{y}_{i}\\)\n\n\\[SER = s_{\\hat{u}} = \\sqrt{\\frac{\\hat{\\mathbf{u}}' \\hat{\\mathbf{u}}}{n-k-1} }= \\sqrt{\\frac{SSR}{n-k-1} }\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#introduction-1",
+    "href": "slides/ols/index.html#introduction-1",
+    "title": "E655 - Econometrics",
+    "section": "Introduction",
+    "text": "Introduction\n\n\\(\\boldsymbol{\\hat{\\beta}}\\) is an estimator for \\(\\boldsymbol{\\beta}\\)\n\nJust like sample mean is an estimator for population mean\n\\(\\boldsymbol{\\beta}\\) is a population parameter, \\(\\boldsymbol{\\hat{\\beta}}\\) is a function of the sample\n\n\\(\\boldsymbol{\\hat{\\beta}}\\) are random variables with a sampling distribution\n\nRealized values change from sample to sample\n\nWe want estimators to have certain statistical properties\n\nConsistency\nEfficiency (lowest variance)\nUnbiasedness"
+  },
+  {
+    "objectID": "slides/ols/index.html#introduction-2",
+    "href": "slides/ols/index.html#introduction-2",
+    "title": "E655 - Econometrics",
+    "section": "Introduction",
+    "text": "Introduction\n\nThere are large sample properties and finite sample properties\n\nLarge sample (asymptotic) properties hold as sample size grows large\nFinite sample ones hold in any sample size\n\nWe will focus most on large sample properties\n\nConsistency and large sample distribution\nThese often matter most in applied work\n\nOccasionally we will touch on the finite sample properties like unbiasedness"
+  },
+  {
+    "objectID": "slides/ols/index.html#assumptions",
+    "href": "slides/ols/index.html#assumptions",
+    "title": "E655 - Econometrics",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nNeed assumptions to derive statistical properties\nFocus on the assumptions necessary for the large sample properties\n\n\n\\(\\textbf{E}[\\mathbf{x}'u]=\\mathbf{0}\\)\n\nSays that the population residual is mean zero and uncorrelated with \\(\\mathbf{x}\\)\nThis is true in our model by definition, so not really an assumption\n\n\\(\\text{rank } \\textbf{E}[\\mathbf{x'x}] = k+1\\)\n\nSays that there is no linear dependence in \\(\\mathbf{x}\\)\nSame as saying there is no perfect multicollinearity among regressors"
+  },
+  {
+    "objectID": "slides/ols/index.html#assumptions-1",
+    "href": "slides/ols/index.html#assumptions-1",
+    "title": "E655 - Econometrics",
+    "section": "Assumptions",
+    "text": "Assumptions\n\n\\(\\{(\\mathbf{x}_{i},y_{i}): i=1,2,...,n)\\}\\) are a random sample\n\nImplies that the observations are independent and identically distributed (iid)\nThis is necessary to establish consistency\n\n\n\n\n\n\n\n\nImportant\n\n\nWhen these assumptions are true, the large sample distribution of \\(\\boldsymbol{\\hat{\\beta}}\\) is\n\\[\\boldsymbol{\\hat{\\beta}} \\sim \\mathcal{N}(\\boldsymbol{\\beta}, n^{-1}[\\mathbf{E}(\\mathbf{x'x})^{-1}]\\mathbf{E}(u^2\\mathbf{x'x})[\\mathbf{E}(\\mathbf{x'x})^{-1}])\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#consistency",
+    "href": "slides/ols/index.html#consistency",
+    "title": "E655 - Econometrics",
+    "section": "Consistency",
+    "text": "Consistency\n\nConsistency: an estimator approaches the parameter when the sample gets big\n\nRemoving sampling variation leaves us with the true parameter\n\nEconometricians like estimators to be consistent at minimum\nWhen the three assumptions above are true, the OLS estimator is consistent\n\n\n\n\n\n\nNote\n\n\nThe concept of consistency is separate from causality. You can have a consistent estimator that does not represent the casual effect."
+  },
+  {
+    "objectID": "slides/ols/index.html#consistency-1",
+    "href": "slides/ols/index.html#consistency-1",
+    "title": "E655 - Econometrics",
+    "section": "Consistency",
+    "text": "Consistency\n\nMathematically, write the OLS estimator as\n\\[\\boldsymbol{\\hat{\\beta}}=\\left (  \\mathbf{X'X}\\right )^{-1}  \\mathbf{X'y}\\] \\[=\\left (  \\mathbf{X'X}\\right )^{-1}  \\mathbf{X'(X'\\boldsymbol{\\beta} + u)}\\] \\[=\\left (  \\mathbf{X'X}\\right )^{-1}  \\mathbf{X'X}\\boldsymbol{\\beta} + \\left (  \\mathbf{X'X}\\right )^{-1} \\mathbf{X'}u\\] \\[=\\boldsymbol{\\beta} + \\left (  \\mathbf{X'X}\\right )^{-1} \\mathbf{X'}u\\]\nIf we partition the matrices, we can write this equivalently as\n\\[\\boldsymbol{\\hat{\\beta}}=\\boldsymbol{\\beta} + \\left ( \\frac{1}{n} \\sum_{i=1}^{n}\\mathbf{x_{i}'x_{i}}\\right )^{-1} \\left (\\frac{1}{n}\\sum_{i=1}^{n}\\mathbf{x_{i}'}u_{i} \\right )\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#consistency-2",
+    "href": "slides/ols/index.html#consistency-2",
+    "title": "E655 - Econometrics",
+    "section": "Consistency",
+    "text": "Consistency\n\nConsistency means showing \\(\\boldsymbol{\\hat{\\beta}}\\) approaches \\(\\boldsymbol{\\beta}\\) as \\(n\\) gets large\nIt is established with the probability limit\n\nProbability that an estimator lies in small range around a parameter as \\(n \\rightarrow \\infty\\)\nThe probability limit of OLS slope estimator \\(\\hat{\\beta}_{k}\\) is \\(\\beta_{k}\\) if \\[\\lim_{n \\rightarrow \\infty} Pr(\\beta_{k} - \\epsilon &lt; \\hat{\\beta}_{k} &lt; \\beta_{k} + \\epsilon) \\rightarrow 1\\]\nThe short form of this is \\[\\text{plim }(\\hat{\\beta}_{k}) = \\beta_{k}\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#consistency-3",
+    "href": "slides/ols/index.html#consistency-3",
+    "title": "E655 - Econometrics",
+    "section": "Consistency",
+    "text": "Consistency\n\nYou can use plim as an operator with the following rules\n\n\\[\\text{plim}(x+y) = \\text{plim}(x) + \\text{plim}(y)\\] \\[\\text{plim}(xy) = \\text{plim}(x)\\text{plim}(y)\\] \\[\\text{plim}(\\frac{x}{y}) = \\frac{\\text{plim}(x)}{ \\text{plim}(y)}\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#consistency-4",
+    "href": "slides/ols/index.html#consistency-4",
+    "title": "E655 - Econometrics",
+    "section": "Consistency",
+    "text": "Consistency\n\nApplying this to our slope estimator\n\n\\[\\text{plim}(\\boldsymbol{\\hat{\\beta}})=\\boldsymbol{\\beta} + \\text{plim} \\left( \\left ( \\frac{1}{n} \\sum_{i=1}^{n}\\mathbf{x_{i}'x_{i}}\\right )^{-1} \\left (\\frac{1}{n}\\sum_{i=1}^{n}\\mathbf{x_{i}'}u_{i} \\right )\\right )\\] \\[\\text{plim}(\\boldsymbol{\\hat{\\beta}})=\\boldsymbol{\\beta} + \\text{plim} \\left ( \\frac{1}{n} \\sum_{i=1}^{n}\\mathbf{x_{i}'x_{i}}\\right )^{-1} \\text{plim} \\left(  \\frac{1}{n}\\sum_{i=1}^{n}\\mathbf{x_{i}'}u_{i} \\right )\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#consistency-5",
+    "href": "slides/ols/index.html#consistency-5",
+    "title": "E655 - Econometrics",
+    "section": "Consistency",
+    "text": "Consistency\n\nYou can show that\n\\[\\text{plim} \\left ( \\frac{1}{n} \\sum_{i=1}^{n}\\mathbf{x_{i}'x_{i}}\\right )^{-1}  = \\left( \\mathbf{E}[\\mathbf{x'x}]\\right )^{-1}\\] \\[\\text{plim} \\left ( \\frac{1}{n} \\sum_{i=1}^{n}\\mathbf{x'}u\\right )  = \\mathbf{E}\\left( \\mathbf{x'}u\\right )\\]\nA property of our model is \\(\\mathbf{E}\\left( \\mathbf{x'}u\\right ) =\\mathbf{0}\\), so\n\\[\\text{plim}(\\boldsymbol{\\hat{\\beta}})=\\boldsymbol{\\beta}\\]\nGiven our assumptions, the OLS estimator is consistent for \\(\\boldsymbol{\\beta}\\)\nMany economic researchers work with big samples, so asymptotic approach works"
+  },
+  {
+    "objectID": "slides/ols/index.html#unbiasedness",
+    "href": "slides/ols/index.html#unbiasedness",
+    "title": "E655 - Econometrics",
+    "section": "Unbiasedness",
+    "text": "Unbiasedness\n\nEconomists generally think at minimum an estimator should be consistent\nAnother desirable property is unbiasedness\n\nOn average, the estimator should equal the parameter\n\nThis finite sample property holds for any sample size\nThe OLS estimator is unbiased under stricter assumptions than those made above\nWe need to replace assumption \\(\\textbf{E}[\\mathbf{x}'u]=0\\) with \\(\\textbf{E}[u|\\mathbf{x}]=0\\)\n\nAssumption says that \\(u\\) is unrelated to any function of \\(\\mathbf{x}\\)"
+  },
+  {
+    "objectID": "slides/ols/index.html#unbiasedness-1",
+    "href": "slides/ols/index.html#unbiasedness-1",
+    "title": "E655 - Econometrics",
+    "section": "Unbiasedness",
+    "text": "Unbiasedness\n\nThis is stronger than assuming \\(\\textbf{E}[\\mathbf{x}'u]=\\mathbf{0}\\)\n\nZero correlation means no linear relationship between \\(u\\) and \\(\\mathbf{x}\\)\n\\(\\textbf{E}[u|\\mathbf{x}]=0\\) means no linear or nonlinear relationship\n\nWith this assumption we can show \\(\\boldsymbol{\\hat{\\beta}}\\) is unbiased\nRecall the OLS estimator is \\[\\boldsymbol{\\hat{\\beta}}=\\boldsymbol{\\beta} + \\left (  \\mathbf{X'X}\\right )^{-1} \\mathbf{X'}\\mathbf{u}\\]\nWe assume \\(u\\) and \\(\\mathbf{x}\\) are unrelated in the population, so \\(\\textbf{E}[\\mathbf{u}|\\mathbf{X}]=\\mathbf{0}\\)\n\nSays each element of \\(\\mathbf{u}\\) is unrelated to all parts of \\(\\mathbf{X}\\)"
+  },
+  {
+    "objectID": "slides/ols/index.html#unbiasedness-2",
+    "href": "slides/ols/index.html#unbiasedness-2",
+    "title": "E655 - Econometrics",
+    "section": "Unbiasedness",
+    "text": "Unbiasedness\n\nTaking expectations\n\\[\\mathbf{E}[\\boldsymbol{\\hat{\\beta}}|\\mathbf{X}]=\\mathbf{E}[\\boldsymbol{\\beta} + \\left (  \\mathbf{X'X}\\right )^{-1} \\mathbf{X'}\\mathbf{u}|\\mathbf{X}]\\]\nBringing the expectation operator through the bracket we get\n\\[\\mathbf{E}[\\boldsymbol{\\hat{\\beta}}|\\mathbf{X}]=\\boldsymbol{\\beta} + \\mathbf{E}[\\left (  \\mathbf{X'X}\\right )^{-1} \\mathbf{X'}\\mathbf{u}|\\mathbf{X}]\\] \\[=\\boldsymbol{\\beta} + \\mathbf{E}[\\left (  \\mathbf{X'X}\\right )^{-1} \\mathbf{X'}\\mathbf{E}[\\mathbf{u}|\\mathbf{X}]\\] \\[=\\boldsymbol{\\beta}\\]\nIf you take the average across all values of \\(\\mathbf{X}\\), you get \\[\\mathbf{E}[\\boldsymbol{\\hat{\\beta}}] =\\mathbf{E}[\\mathbf{E}[\\boldsymbol{\\hat{\\beta}}|\\mathbf{X}]] = \\boldsymbol{\\beta}\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#unbiasedness-3",
+    "href": "slides/ols/index.html#unbiasedness-3",
+    "title": "E655 - Econometrics",
+    "section": "Unbiasedness",
+    "text": "Unbiasedness\n\nImportant to emphasize unbiasedness requires stronger assumptions\nSome estimators are consistent but biased in finite samples\n\nInstrumental variables (IV) estimator is one of them\n\nThis is why researchers focus more on consistency as basis for good estimator\nWe now discuss the distribution and variance of \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nThis will allow us to move on to talking about inference\nWe will emphasize that inference is as important as estimation"
+  },
+  {
+    "objectID": "slides/ols/index.html#large-sample-distribution-of-boldsymbolhatbeta",
+    "href": "slides/ols/index.html#large-sample-distribution-of-boldsymbolhatbeta",
+    "title": "E655 - Econometrics",
+    "section": "Large Sample Distribution of \\(\\boldsymbol{\\hat{\\beta}}\\)",
+    "text": "Large Sample Distribution of \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nFor hypothesis tests on \\(\\boldsymbol{\\beta}\\), we need to know the distribution of \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nIf our estimate is in the tails of the distribution when null is true, we reject\nIf it is in the center, we fail to reject\n\nWe will focus on the large-sample distribution\n\nDistribution as sample size gets large\nIf you make assumptions about the errors, you can get the finite distribution\n\nTo get large sample distribution, we rely on the Central Limit Theorem (CLT)"
+  },
+  {
+    "objectID": "slides/ols/index.html#large-sample-distribution-of-boldsymbolhatbeta-1",
+    "href": "slides/ols/index.html#large-sample-distribution-of-boldsymbolhatbeta-1",
+    "title": "E655 - Econometrics",
+    "section": "Large Sample Distribution of \\(\\boldsymbol{\\hat{\\beta}}\\)",
+    "text": "Large Sample Distribution of \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nThe CLT says\n\nIf random vectors \\(w_{i}, i=1,2,...\\) are iid with mean \\(\\mathbf{E}(\\mathbf{w_{i}})\\) and variance \\(\\text{var}(\\mathbf{w_{i}})\\)\nThen \\(\\bar{\\mathbf{w}} = \\frac{1}{n} \\sum_{1=1}^{n}\\mathbf{w_{i}}\\) converges to \\(\\mathcal{N}(\\mathbf{E}(\\mathbf{w_{i}}), n^{-1}\\text{var}(\\mathbf{w_{i}}))\\)\n\nIf you write the slope estimator as\n\\[\\boldsymbol{\\hat{\\beta}}=\\boldsymbol{\\beta} + \\left ( \\frac{1}{n} \\sum_{i=1}^{n}\\mathbf{x_{i}'x_{i}}\\right )^{-1} \\left (\\frac{1}{n}\\sum_{i=1}^{n}\\mathbf{x_{i}'}u_{i} \\right )\\]\nTaking mean of \\(\\boldsymbol{\\hat{\\beta}}-\\boldsymbol{\\beta}\\) is equivalent to a weighted mean of \\(\\mathbf{x_{i}'}u_{i}\\)\nApplying the CLT, \\(\\boldsymbol{\\hat{\\beta}}\\) has a Normal distribution with mean \\(\\boldsymbol{\\beta}\\) and variance\n\\[\\text{var}(\\boldsymbol{\\hat{\\beta}}) = n^{-1}[\\mathbf{E}(\\mathbf{x'x})^{-1}]\\mathbf{E}(u^2\\mathbf{x'x})[\\mathbf{E}(\\mathbf{x'x})^{-1}]\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#large-sample-distribution-of-boldsymbolhatbeta-2",
+    "href": "slides/ols/index.html#large-sample-distribution-of-boldsymbolhatbeta-2",
+    "title": "E655 - Econometrics",
+    "section": "Large Sample Distribution of \\(\\boldsymbol{\\hat{\\beta}}\\)",
+    "text": "Large Sample Distribution of \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nThe previous discussion assumes nothing about the distribution of the error terms\nSometimes it makes sense to assume homoskedasticity of the errors\n\nVariation in the errors is not a function of \\(\\mathbf{x}\\)\n\nUsually this is stated as\n\\[\\text{var}(u|\\mathbf{x}) = \\sigma^2\\]\nYou can write the variance of \\(u\\) given \\(\\mathbf{x}\\) as \\[\\text{var}(u|\\mathbf{x})  = \\mathbf{E}(u^2|\\mathbf{x}) - \\left [ \\mathbf{E}(u|\\mathbf{x}) \\right ]^2\\]\n\nThe sum of two conditional expectations"
+  },
+  {
+    "objectID": "slides/ols/index.html#large-sample-distribution-of-boldsymbolhatbeta-3",
+    "href": "slides/ols/index.html#large-sample-distribution-of-boldsymbolhatbeta-3",
+    "title": "E655 - Econometrics",
+    "section": "Large Sample Distribution of \\(\\boldsymbol{\\hat{\\beta}}\\)",
+    "text": "Large Sample Distribution of \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nTurns out we only need to assume the first component is constant\n\\[\\mathbf{E}(u^2|\\mathbf{x}) = \\sigma^2\\]\nWe can then simplify the expression for \\(\\text{var}(\\boldsymbol{\\hat{\\beta}})\\)\nFirst, because of the law of iterated expectations\n\\[\\mathbf{E}(u^2\\mathbf{x'x}) = \\mathbf{E}(\\mathbf{E}(u^2|\\mathbf{x})\\mathbf{x'x})\\]\nSubstituting in \\(\\mathbf{E}(u^2|\\mathbf{x}) = \\sigma^2\\), we get\n\\[\\mathbf{E}(u^2\\mathbf{x'x}) = \\sigma^2\\mathbf{E}(\\mathbf{x'x})\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#large-sample-distribution-of-boldsymbolhatbeta-4",
+    "href": "slides/ols/index.html#large-sample-distribution-of-boldsymbolhatbeta-4",
+    "title": "E655 - Econometrics",
+    "section": "Large Sample Distribution of \\(\\boldsymbol{\\hat{\\beta}}\\)",
+    "text": "Large Sample Distribution of \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nFinally, substituting in to the expression for \\(\\text{var}(\\boldsymbol{\\hat{\\beta}})\\)\n\\[\\text{var}(\\boldsymbol{\\hat{\\beta}}) = n^{-1}[\\mathbf{E}(\\mathbf{x'x})^{-1}]\\sigma^2\\mathbf{E}(\\mathbf{x'x})[\\mathbf{E}(\\mathbf{x'x})^{-1}]\\] \\[= \\sigma^2 n^{-1}[\\mathbf{E}(\\mathbf{x'x})^{-1}]\\mathbf{E}(\\mathbf{x'x})[\\mathbf{E}(\\mathbf{x'x})^{-1}]\\] \\[= \\sigma^2 n^{-1}[\\mathbf{E}(\\mathbf{x'x})^{-1}]\\]\nThis is the version of the variance of \\(\\boldsymbol{\\hat{\\beta}}\\) that is given by default in Stata\nIt is only valid under homoskedasticity\n\nIn practice this is rarely the case\n\nWe cannot use these directly because they are population quantities\nNeed to estimate them"
+  },
+  {
+    "objectID": "slides/ols/index.html#variance-estimator-for-boldsymbolhatbeta",
+    "href": "slides/ols/index.html#variance-estimator-for-boldsymbolhatbeta",
+    "title": "E655 - Econometrics",
+    "section": "Variance Estimator for \\(\\boldsymbol{\\hat{\\beta}}\\)",
+    "text": "Variance Estimator for \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nFollow the same procedure by replacing population moments with sample ones\n\\[\\text{var}(\\boldsymbol{\\hat{\\beta}}) = n^{-1}[\\mathbf{E}(\\mathbf{x'x})^{-1}]\\mathbf{E}(u^2\\mathbf{x'x})[\\mathbf{E}(\\mathbf{x'x})^{-1}]\\] \\[\\hat{\\text{var}}(\\boldsymbol{\\hat{\\beta}}) = n^{-1}\\left ( \\frac{1}{n} \\sum_{i=1}^{n}\\mathbf{x_{i}'x_{i}}\\right )^{-1}\\left ( \\frac{1}{n} \\sum_{i=1}^{n}\\hat{u}_{i}^2\\mathbf{x_{i}'x_{i}}\\right )\\left ( \\frac{1}{n} \\sum_{i=1}^{n}\\mathbf{x_{i}'x_{i}}\\right )^{-1}\\]\n\\[\\hat{\\text{var}}(\\boldsymbol{\\hat{\\beta}}) = \\left (\\mathbf{X'X}\\right )^{-1}\\left ( \\sum_{i=1}^{n}\\hat{u}_{i}^2\\mathbf{x_{i}'x_{i}}\\right )\\left ( \\mathbf{X'X}\\right )^{-1}\\]\nThis is the Heteroskedasticity-Robust estimator of the variance\n\nSometimes called the robust estimator or sandwich estimator"
+  },
+  {
+    "objectID": "slides/ols/index.html#variance-estimator-for-boldsymbolhatbeta-1",
+    "href": "slides/ols/index.html#variance-estimator-for-boldsymbolhatbeta-1",
+    "title": "E655 - Econometrics",
+    "section": "Variance Estimator for \\(\\boldsymbol{\\hat{\\beta}}\\)",
+    "text": "Variance Estimator for \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nIt is what Stata produces when you use the “robust” option in regression\nThe square root of the diagonal elements are the Robust Standard Errors\nIf we assume homoskedastic errors, we get\n\\[\\hat{\\text{var}}(\\boldsymbol{\\hat{\\beta}}) = s_{\\hat{u}}^2 \\left (\\mathbf{X'X}\\right )^{-1}\\]\nwhere \\(s_{\\hat{u}}^2\\) is a consistent estimator of \\(\\sigma^2\\) and equals\n\\[s_{\\hat{u}}^2 = \\frac{\\hat{\\mathbf{u}}'\\hat{\\mathbf{u}}}{n-k-1}\\]\nThe square root of the diagonals are Stata’s default standard errors"
+  },
+  {
+    "objectID": "slides/ols/index.html#introduction-3",
+    "href": "slides/ols/index.html#introduction-3",
+    "title": "E655 - Econometrics",
+    "section": "Introduction",
+    "text": "Introduction\n\nRecall that we will never know the value of the true slope parameters\n\nThis is why we are estimating it\n\nBut, we can use our estimator and estimate to test hypotheses about them\nProcedure is as follows\n\nMake tentative assumption about true slope\nChoose a test statistic, with known distribution under assumption\nFormulate a decision rule\nCheck whether estimate is likely to occur under that rule\n\nIf no, then reject\nIf yes, fail to reject"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-single-linear-hypotheses",
+    "href": "slides/ols/index.html#testing-single-linear-hypotheses",
+    "title": "E655 - Econometrics",
+    "section": "Testing Single Linear Hypotheses",
+    "text": "Testing Single Linear Hypotheses\n\nOften in applied econometrics we test hypotheses about one parameter\n\nUsually we are interested in effect of one of regressors on outcome\nWe test whether that slope parameter is zero\n\nThe standard method is to use a \\(t\\)-test\nIn the linear regression model, the null and alternative hypotheses are\n\n\\(H_{0}: \\beta_{j} = \\beta_{j,0}\\)\n\\(H_{1}: \\beta_{j} \\neq \\beta_{j,0}\\)\n\nThe test statistic is the \\(t\\) statistic\n\\[t=\\frac{\\hat{\\beta}_{j} - \\beta_{j,0}}{se(\\hat{\\beta}_{j} )}\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-single-linear-hypotheses-1",
+    "href": "slides/ols/index.html#testing-single-linear-hypotheses-1",
+    "title": "E655 - Econometrics",
+    "section": "Testing Single Linear Hypotheses",
+    "text": "Testing Single Linear Hypotheses\n\nThe \\(t\\)-statistic is a random variable that varies across samples\nIt has a Standard Normal distribution in large samples\n\nIt is a standardized version of a Normal random variable\n\nTo compute the \\(t\\)-statistic, we need \\(se(\\hat{\\beta}_{j} )\\)\n\nThis is the square root of the \\(j\\)th diagonal element of \\(\\hat{\\text{var}}(\\boldsymbol{\\hat{\\beta}})\\)\nThe formula we use for \\(\\hat{\\text{var}}(\\boldsymbol{\\hat{\\beta}})\\) depends on whether we assume homoskedasticity\n\nWe then make a decision rule for rejection\n\nUsually this is defined in terms of a Significance Level\n\nThe significance level \\(\\alpha\\) is the maximum proportion of all possible \\(t\\) values unusual enough to reject \\(H_{0}\\)\n\nTypically, this is \\(\\alpha = 0.05\\)"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-single-linear-hypotheses-2",
+    "href": "slides/ols/index.html#testing-single-linear-hypotheses-2",
+    "title": "E655 - Econometrics",
+    "section": "Testing Single Linear Hypotheses",
+    "text": "Testing Single Linear Hypotheses\n\nChoice of significance level divides sampling distribution into two regions\n\nRejection Region: values for \\(t\\) where we reject \\(H_{0}\\)\n\nOne-sided test: the upper or lower \\(\\alpha \\%\\) of values\nTwo-sided test: the upper and lower \\(\\frac{\\alpha}{2} \\%\\) of values\n\nAcceptance Region: values for \\(t\\) where we accept \\(H_{0}\\)\n\nOne-sided test: the upper or lower \\((1-\\alpha) \\%\\) of values\nTwo-sided test: the middle \\((1-\\alpha) \\%\\) of values\n\n\nThe Critical Value separates the acceptance and rejection regions\n\nOn graphs below it is value between green and white regions\nFor two-tailed tests, there are two critical values"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-single-linear-hypotheses-3",
+    "href": "slides/ols/index.html#testing-single-linear-hypotheses-3",
+    "title": "E655 - Econometrics",
+    "section": "Testing Single Linear Hypotheses",
+    "text": "Testing Single Linear Hypotheses"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-single-linear-hypotheses-4",
+    "href": "slides/ols/index.html#testing-single-linear-hypotheses-4",
+    "title": "E655 - Econometrics",
+    "section": "Testing Single Linear Hypotheses",
+    "text": "Testing Single Linear Hypotheses\n\nValue depends on sampling distribution and \\(\\alpha\\)\n\nAt \\(5\\%\\) significance with a t-distribution and a large sample\n\nUpper tailed test: \\(t^{c}\\) = 1.64\nLower tailed test: \\(t^{c}\\) = -1.64\nTwo tailed test: \\(|t^{c}|\\) = 1.96\n\n\nFinally, we compare our realized test statistic to the critical values\n\nIn two-tailed test reject if \\(|t| &gt; |t^{c}|\\)\nIn lower-tailed test reject if \\(t &lt; t^{c}\\)\nIn upper-tailed test reject if \\(t &gt; t^{c}\\)\n\nIf you do not reject, you fail to reject\n\nNot the same as accepting the null hypothesis"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-multiple-linear-hypotheses",
+    "href": "slides/ols/index.html#testing-multiple-linear-hypotheses",
+    "title": "E655 - Econometrics",
+    "section": "Testing Multiple Linear Hypotheses",
+    "text": "Testing Multiple Linear Hypotheses\n\nSometimes you need to test multiple hypotheses at the same time\n\nTesting significance of the model\nTesting whether two parameters are equal\n\nWe follow a similar procedure\n\nMake tentative assumption about parameters\nChoose a test statistic with known distribution\nMake decision rule\nCompute test statistic and apply decision rule\n\nKey difference is in the test statistic we use"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-multiple-linear-hypotheses-1",
+    "href": "slides/ols/index.html#testing-multiple-linear-hypotheses-1",
+    "title": "E655 - Econometrics",
+    "section": "Testing Multiple Linear Hypotheses",
+    "text": "Testing Multiple Linear Hypotheses\n\nWe can write multiple hypotheses with matrix notation\n\\[H_{0}: \\mathbf{R}\\boldsymbol{\\beta} =\\mathbf{r}\\] \\[H_{1}: \\mathbf{R}\\boldsymbol{\\beta} \\neq \\mathbf{r}\\]\n\n\\(\\mathbf{R}\\) is a \\(q \\times k+1\\) matrix of constants\n\\(\\boldsymbol{\\beta}\\) is a \\(k+1 \\times 1\\) vector of slope parameters\n\\(r\\) is a \\(q \\times 1\\) vector of constants\n\nFor example, suppose you want to test \\(H_{0}: \\beta_{2} = 0\\). In this case\n\\[\\mathbf{R} =\n\\begin{bmatrix}\n0 & 0 & 1 & 0 & \\cdots & 0\n\\end{bmatrix}\\] \\[r = 0\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-multiple-linear-hypotheses-2",
+    "href": "slides/ols/index.html#testing-multiple-linear-hypotheses-2",
+    "title": "E655 - Econometrics",
+    "section": "Testing Multiple Linear Hypotheses",
+    "text": "Testing Multiple Linear Hypotheses\n\nIf you multiply this out you get\n\\[\\mathbf{R}\\boldsymbol{\\beta} =\n\\begin{bmatrix}\n0 & 0 & 1 & 0 & \\cdots & 0\n\\end{bmatrix}\n\\begin{bmatrix}\n\\beta_{0}\\\\\n\\beta_{1}\\\\\n\\beta_{2} \\\\\n\\vdots\\\\\n\\beta_{k}\n\\end{bmatrix}\n=\\beta_{2}\\]\nSo that \\(\\mathbf{R}\\boldsymbol{\\beta} =r\\) is equivalent to \\(\\beta_{2} = 0\\)"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-multiple-linear-hypotheses-3",
+    "href": "slides/ols/index.html#testing-multiple-linear-hypotheses-3",
+    "title": "E655 - Econometrics",
+    "section": "Testing Multiple Linear Hypotheses",
+    "text": "Testing Multiple Linear Hypotheses\n\nNow imagine you want to test \\(H_{0}: \\beta_{2} = 0, \\beta_{4} = 2\\)\n\\[\\mathbf{R} =\n\\begin{bmatrix}\n0 & 0 & 1 & 0 &0&\\cdots & 0\\\\\n0 & 0 & 0 & 0 &1&\\cdots & 0\n\\end{bmatrix}\\] \\[\\mathbf{r} =\n\\begin{bmatrix}\n0 \\\\\n2\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-multiple-linear-hypotheses-4",
+    "href": "slides/ols/index.html#testing-multiple-linear-hypotheses-4",
+    "title": "E655 - Econometrics",
+    "section": "Testing Multiple Linear Hypotheses",
+    "text": "Testing Multiple Linear Hypotheses\n\nIf you multiply out in this case\n\\[\\mathbf{R}\\boldsymbol{\\beta} =\n\\begin{bmatrix}\n0 & 0 & 1 & 0 &0&\\cdots & 0\\\\\n0 & 0 & 0 & 0 &1&\\cdots & 0\n\\end{bmatrix}\n\\begin{bmatrix}\n\\beta_{0}\\\\\n\\beta_{1}\\\\\n\\beta_{2} \\\\\n\\vdots\\\\\n\\beta_{k}\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n\\beta_{2}\\\\\n\\beta_{4}\n\\end{bmatrix}\\]\nSo that \\(\\mathbf{R}\\boldsymbol{\\beta} =r\\) is equivalent to \\[\\begin{bmatrix}\n\\beta_{2}\\\\\n\\beta_{4}\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n0\\\\\n2\n\\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-multiple-linear-hypotheses-5",
+    "href": "slides/ols/index.html#testing-multiple-linear-hypotheses-5",
+    "title": "E655 - Econometrics",
+    "section": "Testing Multiple Linear Hypotheses",
+    "text": "Testing Multiple Linear Hypotheses\n\nWhen testing multiple linear restrictions, it is common to use the Wald Statistic\n\\[W = (\\mathbf{R}\\boldsymbol{\\hat{\\beta}} -\\mathbf{r} )'(\\mathbf{R}\\hat{\\text{var}}(\\boldsymbol{\\hat{\\beta}})  \\mathbf{R}')^{-1} (\\mathbf{R}\\boldsymbol{\\hat{\\beta}} -\\mathbf{r} )\\]\n\nIntuition is \\(W\\) computes squared distance between estimate and null hypothesis\nDistance is scaled by the variance\nIf that distance is too far, we reject the null\nVery similar to intuition of \\(t\\)-test\n\n\\(\\text{var}(\\boldsymbol{\\hat{\\beta}})\\) is variance matrix of OLS estimator computed above\n\nUse Robust or Homoskedastic version as appropriate"
+  },
+  {
+    "objectID": "slides/ols/index.html#variance-estimator-for-boldsymbolhatbeta-2",
+    "href": "slides/ols/index.html#variance-estimator-for-boldsymbolhatbeta-2",
+    "title": "E655 - Econometrics",
+    "section": "Variance Estimator for \\(\\boldsymbol{\\hat{\\beta}}\\)",
+    "text": "Variance Estimator for \\(\\boldsymbol{\\hat{\\beta}}\\)\n\n\n\n\n\n\nImportant\n\n\nThe Heteroskedasticity-Robust Variance Estimator \\(\\boldsymbol{\\hat{\\beta}}\\) is\n\\[\\hat{\\text{var}}(\\boldsymbol{\\hat{\\beta}}) = \\left (\\mathbf{X'X}\\right )^{-1}\\left ( \\sum_{i=1}^{n}\\hat{u}_{i}^2\\mathbf{x_{i}'x_{i}}\\right )\\left ( \\mathbf{X'X}\\right )^{-1}\\]\nThe Variance Estimator for \\(\\boldsymbol{\\hat{\\beta}}\\) Under Homoskedastic Errors is\n\\[\\hat{\\text{var}}(\\boldsymbol{\\hat{\\beta}}) = s_{\\hat{u}}^2 \\left (\\mathbf{X'X}\\right )^{-1}\\]"
+  },
+  {
+    "objectID": "slides/ols/index.html#testing-multiple-linear-hypotheses-6",
+    "href": "slides/ols/index.html#testing-multiple-linear-hypotheses-6",
+    "title": "E655 - Econometrics",
+    "section": "Testing Multiple Linear Hypotheses",
+    "text": "Testing Multiple Linear Hypotheses\n\nNote that you can test single restrictions this way\nSuppose you are testing \\(\\beta_{2} = 0\\). The \\(W\\) statistic reduces to\n\n\\[W = \\frac{(\\hat{\\beta}_{2} - 0)^2}{\\text{var}(\\hat{\\beta}_{2})}\\]\n\nThe \\(W\\) statistic has a \\(\\chi^2_{q}\\) distribution in large samples\nIn Stata, this is sometimes implemented as an \\(F\\)-test, where\n\\[F = \\frac{W}{q}\\]\n\\(F\\) has an \\(F\\) distribution with \\((1,n-k-1)\\) degrees of freedom"
+  },
+  {
+    "objectID": "content/ols.html",
+    "href": "content/ols.html",
+    "title": "Ordinary Least Squares",
+    "section": "",
+    "text": "AP1 Chapter 3\nAP2 Chapter 2\nC Chapter 2\nCT Chapter 4\nHA Chapters 3,4\nHK Chapter 13\nK Chapter 3\nSW Chapters 4,5,6,7,8\nW1 Chapter 4\nW2 Chapters 2,3"
+  },
+  {
+    "objectID": "content/ols.html#readings",
+    "href": "content/ols.html#readings",
+    "title": "Ordinary Least Squares",
+    "section": "",
+    "text": "AP1 Chapter 3\nAP2 Chapter 2\nC Chapter 2\nCT Chapter 4\nHA Chapters 3,4\nHK Chapter 13\nK Chapter 3\nSW Chapters 4,5,6,7,8\nW1 Chapter 4\nW2 Chapters 2,3"
+  },
+  {
+    "objectID": "content/ols.html#slides",
+    "href": "content/ols.html#slides",
+    "title": "Ordinary Least Squares",
+    "section": "Slides",
+    "text": "Slides\nThe slides are embedded in this page, and you can scroll through them with the arrow keys. If you prefer you can instead pop them out in a new window"
+  },
+  {
+    "objectID": "content/ols.html#tutorials",
+    "href": "content/ols.html#tutorials",
+    "title": "Ordinary Least Squares",
+    "section": "Tutorials",
+    "text": "Tutorials\nThe tutorial below covers how to run regressions and output results in R"
   }
 ]

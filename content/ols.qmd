@@ -1,0 +1,38 @@
+---
+title: "Ordinary Least Squares"
+---
+
+
+## Readings
+
+- AP1 Chapter 3
+- AP2 Chapter 2
+- C Chapter 2
+- CT Chapter 4
+- HA Chapters 3,4
+- HK Chapter 13
+- K Chapter 3
+- SW Chapters 4,5,6,7,8
+- W1 Chapter 4
+- W2 Chapters 2,3
+
+## Slides
+
+The slides are embedded in this page, and you can scroll through them with the arrow keys.  If you prefer you can instead <a href="/slides/ols/index.html" target="_blank">pop them out in a new window</a>
+
+
+<div>
+
+```{=html}
+<p align="center"><iframe width="890" height="500" class="slide-deck" src="/slides/ols/"></iframe></p>
+```
+
+</div>
+
+
+## Tutorials
+
+The tutorial below covers how to run regressions and output results in R  
+
+
+

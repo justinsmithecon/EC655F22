@@ -7,14 +7,14 @@ title: "Causality"
 
 - AP1 Chapter 3
 - AP2 Chapter 2
-- C "Properties of Regression"
-- CT Chapter 4
-- HA Chapters 2,3,4
-- HK Chapter 13
+- C Chapters 3,4
+- CT Chapter 2
+- HA Chapter 2
+- HK Chapters 5,6,7,8,9,10,11
 - K Chapter 3
-- SW Chapters 4,5,6,7,8
-- W1 Chapter 4
-- W2 Appendix E
+- SW Chapter 4
+- W1 Chapters 2,4
+- W2 Chapter 3
 
 ## Slides
 
