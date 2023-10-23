@@ -40,7 +40,9 @@ website:
             - text: "Causality"
               file: content/causality.qmd
             - text: "OLS"
-              file: content/ols.qmd              
+              file: content/ols.qmd
+            - text: "Instrumental Variables"
+              file: content/iv.qmd 
 
     - title: "Assignments"
       style: "docked"
