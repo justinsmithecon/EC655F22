@@ -2328,7 +2328,7 @@
     "href": "content/ols.html#tutorials",
     "title": "Ordinary Least Squares",
     "section": "Tutorials",
-    "text": "Tutorials\nThe tutorial below covers how to run regressions and output results in R. You can pop them out in a new window"
+    "text": "Tutorials\nThe files below are RMarkdown documents that contain learnr tutorials. Please download them, open in RStudio, and run. For this, you will need to install the shiny and learnr packages.\n EC655regression\n EC655hypothesis"
   },
   {
     "objectID": "slides/iv/index.html#introduction-1",

@@ -1,0 +1,169 @@
+---
+title: "Hypothesis Testing in R"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+    css: css/custom_css.css
+runtime: shiny_prerendered
+description: >
+  EC655 Econometrics
+---
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab&family=Source+Sans+Pro:wght@300;400&display=swap');
+</style>
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(stargazer)
+library(lmtest)
+library(sandwich)
+library(wooldridge)
+library(estimatr)
+library(car)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Background
+
+- OLS is a way to estimate unknown parameters
+- Gives us a **point estimate**
+
+    - A single number to estimate the parameter
+    
+- This estimate is subject to sampling variation
+
+    - You get a different value in each hypothetical sample
+    
+- The sampling uncertainty makes it impossible to make definitive statements about the value of the parameter
+
+- But we can make probabilistic statements about the parameter
+
+- To do this
+
+    - Assume a value for the parameter (the null hypothesis)
+    - Determine the sampling distribution of our estimator when the null hypothesis is true
+    - Figure out where the estimate falls in the distribution
+    - Decide whether the null hypothesis is likely false or likely true
+    
+- This process is **Hypothesis Testing**
+
+## Setup
+
+### Population Regression Model
+
+- Recall the population regression is
+
+$$y = \mathbf{x}\boldsymbol{\beta} + u$$
+
+- Where
+
+    - $y$ is the outcome variable
+    - $\mathbf{x}$ is a vector of independent variables
+    - $\boldsymbol{\beta}$ is the corresponding vector of slopes
+    - $u$ is the population residual
+    
+- The population regression slope vector is
+
+$$\boldsymbol{\beta} = (\textbf{E}[\mathbf{x'x}])^{-1} \textbf{E}[\mathbf{x}'y]$$
+
+### Ordinary Least Squares
+
+- The associated OLS estimator for the population slope vector is
+
+$$\boldsymbol{\hat{\beta}} = (\mathbf{X'X})^{-1} \mathbf{X}'y$$
+
+### Sampling Distribution of the slope estimator
+
+- With a large sample, the central limit theorem implies
+
+$$\boldsymbol{\hat{\beta}} \sim \mathcal{N}(\boldsymbol{\beta}, n^{-1}[\mathbf{E}(\mathbf{x'x})^{-1}]\mathbf{E}(u^2\mathbf{x'x})[\mathbf{E}(\mathbf{x'x})^{-1}])$$
+- When it comes to doing hypothesis tests, we substitute in an estimate for the standard errors
+
+## Estimation
+
+- Use the `bwght` data from the `wooldridge` package to estimate a regression
+
+```{r code1, exercise = TRUE}
+library(wooldridge)
+library(stargazer)
+data <- bwght
+reg <- lm(bwght ~faminc + cigs, data = data)
+stargazer(reg, type = "text")
+```
+
+## Hypothesis Test About Single Parameter
+
+- The information for a t-test is in the `stargazer` output
+
+    - Displays the standard error and p-value stars
+    
+- We can still do this manually for instructional purposes
+- One package or hypothesis testing is `lmtest`
+
+```{r code2, exercise = TRUE}
+library(lmtest)
+library(sandwich)
+data <- bwght
+reg <- lm(bwght ~faminc + cigs, data = data)
+coeftest(reg)
+```
+
+- The function `coeftest()` computes individual statistics for hypothesis testing
+
+    - We can compare the t-value to the critical values based on chosen significance level
+    - Can also use the p-value
+    
+- Problem: by default these use non-robust standard errors
+- We can make them robust easily with `coeftest()`
+
+```{r code3, exercise = TRUE}
+library(sandwich)
+data <- bwght
+reg <- lm(bwght ~faminc + cigs, data = data)
+coeftest(reg, vcov = vcovHC, type = "const")
+coeftest(reg, vcov = vcovHC, type = "HC1")
+```
+
+- The first gives the non-robust errors
+- The second are robust
+
+- It is unfortunately not easy to get these into `stargazer`
+- We have to trick it into using them
+- A package that helps with this is `estimatr`
+
+```{r code4, exercise = TRUE}
+library(estimatr)
+data <- bwght
+reg <- lm(bwght ~faminc + cigs, data = data)
+stargazer(reg, se = starprep(reg), se_type = "HC1", type = "text")
+```
+
+- Note that this still does not fix the F-statistic at the bottom
+
+
+## Joint Hypothesis Tests
+
+- Suppose we want to jointly test that family income and cigarettes do not affect birthweight
+
+- To do that, we need the `car` package and the `linearHypothesis()` function
+
+```{r code5, exercise = TRUE}
+library(car)
+data <- bwght
+reg <- lm(bwght ~faminc + cigs, data = data)
+linearHypothesis(reg, c("faminc=0","cigs=0"))
+```
+
+
+- We can adjust this for heteroskedasticity
+
+```{r code6, exercise = TRUE}
+library(car)
+data <- bwght
+reg <- lm(bwght ~faminc + cigs, data = data)
+linearHypothesis(reg, c("faminc=0","cigs=0"), white.adjust="hc1")
+```

@@ -31,14 +31,10 @@ The slides are embedded in this page, and you can scroll through them with the a
 
 ## Tutorials
 
-The tutorial below covers how to run regressions and output results in R.  You can <a href="http://18.119.161.195:3838/EC655regression/" target="_blank">pop them out in a new window</a>
+The files below are RMarkdown documents that contain `learnr` tutorials.  Please download them, open in RStudio, and run.  For this, you will need to install the `shiny` and `learnr` packages.
 
-<div>
+[{{< fa solid file-export >}} `EC655regression`](/files/tutorials/EC655regression.Rmd)
 
-```{=html}
-<p align="center"><iframe height="500" width="100%" frameborder="no" src="http://18.119.161.195:3838/EC655regression/"> </iframe></p>
-```
-
-</div>
+[{{< fa solid file-export >}} `EC655hypothesis`](/files/tutorials/EC655hypothesis.Rmd)
 
 

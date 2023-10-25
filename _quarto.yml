@@ -4,6 +4,7 @@ project:
   render:
     - "*.qmd"
     - "!assignments/files/"
+    - "!files/tutorials/"    
 
 website:
   title: "E655 - Econometrics"

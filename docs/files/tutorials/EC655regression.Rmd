@@ -1,0 +1,162 @@
+---
+title: "Regression in R"
+output: 
+  learnr::tutorial:
+    progressive: true
+    allow_skip: true
+    css: css/custom_css.css
+runtime: shiny_prerendered
+description: >
+  EC655 Econometrics
+---
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab&family=Source+Sans+Pro:wght@300;400&display=swap');
+</style>
+
+```{r setup, include=FALSE}
+library(learnr)
+library(tidyverse)
+library(stargazer)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+## Background
+
+- OLS regression is the workhorse in econometrics
+- Even when more advanced techniques are used, OLS is often included as a benchmark
+- In this tutorial we will learn 
+
+    - How to estimate parameters by OLS
+    - Export them in a readable format 
+    
+## Population Regression Model
+
+- Suppose the population regression is
+
+$$y = \mathbf{x}\boldsymbol{\beta} + u$$
+
+- Where
+
+    - $y$ is the outcome variable
+    - $\mathbf{x}$ is a vector of independent variables
+    - $\boldsymbol{\beta}$ is the corresponding vector of slopes
+    - $u$ is the population residual
+    
+- Remember that the population regression slope vector is
+
+$$\boldsymbol{\beta} = (\textbf{E}[\mathbf{x'x}])^{-1} \textbf{E}[\mathbf{x}'y]$$
+
+## Ordinary Least Squares
+
+- Suppose we collect a random sample of $n$ people on all variables
+- Collect the values of the dependent variable into a column vector $\mathbf{y}$
+- Arrange similar column vectors for each $x$ into a matrix $\mathbf{X}$
+- The OLS estimator replaces the population values with consistent estimates from this sample
+- We saw that this is
+
+$$\boldsymbol{\hat{\beta}} = (\mathbf{X'X})^{-1} \mathbf{X}'y$$
+
+## Estimating $\boldsymbol{\hat{\beta}}$ in R
+
+- The main function to estimate $\boldsymbol{\hat{\beta}}$ is `lm()` from the `stats` package
+- As an example, we can load the mtcars data and regress miles per gallon on weight
+
+```{r code1, exercise = TRUE}
+cardata <- mtcars
+lm(mpg ~wt, data = cardata)
+```
+
+- This returns some very basic information including only the parameter estimates
+- But the command can save significantly more information
+- To see, save the regression as its own object
+
+```{r code2, exercise = TRUE}
+cardata <- mtcars
+reg<-lm(mpg ~wt, data = cardata)
+str(reg)
+```
+
+- This object stores a list of 12 things including
+
+    - Coefficients
+    - Residuals
+    - Fitted values
+    
+- But there are things missing, like
+
+    - Standard errors
+    - Measures of fit
+    
+- To get measures of fit, we can apply the `summary()` command to our regression
+
+```{r code3, exercise = TRUE}
+cardata <- mtcars
+reg<-lm(mpg ~wt, data = cardata)
+sumreg<-summary(reg)
+str(sumreg)
+```
+    
+- This new object saves several more things, including
+
+    - Coefficients
+    - Residuals
+    - Standard errors
+    - $R^2$
+    
+- You can access these things directly if necessary
+- For example, if I wanted the $R^2$ I could type
+
+```{r code4, exercise = TRUE}
+cardata <- mtcars
+reg<-lm(mpg ~wt, data = cardata)
+sumreg<-summary(reg)
+sumreg$r.squared
+```
+
+- Note that $ is a way to subset dataframes or lists (as an alternative to `select()`)
+
+## Stargazer
+
+- Mostly you will not access elements of the regression individually
+- There are packages to output nice looking tables
+- The main one is **stargazer**
+- The example below outputs a basic text table
+
+```{r code5, exercise = TRUE}
+cardata <- mtcars
+reg<-lm(mpg ~wt, data = cardata)
+stargazer(reg, type = "text")
+```
+
+- This outputs the coefficients and some summary statistics for the regression
+- You can customize what appears in the table
+- The following removes the dependent variable caption, variable labels, keeps only the number of observations and $R^2$, and gives a title
+
+```{r code6, exercise = TRUE}
+cardata <- mtcars
+reg<-lm(mpg ~wt, data = cardata)
+stargazer(reg, type = "text", dep.var.caption = "", covariate.labels = c("Intercept", "Weight"),keep.stat = c("n", "rsq"), title = "Regression of MPG on WT")
+```
+
+- For many applications, you do not want a text output format
+- In .qmd documents you will likely want **latex** or **html**
+- To change that, just change the type
+
+```{r code7, exercise = TRUE}
+cardata <- mtcars
+reg<-lm(mpg ~wt, data = cardata)
+stargazer(reg, type = "latex", dep.var.caption = "", covariate.labels = c("Intercept", "Weight"),keep.stat = c("n", "rsq"), title = "Regression of MPG on WT")
+```
+
+- This looks ugly, but is easily interpreted by markdown in your document
+
+- Finally you can pick a specific style to taylor your output to a particular journal
+- Suppose we want to output in the Quarterly Journal of Economics style
+
+```{r code8, exercise = TRUE}
+cardata <- mtcars
+reg<-lm(mpg ~wt, data = cardata)
+stargazer(reg, type = "text", style = "qje", dep.var.caption = "", covariate.labels = c("Intercept", "Weight"),keep.stat = c("n", "rsq"), title = "Regression of MPG on WT")
+```
