@@ -18,7 +18,7 @@ title: "Instrumental Variables"
 
 ## Slides
 
-The slides are embedded in this page, and you can scroll through them with the arrow keys.  If you prefer you can instead <a href="/slides/ols/index.html" target="_blank">pop them out in a new window</a>
+The slides are embedded in this page, and you can scroll through them with the arrow keys.  If you prefer you can instead <a href="/slides/iv/index.html" target="_blank">pop them out in a new window</a>
 
 
 <div>
