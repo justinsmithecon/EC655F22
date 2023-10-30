@@ -2580,14 +2580,14 @@
     "href": "slides/iv/index.html#instrument-relevance",
     "title": "E655 - Econometrics",
     "section": "Instrument Relevance",
-    "text": "Instrument Relevance\n\nFor TSLS to work, the instrument must be relevant\n\nIt must be sufficiently correlated with the endogenous variable\n\nAn instrument that is not sufficiently relevant is a weak instrument\nWeak instruments can cause several problems\n\n\nInconsistency when the instrument and error are not exactly uncorrelated\n\nConsider the plim of the TSLS slope estimator\n\n\n\\[\\text{plim }\\hat{\\beta}_{1} =  \\beta_{1} + \\frac{\\sigma_{u}}{\\sigma_{x_{1}}}\\frac{corr(z_{1},e)}{corr(z_{1},x_{1})}\\]"
+    "text": "Instrument Relevance\n\nFor TSLS to work, the instrument must be relevant\n\nIt must be sufficiently correlated with the endogenous variable\n\nAn instrument that is not sufficiently relevant is a weak instrument\nWeak instruments can cause several problems\n\n\nInconsistency when the instrument and error are not exactly uncorrelated\n\nConsider the plim of the TSLS slope estimator\n\n\n\\[\\text{plim }\\hat{\\beta}_{1} =  \\beta_{1} + \\frac{\\sigma_{e}}{\\sigma_{x_{1}}}\\frac{corr(z_{1},e)}{corr(z_{1},x_{1})}\\]"
   },
   {
     "objectID": "slides/iv/index.html#instrument-relevance-1",
     "href": "slides/iv/index.html#instrument-relevance-1",
     "title": "E655 - Econometrics",
     "section": "Instrument Relevance",
-    "text": "Instrument Relevance\n\nContinued...\n\nWhen \\(corr(z_{1},x_{1}) \\rightarrow 0\\) then \\(\\frac{corr(z_{1},e)}{corr(z_{1},x_{1})} \\rightarrow \\infty\\)\n\nTrue even when \\(corr(z_{1},u)\\) is very close to zero\n\nAlso note that the plim of the OLS estimator is\n\\[\\text{plim }\\hat{\\beta}_{1}^{ols} =  \\beta_{1} + \\frac{\\sigma_{u}}{\\sigma_{x_{1}}}corr(x_{1},e)\\]\nTaking the ratio of the two biases \\[\\frac{\\hat{\\beta}_{1}-\\beta_{1}}{\\hat{\\beta}_{1}^{ols}-\\beta_{1}} =  \\frac{corr(z_{1},e)/corr(x_{1},e)}{corr(z_{1},x_{1})}\\]\nAs \\(corr(z_{1},x_{1}) \\rightarrow 0\\), the inconsistency in 2SLS becomes larger than the inconsistency in OLS"
+    "text": "Instrument Relevance\n\nContinued...\n\nWhen \\(corr(z_{1},x_{1}) \\rightarrow 0\\) then \\(\\frac{corr(z_{1},e)}{corr(z_{1},x_{1})} \\rightarrow \\infty\\)\n\nTrue even when \\(corr(z_{1},e)\\) is very close to zero\n\nAlso note that the plim of the OLS estimator is\n\\[\\text{plim }\\hat{\\beta}_{1}^{ols} =  \\beta_{1} + \\frac{\\sigma_{e}}{\\sigma_{x_{1}}}corr(x_{1},e)\\]\nTaking the ratio of the two biases \\[\\frac{\\hat{\\beta}_{1}-\\beta_{1}}{\\hat{\\beta}_{1}^{ols}-\\beta_{1}} =  \\frac{corr(z_{1},e)/corr(x_{1},e)}{corr(z_{1},x_{1})}\\]\nAs \\(corr(z_{1},x_{1}) \\rightarrow 0\\), the inconsistency in 2SLS becomes larger than the inconsistency in OLS"
   },
   {
     "objectID": "slides/iv/index.html#instrument-relevance-2",
@@ -2636,14 +2636,14 @@
     "href": "slides/iv/index.html#local-average-treatment-effects",
     "title": "E655 - Econometrics",
     "section": "Local Average Treatment Effects",
-    "text": "Local Average Treatment Effects\n\nStart with the observed outcomes from the Rubin model \\[y = y_{0} + (y_{1} -y_{0})w\\]\nNow suppose we have a binary instrument \\(z\\)\n\nThis variable measures your assignment to treatment\n\nDefine observed treatment as \\[w = w_{0} + (w_{1} -w_{0})z\\]\n\n\\(w_{1}\\) is potential treatment when assigned to treatment\n\\(w_{0}\\) is potential treatment when not assigned to treatment\nWe observe \\(w=w_{0}\\) when \\(z=0\\) and \\(w=w_{1}\\) when \\(z=1\\)\n\n\\[y_{i} = y_{i0} + (y_{i1} -y_{i0})w_{i0} +  (y_{i1} -y_{i0})(w_{i1} -w_{i0})z_{i}\\]\nAssume that the instrument is independent of treatment and outcomes \\[(y_{i0}, y_{i1}, w_{i0}, w_{i1}) \\perp z_{i}\\]"
+    "text": "Local Average Treatment Effects\n\nStart with the observed outcomes from the Rubin model \\[y = y_{0} + (y_{1} -y_{0})w\\]\nNow suppose we have a binary instrument \\(z\\)\n\nThis variable measures your assignment to treatment\n\nDefine observed treatment as \\[w = w_{0} + (w_{1} -w_{0})z\\]\n\n\\(w_{1}\\) is potential treatment when assigned to treatment\n\\(w_{0}\\) is potential treatment when not assigned to treatment\nWe observe \\(w=w_{0}\\) when \\(z=0\\) and \\(w=w_{1}\\) when \\(z=1\\)"
   },
   {
     "objectID": "slides/iv/index.html#local-average-treatment-effects-1",
     "href": "slides/iv/index.html#local-average-treatment-effects-1",
     "title": "E655 - Econometrics",
     "section": "Local Average Treatment Effects",
-    "text": "Local Average Treatment Effects\n\nWe saw that the TSLS estimator is the reduced form divided by the first stage\nIn this setup with binary \\(y\\), the reduced form is\n\\[E(y|z=1) - E(y|z=0)\\]\nand with binary \\(w\\) the first stage is\n\\[E(w|z=1) - E(w|z=0)\\]\nSo that the IV estimator is\n\\[\\frac{E(y|z=1) - E(y|z=0)}{E(w|z=1) - E(w|z=0)}\\]\nWe now derive the the numerator and denominator"
+    "text": "Local Average Treatment Effects\n\nAssume that the instrument is independent of treatment and outcomes \\[(y_{i0}, y_{i1}, w_{i0}, w_{i1}) \\perp z_{i}\\]\nThe TSLS estimator is the reduced form divided by the first stage\nIn this setup with binary \\(y\\), the reduced form is\n\\[E(y|z=1) - E(y|z=0)\\]\nand with binary \\(w\\) the first stage is\n\\[E(w|z=1) - E(w|z=0)\\]\nSo that the IV estimator is\n\\[\\frac{E(y|z=1) - E(y|z=0)}{E(w|z=1) - E(w|z=0)}\\]"
   },
   {
     "objectID": "slides/iv/index.html#local-average-treatment-effects-2",

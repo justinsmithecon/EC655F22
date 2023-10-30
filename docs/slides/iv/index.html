@@ -1011,7 +1011,7 @@ Fall 2023
 <li>Consider the plim of the TSLS slope estimator</li>
 </ul></li>
 </ol>
-<p><span class="math display">\[\text{plim }\hat{\beta}_{1} =  \beta_{1} + \frac{\sigma_{u}}{\sigma_{x_{1}}}\frac{corr(z_{1},e)}{corr(z_{1},x_{1})}\]</span></p>
+<p><span class="math display">\[\text{plim }\hat{\beta}_{1} =  \beta_{1} + \frac{\sigma_{e}}{\sigma_{x_{1}}}\frac{corr(z_{1},e)}{corr(z_{1},x_{1})}\]</span></p>
 </section>
 <section id="instrument-relevance-1" class="slide level2">
 <h2>Instrument Relevance</h2>
@@ -1020,10 +1020,10 @@ Fall 2023
 <ul>
 <li><p>When <span class="math inline">\(corr(z_{1},x_{1}) \rightarrow 0\)</span> then <span class="math inline">\(\frac{corr(z_{1},e)}{corr(z_{1},x_{1})} \rightarrow \infty\)</span></p>
 <ul>
-<li>True even when <span class="math inline">\(corr(z_{1},u)\)</span> is very close to zero</li>
+<li>True even when <span class="math inline">\(corr(z_{1},e)\)</span> is very close to zero</li>
 </ul></li>
 <li><p>Also note that the plim of the OLS estimator is</p>
-<p><span class="math display">\[\text{plim }\hat{\beta}_{1}^{ols} =  \beta_{1} + \frac{\sigma_{u}}{\sigma_{x_{1}}}corr(x_{1},e)\]</span></p></li>
+<p><span class="math display">\[\text{plim }\hat{\beta}_{1}^{ols} =  \beta_{1} + \frac{\sigma_{e}}{\sigma_{x_{1}}}corr(x_{1},e)\]</span></p></li>
 <li><p>Taking the ratio of the two biases <span class="math display">\[\frac{\hat{\beta}_{1}-\beta_{1}}{\hat{\beta}_{1}^{ols}-\beta_{1}} =  \frac{corr(z_{1},e)/corr(x_{1},e)}{corr(z_{1},x_{1})}\]</span></p></li>
 <li><p>As <span class="math inline">\(corr(z_{1},x_{1}) \rightarrow 0\)</span>, the inconsistency in 2SLS becomes larger than the inconsistency in OLS</p></li>
 </ul></li>
@@ -1162,22 +1162,20 @@ Fall 2023
 <li><p><span class="math inline">\(w_{1}\)</span> is potential treatment when assigned to treatment</p></li>
 <li><p><span class="math inline">\(w_{0}\)</span> is potential treatment when not assigned to treatment</p></li>
 <li><p>We observe <span class="math inline">\(w=w_{0}\)</span> when <span class="math inline">\(z=0\)</span> and <span class="math inline">\(w=w_{1}\)</span> when <span class="math inline">\(z=1\)</span></p></li>
-</ul>
-<p><span class="math display">\[y_{i} = y_{i0} + (y_{i1} -y_{i0})w_{i0} +  (y_{i1} -y_{i0})(w_{i1} -w_{i0})z_{i}\]</span></p></li>
-<li><p>Assume that the instrument is independent of treatment and outcomes <span class="math display">\[(y_{i0}, y_{i1}, w_{i0}, w_{i1}) \perp z_{i}\]</span></p></li>
+</ul></li>
 </ul>
 </section>
 <section id="local-average-treatment-effects-1" class="slide level2">
 <h2>Local Average Treatment Effects</h2>
 <ul>
-<li><p>We saw that the TSLS estimator is the reduced form divided by the first stage</p></li>
+<li><p>Assume that the instrument is independent of treatment and outcomes <span class="math display">\[(y_{i0}, y_{i1}, w_{i0}, w_{i1}) \perp z_{i}\]</span></p></li>
+<li><p>The TSLS estimator is the reduced form divided by the first stage</p></li>
 <li><p>In this setup with binary <span class="math inline">\(y\)</span>, the reduced form is</p>
 <p><span class="math display">\[E(y|z=1) - E(y|z=0)\]</span></p></li>
 <li><p>and with binary <span class="math inline">\(w\)</span> the first stage is</p>
 <p><span class="math display">\[E(w|z=1) - E(w|z=0)\]</span></p></li>
 <li><p>So that the IV estimator is</p>
 <p><span class="math display">\[\frac{E(y|z=1) - E(y|z=0)}{E(w|z=1) - E(w|z=0)}\]</span></p></li>
-<li><p>We now derive the the numerator and denominator</p></li>
 </ul>
 </section>
 <section id="local-average-treatment-effects-2" class="slide level2">

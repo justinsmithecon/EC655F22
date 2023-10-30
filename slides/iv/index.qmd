@@ -646,7 +646,7 @@ $$\text{plim }\hat{\beta}_{1} = \beta_{1} + \frac{cov(z_{1},e)}{cov(z_{1},x_{1})
 
     -   Consider the plim of the TSLS slope estimator
 
-$$\text{plim }\hat{\beta}_{1} =  \beta_{1} + \frac{\sigma_{u}}{\sigma_{x_{1}}}\frac{corr(z_{1},e)}{corr(z_{1},x_{1})}$$
+$$\text{plim }\hat{\beta}_{1} =  \beta_{1} + \frac{\sigma_{e}}{\sigma_{x_{1}}}\frac{corr(z_{1},e)}{corr(z_{1},x_{1})}$$
 
 ## Instrument Relevance
 
@@ -654,11 +654,11 @@ $$\text{plim }\hat{\beta}_{1} =  \beta_{1} + \frac{\sigma_{u}}{\sigma_{x_{1}}}\f
 
     -   When $corr(z_{1},x_{1}) \rightarrow 0$ then $\frac{corr(z_{1},e)}{corr(z_{1},x_{1})} \rightarrow \infty$
 
-        -   True even when $corr(z_{1},u)$ is very close to zero
+        -   True even when $corr(z_{1},e)$ is very close to zero
 
     -   Also note that the plim of the OLS estimator is
 
-        $$\text{plim }\hat{\beta}_{1}^{ols} =  \beta_{1} + \frac{\sigma_{u}}{\sigma_{x_{1}}}corr(x_{1},e)$$
+        $$\text{plim }\hat{\beta}_{1}^{ols} =  \beta_{1} + \frac{\sigma_{e}}{\sigma_{x_{1}}}corr(x_{1},e)$$
 
     -   Taking the ratio of the two biases $$\frac{\hat{\beta}_{1}-\beta_{1}}{\hat{\beta}_{1}^{ols}-\beta_{1}} =  \frac{corr(z_{1},e)/corr(x_{1},e)}{corr(z_{1},x_{1})}$$
 
@@ -804,13 +804,12 @@ $$\text{plim }\hat{\beta}_{1} =  \beta_{1} + \frac{\sigma_{u}}{\sigma_{x_{1}}}\f
 
     -   We observe $w=w_{0}$ when $z=0$ and $w=w_{1}$ when $z=1$
 
-    $$y_{i} = y_{i0} + (y_{i1} -y_{i0})w_{i0} +  (y_{i1} -y_{i0})(w_{i1} -w_{i0})z_{i}$$
-
--   Assume that the instrument is independent of treatment and outcomes $$(y_{i0}, y_{i1}, w_{i0}, w_{i1}) \perp z_{i}$$
 
 ## Local Average Treatment Effects
 
--   We saw that the TSLS estimator is the reduced form divided by the first stage
+-   Assume that the instrument is independent of treatment and outcomes $$(y_{i0}, y_{i1}, w_{i0}, w_{i1}) \perp z_{i}$$
+
+-   The TSLS estimator is the reduced form divided by the first stage
 
 -   In this setup with binary $y$, the reduced form is
 
@@ -823,8 +822,6 @@ $$\text{plim }\hat{\beta}_{1} =  \beta_{1} + \frac{\sigma_{u}}{\sigma_{x_{1}}}\f
 -   So that the IV estimator is
 
     $$\frac{E(y|z=1) - E(y|z=0)}{E(w|z=1) - E(w|z=0)}$$
-
--   We now derive the the numerator and denominator
 
 ## Local Average Treatment Effects
 
