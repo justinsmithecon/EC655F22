@@ -2531,7 +2531,7 @@
     "href": "slides/iv/index.html#structural-vs-reduced-form-equations-1",
     "title": "E655 - Econometrics",
     "section": "Structural vs Reduced form Equations",
-    "text": "Structural vs Reduced form Equations\n\nThe second equation is the first stage\n\nIt is a reduced form equation\n\nAll of the regressors are exogenous\nThe parameters do not necessarily represent causal effects\n\n\nResearchers often also estimate the reduced form for \\(y\\)\n\nSub the second equation into the first to get\n\n\n\\[y =  (\\beta_{0} + \\beta_{k}\\pi_{0}) + x_{1}(\\beta_{1} + \\beta_{k}\\pi_{1}) +...+ x_{k-1} (\\beta_{k-1}+ \\beta_{k}\\pi_{k-1}) + z_{1}\\beta_{k}\\delta_{1}  + e + \\beta_{k}r\\]\n\\[= \\gamma_{0}+ x_{1}\\gamma_{1}+...+ x_{k-1} \\gamma_{k-1}+ z_{1}\\theta_{1}+ \\epsilon\\]\n-   This is the regression of $y$ on all the exogenous variables"
+    "text": "Structural vs Reduced form Equations\n\nThe second equation is the first stage\n\nIt is a reduced form equation\n\nAll of the regressors are exogenous\nThe parameters do not necessarily represent causal effects\n\n\nResearchers often also estimate the reduced form for \\(y\\)\n\nSub the second equation into the first to get\n\n\n\\[y =  (\\beta_{0} + \\beta_{k}\\pi_{0}) + x_{1}(\\beta_{1} + \\beta_{k}\\pi_{1}) +...+ x_{k-1} (\\beta_{k-1}+ \\beta_{k}\\pi_{k-1}) + z_{1}\\beta_{k}\\delta_{1}  + e + \\beta_{k}r\\]\n\\[= \\gamma_{0}+ x_{1}\\gamma_{1}+...+ x_{k-1} \\gamma_{k-1}+ z_{1}\\theta_{1}+ \\epsilon\\]\n\nThis is the regression of \\(y\\) on all the exogenous variables"
   },
   {
     "objectID": "slides/iv/index.html#structural-vs-reduced-form-equations-2",
@@ -2573,7 +2573,7 @@
     "href": "slides/iv/index.html#exclusion-restriction-2",
     "title": "E655 - Econometrics",
     "section": "Exclusion Restriction",
-    "text": "Exclusion Restriction\n\nThere is a more complicated test with heteroskedastic errors\n\nYou can easily execute this in Stata\nWe can discuss the process separately\n\nIf you fail this test (reject the null), then you need to find other instruments"
+    "text": "Exclusion Restriction\n\nThere is a more complicated test with heteroskedastic errors\n\nYou can easily execute this in R or Stata\nWe can discuss the process separately\n\nIf you fail this test (reject the null), then you need to find other instruments"
   },
   {
     "objectID": "slides/iv/index.html#instrument-relevance",

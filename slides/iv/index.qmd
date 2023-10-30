@@ -156,8 +156,6 @@ $$\boldsymbol{\beta}  = [\mathbf{E}(\mathbf{z'x})] ^{-1}\mathbf{E}(\mathbf{z}'y)
 
     -   Correlated with the endogenous variable
 
-
-
 ## Estimation by Method of Moments
 
 -   Applying the method of moments to the population slope
@@ -280,8 +278,6 @@ The TSLS regression slope vector is
 $$\boldsymbol{\beta}  = \left(\mathbf{E}(\mathbf{x^{*'}x^{*}})\right)^{-1}\mathbf{E}(\mathbf{x}^{*'}y)$$
 :::
 
-
-
 -   Note that the IV estimator is *equivalent* to TSLS when there is one instrument for one endogenous variable
 
 -   As before, these are population moments that we cannot compute directly
@@ -330,20 +326,19 @@ ggplot(dag,aes(x = x, y = y, xend = xend, yend = yend)) +
 
 $$\boldsymbol{\pi} = \left ( \mathbf{E}(\mathbf{z'z}) \right )^{-1} \mathbf{E}(\mathbf{z'x_{k}})$$
 
-
--   The sample version is 
+-   The sample version is
 
 $$\boldsymbol{\hat{\pi}} = \left( \mathbf{Z'Z} \right)^{-1}\mathbf{Z'x_{k}}$$
 
 ## Estimation by Method of Moments
 
-- The predicted values of $x_{k}$ are
+-   The predicted values of $x_{k}$ are
 
 $$\mathbf{\hat{x}}_{k} = \mathbf{Z}\boldsymbol{\hat{\pi}}$$
 
-- The **second stage** replaces $x_{k}$ with $\mathbf{\hat{x}}_{k}$
+-   The **second stage** replaces $x_{k}$ with $\mathbf{\hat{x}}_{k}$
 
-- The sample regression slope vector is
+-   The sample regression slope vector is
 
 $$\boldsymbol{\hat{\beta}}  = \left( \mathbf{\mathbf{\hat{X}}'\mathbf{\hat{X}}} \right)^{-1}\mathbf{\mathbf{\hat{X}}'y}$$
 
@@ -363,13 +358,11 @@ $$\boldsymbol{\hat{\beta}}  = \left( \mathbf{\mathbf{\hat{X}}'\mathbf{\hat{X}}} 
     \mathbf{X_{1}} & \mathbf{\hat{x}_{k}}
     \end{bmatrix}$$
 
-
 ::: callout-important
-The TSLS estimator is 
+The TSLS estimator is
 
 $$\boldsymbol{\hat{\beta}}  = \left( \mathbf{\mathbf{\hat{X}}'\mathbf{\hat{X}}} \right)^{-1}\mathbf{\mathbf{\hat{X}}'y}$$
 :::
-
 
 ## Intuition
 
@@ -509,8 +502,7 @@ $$\boldsymbol{\hat{\beta}}  = \left( \mathbf{\mathbf{\hat{X}}'\mathbf{\hat{X}}} 
 
 -   The instrumental variables model in scalar notation is
 
-$$y =  \beta_{0} + x_{1}\beta_{1} +...+ x_{k-1}\beta_{k-1} + x_{k}\beta_{k}  + e$$ 
-$$x_{k} =  \pi_{0} + x_{1}\pi_{1}+...+x_{k-1}\pi_{k-1}  +z_{1}\delta_{1}  + r$$
+$$y =  \beta_{0} + x_{1}\beta_{1} +...+ x_{k-1}\beta_{k-1} + x_{k}\beta_{k}  + e$$ $$x_{k} =  \pi_{0} + x_{1}\pi_{1}+...+x_{k-1}\pi_{k-1}  +z_{1}\delta_{1}  + r$$
 
 -   The first equation is the **structural equation**
 
@@ -528,13 +520,15 @@ $$x_{k} =  \pi_{0} + x_{1}\pi_{1}+...+x_{k-1}\pi_{k-1}  +z_{1}\delta_{1}  + r$$
 
 -   Researchers often also estimate the reduced form for $y$
 
-    -   Sub the second equation into the first to get 
-    
-$$y =  (\beta_{0} + \beta_{k}\pi_{0}) + x_{1}(\beta_{1} + \beta_{k}\pi_{1}) +...+ x_{k-1} (\beta_{k-1}+ \beta_{k}\pi_{k-1}) + z_{1}\beta_{k}\delta_{1}  + e + \beta_{k}r$$ 
+    -   Sub the second equation into the first to get
+
+$$y =  (\beta_{0} + \beta_{k}\pi_{0}) + x_{1}(\beta_{1} + \beta_{k}\pi_{1}) +...+ x_{k-1} (\beta_{k-1}+ \beta_{k}\pi_{k-1}) + z_{1}\beta_{k}\delta_{1}  + e + \beta_{k}r$$
 
 $$= \gamma_{0}+ x_{1}\gamma_{1}+...+ x_{k-1} \gamma_{k-1}+ z_{1}\theta_{1}+ \epsilon$$
 
-    -   This is the regression of $y$ on all the exogenous variables
+         
+-   This is the regression of $y$ on all the exogenous variables
+
 
 ## Structural vs Reduced form Equations
 
@@ -574,16 +568,15 @@ $$= \gamma_{0}+ x_{1}\gamma_{1}+...+ x_{k-1} \gamma_{k-1}+ z_{1}\theta_{1}+ \eps
 
 -   To understand these issues, it is useful to study the following model
 
-$$y = \beta_{0} + \beta_{1}x_{1} + e$$ 
-    
+$$y = \beta_{0} + \beta_{1}x_{1} + e$$
+
 $$x_{1} = \pi_{0} + \pi_{1}z_{1} + r$$
 
 ## Introduction
 
 -   In this model, you can show that
 
-$$\text{plim }\hat{\beta}_{1} = \beta_{1} + \frac{cov(z_{1},e)}{cov(z_{1},x_{1})}$$ 
-$$= \beta_{1} + \frac{\sigma_{e}}{\sigma_{x_{1}}}\frac{corr(z_{1},e)}{corr(z_{1},x_{1})}$$
+$$\text{plim }\hat{\beta}_{1} = \beta_{1} + \frac{cov(z_{1},e)}{cov(z_{1},x_{1})}$$ $$= \beta_{1} + \frac{\sigma_{e}}{\sigma_{x_{1}}}\frac{corr(z_{1},e)}{corr(z_{1},x_{1})}$$
 
 -   We will use this result to inform ourselves about the failure of our assumptions
 
@@ -633,7 +626,7 @@ $$\text{plim }\hat{\beta}_{1} = \beta_{1} + \frac{cov(z_{1},e)}{cov(z_{1},x_{1})
 
 -   There is a more complicated test with heteroskedastic errors
 
-    -   You can easily execute this in Stata
+    -   You can easily execute this in R or Stata
 
     -   We can discuss the process separately
 
@@ -739,8 +732,7 @@ $$\text{plim }\hat{\beta}_{1} =  \beta_{1} + \frac{\sigma_{u}}{\sigma_{x_{1}}}\f
 
     -   In this case you have one strong and one weak instrument
 
-    -  Cragg-Donald F-Statistic is modified F-stat for doing this test jointly
-
+    -   Cragg-Donald F-Statistic is modified F-stat for doing this test jointly
 
 3.  Test that are heteroskedasticity-robust
 
