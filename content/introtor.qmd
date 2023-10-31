@@ -10,15 +10,14 @@ Oswald, F., Viers, V., Robin, J.- M., Villedieu, P., Kenedi, G. (2020). Introduc
 
 ## Tutorial
 
-Below is a tutorial you can use to learn the very basics of R. It does not cover everything, but enough so that we can do most of the things we need for this class. If you prefer you can instead <a href=" http://18.119.161.195:3838/EC655learnr/" target="_blank">pop them out in a new window</a>
+The .zip file below contains the files to run a `learnr` interactive tutorial.  To use it, first ensure that you have installed the `learnr` and `shiny` packages.  Then, download the file, unpack it, open the .Rmd file in RStudio, and click "run document."
 
-<div>
+There is also a plain, non-interactive PDF version of the file below.
 
-```{=html}
-<p align="center"><iframe height="500" width="100%" frameborder="no" src="http://18.119.161.195:3838/EC655learnr/"> </iframe></p>
-```
+[{{< fa solid file-export >}} `EC655learnr.zip`](/files/tutorials/EC655learnr.zip)
 
-</div>
+[{{< fa solid file-export >}} `EC655learnrpdf.pdf`](/files/tutorials/EC655learnrpdf.pdf)
+
 
 ## Videos
 

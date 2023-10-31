@@ -31,10 +31,16 @@ The slides are embedded in this page, and you can scroll through them with the a
 
 ## Tutorials
 
-The files below are RMarkdown documents that contain `learnr` tutorials.  Please download them, open in RStudio, and run.  For this, you will need to install the `shiny` and `learnr` packages.
+The .zip file below contains the files to run a `learnr` interactive tutorial.  To use it, first ensure that you have installed the `learnr` and `shiny` packages.  Then, download the file, unpack it, open the .Rmd file in RStudio, and click "run document."
 
-[{{< fa solid file-export >}} `EC655regression`](/files/tutorials/EC655regression.Rmd)
+There is also a plain, non-interactive PDF version of the file below.
 
-[{{< fa solid file-export >}} `EC655hypothesis`](/files/tutorials/EC655hypothesis.Rmd)
+[{{< fa solid file-export >}} `EC655regression.zip`](/files/tutorials/EC655regression.zip)
+
+[{{< fa solid file-export >}} `EC655regressionpdf.pdf`](/files/tutorials/EC655regressionpdf.pdf)
+
+[{{< fa solid file-export >}} `EC655hypothesis.zip`](/files/tutorials/EC655hypothesis.zip)
+
+[{{< fa solid file-export >}} `EC655hypothesispdf.pdf`](/files/tutorials/EC655hypothesispdf.pdf)
 
 

@@ -396,7 +396,7 @@
     "href": "content/introtor.html#tutorial",
     "title": "Introduction to R",
     "section": "Tutorial",
-    "text": "Tutorial\nBelow is a tutorial you can use to learn the very basics of R. It does not cover everything, but enough so that we can do most of the things we need for this class. If you prefer you can instead pop them out in a new window"
+    "text": "Tutorial\nThe .zip file below contains the files to run a learnr interactive tutorial. To use it, first ensure that you have installed the learnr and shiny packages. Then, download the file, unpack it, open the .Rmd file in RStudio, and click “run document.”\nThere is also a plain, non-interactive PDF version of the file below.\n EC655learnr.zip\n EC655learnrpdf.pdf"
   },
   {
     "objectID": "content/matrixrev.html",
@@ -1964,7 +1964,7 @@
     "href": "content/causality.html#tutorials",
     "title": "Causality",
     "section": "Tutorials",
-    "text": "Tutorials\nThe tutorial below covers the basics on how to plot DAGs in R. You can pop them out in a new window."
+    "text": "Tutorials\nThe .zip file below contains the files to run a learnr interactive tutorial. To use it, first ensure that you have installed the learnr and shiny packages. Then, download the file, unpack it, open the .Rmd file in RStudio, and click “run document.”\nThere is also a plain, non-interactive PDF version of the file below.\n EC655dag.zip\n EC655dagpdf.pdf"
   },
   {
     "objectID": "slides/ols/index.html#estimation-by-method-of-moments",
@@ -2328,7 +2328,7 @@
     "href": "content/ols.html#tutorials",
     "title": "Ordinary Least Squares",
     "section": "Tutorials",
-    "text": "Tutorials\nThe files below are RMarkdown documents that contain learnr tutorials. Please download them, open in RStudio, and run. For this, you will need to install the shiny and learnr packages.\n EC655regression\n EC655hypothesis"
+    "text": "Tutorials\nThe .zip file below contains the files to run a learnr interactive tutorial. To use it, first ensure that you have installed the learnr and shiny packages. Then, download the file, unpack it, open the .Rmd file in RStudio, and click “run document.”\nThere is also a plain, non-interactive PDF version of the file below.\n EC655regression.zip\n EC655regressionpdf.pdf\n EC655hypothesis.zip\n EC655hypothesispdf.pdf"
   },
   {
     "objectID": "slides/iv/index.html#introduction-1",
@@ -2833,5 +2833,12 @@
     "title": "Assignment 2",
     "section": "Instructions",
     "text": "Instructions\n\nTemplate\nThe template below contains the assignment questions. Please answer then all within the template in the appropriate place. Replace everything in all caps with your information, and add code where asked.\nWhen you save the file to your computer, please rename it with your family name and student number, with no spaces.\n a2template.qmd\n\n\nData analysis\nPart of the assignment involves data analysis in R, which you will include as code chunks in the Quarto document. Please make sure all of your analysis is contained in your Quarto document and that it runs properly. Make note of the packages used in the file and ensure you have them installed in RStudio. Also make sure you have a Tex distribution installed on your machine.\n\n\nSubmission\nWhen you are finished, you are required to submit two documents according to the following instructions:\n\nYour .qmd file containing the completed template file. Submit this in MyLearningSpace only.\nA rendered PDF of your .qmd file. Submit this in both MyLearningSpace and Gradescope.\n\nThe template is structured to output both the code and the results of the code. Please ensure that this is the case in your rendered PDF because I will grade only that document. I will go to the .qmd file only in cases when something in your PDF does not make sense.\n\n\nPlagiarism\nThis is an independent assignment, which I expect you to complete on your own. It is plagiarism to copy someone else’s work verbatim, which includes R code. Any work you submit should be yours only. However, you are encouraged to talk to each other to try to figure out how to do the assignment."
+  },
+  {
+    "objectID": "slides/iv/index.html",
+    "href": "slides/iv/index.html",
+    "title": "\nInstrumental Variables\n",
+    "section": "",
+    "text": "Instrumental Variables"
   }
 ]
