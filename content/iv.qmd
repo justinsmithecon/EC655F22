@@ -28,6 +28,12 @@ The slides are embedded in this page, and you can scroll through them with the a
 
 </div>
 
+## Sample R Code
+
+The code below goes through an exercise estimating TSLS when the instrument is exogenous.  It shows how to perform the estimation in R, and why it is interpreted as a Local Average Treatment Effect (LATE)
+
+[{{< fa solid file-export >}} `EC655instrumental.R`](/files/tutorials/EC655instrumental.R)
+
 
 
 

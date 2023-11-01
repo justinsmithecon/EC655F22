@@ -2840,5 +2840,12 @@
     "title": "\nInstrumental Variables\n",
     "section": "",
     "text": "Instrumental Variables\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nLoading required package: kableExtra\n\n\nAttaching package: 'kableExtra'\n\n\nThe following object is masked from 'package:dplyr':\n\n    group_rows\n\n\n\nAttaching package: 'ggdag'\n\n\nThe following object is masked from 'package:stats':\n\n    filter"
+  },
+  {
+    "objectID": "content/iv.html#sample-r-code",
+    "href": "content/iv.html#sample-r-code",
+    "title": "Instrumental Variables",
+    "section": "Sample R Code",
+    "text": "Sample R Code\nThe code below goes through an exercise estimating TSLS when the instrument is exogenous. It shows how to perform the estimation in R, and why it is interpreted as a Local Average Treatment Effect (LATE)\n EC655instrumental.R"
   }
 ]
