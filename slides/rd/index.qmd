@@ -659,7 +659,6 @@ ggplot() +
                   arrow = arrow(length = unit(0.25, "cm"), ends="both"))+
   annotate("text", x=5.7, y=0.375, label = TeX("$\\E[w_{1} -w_{0} |S = \\bar{S}]$"))
 ```
-
 :::
 
 ::: {.column width="50%"}
@@ -680,7 +679,6 @@ ggplot() +
                   arrow = arrow(length = unit(0.15, "cm"), ends="both"))+
   annotate("text", x=6.3, y=8, label = TeX("$\\E[(y_{1} -y_{0})(w_{1} -w_{0}) |S = \\bar{S}]$"))
 ```
-
 :::
 :::
 
@@ -729,6 +727,18 @@ $$\boldsymbol{\hat{\beta}}  = \left( \mathbf{\mathbf{\hat{X}}'\mathbf{\hat{X}}} 
 
     -   Ensure you recenter the $S$ variable around the cutoff
 
+## Milligan and Lemieux (2008)
+
+::: columns
+::: {.column width="50%"}
+![First Stage](mlfs.png)
+:::
+
+::: {.column width="50%"}
+![Reduced Form](mlrf.png)
+:::
+:::
+
 ## Internal Validity of RD
 
 -   The treatment variable does not have to be binary
@@ -761,8 +771,7 @@ $$\boldsymbol{\hat{\beta}}  = \left( \mathbf{\mathbf{\hat{X}}'\mathbf{\hat{X}}} 
 
         -   However, near the discontinuity, *any other* variable must be continuous
 
-        -   If we had covariates ($X$) determined *before* treatment, we could check to see if they have discontinuities 
-        $$x=\gamma_{0} + \gamma_{1}S +  \delta z + u$$
+        -   If we had covariates ($X$) determined *before* treatment, we could check to see if they have discontinuities $$x=\gamma_{0} + \gamma_{1}S +  \delta z + u$$
 
         -   If $\delta \neq 0$, then this may signal a problem
 
