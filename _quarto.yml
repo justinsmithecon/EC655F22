@@ -43,7 +43,9 @@ website:
             - text: "OLS"
               file: content/ols.qmd
             - text: "Instrumental Variables"
-              file: content/iv.qmd 
+              file: content/iv.qmd
+            - text: "Regression Discontinuity"
+              file: content/rd.qmd 
 
     - title: "Assignments"
       style: "docked"

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>E655 - Econometrics - Instrumental Variables</title>
+<title>E655 - Econometrics - Regression Discontinuity</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,8 +38,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/introtor.html">Course content</a></li><li class="breadcrumb-item"><a href="../content/iv.html">Instrumental Variables</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/introtor.html">Course content</a></li><li class="breadcrumb-item"><a href="../content/rd.html">Regression Discontinuity</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -178,13 +176,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/iv.html" class="sidebar-item-text sidebar-link active">
+  <a href="../content/iv.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Instrumental Variables</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content/rd.html" class="sidebar-item-text sidebar-link">
+  <a href="../content/rd.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Regression Discontinuity</span></a>
   </div>
 </li>
@@ -203,7 +201,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#readings" id="toc-readings" class="nav-link active" data-scroll-target="#readings">Readings</a></li>
   <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
   <li><a href="#videos" id="toc-videos" class="nav-link" data-scroll-target="#videos">Videos</a></li>
-  <li><a href="#sample-r-code" id="toc-sample-r-code" class="nav-link" data-scroll-target="#sample-r-code">Sample R Code</a></li>
   </ul>
 </nav>
     </div>
@@ -212,7 +209,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Instrumental Variables</h1>
+<h1 class="title">Regression Discontinuity</h1>
 </div>
 
 
@@ -230,33 +227,24 @@ ul.task-list li input[type="checkbox"] {
 <section id="readings" class="level2">
 <h2 class="anchored" data-anchor-id="readings">Readings</h2>
 <ul>
-<li>AP1 Chapter 4</li>
-<li>AP2 Chapter 3</li>
-<li>C Chapter 7</li>
-<li>CT Chapter 4</li>
+<li>AP1 Chapter 6</li>
+<li>AP2 Chapter 4</li>
+<li>C Chapter 6</li>
 <li>HA Chapter 12</li>
-<li>HK Chapter 19</li>
-<li>K Chapter 9</li>
-<li>SW Chapter 12</li>
-<li>W1 Chapter 5</li>
-<li>W2 Chapters 15</li>
+<li>HK Chapter 20</li>
+<li>W1 Chapter 21.5</li>
 </ul>
 </section>
 <section id="slides" class="level2">
 <h2 class="anchored" data-anchor-id="slides">Slides</h2>
-<p>The slides are embedded in this page, and you can scroll through them with the arrow keys. If you prefer you can instead <a href="../slides/iv/index.html" target="_blank">pop them out in a new window</a></p>
+<p>The slides are embedded in this page, and you can scroll through them with the arrow keys. If you prefer you can instead <a href="../slides/rd/index.html" target="_blank">pop them out in a new window</a></p>
 <div>
-<p align="center"><iframe width="890" height="500" class="slide-deck" src="../slides/iv/"></iframe></p>
+<p align="center"><iframe width="890" height="500" class="slide-deck" src="../slides/rd/"></iframe></p>
 </div>
 </section>
 <section id="videos" class="level2">
 <h2 class="anchored" data-anchor-id="videos">Videos</h2>
-<p>This is a lecture from Prof.&nbsp;Joshua Angrist given for the American Economics Association Continuing Education program (no preview available). <a href="https://www.aeaweb.org/webcasts/2020/mastering-mostly-harmless-econometrics-part-3" target="_blank">View video</a></p>
-</section>
-<section id="sample-r-code" class="level2">
-<h2 class="anchored" data-anchor-id="sample-r-code">Sample R Code</h2>
-<p>The code below goes through an exercise estimating TSLS when the instrument is exogenous. It shows how to perform the estimation in R, and why it is interpreted as a Local Average Treatment Effect (LATE)</p>
-<p><a href="../files/tutorials/EC655instrumental.R"><i class="fa-solid fa-file-export" aria-hidden="true"></i> <code>EC655instrumental.R</code></a></p>
+<p>This is a lecture from Prof.&nbsp;Christopher Walters given for the American Economics Association Continuing Education program (no preview available). <a href="https://www.aeaweb.org/webcasts/2020/mastering-mostly-harmless-econometrics-part-6" target="_blank">View video</a></p>
 
 
 </section>

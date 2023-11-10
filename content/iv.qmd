@@ -28,6 +28,11 @@ The slides are embedded in this page, and you can scroll through them with the a
 
 </div>
 
+## Videos
+
+This is a lecture from Prof. Joshua Angrist given for the American Economics Association Continuing Education program (no preview available). <a href="https://www.aeaweb.org/webcasts/2020/mastering-mostly-harmless-econometrics-part-3" target="_blank">View video</a>
+
+
 
 ## Sample R Code
 
