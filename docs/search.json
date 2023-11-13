@@ -2851,14 +2851,14 @@
   {
     "objectID": "slides/rd/index.html#introduction-1",
     "href": "slides/rd/index.html#introduction-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Introduction",
     "text": "Introduction\n\nRD is a popular method to identify causal treatment effects\nThe method mimics a randomized experiment\n\nPeople are assigned to treatment or not based on some known continuous variable\n\nThose above some “cutoff” are given the treatment\n\nAround the cutoff people share similar characteristics, except for the treatment\nThus, looking at outcome differences for those just above cutoff compared to just below will reveal causal effect of treatment\n\nIt identifies a local LATE\n\nIt is LATE in the sense we defined in instrumental variables\nAlso, it focuses on people in the immediate vicinity of the discontinuity"
   },
   {
     "objectID": "slides/rd/index.html#example",
     "href": "slides/rd/index.html#example",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Example",
     "text": "Example\n\nExample: Milligan and Lemieux (2008)\n\nEffect of social assistance on employment\n\nExtra dollars of social assistance is the treatment\n\nAmount of social assistance determined by age\n\nBefore 1989, 30+ year olds got roughly $550 in monthly benefits\nThose under 30 got roughly $200\nTreatment is getting more social assistance\n\nPeople around age 30 are roughly similar on average\nCompares employment rates for 30 year olds to those just under 30\n\nAt the cutoff, the only difference between 2 groups is benefit level\n\nReveals causal effect of getting more benefits on employment\nResults show more benefits means lower employment rates"
   },
@@ -2991,9 +2991,9 @@
   {
     "objectID": "slides/rd/index.html#visualizing-fuzzy-rd",
     "href": "slides/rd/index.html#visualizing-fuzzy-rd",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Visualizing Fuzzy RD",
-    "text": "Visualizing Fuzzy RD\n\n\n\nggplot() +\n  geom_function(fun = function(x) 0.01*x, color = \"black\", xlim=c(0,5),  size = 1.5) +\n  geom_function(fun = function(x) 0.01*x+0.6, color = \"red\", xlim=c(0,5), linetype='longdash', size = 1.5, alpha = .2) +\n  geom_function(fun = function(x) 0.01*x, color = \"red\", xlim=c(5,10), linetype='longdash', size = 1.5, alpha = .2) +\n  geom_function(fun = function(x) 0.01*x+0.6, color = \"black\", xlim=c(5,10), size = 1.5) +  \n  geom_vline(xintercept = 5, linetype=\"dotted\") +\n  labs(x = \"S\", y = \"w\", title = \"CEFs and Observed Treatment\") +\n  theme_pander(nomargin = FALSE) +\n  xlim(0,10) +\n  annotate(\"text\", x=2.5, y=0.07, label = \"E[w|s]\") +\n  annotate(\"text\", x=7.5, y=0.62, label = \"E[w|s]\") +\n  ylim(0,1) +\n  geom_segment(aes(x = 5, y = 0.06, xend = 5, yend = 0.64),color = \"red\",\n                  arrow = arrow(length = unit(0.25, \"cm\"), ends=\"both\"))+\n  annotate(\"text\", x=5.7, y=0.375, label = TeX(\"$\\\\E[w_{1} -w_{0} |S = \\\\bar{S}]$\"))\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\n\n\n\n\n\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'"
+    "text": "Visualizing Fuzzy RD"
   },
   {
     "objectID": "slides/rd/index.html#estimation-of-fuzzy-regression-discontinuity",
@@ -3012,14 +3012,14 @@
   {
     "objectID": "slides/rd/index.html#internal-validity-of-rd",
     "href": "slides/rd/index.html#internal-validity-of-rd",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Internal Validity of RD",
     "text": "Internal Validity of RD\n\nThe treatment variable does not have to be binary\n\nSee van der Klaauw (2001), Matsudaira (2008)\n\nThe method only works if the running variable \\(S\\) cannot be manipulated\n\nEx: Matsudaira (2008)\n\nEffect of summer school on future performance with 50% grade cutoff\nKids may know the assignment rule to summer school\nSome more “motivated” kids put in effort to not attend\nTheir non-treated outcomes differ on each side of the cutoff\ni.e. \\(E[y_{0}|S = \\bar{S}] = lim_{S\\uparrow \\bar{S}} E[y_{0}|S]\\)\n\n\nIf running variable is manipulated in a non-random way, RD is invalid and biased"
   },
   {
     "objectID": "slides/rd/index.html#internal-validity-of-rd-1",
     "href": "slides/rd/index.html#internal-validity-of-rd-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Internal Validity of RD",
     "text": "Internal Validity of RD\n\nTwo ways to check if the running variable has been manipulated\n\nCheck for discontinuities in baseline variables\n\nTreatment is expected to be discontinuous; this is where our variation comes from\nHowever, near the discontinuity, any other variable must be continuous\nIf we had covariates (\\(X\\)) determined before treatment, we could check to see if they have discontinuities \\[x=\\gamma_{0} + \\gamma_{1}S +  \\delta z + u\\]\nIf \\(\\delta \\neq 0\\), then this may signal a problem\n\nCheck for discontinuities in the density of the running variable\n\nA histogram may show “piling up” of people on one side of discontinuity\nIf so, this may signal a problem\nSee McCrary(2008) for more technical details"
   },
@@ -3033,28 +3033,28 @@
   {
     "objectID": "slides/rd/index.html#treatment-assignment",
     "href": "slides/rd/index.html#treatment-assignment",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Treatment Assignment",
     "text": "Treatment Assignment\n\nIn RD, treatment is assigned based on the value of \\(S\\) relative to a cutoff \\(\\bar{S}\\)\nIn graph above suppose \\(\\bar{S} = 5\\)\n\nThose with \\(S\\ge \\bar{S}\\) get the treatment\nThose with \\(S&lt; \\bar{S}\\) do not get the treatment\n\nIf the treatment variable is \\(w\\) then\n\n\\[w = 1[S\\ge \\bar{S}]\\]\n\nIn the example paper, \\(w\\) is a dummy for getting extra benefits\n\n\\(\\bar{S} = 30\\) years old and \\(w=1\\) happens when \\(S\\ge 30\\)"
   },
   {
     "objectID": "slides/rd/index.html#bias-in-regression",
     "href": "slides/rd/index.html#bias-in-regression",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Bias in Regression",
     "text": "Bias in Regression\n\nConsider the population least squares regression of \\(y\\) on \\(w\\)\n\n\\[y = \\beta_{0} + \\beta_{1}w + u \\]\n\nThe slope in this regression is\n\n\\[E[y|w=1] - E[y|w=0]\\] \\[=  E[y_{1} - y_{0}|w=1] + E[y_{0}|w=1]- E[y_{0}|w=0]\\]\n\nSelection bias does not disappear because \\(y_{0}\\) is not independent of treatment\n\nThe mean of \\(y_{0}\\) above the cutoff is not the same as below the cutoff\nExample: untreated employment outcomes are different for older and younger people"
   },
   {
     "objectID": "slides/rd/index.html#conditional-mean-independence",
     "href": "slides/rd/index.html#conditional-mean-independence",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean Independence",
     "text": "Conditional Mean Independence\n\nWhat if we instead condition on \\(S\\)?\n\\[E[y|S,w=1] - E[y|S,w=0]\\] \\[=  E[y_{1} - y_{0}|S,w=1] + E[y_{0}|S,w=1]- E[y_{0}|S,w=0]\\]\nIn this case, selection bias will disappear because treatment is determined by \\(S\\)\n\nSo holding \\(S\\) fixed, mean \\(y_{0}\\) is independent of treatment\n\nIn our example, people of the same age have the same average untreated outcome\nBecause \\(E[y_{0}|S] = E[y_{0}|S, w]\\) we can write\n\n\\[E[y|S,w=1] - E[y|S,w=0] =  E[y_{1} - y_{0}|S,w=1] \\]\n\nThis is the ATT conditional on \\(S\\)"
   },
   {
     "objectID": "slides/rd/index.html#conditional-mean-independence-1",
     "href": "slides/rd/index.html#conditional-mean-independence-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean Independence",
     "text": "Conditional Mean Independence\n\nProblem: we cannot compute \\(E[y|S, w = 1] - E[y|S, w = 0]\\)\n\nBecause \\(w=1\\) only for those with \\(S\\ge \\bar{S}\\)\nAnd \\(w=0\\) only for those with \\(S&lt; \\bar{S}\\)\n\nThere is no “overlap” in these functions\n\nNo spot in the graph with two solid lines at a value of \\(S\\)"
   },
@@ -3068,14 +3068,14 @@
   {
     "objectID": "slides/rd/index.html#conditional-mean-at-cutoff",
     "href": "slides/rd/index.html#conditional-mean-at-cutoff",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean at Cutoff",
     "text": "Conditional Mean at Cutoff\n\nRD solves this problem by focusing on the treatment cutoff\n\n\\[E[y|S = \\bar{S}] - lim_{S\\uparrow \\bar{S}} E[y|S]\\] \\[=  E[y_{1} - y_{0}|S = \\bar{S}] +E[y_{0}|S = \\bar{S}]- lim_{S\\uparrow \\bar{S}}E[y_{0}|S]\\]\n\nThe key assumption is the that \\(E[y_{0}|S = \\bar{S}]\\) is continuous at \\(S=\\bar{S}\\)\n\n\\[E[y_{0}|S = \\bar{S}] = lim_{S\\uparrow \\bar{S}} E[y_{0}|S]\\]\n\nIf this is true, selection bias disappears and we get the ATT at the cutoff\n\n\\[E[y|S = \\bar{S}] - lim_{S\\uparrow \\bar{S}} E[y|S] =E[y_{1} -y_{0} |S = \\bar{S}]\\]"
   },
   {
     "objectID": "slides/rd/index.html#conditional-mean-at-cutoff-1",
     "href": "slides/rd/index.html#conditional-mean-at-cutoff-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean at Cutoff",
     "text": "Conditional Mean at Cutoff\n\nThe idea behind these assumptions is\n\nCompare average observed outcome just above cutoff to average outcome just below\nThey serve as good counterfactuals if potential outcomes not affected by treatment\ne.g. social assistance benefits and employment\n\nCompare mean employment rate for people just above and below age 30\nWorks if employment rates smooth across age 30 without treatment"
   },
@@ -3089,14 +3089,14 @@
   {
     "objectID": "slides/rd/index.html#summary-of-model",
     "href": "slides/rd/index.html#summary-of-model",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Summary of Model",
     "text": "Summary of Model\n\nThe key result is\n\n\\[E[y|S = \\bar{S}] - lim_{S\\uparrow \\bar{S}} E[y|S] =E[y_{1} -y_{0} |S = \\bar{S}]  \\]\n\nThis works as long as \\(E[y_{0}|S = \\bar{S}]\\) is continuous at \\(S=\\bar{S}\\)\nThus, RD estimates an average treatment effect at the cutoff point\nAs before, we do not know the conditional expectation, so we must estimate\nThere are various ways, but we will cover OLS regression"
   },
   {
     "objectID": "slides/rd/index.html#estimation",
     "href": "slides/rd/index.html#estimation",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
     "text": "Estimation\n\nTo estimate we need to approximate the function \\(E[y|S]\\)\nWe can use a population linear regression of \\(y\\) on \\(S\\), and estimate that by OLS\nImportant: we must allow for an intercept shift at the cutoff point \\(\\bar{S}\\)\n\nThis is the approximation of \\(E[y_{1} -y_{0} |S = \\bar{S}]\\)\n\nThe simplest linear model is\n\n\\[y = \\beta_{0} +  \\beta_{1} S+\\rho w + u\\]\n\nThis is a straight line that jumps at \\(\\bar{S}\\) by \\(\\rho\\)"
   },
@@ -3110,9 +3110,9 @@
   {
     "objectID": "slides/rd/index.html#linear-population-regression-function",
     "href": "slides/rd/index.html#linear-population-regression-function",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Linear Population Regression Function",
-    "text": "Linear Population Regression Function\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'"
+    "text": "Linear Population Regression Function"
   },
   {
     "objectID": "slides/rd/index.html#ols",
@@ -3124,210 +3124,210 @@
   {
     "objectID": "slides/rd/index.html#estimation-1",
     "href": "slides/rd/index.html#estimation-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
     "text": "Estimation\n\nTo estimate the PRF, we can use OLS\nReplace the population parameters with sample estimates\n\n\\[y = \\hat{\\beta}_{0} +  \\hat{\\beta}_{1} S+\\hat{\\rho} w + \\hat{u}\\]\n\nThe estimate of \\(\\rho\\) is the difference in predicted \\(y\\) at the cutoff point\n\n\\[\\hat{\\rho} = (\\hat{\\beta}_{0} +  \\hat{\\beta}_{1} S+\\hat{\\rho}) -   (\\hat{\\beta}_{0} +  \\hat{\\beta}_{1} S)\\]"
   },
   {
     "objectID": "slides/rd/index.html#estimation-2",
     "href": "slides/rd/index.html#estimation-2",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
     "text": "Estimation\n\nA more complicated PRF allows the slope to differ on either side of the cutoff point\n\n\\[y = \\beta_{0} +  \\beta_{1} S+\\rho w + \\beta_{2}(S \\times w) + u\\]\n\nThe interaction term allows the slope to differ on either side of the cutoff point\n\n\\[\\frac{\\partial y}{\\partial S} = \\beta_{1} + \\beta_{2} w\\]\n\nWhen \\(w = 1\\) the slope changes by \\(\\beta_{2}\\)"
   },
   {
     "objectID": "slides/rd/index.html#estimation-3",
     "href": "slides/rd/index.html#estimation-3",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
-    "text": "Estimation\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'"
+    "text": "Estimation"
   },
   {
     "objectID": "slides/rd/index.html#estimation-4",
     "href": "slides/rd/index.html#estimation-4",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
     "text": "Estimation\n\nProblem: as specified, \\(\\rho\\) does not measure the jump at the cutoff\nCall the prediction of \\(y\\) at values of \\(S\\) and \\(w\\) \\(P[y|S, w]\\)\n\n\\[P[y|S, w=1] - P[y|S, w=0] \\] \\[= (\\beta_{0} +  \\beta_{1} S+ \\rho + \\beta_{2}S) - (\\beta_{0} +  \\beta_{1} S) \\] \\[= \\rho +  \\beta_{2} S \\]\n\n\\(\\rho\\) is therefore the jump when \\(S = 0\\), not when \\(S=\\bar{S}\\)"
   },
   {
     "objectID": "slides/rd/index.html#estimation-5",
     "href": "slides/rd/index.html#estimation-5",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
     "text": "Estimation\n\nTo ensure \\(\\rho\\) is the jump at the cutoff, we must center \\(S\\) at the cutoff point\nDefine \\(S_{c} = S - \\bar{S}\\)\nReplace \\(S\\) with \\(S_{c}\\) in the PRF\n\n\\[y = \\beta_{0}^{*} +  \\beta_{1} S_{c}+\\rho^{*} w + \\beta_{2}(S_{c} \\times w) + u\\]\n\nDifference in the PRF is now\n\n\\[P[y|S_{c}, w=1] - P[y|S_{c}, w=0] \\] \\[= \\rho^{*} +  \\beta_{2} S_{c} \\]\n\nThis occurs at the cutoff: \\(S_{c} = S - \\bar{S}\\) when \\(S = \\bar{S}\\)"
   },
   {
     "objectID": "slides/rd/index.html#estimation-6",
     "href": "slides/rd/index.html#estimation-6",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
-    "text": "Estimation\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'"
+    "text": "Estimation"
   },
   {
     "objectID": "slides/rd/index.html#estimation-7",
     "href": "slides/rd/index.html#estimation-7",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
     "text": "Estimation\n\nTo estimate \\(\\rho^{*}\\) replace the population parameters with sample estimates\n\n\\[y = \\hat{\\beta}_{0}^{*} +  \\hat{\\beta}_{1} S_{c}+\\hat{\\rho}^{*} w + \\hat{\\beta}_{2}S_{c} \\times w + \\hat{u}\\]\n\nPrior to running OLS regression, ensure you create \\(S_{c} = S - \\bar{S}\\)\n\\(\\hat{\\rho}^{*}\\) is the regression discontinuity estimate of the treatement effect"
   },
   {
     "objectID": "slides/rd/index.html#model",
     "href": "slides/rd/index.html#model",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Model",
     "text": "Model\n\nPerforming a bit of algebra, we get\n\n\\[=  E[(y_{1} - y_{0})(w_{1}-w_{0})|S = \\bar{S}] + (E[y_{0}|S = \\bar{S}] - lim_{S\\uparrow \\bar{S}} E[y_{0} |S] )\\]\n\nIf \\(E[y_{0}|S = \\bar{S}]\\) is continuous at the cutoff, we can drop the second term\n\n\\[=  E[(y_{1} - y_{0})(w_{1}-w_{0})|S = \\bar{S}] \\]"
   },
   {
     "objectID": "slides/rd/index.html#model-1",
     "href": "slides/rd/index.html#model-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Model",
     "text": "Model\n\nIf we make a monotonicity assumption (as we did in the LATE notes)\n\n\\[ E[(y_{1} - y_{0})(w_{1}-w_{0})|S = \\bar{S}] = E[y_{1} - y_{0}|w_{1}-w_{0}=1,S = \\bar{S}]  E[w_{1} - w_{0}|S = \\bar{S}]\\]\n\nThe CEF for \\(w\\) is\n\n\\[E[w|S = \\bar{S}] - lim_{S\\uparrow \\bar{S}} E[w|S] = E[w_{1} - w_{0}|S = \\bar{S}] \\]\n\nWhich brings us to\n\n\\[\\frac{E[y|S = \\bar{S}] - lim_{S\\uparrow \\bar{S}} E[y|S] }{E[w|S = \\bar{S}] - lim_{S\\uparrow \\bar{S}} E[w|S] } = E[y_{1} - y_{0}|w_{1}-w_{0}=1,S = \\bar{S}]\\]"
   },
   {
     "objectID": "slides/rd/index.html#model-2",
     "href": "slides/rd/index.html#model-2",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Model",
     "text": "Model\n\nIn the fuzzy RD we divide the mean difference in outcomes by the mean difference in treatment\n\nThis “scales” the difference in outcomes by the difference in treatment probability\n\nThe interpretation is a LATE\n\nThe treatment effect for compliers, at the cutoff\n\nJust like sharp RD, you can allow different slopes, nonlinearities"
   },
   {
     "objectID": "slides/rd/index.html#setup",
     "href": "slides/rd/index.html#setup",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Setup",
     "text": "Setup\n\nRD is best understood visually\nSuppose we have potential outcomes \\(y_{0}\\) and \\(y_{1}\\)\n\n\\(y_{0}\\) is the outcome if not treated\n\\(y_{1}\\) is the outcome if treated\n\nBoth potential outcomes are continuous functions of some variable \\(S\\)\n\n\\(S\\) is called the “running variable” or “forcing variable”\n\nIn the example paper, \\(S\\) is age\n\n\\(y_{0}\\) is employment rate with normal benefits\n\\(y_{1}\\) is employment rate with extra benefits\n\nGraph below plots example CEFs as a function of \\(S\\)"
   },
   {
     "objectID": "slides/rd/index.html#cef-of-potential-outcomes",
     "href": "slides/rd/index.html#cef-of-potential-outcomes",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "CEF of Potential Outcomes",
-    "text": "CEF of Potential Outcomes\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
+    "text": "CEF of Potential Outcomes"
   },
   {
     "objectID": "slides/rd/index.html#observed-value-of-the-outcome",
     "href": "slides/rd/index.html#observed-value-of-the-outcome",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Observed Value of the Outcome",
     "text": "Observed Value of the Outcome\n\nRecall that the observed outcome \\(y = y_{0} + (y_{1} - y_{0})w\\)\n\n\\(y = y_{0}\\) if \\(w=0\\), \\(y = y_{1}\\) if \\(w=1\\)\n\nSince \\(w = 1[S\\ge \\bar{S}]\\) we can write\n\n\\(y = y_{0}\\) if \\(S&lt; \\bar{S}\\), \\(y = y_{1}\\) if \\(S\\ge \\bar{S}\\)\n\nWe can then draw the CEF \\(E[y|S]\\) on the graph\n\nBlack line is the CEF of \\(E[y|S]\\)\nRed lines are the (unobserved) potential outcomes"
   },
   {
     "objectID": "slides/rd/index.html#observed-value-of-the-outcome-1",
     "href": "slides/rd/index.html#observed-value-of-the-outcome-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Observed Value of the Outcome",
     "text": "Observed Value of the Outcome"
   },
   {
     "objectID": "slides/rd/index.html#observed-value-of-the-outcome-2",
     "href": "slides/rd/index.html#observed-value-of-the-outcome-2",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Observed Value of the Outcome",
-    "text": "Observed Value of the Outcome\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'"
+    "text": "Observed Value of the Outcome"
   },
   {
     "objectID": "slides/rd/index.html#conditional-mean-at-cutoff-2",
     "href": "slides/rd/index.html#conditional-mean-at-cutoff-2",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Conditional Mean at Cutoff",
     "text": "Conditional Mean at Cutoff\n\nWe plotted CEFs of potential outcomes assuming they are linear with equal slopes\nThey do not have to be\nThe two graphs below present situations where\n\nPotential outcomes are linear with different slopes\nThey are nonlinear"
   },
   {
     "objectID": "slides/rd/index.html#linear-cef-with-unequal-slopes",
     "href": "slides/rd/index.html#linear-cef-with-unequal-slopes",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Linear CEF with Unequal Slopes",
-    "text": "Linear CEF with Unequal Slopes\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'"
+    "text": "Linear CEF with Unequal Slopes"
   },
   {
     "objectID": "slides/rd/index.html#nonlinear-cef",
     "href": "slides/rd/index.html#nonlinear-cef",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Nonlinear CEF",
-    "text": "Nonlinear CEF\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'"
+    "text": "Nonlinear CEF"
   },
   {
     "objectID": "slides/rd/index.html#setup-1",
     "href": "slides/rd/index.html#setup-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Setup",
     "text": "Setup\n\nWe still have potential outcomes \\(y_{0}\\) and \\(y_{1}\\) that are functions of \\(S\\)\nGraph below plots their CEFs again as a function of \\(S\\)\nThe cutoff point is still \\(\\bar{S}\\)"
   },
   {
     "objectID": "slides/rd/index.html#cef-of-potential-outcomes-1",
     "href": "slides/rd/index.html#cef-of-potential-outcomes-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "CEF of Potential Outcomes",
     "text": "CEF of Potential Outcomes"
   },
   {
     "objectID": "slides/rd/index.html#treatment",
     "href": "slides/rd/index.html#treatment",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Treatment",
     "text": "Treatment\n\nThe treatment is now only partially determined by \\(S\\)\n\nPeople are assigned to treatment if \\(S &gt; \\bar{S}\\)\nBut they may not take it, so actual treatment could differ\n\nSuppose that assignment to treatment is \\(z\\)\n\n\\[z = 1[S &gt; \\bar{S}]\\]\n\nActual treatment is determined by \\(w\\)\n\n\\[w = w_{0} + (w_{1} - w_{0})z\\]\n\nThe potential treatments are functions of \\(S\\)\nThe observed treatment is \\(w_{0}\\) if \\(S \\leq \\bar{S}\\) and \\(w_{1}\\) if \\(S &gt; \\bar{S}\\)"
   },
   {
     "objectID": "slides/rd/index.html#cef-of-treatment",
     "href": "slides/rd/index.html#cef-of-treatment",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "CEF of Treatment",
-    "text": "CEF of Treatment\n\nggplot() +\n  geom_function(fun = function(x) 0.01*x, color = \"black\", xlim=c(0,5),  size = 1.5) +\n  geom_function(fun = function(x) 0.01*x+0.6, color = \"red\", xlim=c(0,5), linetype='longdash', size = 1.5, alpha = .2) +\n  geom_function(fun = function(x) 0.01*x, color = \"red\", xlim=c(5,10), linetype='longdash', size = 1.5, alpha = .2) +\n  geom_function(fun = function(x) 0.01*x+0.6, color = \"black\", xlim=c(5,10), size = 1.5) +  \n  geom_vline(xintercept = 5, linetype=\"dotted\") +\n  labs(x = \"S\", y = \"w\", title = \"CEFs and Observed Treatment\") +\n  theme_pander(nomargin = FALSE) +\n  xlim(0,10) +\n  annotate(\"text\", x=2.5, y=0.07, label = \"E[w|s]\") +\n  annotate(\"text\", x=7.5, y=0.62, label = \"E[w|s]\") +\n  ylim(0,1) +\n  geom_segment(aes(x = 5, y = 0.06, xend = 5, yend = 0.64),color = \"red\",\n                  arrow = arrow(length = unit(0.25, \"cm\"), ends=\"both\"))+\n  annotate(\"text\", x=5.7, y=0.375, label = TeX(\"$\\\\E[w_{1} -w_{0} |S = \\\\bar{S}]$\"))\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'"
+    "text": "CEF of Treatment"
   },
   {
     "objectID": "slides/rd/index.html#observed-outcomes",
     "href": "slides/rd/index.html#observed-outcomes",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Observed Outcomes",
     "text": "Observed Outcomes\n\nLike before we can plot the CEF of the observed outcome\nUnlike before\n\n\\[E[y|S \\ge \\bar{S}] \\neq E[y_{1}|S \\ge \\bar{S}]\\] \\[E[y|S &lt; \\bar{S}] \\neq E[y_{0}|S &lt; \\bar{S}]\\]\n\nThis is because actual treatment can deviate from assigned treatment"
   },
   {
     "objectID": "slides/rd/index.html#observed-outcomes-1",
     "href": "slides/rd/index.html#observed-outcomes-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Observed Outcomes",
     "text": "Observed Outcomes\n\nTo find the CEF of the observed outcome remember\n\n\\[y = y_{0} + (y_{1} - y_{0})w\\]\n\nRearrange\n\n\\[ y = y_{0}(1-w) + y_{1}w\\]\n\nTake expectations conditional on \\(S\\)\n\n\\[E[y|S] = E[y_{0}|S] (1-E[w|S]) + E[y_{1}|S]E[w|S]\\]"
   },
   {
     "objectID": "slides/rd/index.html#cef-of-observed-outcome",
     "href": "slides/rd/index.html#cef-of-observed-outcome",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "CEF of Observed Outcome",
     "text": "CEF of Observed Outcome"
   },
   {
     "objectID": "slides/rd/index.html#treatment-effect",
     "href": "slides/rd/index.html#treatment-effect",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Treatment Effect",
     "text": "Treatment Effect\n\nComputing the treatment effect is more complicated\nIt operates like the TSLS model we saw before\n\n\\(z\\) is as an instrument for \\(w\\)\nTreatment effect is ratio of mean difference in \\(y\\) to mean difference in \\(w\\)\n\nThe treatment effect is a LATE, at the cutoff"
   },
   {
     "objectID": "slides/rd/index.html#treatment-effect-1",
     "href": "slides/rd/index.html#treatment-effect-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Treatment Effect",
     "text": "Treatment Effect\n\nDifference in CEF on each side of the cutoff\n\n\\[E[y|S = \\bar{S}] - lim_{S\\uparrow \\bar{S}} E[y|S]\\]\n\nReplace \\(y\\) with \\(y = y_{0} + (y_{1} - y_{0})w\\)\n\n\\[=  E[y_{0} + (y_{1} - y_{0})w|S = \\bar{S}] - lim_{S\\uparrow \\bar{S}} E[y_{0} + (y_{1} - y_{0})w|S]\\]\n\nWhen \\(S \\ge \\bar{S}\\) then \\(w = w_{1}\\) and when \\(S &lt; \\bar{S}\\) then \\(w = w_{0}\\)\n\n\\[=  E[y_{0} + (y_{1} - y_{0})w_{1}|S = \\bar{S}] - lim_{S\\uparrow \\bar{S}} E[y_{0} + (y_{1} - y_{0})w_{0}|S]\\]"
   },
   {
     "objectID": "slides/rd/index.html#cef-of-observed-outcome-1",
     "href": "slides/rd/index.html#cef-of-observed-outcome-1",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "CEF of Observed Outcome",
-    "text": "CEF of Observed Outcome\n\n\nWarning in is.na(x): is.na() applied to non-(list or vector) of type\n'expression'"
+    "text": "CEF of Observed Outcome"
   },
   {
     "objectID": "slides/rd/index.html#estimation-8",
     "href": "slides/rd/index.html#estimation-8",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
     "text": "Estimation\n\nEstimate using TSLS\n\nTreat \\(w\\) as endogenous, and \\(z\\) as an exogenous instrument\n\\(S\\) is the included instrument\n\nA linear structural model would be\n\n\\[y = \\beta_{0} +  \\beta_{1} S+\\rho w + e\\]\n\nWith first stage\n\n\\[w = \\alpha_{0}  + \\alpha_{1} S + \\pi z + u\\]"
   },
   {
     "objectID": "slides/rd/index.html#estimation-9",
     "href": "slides/rd/index.html#estimation-9",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
     "text": "Estimation\n\nEstimating by TSLS the vector of coefficients is\n\n\\[\\boldsymbol{\\hat{\\beta}}  = \\left( \\mathbf{\\mathbf{\\hat{X}}'\\mathbf{\\hat{X}}} \\right)^{-1}\\mathbf{\\mathbf{\\hat{X}}'y} =  \n\\begin{bmatrix}\n\\hat{\\beta}_{0}\\\\\n\\hat{\\beta}_{1}\\\\\n\\hat{\\rho}\n\\end{bmatrix}\\]\n\nThe \\(\\hat{X}\\) matrix contains the constant, \\(S\\), and \\(\\hat{w}\\)\nAs before you can add different slopes, nonlinearities\n\nEnsure you recenter the \\(S\\) variable around the cutoff"
   },
@@ -3341,7 +3341,7 @@
   {
     "objectID": "slides/rd/index.html#external-validity-of-rd",
     "href": "slides/rd/index.html#external-validity-of-rd",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "External Validity of RD",
     "text": "External Validity of RD\n\nExternal validity is the ability to extrapolate estimates\nRD estimates are local to the cutoff\nIf there are heteogeneous treatment effects, may not be able to apply to whole population\n\nEx: Estimates of benefits on employment for 30 year olds may not apply to 50 year olds\nEx: Estimates of summer school on test scores for kids around 50% may not apply to high achievers\n\nMust be careful not to overinterpret results"
   },
@@ -3383,7 +3383,7 @@
   {
     "objectID": "slides/rd/index.html#milligan-and-lemieux-2008",
     "href": "slides/rd/index.html#milligan-and-lemieux-2008",
-    "title": "\nRegression Discontinuity\n",
+    "title": "E655 - Econometrics",
     "section": "Milligan and Lemieux (2008)",
     "text": "Milligan and Lemieux (2008)\n\n\n\n\n\nFirst Stage\n\n\n\n\n\n\nReduced Form"
   },
