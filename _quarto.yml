@@ -46,6 +46,8 @@ website:
               file: content/iv.qmd
             - text: "Regression Discontinuity"
               file: content/rd.qmd 
+            - text: "Difference in Differences"
+              file: content/did.qmd 
 
     - title: "Assignments"
       style: "docked"

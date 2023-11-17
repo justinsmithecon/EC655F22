@@ -3393,5 +3393,285 @@
     "title": "\nRegression Discontinuity\n",
     "section": "",
     "text": "Regression Discontinuity\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.2     ✔ tidyr     1.3.0\n✔ purrr     1.0.1     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nLoading required package: kableExtra\n\n\nAttaching package: 'kableExtra'\n\n\nThe following object is masked from 'package:dplyr':\n\n    group_rows\n\n\n\nAttaching package: 'ggdag'\n\n\nThe following object is masked from 'package:stats':\n\n    filter"
+  },
+  {
+    "objectID": "slides/did/index.html#introduction-1",
+    "href": "slides/did/index.html#introduction-1",
+    "title": "E655 - Econometrics",
+    "section": "Introduction",
+    "text": "Introduction\n\nUses a natural experiment to separate data into treatment and control groups\n\nA policy or naturally occurring event that creates exogenous variation in a variable\n\nEx: Increasing the minimum wage in one state but not another\nEx: Mandated fitness policies in some schools but not others\n\n\nUsually data in the form of pooled cross-sections\n\nIndividuals in 2 (or more) time periods\nCould be same or different people in each time period\n\nCan also have data in 2 groups in same time period\n\nIndividuals in 2 different states, countries\nPeople in 2 different schools\n\nDiD is a specific way to compare treatment to control group"
+  },
+  {
+    "objectID": "slides/did/index.html#basic-model",
+    "href": "slides/did/index.html#basic-model",
+    "title": "E655 - Econometrics",
+    "section": "Basic Model",
+    "text": "Basic Model\n\nCan also think about this in regression framework\nImagine potential outcomes are defined as \\[y_{0} = \\beta_{0} + \\beta_{1}dA + \\beta_{2}d2 + \\eta\\] \\[y_{1} = y_{0} + \\beta_{3}\\]\nThis model setup says that\n\nThe potential untreated outcome varies across groups and time\n\nThe difference in \\(y_{0}\\) is the same across time for groups A and B\nThe difference in \\(y_{0}\\) is the same across groups in each time period\n\nThe treatment effect \\(\\beta_{3}\\) is constant\n\nIf we plug these into the equation for \\(y\\) we get\n\\[y =\\beta_{0} + \\beta_{1}dA + \\beta_{2}d2 +  \\beta_{3}w +  \\eta\\]"
+  },
+  {
+    "objectID": "slides/did/index.html#basic-model-1",
+    "href": "slides/did/index.html#basic-model-1",
+    "title": "E655 - Econometrics",
+    "section": "Basic Model",
+    "text": "Basic Model\n\nTake expected values for each group in period 2 \\[E[y|dA = 1, d2 = 1] = \\beta_{0} + \\beta_{1}   +\\beta_{2}+ \\beta_{3} + E[\\eta|dA = 1, d2 = 1]\\] \\[E[y|dA = 0, d2 = 1] = \\beta_{0}   +\\beta_{2}+ E[\\eta|dA = 0, d2 = 1]\\]\nThen expected values for each group in period 1\n\\[E[y|dA = 1, d2 = 0] = \\beta_{0} + \\beta_{1}    + E[\\eta|dA = 1, d2 = 0]\\] \\[E[y|dA = 0, d2 = 0] = \\beta_{0}  + E[\\eta|dA = 0, d2 = 0]\\]"
+  },
+  {
+    "objectID": "slides/did/index.html#basic-model-2",
+    "href": "slides/did/index.html#basic-model-2",
+    "title": "E655 - Econometrics",
+    "section": "Basic Model",
+    "text": "Basic Model\n\nThen compute the difference in differences\n\\[(E[y|dA = 1, d2 = 1] - E[y|dA = 0, d2 = 1] )\\] \\[- (E[y|dA = 1, d2 = 0])-E[y|dA = 0, d2 = 0])\\] \\[= \\beta_{3}\\] \\[+  (E[\\eta|dA = 1, d2 = 1] - E[\\eta|dA = 1, d2 = 0])\\] \\[- (E[\\eta|dA = 0, d2 = 1] - E[\\eta|dA = 0, d2 = 0])\\]\nWhere \\(\\beta_{3}\\) is the treatment effect\nSelection bias is zero when regression error has constant bias/common trends"
+  },
+  {
+    "objectID": "slides/did/index.html#basic-model-3",
+    "href": "slides/did/index.html#basic-model-3",
+    "title": "E655 - Econometrics",
+    "section": "Basic Model",
+    "text": "Basic Model\n\nDiD subtracts the difference in outcomes from period 1 to account for selection\n\n\\[E[y|dA = 1, d2 = 1] - E[y|dA = 0, d2 = 1]\\] \\[ -[E[y|dA = 1, d2 = 0] - E[y|dA = 0, d2 = 0]]\\] \\[ = E[y_1|dA = 1, d2 = 1] - E[y_0|dA = 1, d2 = 1] \\] \\[+ E[y_0|dA = 1, d2 = 1]- E[y_0|dA = 0, d2 = 1]\\] \\[ -[E[y_0|dA = 1, d2 = 0] - E[y_0|dA = 0, d2 = 0]]\\]\n\nSelection bias is zero if we assume constant bias or common trends"
+  },
+  {
+    "objectID": "slides/did/index.html#basic-model-4",
+    "href": "slides/did/index.html#basic-model-4",
+    "title": "E655 - Econometrics",
+    "section": "Basic Model",
+    "text": "Basic Model\n\nSelection bias is zero if we make the constant bias assumption\nFrom above\n\n\\[+ E[y_0|dA = 1, d2 = 1]- E[y_0|dA = 0, d2 = 1]\\] \\[ -[E[y_0|dA = 1, d2 = 0] - E[y_0|dA = 0, d2 = 0]]\\]\n\nConstant bias means group difference in \\(y_0\\) is the same in both time periods\n\nBetween group differences in prior period are a good counterfactual for difference in treated time period"
+  },
+  {
+    "objectID": "slides/did/index.html#basic-model-5",
+    "href": "slides/did/index.html#basic-model-5",
+    "title": "E655 - Econometrics",
+    "section": "Basic Model",
+    "text": "Basic Model\n\nAn equivalent assumption is common trends assumption\nRearrange the selection bias term to be\n\n\\[+ E[y_0|dA = 1, d2 = 1]- E[y_0|dA = 1, d2 = 0]\\] \\[ -[E[y_0|dA = 0, d2 = 1] - E[y_0|dA = 0, d2 = 0]]\\]\n\nSays trend in \\(y_0\\) for group A is the same as group B\n\nTrend in group B is a good counterfactual for trend in group A\n\nBoth assumptions are equivalent and assume no selection bias"
+  },
+  {
+    "objectID": "slides/did/index.html#basic-model-6",
+    "href": "slides/did/index.html#basic-model-6",
+    "title": "E655 - Econometrics",
+    "section": "Basic Model",
+    "text": "Basic Model\n\nCan also think about this in regression framework\nImagine potential outcomes are defined as \\[y_{0} = \\beta_{0} + \\beta_{1}dA + \\beta_{2}d2 + \\eta\\] \\[y_{1} = y_{0} + \\beta_{3}\\]\nThis model setup says that\n\nThe potential untreated outcome varies across groups and time\n\nThe difference in \\(y_{0}\\) is the same across time for groups A and B\nThe difference in \\(y_{0}\\) is the same across groups in each time period\n\nThe treatment effect \\(\\beta_{3}\\) is constant\n\nIf we plug these into the equation for \\(y\\) we get\n\\[y =\\beta_{0} + \\beta_{1}dA + \\beta_{2}d2 +  \\beta_{3}w +  \\eta\\]"
+  },
+  {
+    "objectID": "slides/did/index.html#basic-model-7",
+    "href": "slides/did/index.html#basic-model-7",
+    "title": "E655 - Econometrics",
+    "section": "Basic Model",
+    "text": "Basic Model\n\nTake expected values for each group in period 2 \\[E[y|dA = 1, d2 = 1] = \\beta_{0} + \\beta_{1}   +\\beta_{2}+ \\beta_{3} + E[\\eta|dA = 1, d2 = 1]\\] \\[E[y|dA = 0, d2 = 1] = \\beta_{0}   +\\beta_{2}+ E[\\eta|dA = 0, d2 = 1]\\]\nThen expected values for each group in period 1\n\\[E[y|dA = 1, d2 = 0] = \\beta_{0} + \\beta_{1}    + E[\\eta|dA = 1, d2 = 0]\\] \\[E[y|dA = 0, d2 = 0] = \\beta_{0}  + E[\\eta|dA = 0, d2 = 0]\\]"
+  },
+  {
+    "objectID": "slides/did/index.html#basic-model-8",
+    "href": "slides/did/index.html#basic-model-8",
+    "title": "E655 - Econometrics",
+    "section": "Basic Model",
+    "text": "Basic Model\n\nThen compute the difference in differences\n\\[(E[y|dA = 1, d2 = 1] - E[y|dA = 0, d2 = 1] )\\] \\[- (E[y|dA = 1, d2 = 0])-E[y|dA = 0, d2 = 0])\\] \\[= \\beta_{3}\\] \\[+  (E[\\eta|dA = 1, d2 = 1] - E[\\eta|dA = 1, d2 = 0])\\] \\[- (E[\\eta|dA = 0, d2 = 1] - E[\\eta|dA = 0, d2 = 0])\\]\nWhere \\(\\beta_{3}\\) is the treatment effect\nSelection bias is zero when regression error has constant bias/common trends"
+  },
+  {
+    "objectID": "slides/did/index.html#interpretation-of-did",
+    "href": "slides/did/index.html#interpretation-of-did",
+    "title": "E655 - Econometrics",
+    "section": "Interpretation of DiD",
+    "text": "Interpretation of DiD\n\nUnder the assumption of constant treatment effects, \\(\\beta_{3} = ATE = ATT\\)\n\nConstant treatment effects means it is the same for all groups\n\nIf treatment effect can vary across groups, \\(\\beta_{3} = ATT\\)\n\nCard and Krueger: \\(\\beta_{3}\\) is the effect of increase in minimum wage on employment in NJ"
+  },
+  {
+    "objectID": "slides/did/index.html#estimation-1",
+    "href": "slides/did/index.html#estimation-1",
+    "title": "E655 - Econometrics",
+    "section": "Estimation",
+    "text": "Estimation\n\nEstimation typically done by OLS \\[y = \\hat{\\beta}_{0} + \\hat{\\beta}_{1}dA +\\hat{\\beta}_{2}d2 + \\hat{\\beta}_{3}(dA\\times d2)+ u\\]\nThe coefficient on \\((dA\\times d2)\\) is the DiD estimator\nIt is given simply by \\[\\hat{\\beta}_{3} = (\\bar{y}_{A2} - \\bar{y}_{B2}) - (\\bar{y}_{A1} -\\bar{y}_{B1})\\]\nYou can also add control variables \\[y= \\beta_{0} + \\beta_{1}dA +\\beta_{2}d2 + \\beta_{3}(dA\\times d2)+\\mathbf{x}\\boldsymbol{\\alpha}+ u\\]\nThe interpretation remains similar, but estimator no longer collapses to the easy formula"
+  },
+  {
+    "objectID": "slides/did/index.html#multiple-treatments",
+    "href": "slides/did/index.html#multiple-treatments",
+    "title": "E655 - Econometrics",
+    "section": "Multiple Treatments",
+    "text": "Multiple Treatments\n\nImagine the Card study where NJ raises the minimum wage\nSuppose that NY also raises it \\[y = \\beta_{0} + \\beta_{1}d(NJ,NY) +\\beta_{2}d2 +\\beta_{3}(d(NJ,NY)\\times d2)+  u\\]\n\\(d(NJ,NY)\\) equals 1 if in NJ or NY\nThis restricts the effect to be the same in NJ and NY\n\nAllowing for different impacts in NY and NJ\n\\[y = \\beta_{0} + \\beta_{1}dNJ+\\beta_{2}dNY +\\beta_{3}d2 + \\beta_{4}(dNJ\\times d2)+ \\beta_{5}(dNY\\times d2)+ u\\]\nHere, PA is used as the control group for both treatments"
+  },
+  {
+    "objectID": "slides/did/index.html#multiple-time-periods",
+    "href": "slides/did/index.html#multiple-time-periods",
+    "title": "E655 - Econometrics",
+    "section": "Multiple Time Periods",
+    "text": "Multiple Time Periods\n\nImagine again the Card study with only NJ and PA\nSuppose we observe 4 time periods: 2 before, and 2 after policy change\nThe specification could change to \\[y = \\beta_{0} + \\beta_{1}dNJ +\\beta_{2}d2 +\\beta_{3}d3 +\\beta_{4}d4 + \\beta_{5}(dNJ\\times d(3,4))+u\\]\nwhere \\(d(3,4)\\) is a dummy equal to 1 if time period is 3 or 4\nThis would impose that the treatment effect is the same in all years\nA more general way to model this would be \\[y = \\beta_{0} + \\beta_{1}dNJ +\\beta_{2}d2 +\\beta_{3}d3 +\\beta_{4}d4 + \\beta_{5}(dNJ\\times d3)+ \\beta_{6}(dNJ\\times d4)+ u\\]\n\n\\(\\beta_{5}\\) is the treatment effect in time period 3\n\\(\\beta_{6}\\) is the treatment effect in time period 4"
+  },
+  {
+    "objectID": "slides/did/index.html#multiple-treatments-and-time-periods",
+    "href": "slides/did/index.html#multiple-treatments-and-time-periods",
+    "title": "E655 - Econometrics",
+    "section": "Multiple Treatments and Time Periods",
+    "text": "Multiple Treatments and Time Periods\n\nIn this most general case, the specification is \\[y = \\beta_{0} + \\mathbf{dG}\\boldsymbol{\\beta_{1}} +\\mathbf{dT}\\boldsymbol{\\beta_{2}}+\\mathbf{z}\\boldsymbol{\\beta_{3}}+ u\\]\nWhere\n\n\\(\\mathbf{dG}\\) is a set of group dummies\n\\(\\mathbf{dT}\\) is a set of time dummies\n\\(\\mathbf{z}\\) are interaction between the time and group dummies post treatment\n\\(\\mathbf{z}\\) could also be a scalar equal to 1 for all groups and time periods post treatment\n\nThis is sometimes called the Two-Way Fixed Effects (TWFE) model"
+  },
+  {
+    "objectID": "slides/did/index.html#standard-errors",
+    "href": "slides/did/index.html#standard-errors",
+    "title": "E655 - Econometrics",
+    "section": "Standard Errors",
+    "text": "Standard Errors\n\nYou must use “cluster-robust” standard errors\n\nError is not iid across all individuals\nCommon group component\nMust correct for this or SEs will be biased downward severely\n\nDonald and Lang (2001)\n\nClustered standard errors may not be enough\nAsymptotic results bad when number of groups is small\nUse bootstrap to solve this problem\n\nIn particular the clustered wild bootstrap"
+  },
+  {
+    "objectID": "slides/did/index.html#standard-errors-1",
+    "href": "slides/did/index.html#standard-errors-1",
+    "title": "E655 - Econometrics",
+    "section": "Standard Errors",
+    "text": "Standard Errors\n\nBertrand, Duflo, Mullainathan (2004)\n\nErrors may be serially correlated\nOnly a problem when there are many time periods\nTo fix, you can aggregate to 2 time periods\nUse a “block” bootstrap"
+  },
+  {
+    "objectID": "slides/did/index.html#common-treands",
+    "href": "slides/did/index.html#common-treands",
+    "title": "E655 - Econometrics",
+    "section": "Common Treands",
+    "text": "Common Treands\n\nWith 2 time periods, hard to check identifying assumption\nWith more than 2 time periods, you may be able to assess it\n\nExamine trends prior to treatment across both groups"
+  },
+  {
+    "objectID": "slides/did/index.html#timing-of-treatment",
+    "href": "slides/did/index.html#timing-of-treatment",
+    "title": "E655 - Econometrics",
+    "section": "Timing of Treatment",
+    "text": "Timing of Treatment\n\nYou can have multiple groups who are treated at different times\nDiD estimator is complicated weighted average of treatment and control pairs\nCan be even more complicated if treatment effect varies over time\nSee Roth et. al. (2023) for an overview"
+  },
+  {
+    "objectID": "slides/did/index.html#model-1",
+    "href": "slides/did/index.html#model-1",
+    "title": "E655 - Econometrics",
+    "section": "Model",
+    "text": "Model\n\nSometimes even the DiD assumptions are not valid\n\nThe common trend assumption is violated\n\nExample: Health care policy aimed at elderly (Wooldridge (2007))\n\nSuppose we have two groups\n\nElderly in state with policy\nElderly in state without policy\nBoth are observed in 2 time periods\n\nCould do DiD using difference in non-policy state as control\n\nThis alternative state might evolve differently somehow\n\nNow, imagine in each state we have\n\nElderly and non-elderly\nBoth are observed in 2 time periods"
+  },
+  {
+    "objectID": "slides/did/index.html#model-2",
+    "href": "slides/did/index.html#model-2",
+    "title": "E655 - Econometrics",
+    "section": "Model",
+    "text": "Model\n\nCould do DiD in treatment state using difference in non-elderly as control group\n\nHealth of elderly and non-elderly might evolve differently\n\nWith 2 potential DiDs, which one do we choose?\nThe DDD estimator is an extension of the DiD estimator\n\nUses both DiDs in the same specification\nUses controls from within the treatment state (non-elderly) and from the other state (non-policy state) simultaneously"
+  },
+  {
+    "objectID": "slides/did/index.html#model-3",
+    "href": "slides/did/index.html#model-3",
+    "title": "E655 - Econometrics",
+    "section": "Model",
+    "text": "Model\n\nSuppose we separate the sample into these groups\n\nGroup A: People in treatment state\nGroup B: People in control state\nGroup E: Elderly\nGroup N: Non Elderly\n\nThe regression would be \\[y = \\beta_{0} + \\beta_{1}dA + \\beta_{2}dE +\\beta_{3}d2 + \\beta_{3}(dA\\times d2)\\] \\[+ \\beta_{4}(dE\\times d2) + \\beta_{5}(dE\\times dA) + \\beta_{6}(dE\\times dA \\times d2)\n    + u\\]"
+  },
+  {
+    "objectID": "slides/did/index.html#estimation-2",
+    "href": "slides/did/index.html#estimation-2",
+    "title": "E655 - Econometrics",
+    "section": "Estimation",
+    "text": "Estimation\n\nThe DDD estimator is \\[\\hat{\\beta}_{6} = [(\\bar{y}_{AE2} - \\bar{y}_{AN2}) - (\\bar{y}_{AE1} - \\bar{y}_{AN1})]\\] \\[- [(\\bar{y}_{BE2} - \\bar{y}_{BN2}) - (\\bar{y}_{BE1} - \\bar{y}_{BN1})]\\]\nIntuition\n\nDo a separate DiD in treatment and control state\nSubtract the 2 DiD estimates\n\nUses one DiD as a control for the other\n\nThere are actually several ways to interpret this estimator\n\nThe same problems with DiD apply to DDD estimators\n\nYou must be careful with the standard errors\nYou must be careful with the interpretation"
+  },
+  {
+    "objectID": "slides/did/index.html#setup",
+    "href": "slides/did/index.html#setup",
+    "title": "E655 - Econometrics",
+    "section": "Setup",
+    "text": "Setup\n\nImagine the following scenario\n\nWe have data on 2 groups of people (A, and B)\nWe have data during 2 time periods (1 and 2)\nGroup A was exposed to some treatment in period 2\n\nEx: Minimum Wages (Card and Krueger (1994))\nGroup A (New Jersey) increases their minimum wage in period 2\nGroup B (Pennsylvania) does not change its minimum wage\nWe observe both groups before and after the wage change\n\n\nWe want to measure the causal effect of the policy"
+  },
+  {
+    "objectID": "slides/did/index.html#potential-outcomes",
+    "href": "slides/did/index.html#potential-outcomes",
+    "title": "E655 - Econometrics",
+    "section": "Potential Outcomes",
+    "text": "Potential Outcomes\n\nWe will couch this estimator in the potential outcomes framework\nRecall that observed outcomes are \\[y = (y_{1} - y_{0} )w +  y_{0}\\]\n\n\\(y_{0}\\) is outcome without treatment\n\\(y_{1}\\) is outcome with treatment\n\nDefine the following dummy variables\n\n\\(dA = 1\\) if in group A, 0 if in group B\n\\(d2 = 1\\) of in time period 2, 0 if in period 1\n\n\\(w\\) is the binary treatment indicator\n\nEquals 1 for group A in period 2, and 0 otherwise\nIt is equivalent to \\(dA \\times d2\\)"
+  },
+  {
+    "objectID": "slides/did/index.html#cef",
+    "href": "slides/did/index.html#cef",
+    "title": "E655 - Econometrics",
+    "section": "CEF",
+    "text": "CEF\n\nTake difference in observed outcome between treatment and control in period 2\n\n\\[E[y|dA = 1, d2 = 1] - E[y|dA = 0, d2 = 1]\\] \\[ = E[y_1|dA = 1, d2 = 1] - E[y_0|dA = 0, d2 = 1]\\]\n\\[ = E[y_1|dA = 1, d2 = 1] - E[y_0|dA = 1, d2 = 1] \\] \\[+ E[y_0|dA = 1, d2 = 1]- E[y_0|dA = 0, d2 = 1]\\]\n\nThis is the ATT plus selection bias\nSelection bias possibly not zero because \\(y_0\\) different between groups A and B in period 2"
+  },
+  {
+    "objectID": "slides/did/index.html#cef-1",
+    "href": "slides/did/index.html#cef-1",
+    "title": "E655 - Econometrics",
+    "section": "CEF",
+    "text": "CEF\n\nDiD subtracts the difference in outcomes from period 1 to account for selection\n\n\\[E[y|dA = 1, d2 = 1] - E[y|dA = 0, d2 = 1]\\] \\[ -[E[y|dA = 1, d2 = 0] - E[y|dA = 0, d2 = 0]]\\] \\[ = E[y_1|dA = 1, d2 = 1] - E[y_0|dA = 1, d2 = 1] \\] \\[+ E[y_0|dA = 1, d2 = 1]- E[y_0|dA = 0, d2 = 1]\\] \\[ -[E[y_0|dA = 1, d2 = 0] - E[y_0|dA = 0, d2 = 0]]\\]\n\nSelection bias is zero if we assume constant bias or common trends"
+  },
+  {
+    "objectID": "slides/did/index.html#constant-bias",
+    "href": "slides/did/index.html#constant-bias",
+    "title": "E655 - Econometrics",
+    "section": "Constant Bias",
+    "text": "Constant Bias\n\nSelection bias is zero if we make the constant bias assumption\nFrom above\n\n\\[+ E[y_0|dA = 1, d2 = 1]- E[y_0|dA = 0, d2 = 1]\\] \\[ -[E[y_0|dA = 1, d2 = 0] - E[y_0|dA = 0, d2 = 0]]\\]\n\nConstant bias means group difference in \\(y_0\\) is the same in both time periods\n\nBetween group differences in prior period are a good counterfactual for difference in treated time period"
+  },
+  {
+    "objectID": "slides/did/index.html#common-trends",
+    "href": "slides/did/index.html#common-trends",
+    "title": "E655 - Econometrics",
+    "section": "Common Trends",
+    "text": "Common Trends\n\nAn equivalent assumption is common trends assumption\nRearrange the selection bias term to be\n\n\\[+ E[y_0|dA = 1, d2 = 1]- E[y_0|dA = 1, d2 = 0]\\] \\[ -[E[y_0|dA = 0, d2 = 1] - E[y_0|dA = 0, d2 = 0]]\\]\n\nSays trend in \\(y_0\\) for group A is the same as group B\n\nTrend in group B is a good counterfactual for trend in group A\n\nBoth assumptions are equivalent and assume no selection bias"
+  },
+  {
+    "objectID": "slides/did/index.html#regression",
+    "href": "slides/did/index.html#regression",
+    "title": "E655 - Econometrics",
+    "section": "Regression",
+    "text": "Regression\n\nWe can model the CEF with a regression because it is a saturated model\n\n\\[y = \\beta_0 + \\beta_1 dA + \\beta_2 d2 + \\beta_3 (dA \\times d2) + u\\]\n\nThe parameter \\(\\beta_3\\) is the population difference in differences\n\n\\[\\beta_3 = E[y|dA = 1, d2 = 1] - E[y|dA = 0, d2 = 1] \\] \\[- E[y|dA = 1, d2 = 0]- E[y|dA = 0, d2 = 0 ]\\]\n\nRecall that \\(\\beta_3\\) is the ATT if we assume common trends or constant bias\n\nIf those do not hold, we have selection bias"
+  },
+  {
+    "objectID": "slides/did/index.html#did-graphically",
+    "href": "slides/did/index.html#did-graphically",
+    "title": "E655 - Econometrics",
+    "section": "DiD Graphically",
+    "text": "DiD Graphically"
+  },
+  {
+    "objectID": "slides/did/index.html#did-graphically-1",
+    "href": "slides/did/index.html#did-graphically-1",
+    "title": "E655 - Econometrics",
+    "section": "DiD Graphically",
+    "text": "DiD Graphically"
+  },
+  {
+    "objectID": "slides/did/index.html#visual-representation",
+    "href": "slides/did/index.html#visual-representation",
+    "title": "E655 - Econometrics",
+    "section": "Visual Representation",
+    "text": "Visual Representation"
+  },
+  {
+    "objectID": "slides/did/index.html#visual-representation-1",
+    "href": "slides/did/index.html#visual-representation-1",
+    "title": "E655 - Econometrics",
+    "section": "Visual Representation",
+    "text": "Visual Representation"
+  },
+  {
+    "objectID": "slides/did/index.html",
+    "href": "slides/did/index.html",
+    "title": "\nDifference in Differences\n",
+    "section": "",
+    "text": "Difference in Differences"
+  },
+  {
+    "objectID": "slides/did/index.html#checking-validity-of-did",
+    "href": "slides/did/index.html#checking-validity-of-did",
+    "title": "E655 - Econometrics",
+    "section": "Checking Validity of DiD",
+    "text": "Checking Validity of DiD\n\nRecall that a required assumption is common trends\nYou can check that empirically by looking at trends for treatment and control groups prior to treatment\n\nRequires more than 2 time periods\n\nTo do this, you can\n\nEstimate regression with sample before treatment\nInclude time dummy variables, group variables, interactions\nDo F-test on interactions"
+  },
+  {
+    "objectID": "content/did.html",
+    "href": "content/did.html",
+    "title": "Difference in Differences",
+    "section": "",
+    "text": "AP1 Chapter 6\nAP2 Chapter 4\nC Chapter 6\nHA Chapter 12\nHK Chapter 20\nW1 Chapter 21.5"
+  },
+  {
+    "objectID": "content/did.html#readings",
+    "href": "content/did.html#readings",
+    "title": "Difference in Differences",
+    "section": "",
+    "text": "AP1 Chapter 6\nAP2 Chapter 4\nC Chapter 6\nHA Chapter 12\nHK Chapter 20\nW1 Chapter 21.5"
+  },
+  {
+    "objectID": "content/did.html#slides",
+    "href": "content/did.html#slides",
+    "title": "Difference in Differences",
+    "section": "Slides",
+    "text": "Slides\nThe slides are embedded in this page, and you can scroll through them with the arrow keys. If you prefer you can instead pop them out in a new window"
+  },
+  {
+    "objectID": "content/did.html#videos",
+    "href": "content/did.html#videos",
+    "title": "Difference in Differences",
+    "section": "Videos",
+    "text": "Videos\nThis is a lecture from Prof. Christopher Walters given for the American Economics Association Continuing Education program (no preview available). View video"
   }
 ]
