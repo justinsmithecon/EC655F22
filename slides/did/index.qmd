@@ -28,7 +28,7 @@ editor: visual
 
 # Introduction
 
-```{r}
+```{r, echo=FALSE}
 library(tidyverse)
 library(magrittr)
 library(ggthemes)
