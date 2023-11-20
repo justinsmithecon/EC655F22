@@ -29,4 +29,12 @@ The slides are embedded in this page, and you can scroll through them with the a
 
 This is a lecture from Prof. Christopher Walters given for the American Economics Association Continuing Education program (no preview available). <a href="https://www.aeaweb.org/webcasts/2020/mastering-mostly-harmless-econometrics-part-6" target="_blank">View video</a>
 
+## Sample R Code
+
+The code below goes through an exercise estimating various RD models, both sharp and fuzzy.  
+
+[{{< fa solid file-export >}} `EC655rd.R`](/files/tutorials/EC655rd.R)
+
+
+
 

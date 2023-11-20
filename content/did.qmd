@@ -5,12 +5,14 @@ title: "Difference in Differences"
 
 ## Readings
 
-- AP1 Chapter 6
-- AP2 Chapter 4
-- C Chapter 6
-- HA Chapter 12
-- HK Chapter 20
-- W1 Chapter 21.5
+- AP1 Chapter 5
+- AP2 Chapter 5
+- C Chapter 9
+- HA Chapter 18
+- HK Chapter 18
+- W1 Chapter 6.5
+- W2 Chapter 13
+
 
 ## Slides
 
@@ -25,8 +27,5 @@ The slides are embedded in this page, and you can scroll through them with the a
 </div>
 
 
-## Videos
-
-This is a lecture from Prof. Christopher Walters given for the American Economics Association Continuing Education program (no preview available). <a href="https://www.aeaweb.org/webcasts/2020/mastering-mostly-harmless-econometrics-part-6" target="_blank">View video</a>
 
 

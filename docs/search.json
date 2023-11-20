@@ -3651,14 +3651,14 @@
     "href": "content/did.html",
     "title": "Difference in Differences",
     "section": "",
-    "text": "AP1 Chapter 6\nAP2 Chapter 4\nC Chapter 6\nHA Chapter 12\nHK Chapter 20\nW1 Chapter 21.5"
+    "text": "AP1 Chapter 5\nAP2 Chapter 5\nC Chapter 9\nHA Chapter 18\nHK Chapter 18\nW1 Chapter 6.5\nW2 Chapter 13"
   },
   {
     "objectID": "content/did.html#readings",
     "href": "content/did.html#readings",
     "title": "Difference in Differences",
     "section": "",
-    "text": "AP1 Chapter 6\nAP2 Chapter 4\nC Chapter 6\nHA Chapter 12\nHK Chapter 20\nW1 Chapter 21.5"
+    "text": "AP1 Chapter 5\nAP2 Chapter 5\nC Chapter 9\nHA Chapter 18\nHK Chapter 18\nW1 Chapter 6.5\nW2 Chapter 13"
   },
   {
     "objectID": "content/did.html#slides",
@@ -3673,5 +3673,12 @@
     "title": "Difference in Differences",
     "section": "Videos",
     "text": "Videos\nThis is a lecture from Prof. Christopher Walters given for the American Economics Association Continuing Education program (no preview available). View video"
+  },
+  {
+    "objectID": "content/rd.html#sample-r-code",
+    "href": "content/rd.html#sample-r-code",
+    "title": "Regression Discontinuity",
+    "section": "Sample R Code",
+    "text": "Sample R Code\nThe code below goes through an exercise estimating various RD models, both sharp and fuzzy.\n EC655rd.R"
   }
 ]
