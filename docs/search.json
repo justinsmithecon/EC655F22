@@ -3680,5 +3680,12 @@
     "title": "Regression Discontinuity",
     "section": "Sample R Code",
     "text": "Sample R Code\nThe code below goes through an exercise estimating various RD models, both sharp and fuzzy.\n EC655rd.R"
+  },
+  {
+    "objectID": "content/did.html#sample-r-code",
+    "href": "content/did.html#sample-r-code",
+    "title": "Difference in Differences",
+    "section": "Sample R Code",
+    "text": "Sample R Code\nThe code below goes through an exercise estimating Difference in Differences models.\n EC655did.R"
   }
 ]

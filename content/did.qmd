@@ -26,6 +26,11 @@ The slides are embedded in this page, and you can scroll through them with the a
 
 </div>
 
+## Sample R Code
+
+The code below goes through an exercise estimating Difference in Differences models.  
+
+[{{< fa solid file-export >}} `EC655did.R`](/files/tutorials/EC655did.R)
 
 
 
