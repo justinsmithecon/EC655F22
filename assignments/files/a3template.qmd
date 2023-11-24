@@ -1,0 +1,73 @@
+---
+title: "Assignment 3"
+author: "YOUR NAME HERE"
+date: "DATE GOES HERE"
+format: pdf
+---
+
+```{r include = FALSE}
+library(tidyverse)
+library(ggthemes)
+library(modelsummary)
+library(coefplot)
+```
+
+## Questions
+
+1\.  Carpenter and Dobkin (2011) study the effect of the legal drinking age in the United States on public health outcomes.  They use a Regression Discontinuity Design where the running variable is age, and the cutoff is the legal drinking age of 21.  In the dataset `a3data1.csv`, the outcomes are *all* (all deaths), *alcohol* (alcohol-related deaths), and *mva* (motor vehicle accident deaths) measured in deaths per 100,000 people.  The variable *agecell* is the average age for that set of people.
+
+Plot separate scatterplots of each of the three outcomes against age.  In each graph, make sure the axes are labelled appropriately, there is an informative title, and the cutoff is marked with a vertical line.  Comment on the plots and explain what you see.
+
+INSERT COMMENTS HERE
+
+```{r}
+
+```
+
+2\.  Create a treatment variable called *mlda* that equals 1 when age is greater than or equal to 21, and zero otherwise.  Using the outcome *all*, estimate the following regressions: a) a simple OLS regression of the outcome on mlda, b) regression discontinuity model that is linear in age with the same slope on both sides of the cutoff, c) regression discontinuity model that is linear in age with different slopes on each side of the cutoff, d) regression discontinuity model that is quadratic in age with different slopes on each side of the cutoff.  Report the results in a professional-looking output table using the `modelsummary` package.  Comment on the results.
+
+INSERT COMMENTS HERE
+
+```{r}
+
+```
+
+
+3\.  Plot the predicted values from (c) and (d) on top of a scatterplot of the data for the *all* outcome.  Make sure the axes are labelled appropriately, there is an informative title, and the cutoff is marked with a vertical line.  Explain which model fits the data better and why.
+
+INSERT COMMENTS HERE
+
+```{r}
+
+```
+
+
+4\.  The Regression Discontinuity method requires that the untreated potential outcome is continuous across the cutoff.  Explain what this means in the context of the Carpenter and Dobkin (2011) study.  Do you think this assumption is reasonable?  Why or why not?
+
+INSERT COMMENTS HERE
+
+5\.  We will now examine the effects of the minimum legal drinking age on deaths using a Difference in Differences framework.  In 1975, the state of Alabama changed its legal drinking age from 21 to 19, while many other states kept their legal drinking age at 21.  The data `a3data2.csv` contains information for Alabama and several other states over the years 1970 to 1985, and we would like to use this to estimate the effect of the change in the legal drinking age on deaths, as measured by mortality rates.  
+
+Plot the time series of mortality rates for all states in the data on the same graph.  Make sure the axes are labelled appropriately, there is an informative title, and the time period where the policy change occurs is marked with a vertical line.  Comment on the general patterns and trends in the data, and whether you think there is any obvious effect of the Alabama policy.
+
+INSERT COMMENTS HERE
+
+```{r}
+
+```
+
+6\. Estimate the following regressions: a) a simple OLS regression of the mortality rate on a dummy for Alabama, b) a difference in differences specification with a dummy for Alabama, a dummy for the time period after treatment, and the interaction; c) a difference in differences specification a full set of state dummies, a full set of time dummies, and the same interaction from (b).  Report the results in a professional-looking output table using the `modelsummary` package.  Comment on the results.
+
+INSERT COMMENTS HERE
+
+```{r}
+
+```
+
+7\. Estimate an "event study" regression where you include a full set of state dummies, a full set of time dummies, and an interaction between the Alabama dummy and all of the time period dummies except the one for 1974.  Plot the results using `iplot`.  Comment on whether the requirements for Difference in Differences to estimate a causal effect are met.
+
+```{r}
+
+```
+
+INSERT COMMENTS HERE

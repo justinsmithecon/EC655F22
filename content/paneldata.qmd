@@ -1,0 +1,36 @@
+---
+title: "Panel Data"
+---
+
+
+## Readings
+
+- AP1 Chapter 5
+- AP2 Chapter 5
+- C Chapter 9
+- HA Chapter 18
+- HK Chapter 18
+- W1 Chapter 6.5
+- W2 Chapter 13
+
+
+## Slides
+
+The slides are embedded in this page, and you can scroll through them with the arrow keys.  If you prefer you can instead <a href="/slides/paneldata/index.html" target="_blank">pop them out in a new window</a>
+
+<div>
+
+```{=html}
+<p align="center"><iframe width="890" height="500" class="slide-deck" src="/slides/paneldata/"></iframe></p>
+```
+
+</div>
+
+## Sample R Code
+
+The code below goes through an exercise estimating Difference in Differences models.  
+
+[{{< fa solid file-export >}} `EC655did.R`](/files/tutorials/EC655did.R)
+
+
+

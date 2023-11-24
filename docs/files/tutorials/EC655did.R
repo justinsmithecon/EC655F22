@@ -56,7 +56,7 @@ modelsummary(list("DiD Simple" = lm1, "DiD 2" = lm3),
 # We can allow the treatment effect to differ across time by interacting the
 # california dummy separately with all the post-treatment time periods
 
-data %<>% mutate(after1 = if_else(Quarter %in% c('Q32011','Q42011','Q12012'), 1, 0),
+data %<>% mutate(after1 = if_else(Quarter %in% c('Q32011'), 1, 0),
                  after2 = if_else(Quarter %in% c('Q42011'), 1, 0),
                  after3 = if_else(Quarter %in% c('Q12012'), 1, 0))
 
@@ -74,7 +74,7 @@ modelsummary(list("DiD Simple" = lm1, "DiD 2" = lm3, "DiD 3" = lm4),
 
 data %<>% mutate(Quarterfac = factor(Quarter, levels = unique(Quarter)))
 
-lm5 <- feols(Rate ~ i(Quarterfac, treat, "Q22011") | State + Quarter, data = data)
+lm5 <- feols(Rate ~ i(Quarterfac, treat, "Q42010") | State + Quarter, data = data)
 
 modelsummary(list("DiD Simple" = lm1, "DiD 2" = lm3, "DiD 3" = lm4, "Did 4" = lm5), 
              gof_omit = "IC|Log|Adj|p\\.value|statistic|se_type|State|Quarter",

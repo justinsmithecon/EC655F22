@@ -48,6 +48,8 @@ website:
               file: content/rd.qmd 
             - text: "Difference in Differences"
               file: content/did.qmd 
+            - text: "Panel Data"
+              file: content/paneldata.qmd               
 
     - title: "Assignments"
       style: "docked"
@@ -67,7 +69,8 @@ website:
               file: assignments/assign1.qmd
             - text: "Assignment 2"
               file: assignments/assign2.qmd  
-
+            - text: "Assignment 3"
+              file: assignments/assign3.qmd  
 format:
   html:
     code-overflow: wrap
