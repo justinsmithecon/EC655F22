@@ -5,13 +5,15 @@ title: "Panel Data"
 
 ## Readings
 
-- AP1 Chapter 5
-- AP2 Chapter 5
-- C Chapter 9
-- HA Chapter 18
-- HK Chapter 18
-- W1 Chapter 6.5
-- W2 Chapter 13
+- Fixed Effects
+
+    - AP1 Chapter 5
+    - C Chapter 8
+    - CT Chapter 21
+    - HA Chapter 17
+    - HK Chapter 16
+    - W1 Chapter 14
+    - W2 Chapter 10
 
 
 ## Slides
@@ -26,11 +28,6 @@ The slides are embedded in this page, and you can scroll through them with the a
 
 </div>
 
-## Sample R Code
-
-The code below goes through an exercise estimating Difference in Differences models.  
-
-[{{< fa solid file-export >}} `EC655did.R`](/files/tutorials/EC655did.R)
 
 
 

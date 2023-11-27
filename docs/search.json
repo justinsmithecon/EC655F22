@@ -3698,28 +3698,28 @@
   {
     "objectID": "slides/paneldata/index.html#structure-of-panel-data",
     "href": "slides/paneldata/index.html#structure-of-panel-data",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Structure of Panel Data",
     "text": "Structure of Panel Data\n\nPanels have at least 2 dimensions\n\nVariation occurs over \\(i=1,\\ldots,N\\) people, and \\(t=1,\\ldots,T\\) time\n\nA balanced panel is one where all individuals are observed in every time period\nAn unbalanced panel has at least one person not observed in a time period\n\n\n\n\nBalanced Panel\n\n\n\nID\nYear\nIncome\n\n\n1\n1990\n60000\n\n\n1\n1991\n65000\n\n\n1\n1992\n90000\n\n\n2\n1990\n20000\n\n\n2\n1991\n21000\n\n\n2\n1992\n24000\n\n\n\n\n\n\nUnbalanced Panel\n\n\n\nID\nYear\nEducation\n\n\n1\n1990\n60000\n\n\n1\n1991\n90000\n\n\n2\n1990\n20000\n\n\n2\n1991\n21000\n\n\n2\n1992\n24000"
   },
   {
     "objectID": "slides/paneldata/index.html#unobserved-effects-model",
     "href": "slides/paneldata/index.html#unobserved-effects-model",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Unobserved Effects Model",
     "text": "Unobserved Effects Model\n\nLike regular regression model, but with unobserved variable that only varies over individuals\nThe regression model is \\[y_{it} =  \\mathbf{x_{it}}\\boldsymbol{\\beta} +a_{i} + u_{it}\\]\n\n\\(\\mathbf{x_{ij}}\\) contains a constant\n\\(a_{i}\\) is the unobserved effect\n\nAssume we are not interested in the effect of \\(a_{i}\\) on \\(y_{ij}\\)\n\nUsually it is not observed, or unmeasurable anyway\nThis is why it is not written with a parameter\n\nSeveral models we can use to estimate the parameters \\(\\boldsymbol{\\beta}\\)\n\nDepends on assumption about relationship between \\(\\mathbf{x_{ij}}\\) and \\(a_{i}\\)"
   },
   {
     "objectID": "slides/paneldata/index.html#strict-exogeneity",
     "href": "slides/paneldata/index.html#strict-exogeneity",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Strict Exogeneity",
     "text": "Strict Exogeneity\n\nWe learned regression model was structural when error was mean independent\nPanel model is structural when we assume Strict Exogeneity\n\nError term \\(u_{ij}\\) has zero mean conditional on \\(a_{i}\\) and \\(\\mathbf{x_{ij}}\\) in all time periods.\n\nMathematically, strict exogeneity is written as \\[E[u_{ij} | \\mathbf{x_{i1}}, \\mathbf{x_{i2}}, \\ldots, \\mathbf{x_{iJ}}, a_{i}] =0\\]\nIt implies that \\(u_{ij}\\) in each time period is uncorrelated with \\(\\mathbf{x_{ij}}\\) in each time period \\[E[\\mathbf{x_{is}^{'}}u_{ij}] =0, \\forall s,j = 1,2,\\ldots, J\\]"
   },
   {
     "objectID": "slides/paneldata/index.html#strict-exogeneity-1",
     "href": "slides/paneldata/index.html#strict-exogeneity-1",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Strict Exogeneity",
     "text": "Strict Exogeneity\n\nIt also implies that the unobserved effect is uncorrelated with \\(u_{ij}\\) in every time period \\[E[a_{i}u_{is}] =0, \\forall s = 1,2,\\ldots, J\\]\nStrict exogeneity assumptions are necessary for consistency of estimators we discuss below\nNote that strict exogeneity says nothing about the correlation between \\(\\mathbf{x_{ij}}\\) and \\(a_{i}\\)\n\nWe must make an additional assumption\nIt is this assumption that determines what model we use"
   },
@@ -3733,196 +3733,196 @@
   {
     "objectID": "slides/paneldata/index.html#fixed-effects-1",
     "href": "slides/paneldata/index.html#fixed-effects-1",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Fixed Effects",
-    "text": "Fixed Effects\n\nIf we assume \\(\\mathbf{x_{ij}}\\) and \\(a_{i}\\) are correlated, then fixed effects is the appropriate method \\[y_{ij} =  \\mathbf{x_{ij}}\\boldsymbol{\\beta} +a_{i} + u_{ij}\\]\nThis is the most popular panel data method\n\nMain use of panel data is to account for an unobserved factors correlated with \\(\\mathbf{x_{ij}}\\)\nIn this case, we assume the unobserved factor is time constant\n\nFixed effects is a method to remove the influence of \\(a_{i}\\) to get estimates of \\(\\boldsymbol{\\beta}\\)\nThere are two main ways to estimate a fixed model"
+    "text": "Fixed Effects\n\nFor a couple of reasons we usually do not use the DVR approach\n\nIf \\(N\\) is large, it takes forever to estimate\nWe do not care about \\(a_{i}\\) normally\nThe estimator for fixed effects is not consistent as \\(N \\rightarrow \\infty\\)\n\nWith the DVR approach, you would use the variance estimator we discussed in the OLS section"
   },
   {
     "objectID": "slides/paneldata/index.html#fixed-effects-2",
     "href": "slides/paneldata/index.html#fixed-effects-2",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Fixed Effects",
-    "text": "Fixed Effects\n\nThe within transformation\n\n\nFind the average of each variable within the cross-sectional unit \\[\\bar{y}_{i} =  \\mathbf{\\bar{x}_{i}}\\boldsymbol{\\beta} +a_{i} + \\bar{u}_{i}\\]\nThen subtract the within unit mean from each observation \\[y_{ij} - \\bar{y}_{i} = (\\mathbf{x_{ij}} - \\mathbf{\\bar{x}_{i}})\\boldsymbol{\\beta} + a_{i} - a_{i} + u_{ij} - \\bar{u}_{i}\\] \\[y_{ij} - \\bar{y}_{i} = (\\mathbf{x_{ij}} - \\mathbf{\\bar{x}_{i}})\\boldsymbol{\\beta}   + u_{ij} - \\bar{u}_{i}\\] \\[y_{ij}^{*} = \\mathbf{x_{ij}}^{*}\\boldsymbol{\\beta}   + u_{ij}^{*}\\]\nSince \\(a_{i}\\) does not vary across \\(j\\), \\(a_{i}\\) is eliminated when we subtract the means\nIf we estimate the equation above by OLS, we get the Fixed Effects Estimator \\[\\boldsymbol{\\hat{\\beta}_{fe}} = \\mathbf{(X^{*'} X^{*})^{-1}X^{*'} Y^{*}}\\]"
+    "text": "Fixed Effects\n\nFixed effects is frequently used to infer causality\n\nUnobserved variables are “controlled” with the fixed effect\nThis is only appropriate if all unobserved heterogeneity is constant over time\n\nIf unobserved variables differ over time, no causality can be inferred"
   },
   {
     "objectID": "slides/paneldata/index.html#fixed-effects-3",
     "href": "slides/paneldata/index.html#fixed-effects-3",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Fixed Effects",
     "text": "Fixed Effects\n\nThe matrix \\(\\mathbf{X^{*}}\\) contains all observations over time and persons and is \\((N\\times J)\\) by \\(K\\)\nIt is easiest to think of them as stacked cross-sectional observations\nFor each cross-sectional observation we have \\[\\mathbf{X_{i}} = \\begin{bmatrix} x_{i1}^{1}  &x_{i1}^{2}&\\ldots &x_{i1}^{K}\\\\\n                            x_{i2}^{1} &x_{i2}^{2}&\\ldots &x_{i2}^{K} \\\\\n                            \\vdots &\\ddots & \\ldots & \\vdots \\\\\n                            x_{iJ}^{1}&x_{iJ}^{2}&\\ldots &x_{iJ}^{K} \\\\\n                            \\end{bmatrix} ,  \\mathbf{\\bar{X}_{i}}  =\\begin{bmatrix} \\bar{x_{i}}^{1}  &\\bar{x_{i}}^{2}&\\ldots &\\bar{x_{i}}^{K}\\\\\n                            \\bar{x_{i}}^{1}  &\\bar{x_{i}}^{2}&\\ldots &\\bar{x_{i}}^{K} \\\\\n                            \\vdots &\\ddots & \\ldots & \\vdots \\\\\n                            \\bar{x_{i}}^{1}  &\\bar{x_{i}}^{2}&\\ldots &\\bar{x_{i}}^{K} \\\\\n                            \\end{bmatrix}\\] \\[\\mathbf{X^{*}_{i}} = \\begin{bmatrix} (x_{i1}^{1} - \\bar{x}_{i}^{1}) &(x_{i1}^{2}-\\bar{x}_{i}^{2})&\\ldots &(x_{i1}^{K}-\\bar{x}_{i}^{K})\\\\\n                            (x_{i2}^{1}-\\bar{x}_{i}^{1}) &(x_{i2}^{2}-\\bar{x}_{i}^{2})&\\ldots &(x_{i2}^{K}-\\bar{x}_{i}^{K}) \\\\\n                            \\vdots &\\ddots & \\ldots & \\vdots \\\\\n                            (x_{iJ}^{1} -\\bar{x}_{i}^{1})&(x_{iJ}^{2}-\\bar{x}_{i}^{2})&\\ldots &(x_{iJ}^{K}-\\bar{x}_{i}^{K}) \\\\\n                            \\end{bmatrix} =  \\mathbf{X_{i}}  - \\mathbf{\\bar{X}_{i}}\\]"
   },
   {
     "objectID": "slides/paneldata/index.html#fixed-effects-4",
     "href": "slides/paneldata/index.html#fixed-effects-4",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Fixed Effects",
     "text": "Fixed Effects\n\nThese matrices are then stacked on top of each other \\[\\mathbf{X^{*}} = \\begin{bmatrix} \\mathbf{X^{*}_{1}} \\\\ \\mathbf{X^{*}_{2}} \\\\ \\vdots \\\\ \\mathbf{X^{*}_{N}}  \\end{bmatrix}\\]\nThe fixed effects estimator can be derived using the time-demeaning matrix\nLet \\(\\mathbf{i}\\) be a \\(J \\times 1\\) column of ones\nDefine the \\(J \\times J\\) matrix \\(\\mathbf{M_{0}}\\) as one that turns the columns of any matrix with \\(J\\) rows into deviations from means \\[\\mathbf{M_{0}} = \\mathbf{I}_{J} - \\frac{1}{J}\\mathbf{ii'}\\]"
   },
   {
     "objectID": "slides/paneldata/index.html#fixed-effects-5",
     "href": "slides/paneldata/index.html#fixed-effects-5",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Fixed Effects",
     "text": "Fixed Effects\n\nNext, define the following \\(NJ \\times NJ\\) matrix \\(\\mathbf{M_{D}}\\) \\[\\mathbf{M_{D}}  = \\begin{bmatrix} \\mathbf{M_{0}} & 0 & \\ldots &0\\\\\n                               0 & \\mathbf{M_{0}}& \\ldots &0 \\\\\n                               \\vdots &\\ddots & \\ldots & \\vdots \\\\\n                               0 & 0& \\ldots & \\mathbf{M_{0}}   \\\\\n                            \\end{bmatrix}\\]\nThe Fixed Effects estimator can be written as \\[\\boldsymbol{\\hat{\\beta}_{fe}} = \\mathbf{(X^{'}M_{D}X)^{-1}X^{'}M_{D} Y}\\]"
   },
   {
     "objectID": "slides/paneldata/index.html#fixed-effects-6",
     "href": "slides/paneldata/index.html#fixed-effects-6",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Fixed Effects",
     "text": "Fixed Effects\n\nThe robust estimator for the variance covariance matrix for \\(\\boldsymbol{\\hat{\\beta}_{fe}}\\) is \\[\\hat{var}(\\boldsymbol{\\hat{\\beta}_{fe}})= \\mathbf{(X^{*'}_{i} X^{*}_{i})^{-1}} \\left ( \\sum_{i=1}^{n} \\mathbf{X^{*'}_{i} \\hat{u}_{i}^{*} \\hat{u}_{i}^{*'}X^{*}_{i}}\\right ) \\mathbf{(X^{*'}_{i} X^{*}_{i})^{-1}}\\]\nThis estimator is robust to both heteroskedasticity and serial correlation\n\nSerial correlation is an issue because the data have a time element\nHeteroskedasticity can happen because the data have a cross-sectional element\n\nIf error has no heteroskedasticity and no serial correlation, you can simplify this variance estimator"
   },
   {
     "objectID": "slides/paneldata/index.html#fixed-effects-7",
     "href": "slides/paneldata/index.html#fixed-effects-7",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Fixed Effects",
     "text": "Fixed Effects\n\nA second estimation method is the Dummy Variable Regression\n\n\nIn this model, we include a dummy variable for each cross-sectional unit\n\nThe interpretation of \\(a_{i}\\) changes\nIt is now considered a parameter and not a variable\nIn practice it does not matter because it produces the same results as within estimator\n\nThe regression is \\[y_{ij} =  \\mathbf{x_{ij}}\\boldsymbol{\\beta} + \\mathbf{D_{i}}\\boldsymbol{\\alpha} + u_{ij}\\]\nWhere \\(D_{i}\\) is a vector of dummy variables indicating the cross-sectional unit, and \\(\\alpha\\) is an \\(N-1\\) vector (we exclude 1 of the dummies to identify the model)\nThe vector \\(\\boldsymbol{\\hat{\\beta}_{DVR}}\\) will be identical to \\(\\boldsymbol{\\hat{\\beta}_{fe}}\\)"
   },
   {
     "objectID": "slides/paneldata/index.html#fixed-effects-8",
     "href": "slides/paneldata/index.html#fixed-effects-8",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Fixed Effects",
     "text": "Fixed Effects\n\nFor a couple of reasons we usually do not use the DVR approach\n\nIf \\(N\\) is large, it takes forever to estimate\nWe do not care about \\(a_{i}\\) normally\nThe estimator for fixed effects is not consistent as \\(N \\rightarrow \\infty\\)\n\nWith the DVR approach, you would use the variance estimator we discussed in the OLS section"
   },
   {
     "objectID": "slides/paneldata/index.html#first-differencing",
     "href": "slides/paneldata/index.html#first-differencing",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "First Differencing",
-    "text": "First Differencing\n\nIn this method, we still assume \\(\\mathbf{x_{ij}}\\) and \\(a_{i}\\) are correlated\nThe estimating equation is \\[y_{ij} =  \\mathbf{x_{ij}}\\boldsymbol{\\beta} +a_{i} + u_{ij}\\]\nImagine lagging this equation by 1 time period \\[y_{ij-1} =  \\mathbf{x_{ij-1}}\\boldsymbol{\\beta} +a_{i} + u_{ij-1}\\]\nThen difference the equations \\[y_{ij} -  y_{ij-1} =  \\mathbf{(x_{ij} -x_{ij-1}) }\\boldsymbol{\\beta} +a_{i}-a_{i} + u_{ij} -u_{ij-1}\\] \\[\\Delta y_{ij}=  \\mathbf{(\\Delta x_{ij}  ) }\\boldsymbol{\\beta}   + \\Delta u_{ij}\\]\nSince \\(a_{i}\\) is constant over time for each cross-sectional unit, it is eliminated when we difference"
+    "text": "First Differencing\n\nStill assume \\(\\mathbf{x_{ij}}\\) and \\(a_{i}\\) are correlated\nThe unobserved effects model is \\[y_{it} =  \\mathbf{x_{it}}\\boldsymbol{\\beta} +a_{i} + u_{it}\\]\nThe unobserved effect is eliminated by differencing adjacent time periods\n\n\\[y_{it-1} =  \\mathbf{x_{it-1}}\\boldsymbol{\\beta} +a_{i} + u_{it-1}\\]\n\\[y_{it} -  y_{it-1} =  \\mathbf{(x_{it} -x_{it-1}) }\\boldsymbol{\\beta} +a_{i}-a_{i} + u_{it} -u_{it-1}\\] \\[\\Delta y_{it}=  \\mathbf{(\\Delta x_{it}  ) }\\boldsymbol{\\beta}   + \\Delta u_{it}\\]\n\nSince \\(a_{i}\\) is constant over time for each cross-sectional unit, it is eliminated when we difference"
   },
   {
     "objectID": "slides/paneldata/index.html#first-differencing-1",
     "href": "slides/paneldata/index.html#first-differencing-1",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "First Differencing",
-    "text": "First Differencing\n\nThe amount of data we have left after differencing depends on the number of time periods\n\nIf T = 2, then we are left with 1 observation per person\nIf T = 3, then we are left with 2 observations per person\netc...\n\nThe first difference estimator is the OLS estimator applied to the differenced data\n\nCollecting \\(y_{ij}\\) and \\(\\mathbf{x_{ij}}\\) into matrices, we get \\[\\boldsymbol{\\hat{\\beta}_{fd}} = \\mathbf{((\\Delta X)^{'}(\\Delta X))^{-1}(\\Delta X)^{'}(\\Delta Y)}\\]"
+    "text": "First Differencing\n\nThe amount of data we have left after differencing depends on the number of time periods\n\nIf T = 2, then we are left with 1 observation per person\nIf T = 3, then we are left with 2 observations per person\netc...\n\nThe first difference estimator is the OLS estimator applied to the differenced data\n\n\\[\\boldsymbol{\\hat{\\beta}_{fd}} = \\mathbf{((\\Delta X)^{'}(\\Delta X))^{-1}(\\Delta X)^{'}(\\Delta Y)}\\]"
   },
   {
     "objectID": "slides/paneldata/index.html#first-differencing-2",
     "href": "slides/paneldata/index.html#first-differencing-2",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "First Differencing",
-    "text": "First Differencing\n\nThe robust variance covariance matrix for \\(\\boldsymbol{\\beta_{fd}}\\) is\n\\[\\hat{var}(\\boldsymbol{\\hat{\\beta}_{fd}}) = \\mathbf{(\\Delta X' \\Delta X)^{-1}} \\left ( \\sum_{i=1}^{n} \\mathbf{\\Delta X'_{i} \\Delta\\hat{u}_{i} \\Delta\\hat{u}'_{i}\\Delta X_{i}}\\right ) \\mathbf{(\\Delta X' \\Delta X)^{-1}}\\]\nAgain this is robust to both heteroskedasticity and serial correlation\nWhen using this method:\n\nThere must be variation in a variable over time for it to be included\nTo infer a causal relationship, the unobserved heterogeneity must be time constant"
+    "text": "First Differencing\n\nThe cluster-robust variance covariance matrix for \\(\\boldsymbol{\\beta_{fd}}\\) is\n\n\\[\\hat{var}(\\boldsymbol{\\hat{\\beta}_{fd}}) = \\mathbf{(\\Delta X' \\Delta X)^{-1}} \\left ( \\sum_{i=1}^{n} \\mathbf{\\Delta X'_{i} \\Delta\\hat{u}_{i} \\Delta\\hat{u}'_{i}\\Delta X_{i}}\\right ) \\mathbf{(\\Delta X' \\Delta X)^{-1}}\\]\n\nAgain this is robust to both heteroskedasticity and serial correlation\nWhen using this method:\n\nThere must be variation in a variable over time for it to be included\nTo infer a causal relationship, the unobserved heterogeneity must be time constant"
   },
   {
     "objectID": "slides/paneldata/index.html#random-effects",
     "href": "slides/paneldata/index.html#random-effects",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Random Effects",
     "text": "Random Effects\n\nIn random effects we assume \\(\\mathbf{x_{ij}}\\) and \\(a_{i}\\) are uncorrelated\n\nThus, random effects is NOT an identification strategy\nIt forces \\(a_{i}\\) into the error term\nPutting \\(a_{i}\\) into the error term implies a specific error structure\n\nThe model is still \\[y_{ij} =  \\mathbf{x_{ij}}\\boldsymbol{\\beta} +a_{i} + u_{ij}\\]\nExcept now we force \\(a_{i}\\) into the error \\[y_{ij} =  \\mathbf{x_{ij}}\\boldsymbol{\\beta} +v_{ij}\\] \\[v_{ij} = a_{i} + u_{ij}\\]\nImplies a “block correlation” in errors across \\(i\\)"
   },
   {
     "objectID": "slides/paneldata/index.html#random-effects-1",
     "href": "slides/paneldata/index.html#random-effects-1",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Random Effects",
     "text": "Random Effects\n\nThe random effects model attempts to harness this block correlation\nThe method imposes certain assumptions on the data (in addition to strict exogeneity)\n\n\\(E(u_{ij}^2) = \\sigma_{u}\\) (homoskedasticity)\n\\(E(u_{ij}u_{is}) = 0, \\forall j \\neq s\\) (no serial correlation)\n\nStrict exogeniety implies \\(E(a_{i}u_{ij}) =0, \\forall t\\)\nUnder these assumptions\n\nThe diagonal elements of the variance covariance matrix for person \\(i\\) are \\[E(v_{ij}^{2}) = E(a_{i}^{2}) + 2E(a_{i}u_{ij}) + E(u_{ij}^{2}) = \\sigma_{a} + \\sigma_{u}\\]\n\n\n\nThe off-diagonal elements of the variance covariance matrix for person \\(i\\) are \\[E(v_{ij}v_{is}) = E[(a_{i} - u_{ij})(a_{i} - u_{is})] = E(a_{i}^{2}) = \\sigma_{a}\\]"
   },
   {
     "objectID": "slides/paneldata/index.html#random-effects-2",
     "href": "slides/paneldata/index.html#random-effects-2",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Random Effects",
     "text": "Random Effects\n\nIf we group all observations for person \\(i\\) into a matrix, then\n\\[\\boldsymbol{\\Sigma} =  E(\\mathbf{v_{i}v_{i}'}) =   \\begin{bmatrix} \\sigma_{a} + \\sigma_{\\epsilon}&  \\sigma_{a}  & \\ldots &  \\sigma_{a}\\\\\n                                 \\sigma_{a} & \\sigma_{a} + \\sigma_{\\epsilon}& \\ldots & \\sigma_{a} \\\\\n                               \\vdots &\\ddots & \\ldots & \\vdots \\\\\n                                \\sigma_{a} &  \\sigma_{a}& \\ldots & \\sigma_{a} + \\sigma_{\\epsilon} \\\\\n                            \\end{bmatrix}\\]\nThe variance covariance matrix of the errors for the whole data set is \\[\\boldsymbol{\\Omega} =     \\begin{bmatrix} \\boldsymbol{\\Sigma}& \\mathbf{0}  & \\ldots & \\mathbf{0}\\\\\n                                 \\mathbf{0}& \\boldsymbol{\\Sigma}& \\ldots & \\mathbf{0} \\\\\n                               \\vdots &\\ddots & \\ldots & \\vdots \\\\\n                               \\mathbf{0}&  \\mathbf{0}& \\ldots & \\boldsymbol{\\Sigma}\\\\\n                            \\end{bmatrix}\\]\nThis is the “random effects structure”\n\nErrors are correlated within \\(i\\), but not across \\(i\\)"
   },
   {
     "objectID": "slides/paneldata/index.html#random-effects-3",
     "href": "slides/paneldata/index.html#random-effects-3",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Random Effects",
     "text": "Random Effects\n\nThe random effects estimator is GLS applied to the data using the random effects error structure\nGLS “transforms” the data, and runs OLS on the transformed data\nThe random effects estimator is \\[\\boldsymbol{\\hat{\\beta}_{re}} =  \\mathbf{(X' \\hat{\\Omega}^{-1}X)^{-1}X'\\hat{\\Omega}^{-1}Y}\\]\n\\(\\boldsymbol{\\hat{\\Omega}}\\) is the estimated variance covariance matrix with \\(\\sigma_{u}\\) and \\(\\sigma_{a}\\) replaced by estimates\n\nNote that for \\(\\boldsymbol{\\hat{\\beta}_{re}}\\) to be efficient, we must make stronger assumptions than before\n\n\\(E(u_{ij}^2|\\mathbf{x_{i}}, a_{i}) = \\sigma_{u}\\)\n\\(E(u_{ij}u_{is}|\\mathbf{x_{i}}, a_{i}) = 0, \\forall j \\neq s\\)\n\\(E(a_{i}^2|\\mathbf{x_{i}}) = \\sigma_{a}\\)"
   },
   {
     "objectID": "slides/paneldata/index.html#random-effects-4",
     "href": "slides/paneldata/index.html#random-effects-4",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Random Effects",
     "text": "Random Effects\n\nWe need a consistent estimates of \\(\\sigma_{\\epsilon}\\) and \\(\\sigma_{a}\\)\nTo do so, we follow the method of Wooldridge (2002)\n\nRecall that \\[y_{ij} =  \\mathbf{x_{ij}}\\boldsymbol{\\beta} +v_{ij}\\] \\[v_{ij} = a_{i} + u_{ij}\\]\nBecause of the second equation \\[\\sigma_{v}^2 = \\sigma_{a}^2 + \\sigma_{u}^2\\]\nWe will find \\(\\sigma_{v}^2\\) and \\(\\sigma_{a}^2\\), then deduce \\(\\sigma_{u}^2\\)"
   },
   {
     "objectID": "slides/paneldata/index.html#random-effects-5",
     "href": "slides/paneldata/index.html#random-effects-5",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Random Effects",
     "text": "Random Effects\n\nBecause of our previous assumptions, \\[\\sigma_{v}^2 = \\frac{1}{J}\\sum_{j=1}^{J}E(v_{ij}^2)\\]\n\nThis is true for each individual\nReplace \\(E(v_{ij}^2)\\) with a sample average across \\(i\\) using consistent estimates of \\(v_{ij}\\)\n\nBecause we have assumed \\(\\mathbf{x_{ij}}\\) and \\(a_{i}\\) are uncorrelated, we can obtain consistent estimates of \\(v_{ij}\\) from pooled OLS\n\nRegress \\(y_{ij} = \\mathbf{x_{ij}}\\boldsymbol{\\beta} +v_{ij}\\)\nKeep the residuals from this regression, \\(\\hat{v}_{ij}\\)\nThen for the estimate of \\(\\sigma_{v}^2\\) \\[\\hat{\\sigma}_{v}^2 = \\frac{1}{NJ-K}\\sum_{i=1}^{N}\\sum_{j=1}^{J}\\hat{v}_{ij}^2\\]"
   },
   {
     "objectID": "slides/paneldata/index.html#random-effects-6",
     "href": "slides/paneldata/index.html#random-effects-6",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Random Effects",
     "text": "Random Effects\n\nNow, we obtain an estimate of \\(\\sigma_{a}\\) using a similar method \\[\\sigma_{a}^2 = \\frac{1}{J(J-1)/2}\\sum_{j=1}^{J-1}\\sum_{s = j+1}^{J}E(v_{ij}v_{is})\\]\n\nThis is true for each individual\nReplace \\(E(v_{ij}v_{is})\\) with a sample average across \\(i\\) using consistent estimates of \\(v_{ij}\\)"
   },
   {
     "objectID": "slides/paneldata/index.html#random-effects-7",
     "href": "slides/paneldata/index.html#random-effects-7",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Random Effects",
     "text": "Random Effects\n\nThe estimate of \\(\\sigma_{a}^2\\) is \\[\\hat{\\sigma}_{a}^2 = \\frac{1}{NJ(J-1)/2 - K}\\sum_{j=1}^{J-1}\\sum_{s = j+1}^{J}\\sum_{i=1}^{N}\\hat{v}_{ij}\\hat{v}_{is}\\]\nThe idea is that there are \\(J(J-1)/2\\) cross-products of errors for each individual\nAveraging these errors together for each person, then averaging across all people, we get a consistent estimate\nOnce we have \\(\\hat{\\sigma}_{a}^2\\) and \\(\\hat{\\sigma}_{v}^2\\), we obtain \\(\\hat{\\sigma}_{u}^2 = \\hat{\\sigma}_{v}^2-\\hat{\\sigma}_{a}^2\\)\n\nUse these values in \\(\\boldsymbol{\\hat{\\Omega}}\\), and we have all that is required for the Random Effects Estimator"
   },
   {
     "objectID": "slides/paneldata/index.html#random-effects-8",
     "href": "slides/paneldata/index.html#random-effects-8",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Random Effects",
     "text": "Random Effects\n\nWith all of these assumptions, the variance estimate of the random effects estimator is\n\\[\\hat{var}( \\boldsymbol{\\hat{\\beta}_{re}}) = \\mathbf{(X'\\boldsymbol{\\hat{\\Omega}}^{-1}X)^{-1} }\\]\nThis procedure depends on the assumptions we have made about the random effects structure\nWe could also avoid those assumptions and use a robust variance estimator \\[\\hat{var}(\\boldsymbol{\\hat{\\beta}_{re}})= \\mathbf{(X'\\boldsymbol{\\hat{\\Omega}}^{-1}X)^{-1} }\\left ( \\sum_{i=1}^{n} \\mathbf{X^{'}_{i} \\hat{\\Sigma}^{-1} \\hat{u}_{i} \\hat{u}_{i}^{'}\\hat{\\Sigma}^{-1}X_{i}}\\right ) \\mathbf{(X'\\boldsymbol{\\hat{\\Omega}}^{-1}X)^{-1} }\\]\nBut Random Effects is generally all about the structure of the errors\n\nSo if you are going to avoid making those assumptions, then you can use OLS"
   },
   {
     "objectID": "slides/paneldata/index.html#introduction",
     "href": "slides/paneldata/index.html#introduction",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Introduction",
     "text": "Introduction\n\nRepeated observations of some individual unit along some dimension\n\nObserving same people/firms/countries over time\nSecond dimension does not have to be time\n\nPanel data can be used in several ways\n\nEliminate individual heterogeneity\nIncrease variation (reduce standard errors)\nStudy dynamics\n\nIn microeconometrics, panel data mostly controls for individual heterogeneity\nWe will study\n\nBasic panel data methods\nUsing panel data to identify parameters"
   },
   {
     "objectID": "slides/paneldata/index.html#model",
     "href": "slides/paneldata/index.html#model",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Model",
     "text": "Model\n\nWrite the regression model as\n\n\\[y_{it} =  \\mathbf{x_{it}}\\boldsymbol{\\beta} + e_{it}\\]\n\nRecall that \\(i\\) indexes individuals, and \\(t\\) indexes time\nOne approach is to ignore the panel structure\nThis is called Pooled Regression since it pools data across people and time\nThe slope from population least squares is\n\n\\[\\boldsymbol{\\beta}^{*} = E[\\mathbf{x_{it}}'\\mathbf{x_{it}}]^{-1}E[\\mathbf{x_{it}}'y_{it}]\\]"
   },
   {
     "objectID": "slides/paneldata/index.html#model-1",
     "href": "slides/paneldata/index.html#model-1",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Model",
     "text": "Model\n\nIf \\(\\boldsymbol{\\beta}\\) is defined as the population least squares slope\n\nThe error term \\(e_{it}\\) is the population least squares residual\nBy definition \\(E[\\mathbf{x_{it}}'e_{it}] = 0\\)\nCan proceed with OLS to estimate \\(\\boldsymbol{\\beta}\\)\n\nIf \\(\\boldsymbol{\\beta}\\) is a structural parameter (like a causal effect)\n\nWe need to assume that \\(E[\\mathbf{x_{it}}'e_{it}] = 0\\)\nThis may or may not be true\nIf it is true, we can proceed with OLS to estimate \\(\\boldsymbol{\\beta}\\)\nIf it is not true, we cannot use OLS to estimate \\(\\boldsymbol{\\beta}\\)"
   },
   {
     "objectID": "slides/paneldata/index.html#estimation",
     "href": "slides/paneldata/index.html#estimation",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
     "text": "Estimation\n\nThe pooled regression estimator is\n\n\\[\\hat{\\boldsymbol{\\beta}} = \\left(\\sum_{i=1}^{N}\\sum_{t=1}^{T}\\mathbf{x_{it}}'\\mathbf{x_{it}}\\right)^{-1}\\left(\\sum_{i=1}^{N}\\sum_{t=1}^{T}\\mathbf{x_{it}}'y_{it}\\right) = (X'X)^{-1}X'Y\\] - Perform OLS on the data as though there was no separate individual and time dimension\n\nIf \\(E[\\mathbf{x_{it}}'e_{it}] = 0\\), then \\(\\hat{\\boldsymbol{\\beta}}\\) is consistent for \\(\\boldsymbol{\\beta}\\)"
   },
   {
     "objectID": "slides/paneldata/index.html#estimation-1",
     "href": "slides/paneldata/index.html#estimation-1",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
     "text": "Estimation\n\nFor inference we need the variance of \\(\\hat{\\boldsymbol{\\beta}}\\)\nWith variation across individuals and time this is more complicated\n\nNeed to worry about heteroskedasticity and serial correlation\n\nAssuming no heteroskedasticity or serial correlation\n\nVariance of \\(\\hat{\\boldsymbol{\\beta}}\\) is the homoskedasticity-only variance estimator we covered before\n\nAssuming heteroskedasticity but no serial correlation\n\nVariance of \\(\\hat{\\boldsymbol{\\beta}}\\) is the robust variance estimator we covered before"
   },
   {
     "objectID": "slides/paneldata/index.html#estimation-2",
     "href": "slides/paneldata/index.html#estimation-2",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Estimation",
     "text": "Estimation\n\nIf we think there is serial correlation, need to adjust the variance estimator\nMain issue is that the error term is correlated across time within units\nA method that accounts for this is the cluster-robust variance estimator\n\n\\[\\hat{V}_{CR}(\\hat{\\boldsymbol{\\beta}}) = (\\mathbf{X'X)^{-1}} \\left( \\sum_{i=1}^{N}\\mathbf{X_{i}'}\\mathbf{\\hat{e_{i}}}\\mathbf{\\hat{e_{i}}'}\\mathbf{X_{i}}\\right)(\\mathbf{X'X)^{-1}}\\]\n\n\\(\\mathbf{X_{i}}\\) is the matrix of observations for individual \\(i\\)\n\\(\\mathbf{\\hat{e_{i}}}\\) is the vector of residuals for individual \\(i\\)"
   },
   {
     "objectID": "slides/paneldata/index.html#model-2",
     "href": "slides/paneldata/index.html#model-2",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Model",
     "text": "Model\n\nPooled regression ignores the panel structure of the data\nWe can do more by leveraging the variation over time and individuals\nUsually researchers do this by modelling the error term in the following way\n\n\\[e_{it} =  a_{i} + u_{it}\\]\n\nThere are two components to the error\n\n\\(a_{i}\\) is the unobserved effect or individual effect\n\\(u_{it}\\) is the idiosyncratic error\n\nPutting this together the unobserved effects model is\n\n\\[y_{it} =  \\mathbf{x_{it}}\\boldsymbol{\\beta} + a_{i} + u_{it}\\]"
   },
   {
     "objectID": "slides/paneldata/index.html#unobserved-effect",
     "href": "slides/paneldata/index.html#unobserved-effect",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Unobserved Effect",
     "text": "Unobserved Effect\n\nThe unobserved effect \\(a_{i}\\) is a constant that varies across individuals\nIt is usually treated as some unknown omitted variable\n\nEffect of a school on test scores\nEffect of a firm on wages\n\nWe do not care about estimating its effect\nBut may need to control for it to estimate structural parameters\nMethods we cover differ in how they deal with \\(a_{i}\\)"
   },
@@ -3936,21 +3936,21 @@
   {
     "objectID": "slides/paneldata/index.html#model-3",
     "href": "slides/paneldata/index.html#model-3",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Model",
-    "text": "Model\n\nThe key to this model is assumption that \\(a_{i}\\) is correlated with \\(\\mathbf{x_{it}}\\)\nExample: Effect of school size on achievement\n\n\\(y_{it}\\) is student achievement\n\\(x_{it}\\) is school size\n\\(a_{i}\\) is unobserved school quality\nSchools that are larger may be better quality\nIf school size and quality affect achievement, this causes bias\n\nThis is illustrated graphically below"
+    "text": "Model\n\nThe key to this model is assumption that \\(a_{i}\\) is correlated with \\(\\mathbf{x_{it}}\\)\nExample: Effect of school size on achievement\n\nOutcome is student achievement\nMain independent variable is school size\nThere is unobserved school quality\nSchools that are larger may be better quality\nIf school size and quality affect achievement, this causes bias\n\nThis is illustrated graphically below using a general example"
   },
   {
     "objectID": "slides/paneldata/index.html#graphical-illustration",
     "href": "slides/paneldata/index.html#graphical-illustration",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Graphical Illustration",
     "text": "Graphical Illustration"
   },
   {
     "objectID": "slides/paneldata/index.html#fixed-effects-9",
     "href": "slides/paneldata/index.html#fixed-effects-9",
-    "title": "\nPanel Data\n",
+    "title": "E655 - Econometrics",
     "section": "Fixed Effects",
     "text": "Fixed Effects\n\nFixed effects is frequently used to infer causality\n\nUnobserved variables are “controlled” with the fixed effect\nThis is only appropriate if all unobserved heterogeneity is constant over time\n\nIf unobserved variables differ over time, no causality can be inferred"
   },
@@ -3980,14 +3980,14 @@
     "href": "content/paneldata.html",
     "title": "Panel Data",
     "section": "",
-    "text": "AP1 Chapter 5\nAP2 Chapter 5\nC Chapter 9\nHA Chapter 18\nHK Chapter 18\nW1 Chapter 6.5\nW2 Chapter 13"
+    "text": "Fixed Effects\n\nAP1 Chapter 5\nC Chapter 8\nCT Chapter 21\nHA Chapter 17\nHK Chapter 16\nW1 Chapter 14\nW2 Chapter 10"
   },
   {
     "objectID": "content/paneldata.html#readings",
     "href": "content/paneldata.html#readings",
     "title": "Panel Data",
     "section": "",
-    "text": "AP1 Chapter 5\nAP2 Chapter 5\nC Chapter 9\nHA Chapter 18\nHK Chapter 18\nW1 Chapter 6.5\nW2 Chapter 13"
+    "text": "Fixed Effects\n\nAP1 Chapter 5\nC Chapter 8\nCT Chapter 21\nHA Chapter 17\nHK Chapter 16\nW1 Chapter 14\nW2 Chapter 10"
   },
   {
     "objectID": "content/paneldata.html#slides",
@@ -4002,5 +4002,124 @@
     "title": "Panel Data",
     "section": "Sample R Code",
     "text": "Sample R Code\nThe code below goes through an exercise estimating Difference in Differences models.\n EC655did.R"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#model-4",
+    "href": "slides/paneldata/index.html#model-4",
+    "title": "E655 - Econometrics",
+    "section": "Model",
+    "text": "Model\n\nData is generated for three individuals over 10 time periods\nFor each individual the outcome is negatively related to \\(x_it\\)\nThe exact function is\n\n\\[y_{it} = 9 - x_{it} + a_{i} + u_{it}\\]\n\nBut there is an unobserved effect \\(a_{i}\\) that is positively correlated with \\(x_{it}\\)\nThis creates three distinct clusters of points\n\nEach individual has a different colour"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#bias-with-pooled-ols",
+    "href": "slides/paneldata/index.html#bias-with-pooled-ols",
+    "title": "E655 - Econometrics",
+    "section": "Bias with Pooled OLS",
+    "text": "Bias with Pooled OLS\n\nSuppose we ignore the unobserved individual effect\nAs illustrated in the graph below, the estimated slope is positive\nThis is because \\(a_{i}\\) is positively correlated with \\(x_{it}\\) and we have omitted variables bias"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#background",
+    "href": "slides/paneldata/index.html#background",
+    "title": "E655 - Econometrics",
+    "section": "Background",
+    "text": "Background\n\nThe key to this model is assumption that \\(a_{i}\\) is correlated with \\(\\mathbf{x_{it}}\\)\nExample: Effect of school size on achievement\n\nOutcome is student achievement\nMain independent variable is school size\nThere is unobserved school quality\nSchools that are larger may be better quality\nIf school size and quality affect achievement, this causes bias\n\nThis is illustrated graphically below using a general example"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#background-1",
+    "href": "slides/paneldata/index.html#background-1",
+    "title": "E655 - Econometrics",
+    "section": "Background",
+    "text": "Background\n\nData is generated for three individuals over 10 time periods\nFor each individual the outcome is negatively related to \\(x_it\\)\nThe exact function is\n\n\\[y_{it} = 9 - x_{it} + a_{i} + u_{it}\\]\n\nBut there is an unobserved effect \\(a_{i}\\) that is positively correlated with \\(x_{it}\\)\nThis creates three distinct clusters of points\n\nEach individual has a different colour"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#graphical-illustration-1",
+    "href": "slides/paneldata/index.html#graphical-illustration-1",
+    "title": "E655 - Econometrics",
+    "section": "Graphical Illustration",
+    "text": "Graphical Illustration"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#fixed-effects-model",
+    "href": "slides/paneldata/index.html#fixed-effects-model",
+    "title": "E655 - Econometrics",
+    "section": "Fixed Effects Model",
+    "text": "Fixed Effects Model\n\nThe Fixed Effects model is a special case of the unobserved effects model\nIt assumes that the unobserved effect is correlated with the independent variables\nThen makes an adjustment to control for the unobserved effect\nThe unobserved effects model is\n\n\\[y_{it} =  \\mathbf{x_{it}}\\boldsymbol{\\beta} + a_{i} + u_{it}\\]\n\nAssume this is a structural model and we want to estimate \\(\\boldsymbol{\\beta}\\)"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#fixed-effects-model-1",
+    "href": "slides/paneldata/index.html#fixed-effects-model-1",
+    "title": "E655 - Econometrics",
+    "section": "Fixed Effects Model",
+    "text": "Fixed Effects Model\n\nA necessary assumption is Strict Exogeneity\n\n\\[E(\\mathbf{x_{is}'}u_{it}) = 0 \\text{ for all } s = 1,...,T \\]\n\nIn words, this means that all lags and leads of \\(u_{it}\\) are uncorrelated with \\(\\mathbf{x_{it}}\\)\nThis is an extension of what we learned in instrumental variables\n\nThe exogeneity extends to all time periods\nNot just the current time period"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#fixed-effects-model-2",
+    "href": "slides/paneldata/index.html#fixed-effects-model-2",
+    "title": "E655 - Econometrics",
+    "section": "Fixed Effects Model",
+    "text": "Fixed Effects Model\n\nWith strict exogeneity, we need an estimator that controls for \\(a_{i}\\)\nOne way to do this is the Within Transformation\nTo do this, compute the mean over time for each variable for each individual\n\n\\[\\bar{y}_{i} = \\frac{1}{T}\\sum_{t=1}^{T}y_{it}\\]\n\\[\\bar{x}_{i} = \\frac{1}{T}\\sum_{t=1}^{T}x_{it}\\]"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#fixed-effects-model-3",
+    "href": "slides/paneldata/index.html#fixed-effects-model-3",
+    "title": "E655 - Econometrics",
+    "section": "Fixed Effects Model",
+    "text": "Fixed Effects Model\n\nThen subtract the within unit mean from each observation\n\n\\[y_{ij} - \\bar{y}_{i} = (\\mathbf{x_{ij}} - \\mathbf{\\bar{x}_{i}})\\boldsymbol{\\beta} + a_{i} - a_{i} + u_{ij} - \\bar{u}_{i}\\] \\[y_{it} - \\bar{y}_{i} = (\\mathbf{x_{it}} - \\mathbf{\\bar{x}_{i}})\\boldsymbol{\\beta}   + u_{it} - \\bar{u}_{i}\\] \\[y_{it}^{*} = \\mathbf{x_{it}}^{*}\\boldsymbol{\\beta}   + u_{it}^{*}\\]\n\nNotice that this transformed model does not depend on \\(a_{i}\\)\nWe can use regression on this transformed model to get the slope vector\n\n\\[\\boldsymbol{\\beta}_{fe} = E[\\mathbf{x_{it}^{*}}'\\mathbf{x_{it}^{*}}]^{-1}E[\\mathbf{x_{it}^{*}}'y_{it}^{*}]\\]"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#fixed-effects-model-4",
+    "href": "slides/paneldata/index.html#fixed-effects-model-4",
+    "title": "E655 - Econometrics",
+    "section": "Fixed Effects Model",
+    "text": "Fixed Effects Model\n\nSince \\(a_{i}\\) does not vary across \\(j\\), \\(a_{i}\\) is eliminated when we subtract the means\nIf we estimate the equation above by OLS, we get the Fixed Effects Estimator \\[\\boldsymbol{\\hat{\\beta}_{fe}} = \\mathbf{(X^{*'} X^{*})^{-1}X^{*'} Y^{*}}\\] ## Unobserved Effects Model\nLike regular regression model, but with unobserved variable that only varies over individuals\nThe regression model is \\[y_{it} =  \\mathbf{x_{it}}\\boldsymbol{\\beta} +a_{i} + u_{it}\\]\n\n\\(\\mathbf{x_{ij}}\\) contains a constant\n\\(a_{i}\\) is the unobserved effect\n\nAssume we are not interested in the effect of \\(a_{i}\\) on \\(y_{ij}\\)\n\nUsually it is not observed, or unmeasurable anyway\nThis is why it is not written with a parameter\n\nSeveral models we can use to estimate the parameters \\(\\boldsymbol{\\beta}\\)\n\nDepends on assumption about relationship between \\(\\mathbf{x_{ij}}\\) and \\(a_{i}\\)"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#estimation-3",
+    "href": "slides/paneldata/index.html#estimation-3",
+    "title": "E655 - Econometrics",
+    "section": "Estimation",
+    "text": "Estimation\n\nIf we estimate by OLS, we get the Fixed Effects Estimator\n\n\\[\\boldsymbol{\\hat{\\beta}_{fe}} = \\mathbf{(X^{*'} X^{*})^{-1}X^{*'} Y^{*}}\\]\n\nFor each cross-sectional observation we have\n\n\\[\\mathbf{X_{i}} = \\begin{bmatrix} x_{i1}^{1}  &x_{i1}^{2}&\\ldots &x_{i1}^{K}\\\\\n                                x_{i2}^{1} &x_{i2}^{2}&\\ldots &x_{i2}^{K} \\\\\n                                \\vdots &\\ddots & \\ldots & \\vdots \\\\\n                                x_{iJ}^{1}&x_{iJ}^{2}&\\ldots &x_{iJ}^{K} \\\\\n                                \\end{bmatrix} ,  \\mathbf{\\bar{X}_{i}}  =\\begin{bmatrix} \\bar{x_{i}}^{1}  &\\bar{x_{i}}^{2}&\\ldots &\\bar{x_{i}}^{K}\\\\\n                                \\bar{x_{i}}^{1}  &\\bar{x_{i}}^{2}&\\ldots &\\bar{x_{i}}^{K} \\\\\n                                \\vdots &\\ddots & \\ldots & \\vdots \\\\\n                                \\bar{x_{i}}^{1}  &\\bar{x_{i}}^{2}&\\ldots &\\bar{x_{i}}^{K} \\\\\n                                \\end{bmatrix}\\]"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#estimation-4",
+    "href": "slides/paneldata/index.html#estimation-4",
+    "title": "E655 - Econometrics",
+    "section": "Estimation",
+    "text": "Estimation\n\nAfter the within transformation it looks like\n\n\\[\\mathbf{X^{*}_{i}} = \\begin{bmatrix} (x_{i1}^{1} - \\bar{x}_{i}^{1}) &(x_{i1}^{2}-\\bar{x}_{i}^{2})&\\ldots &(x_{i1}^{K}-\\bar{x}_{i}^{K})\\\\\n                                (x_{i2}^{1}-\\bar{x}_{i}^{1}) &(x_{i2}^{2}-\\bar{x}_{i}^{2})&\\ldots &(x_{i2}^{K}-\\bar{x}_{i}^{K}) \\\\\n                                \\vdots &\\ddots & \\ldots & \\vdots \\\\\n                                (x_{iJ}^{1} -\\bar{x}_{i}^{1})&(x_{iJ}^{2}-\\bar{x}_{i}^{2})&\\ldots &(x_{iJ}^{K}-\\bar{x}_{i}^{K}) \\\\\n                                \\end{bmatrix} =  \\mathbf{X_{i}}  - \\mathbf{\\bar{X}_{i}}\\]\n\nThese matrices are then stacked on top of each other\n\n\\[\\mathbf{X^{*}} = \\begin{bmatrix} \\mathbf{X^{*}_{1}} \\\\ \\mathbf{X^{*}_{2}} \\\\ \\vdots \\\\ \\mathbf{X^{*}_{N}}  \\end{bmatrix}\\]\n\nIf strict exogeneity holds, then \\(\\boldsymbol{\\hat{\\beta}_{fe}}\\) consistently estimates \\(\\boldsymbol{\\beta}\\)"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#estimation-5",
+    "href": "slides/paneldata/index.html#estimation-5",
+    "title": "E655 - Econometrics",
+    "section": "Estimation",
+    "text": "Estimation\n\nThe cluster- robust estimator for the variance covariance matrix for \\(\\boldsymbol{\\hat{\\beta}_{fe}}\\) is\n\n\\[\\hat{var}(\\boldsymbol{\\hat{\\beta}_{fe}})= \\mathbf{(X^{*'}_{i} X^{*}_{i})^{-1}} \\left ( \\sum_{i=1}^{n} \\mathbf{X^{*'}_{i} \\hat{u}_{i}^{*} \\hat{u}_{i}^{*'}X^{*}_{i}}\\right ) \\mathbf{(X^{*'}_{i} X^{*}_{i})^{-1}}\\]\n\nThis estimator is robust to both heteroskedasticity and serial correlation\n\nSerial correlation is an issue because the data have a time element\nHeteroskedasticity can happen because the data have a cross-sectional element\n\nIf error has no heteroskedasticity and no serial correlation, you can simplify this variance estimator"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#dummy-variable-regression",
+    "href": "slides/paneldata/index.html#dummy-variable-regression",
+    "title": "E655 - Econometrics",
+    "section": "Dummy Variable Regression",
+    "text": "Dummy Variable Regression\n\nA second way to control for the unobserved effect is the Dummy Variable Regression\nIn this model, include a dummy variable for each cross-sectional unit\n\nThe interpretation of \\(a_{i}\\) changes\nIt is now considered a parameter and not a variable\nIn practice it does not matter because it produces the same results as within estimator\n\nThe regression is\n\n\\[y_{it} =  \\mathbf{x_{it}}\\boldsymbol{\\beta} + \\mathbf{D_{i}}\\boldsymbol{\\alpha} + u_{it}\\]\n\n\\(D_{i}\\) is a vector of dummy variables indicating the cross-sectional unit, and \\(\\alpha\\) is an \\(N-1\\) vector\n\nExclude 1 of the dummies to identify the model"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#graphical-illustration-2",
+    "href": "slides/paneldata/index.html#graphical-illustration-2",
+    "title": "E655 - Econometrics",
+    "section": "Graphical Illustration",
+    "text": "Graphical Illustration"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#considerations",
+    "href": "slides/paneldata/index.html#considerations",
+    "title": "E655 - Econometrics",
+    "section": "Considerations",
+    "text": "Considerations\n\nThe within estimator wipes out the unobserved effect\nBut it also wipes out any time-invariant variables\n\nSo you cannot add them to the regression\n\nIt also reduces the variation in the data\n\nSo it is less efficient than OLS if the unobserved effect is not related to \\(x\\)"
+  },
+  {
+    "objectID": "slides/paneldata/index.html#dummy-variable-regression-1",
+    "href": "slides/paneldata/index.html#dummy-variable-regression-1",
+    "title": "E655 - Econometrics",
+    "section": "Dummy Variable Regression",
+    "text": "Dummy Variable Regression\n\nApply regression to the model above to get the dummy variable regression\nEstimate by OLS\nThe vector \\(\\boldsymbol{\\hat{\\beta}_{DVR}}\\) will be identical to \\(\\boldsymbol{\\hat{\\beta}_{fe}}\\)\nThe variance estimator is also the same as the within estimator\nFor a couple of reasons we usually do not use the DVR approach\n\nIf \\(N\\) is large, it takes forever to estimate\nWe do not care about \\(a_{i}\\) normally\nThe estimator for fixed effects is not consistent as \\(N \\rightarrow \\infty\\)"
   }
 ]
