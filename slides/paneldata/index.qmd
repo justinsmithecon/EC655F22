@@ -602,4 +602,106 @@ $$\hat{var}(\boldsymbol{\hat{\beta}_{fd}}) = \mathbf{(\Delta X' \Delta X)^{-1}} 
 
     -   To infer a causal relationship, the unobserved heterogeneity must be time constant
 
+## Random Effects
 
+- Fixed Effects and First Differencing are appropriate with a correlated unobserved effect
+
+-  If the unobserved effect is not correlated with $\mathbf{x_{it}}$, we do not need to control for it
+
+- In theory we can use a pooled regression in this case
+
+- But it not efficient because it ignores the unobserved effect in the error
+
+- **Random Effects** is appropriate in this case
+
+## Assumptions of Random Effects
+
+- To use this method, we need to make a series of assumptions
+
+1. $E(u_{it}|\mathbf{x_{i}}) = 0$
+2. $E(u_{it}u_{is}|\mathbf{x_{i}}) = 0$ for $t \neq s$
+3. $E(u_{it}^{2}|\mathbf{x_{i}}) = \sigma^{2}_{u}$
+4. $E(a_{i}|\mathbf{x_{i}}) = 0$
+5. $E(a_{i}^2|\mathbf{x_{i}}) = \sigma^{2}_{a}$
+6. $E(a_{i}u_{it}|\mathbf{x_{i}}) = 0$
+
+- These state that the unobserved effect is uncorrelated with $\mathbf{x_{it}}$ and the error
+- Also that the error is homoskedastic and has no serial correlation
+- Researchers are usually skeptical of these assumptions
+    
+    - So this method is not used much in economics
+    
+## Random Effects
+
+-   Together these assumptions imply that
+
+$$E(e_{i}|\mathbf{x_{i}})  = 0$$
+
+$$E(\mathbf{e_{i}}\mathbf{e_{i}'}|\mathbf{x_{i}})  =\begin{bmatrix} \sigma_{a}^2 + \sigma_{u}^2&  \sigma_{a}^2  & \ldots &  \sigma_{a}^2\\
+                                     \sigma_{a}^2 & \sigma_{a}^2 + \sigma_{u}^2& \ldots & \sigma_{a}^2 \\
+                                   \vdots &\ddots & \ldots & \vdots \\
+                                    \sigma_{a}^2 &  \sigma_{a}^2& \ldots & \sigma_{a}^2 + \sigma_{u}^2 \\
+                                \end{bmatrix}$$
+
+
+## Random Effects
+
+
+-   The variance covariance matrix of the errors for the whole data set is 
+
+$$\boldsymbol{\Omega} =     \begin{bmatrix} \boldsymbol{\Sigma}& \mathbf{0}  & \ldots & \mathbf{0}\\
+                                     \mathbf{0}& \boldsymbol{\Sigma}& \ldots & \mathbf{0} \\
+                                   \vdots &\ddots & \ldots & \vdots \\
+                                   \mathbf{0}&  \mathbf{0}& \ldots & \boldsymbol{\Sigma}\\
+                                \end{bmatrix}$$
+
+-   This is the "random effects structure"
+
+    -   Errors are correlated within $i$, but not across $i$   
+
+
+## Random Effects
+
+-   The random effects estimator is Generalized Least Squares (GLS) applied to the data using the random effects error structure
+
+    -   GLS "transforms" the data, and runs OLS on the transformed data
+
+-   The **Random Effects Estimator** is 
+
+$$\boldsymbol{\hat{\beta}_{re}} =  \mathbf{(X' \hat{\Omega}^{-1}X)^{-1}X'\hat{\Omega}^{-1}Y}$$
+
+-   $\boldsymbol{\hat{\Omega}}$ is the estimated variance covariance matrix with $\sigma_{u}$ and $\sigma_{a}$ replaced by estimates
+
+- Finding estimates of $\sigma_{u}$ and $\sigma_{a}$ is outlined in Wooldridge (2002)
+
+    - It is applied automatically in Stata or R
+    
+    
+## Random Effects
+
+- Since we have assumed homoskedasticity, we can write the variance estimator
+
+
+$$\hat{var}( \boldsymbol{\hat{\beta}_{re}}) = \mathbf{(X'\boldsymbol{\hat{\Omega}}^{-1}X)^{-1} }$$
+
+
+- Can compare to a cluster-robust estimator
+
+$$\hat{var}(\boldsymbol{\hat{\beta}_{re}})= \mathbf{(X'\boldsymbol{\hat{\Omega}}^{-1}X)^{-1} }\left ( \sum_{i=1}^{n} \mathbf{X^{'}_{i} \hat{\Sigma}^{-1} \hat{u}_{i} \hat{u}_{i}^{'}\hat{\Sigma}^{-1}X_{i}}\right ) \mathbf{(X'\boldsymbol{\hat{\Omega}}^{-1}X)^{-1} }$$
+
+- Again, this is computed automatically using software so no need to worry about the complex formula
+
+
+## Fixed Effect or Random Effects
+
+- Depends on assumptions about the error
+
+- Fixed effects is valid in either case, but is less efficient if $a_{i}$ is uncorrelated with $\mathbf{x_{it}}$
+
+- Economists tend to value robustness over efficiency
+
+- So fixed effects is almost always used
+
+- To test between them, there is a Hausman test you can use
+
+- But again, fixed effects is usually the default
