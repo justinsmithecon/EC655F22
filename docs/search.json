@@ -4001,7 +4001,7 @@
     "href": "content/paneldata.html#sample-r-code",
     "title": "Panel Data",
     "section": "Sample R Code",
-    "text": "Sample R Code\nThe code below goes through an exercise estimating Difference in Differences models.\n EC655did.R"
+    "text": "Sample R Code\nThe code below goes through an exercise estimating with various panel data approaches under scenarios where the unobserved effect is or is not correlated with the main independent variable, and whether strict exogeneity holds.\n EC655panel.R"
   },
   {
     "objectID": "slides/paneldata/index.html#model-4",

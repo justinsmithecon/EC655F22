@@ -28,6 +28,13 @@ The slides are embedded in this page, and you can scroll through them with the a
 
 </div>
 
+## Sample R Code
+
+The code below goes through an exercise estimating with various panel data approaches under scenarios where the unobserved effect is or is not correlated with the main independent variable, and whether strict exogeneity holds.
+
+[{{< fa solid file-export >}} `EC655panel.R`](/files/tutorials/EC655panel.R)
+
+
 
 
 
