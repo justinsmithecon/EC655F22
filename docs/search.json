@@ -4135,5 +4135,460 @@
     "title": "E655 - Econometrics",
     "section": "Fixed Effect or Random Effects",
     "text": "Fixed Effect or Random Effects\n\nDepends on assumptions about the error\nFixed effects is valid in either case, but is less efficient if \\(a_{i}\\) is uncorrelated with \\(\\mathbf{x_{it}}\\)\nEconomists tend to value robustness over efficiency\nSo fixed effects is almost always used\nTo test between them, there is a Hausman test you can use\nBut again, fixed effects is usually the default"
+  },
+  {
+    "objectID": "slides/limdep/index.html#introduction",
+    "href": "slides/limdep/index.html#introduction",
+    "title": "E655 - Econometrics",
+    "section": "Introduction",
+    "text": "Introduction\n\nMany economic outcomes are qualitative in nature\n\nGrouped into categories\n\nWork or not\nDrive, take bus, cycle to work\nNumber of visits to Doctor\n\n\nPeople sometimes use alternative methods in this context\n\nThough linear regression does still work in many cases\n\nIn this section we cover models for these types of variables"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice",
+    "href": "slides/limdep/index.html#binary-choice",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nIn models with more variables and where they are continuous\n\n\\[Pr(y=1|\\mathbf{x}) = \\Phi \\left(\\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right)\\]\n\nThe marginal effect for continuous variable \\(x_{j}\\)\n\n\\[\\frac{\\partial Pr(y=1|\\mathbf{x})}{\\partial x_{j}} = \\phi \\left(\\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right) \\frac{\\beta_{j}}{\\sigma^{2}_{e}}\\]\n\nThis is a function of the entire vector \\(\\mathbf{x}\\)\n\nYou need to specify their values to get the marginal effect\nNormally people hold them at the mean\nIn theory you can get a distribution of marginal effects"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-1",
+    "href": "slides/limdep/index.html#binary-choice-1",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\nLogit Model\n\nAssuming \\(\\eta \\sim \\text{Logistic}(0,\\sigma^{2}_{\\eta})\\) leads to the Logit Model\n\n\\[Pr(y=1|w) = \\Lambda \\left(\\frac{\\beta_{0} + \\beta_{1}w}{\\sigma^{2}_{e}} \\right)\\]\n\nwhere\n\\[\\Lambda (z) =  \\frac{e^z}{1+e^z}\\]\nAgain, because \\(\\Lambda(.)\\) is a CDF, \\(Pr(y=1|w)\\) is always between 0 and 1"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-2",
+    "href": "slides/limdep/index.html#binary-choice-2",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nThe observed difference in probabilities is\n\\[Pr(y=1|w = 1) - Pr(y=1|w=0)\\] \\[=  \\Lambda \\left(\\frac{\\beta_{0} + \\beta_{1}}{\\sigma^{2}_{\\eta}} \\right) - \\Lambda \\left(\\frac{\\beta_{0}}{\\sigma^{2}_{\\eta}}  \\right)\\]\nIn models with more variables and where they are continuous\n\\[Pr(y=1|\\mathbf{x}) = \\Lambda \\left(\\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right)\\]\nThe marginal effect for continuous variable \\(x_{j}\\)\n\\[\\frac{\\partial Pr(y=1|\\mathbf{x})}{\\partial x_{j}} = \\Lambda \\left(\\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right) \\left( 1-\\Lambda \\left(\\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right) \\right)\\frac{\\beta_{j}}{\\sigma^{2}_{\\eta}}\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-3",
+    "href": "slides/limdep/index.html#binary-choice-3",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\nEstimation of Probit and Logit\n\nBoth models usually estimated by Maximum Likelihood\nMethod maximizes the probability of getting our sample by choosing parameters\n\nTheLikelihood Function is the function of the parameters given the data\n\nThe probability distribution of \\(y_i\\) is\n\\[f(y_i| \\mathbf{x_{i}};\\boldsymbol{\\beta})= F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right)^{y_i} \\left(1- F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right) \\right) ^{1-y_{i}}\\]\nThe joint probability of observing the all the \\(y_{i}\\) in the data is\n\\[f(\\mathbf{y}| \\mathbf{X};\\boldsymbol{\\beta})=\\Pi_{i=1}^n F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right)^{y_{i}}  \\left(1- F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right) \\right) ^{1-y_{i}}\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-4",
+    "href": "slides/limdep/index.html#binary-choice-4",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nThe Likelihood Function recasts as a function of the parameters given the data\n\\[\\mathcal{L}(\\boldsymbol{\\beta}|\\mathbf{y}, \\mathbf{X})=\\Pi_{i=1}^n F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right)^{y_{i}}  \\left(1- F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right) \\right) ^{1-y_{i}}\\]\nBoth models usually estimated by Maximum Likelihood\nMethod maximizes the joint probability of \\(y\\) values conditional on \\(\\mathbf{x}\\)\n\nThis is called the Likelihood Function\n\nIn the case of a binary \\(y\\), the likelihood function is\n\\[f[y| \\mathbf{x};\\boldsymbol{\\beta}]=P[Y_{1} = y_{1}, Y_{2} = y_{2}, \\ldots, Y_{n} = y_{n}|\\mathbf{x_{i}};\\boldsymbol{\\beta}]\\] \\[=\\Pi_{y_{i}=1}F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right) \\Pi_{y_{i}=0} \\left[1-F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right) \\right]\\] \\[=\\Pi_{i=1}^{n} F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right)^{y_{i}} \\left[1-F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right)\\right] ^{1-y_{i}}\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-5",
+    "href": "slides/limdep/index.html#binary-choice-5",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nResearchers usually focus on the log of the likelihood instead\n\nIt is a monotonic (increasing) transformation of the likelihood\nThe same parameter vector solves both versions\nLog likelihoods are easier to work with\n\nLog Likelihood \\[ln\\mathcal{L}(\\boldsymbol{\\beta}|\\mathbf{y}, \\mathbf{X})= \\sum_{i=1}^{N}\\{ y_{i}lnF \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right)+  (1-y_{i})ln (1-F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right))  \\}\\]\nTo solve this equation, you need numerical methods\n\nA grid search algorithm that finds the maximum value"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-6",
+    "href": "slides/limdep/index.html#binary-choice-6",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nIn ML environments, the estimated variance of \\(\\boldsymbol{\\hat{\\beta}}\\) is estimated as the negative of the expected value of the Hessian (information matrix) \\[\\hat{Var}(\\boldsymbol{\\hat{\\beta}}) = -E[(\\frac{\\partial^2 lnL}{\\partial\\boldsymbol{\\hat{\\beta}} \\partial \\boldsymbol{\\hat{\\beta}^{'}}})^{-1}]\\] \\[= (\\sum_{i=1}^{n} \\frac{f(\\mathbf{x_{i}^{'}}\\boldsymbol{\\hat{\\beta}})^2 }{ F(\\mathbf{x_{i}^{'}}\\boldsymbol{\\hat{\\beta}})(1- F(\\mathbf{x_{i}^{'}}\\boldsymbol{\\hat{\\beta}}) ) }  \\mathbf{x_{i}x_{i}^{'}} )^{-1}\\]\nwhere \\(F(.)\\) is either the Normal or Logistic CDF, and \\(f(.)\\) is the associated PDF\n\nHypothesis Testing in Probit and Logit\n\nSimple tests for coefficient significance is done by the usual \\(t\\)-test method\n\nAssume \\(\\boldsymbol{\\hat{\\beta}}\\) has normal distribution (asymptotically)\nTest statistic \\(Z = \\frac{\\hat{\\beta}_{k}}{\\hat{SE}(\\hat{\\beta}_{k})}\\)"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-7",
+    "href": "slides/limdep/index.html#binary-choice-7",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nMore complicated tests done using one of 3 methods:\n\nLikelihood Ratio (LR) Test\n\nTest statistic \\(LR = 2[ln\\hat{L}_{U} - ln\\hat{L}_{R}]\\)\n\\(ln\\hat{L}_{R}\\) is log likelihood evaluated at restricted parameter vector\n\nWald (W) Test\n\nTest statistic \\(W = \\hat{g}^{'}[\\hat{G}\\hat{Var}(\\boldsymbol{\\hat{\\beta}})\\hat{G}^{'}]\\hat{g}\\)\n\\(\\hat{g}\\) is a vector of restrictions evaluated at \\(\\boldsymbol{\\hat{\\beta}}\\)\n\\(\\hat{G}\\) is the derivative of a vector of restrictions evaluated at \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nLagrange Multiplier (LM) Test\n\nTest statistic \\(LM = \\hat{d}^{'}[\\hat{Var}(\\boldsymbol{\\hat{\\beta}})]\\hat{d}\\)\n\\(\\hat{d}\\) is the derivative of \\(lnL\\) evaluated at restricted \\(\\boldsymbol{\\hat{\\beta}}\\)\n\n\nRestrictions can be linear or non-linear"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-8",
+    "href": "slides/limdep/index.html#binary-choice-8",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nSource: Kennedy (2008)"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-9",
+    "href": "slides/limdep/index.html#binary-choice-9",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\nGoodness of Fit in Probit and Logit\n\nConfusion Matrix\n\n\n\n\nActual\n\n\n\n\n\n\nPredicted\n0\n1\nTotal\n\n\n0\n# Correct 0\n# Incorrect 1\n# Pred 0\n\n\n1\n# Incorrect 0\n#Correct 1\n# Pred 1\n\n\nTotal\n# True 0\n# True 1\n\n\n\n\nPseudo-\\(R^{2}\\)\n\nMcFadden \\(\\rightarrow\\) \\(R^{2} = 1 - \\frac{ln\\hat{L}_{U}}{ln\\hat{L}_{0}}\\)\n\n\\(ln\\hat{L}_{0}\\) is log-likelihood with no explanatory variables\n\nOthers are possible, but goodness of fit is not incredibly important"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-10",
+    "href": "slides/limdep/index.html#binary-choice-10",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nSource: Kennedy (2008)"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-11",
+    "href": "slides/limdep/index.html#binary-choice-11",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\nGoodness of Fit in Probit and Logit\n\nConfusion Matrix\n\n\n\n\nActual\n\n\n\n\n\n\nPredicted\n0\n1\nTotal\n\n\n0\n# Correct 0\n# Incorrect 1\n# Pred 0\n\n\n1\n# Incorrect 0\n#Correct 1\n# Pred 1\n\n\nTotal\n# True 0\n# True 1\n\n\n\n\nPseudo-\\(R^{2}\\)\n\nMcFadden \\(\\rightarrow\\) \\(R^{2} = 1 - \\frac{ln\\hat{L}_{U}}{ln\\hat{L}_{0}}\\)\n\n\\(ln\\hat{L}_{0}\\) is log-likelihood with no explanatory variables\n\nOthers are possible, but goodness of fit is not incredibly important"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-12",
+    "href": "slides/limdep/index.html#binary-choice-12",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nMore complicated tests done using one of 3 methods:\n\nLikelihood Ratio (LR) Test\n\nTest statistic \\(LR = 2[ln\\hat{L}_{U} - ln\\hat{L}_{R}]\\)\n\\(ln\\hat{L}_{R}\\) is log likelihood evaluated at restricted parameter vector\n\nWald (W) Test\n\nTest statistic \\(W = \\hat{g}^{'}[\\hat{G}\\hat{Var}(\\boldsymbol{\\hat{\\beta}})\\hat{G}^{'}]\\hat{g}\\)\n\\(\\hat{g}\\) is a vector of restrictions evaluated at \\(\\boldsymbol{\\hat{\\beta}}\\)\n\\(\\hat{G}\\) is the derivative of a vector of restrictions evaluated at \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nLagrange Multiplier (LM) Test\n\nTest statistic \\(LM = \\hat{d}^{'}[\\hat{Var}(\\boldsymbol{\\hat{\\beta}})]\\hat{d}\\)\n\\(\\hat{d}\\) is the derivative of \\(lnL\\) evaluated at restricted \\(\\boldsymbol{\\hat{\\beta}}\\)\n\n\nRestrictions can be linear or non-linear"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-13",
+    "href": "slides/limdep/index.html#binary-choice-13",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nSource: Kennedy (2008)"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-14",
+    "href": "slides/limdep/index.html#binary-choice-14",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\nGoodness of Fit in Probit and Logit\n\nConfusion Matrix\n\n\n\n\nActual\n\n\n\n\n\n\nPredicted\n0\n1\nTotal\n\n\n0\n# Correct 0\n# Incorrect 1\n# Pred 0\n\n\n1\n# Incorrect 0\n#Correct 1\n# Pred 1\n\n\nTotal\n# True 0\n# True 1\n\n\n\n\nPseudo-\\(R^{2}\\)\n\nMcFadden \\(\\rightarrow\\) \\(R^{2} = 1 - \\frac{ln\\hat{L}_{U}}{ln\\hat{L}_{0}}\\)\n\n\\(ln\\hat{L}_{0}\\) is log-likelihood with no explanatory variables\n\nOthers are possible, but goodness of fit is not incredibly important"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-15",
+    "href": "slides/limdep/index.html#binary-choice-15",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nSource: Kennedy (2008)"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-16",
+    "href": "slides/limdep/index.html#binary-choice-16",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\nGoodness of Fit in Probit and Logit\n\nConfusion Matrix\n\n\n\n\nActual\n\n\n\n\n\n\nPredicted\n0\n1\nTotal\n\n\n0\n# Correct 0\n# Incorrect 1\n# Pred 0\n\n\n1\n# Incorrect 0\n#Correct 1\n# Pred 1\n\n\nTotal\n# True 0\n# True 1\n\n\n\n\nPseudo-\\(R^{2}\\)\n\nMcFadden \\(\\rightarrow\\) \\(R^{2} = 1 - \\frac{ln\\hat{L}_{U}}{ln\\hat{L}_{0}}\\)\n\n\\(ln\\hat{L}_{0}\\) is log-likelihood with no explanatory variables\n\nOthers are possible, but goodness of fit is not incredibly important"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-17",
+    "href": "slides/limdep/index.html#binary-choice-17",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\nGoodness of Fit in Probit and Logit\n\nConfusion Matrix\n\n\n\n\nActual\n\n\n\n\n\n\nPredicted\n0\n1\nTotal\n\n\n0\n# Correct 0\n# Incorrect 1\n# Pred 0\n\n\n1\n# Incorrect 0\n#Correct 1\n# Pred 1\n\n\nTotal\n# True 0\n# True 1\n\n\n\n\nPseudo-\\(R^{2}\\)\n\nMcFadden \\(\\rightarrow\\) \\(R^{2} = 1 - \\frac{ln\\hat{L}_{U}}{ln\\hat{L}_{0}}\\)\n\n\\(ln\\hat{L}_{0}\\) is log-likelihood with no explanatory variables\n\nOthers are possible, but goodness of fit is not incredibly important"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-18",
+    "href": "slides/limdep/index.html#binary-choice-18",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nResearchers usually focus on the log of the likelihood instead\n\nIt is a monotonic (increasing) transformation of the likelihood\nThe same parameter vector solves both versions\nLog likelihoods are easier to work with\n\nLog Likelihood \\[ln\\mathcal{L}(\\boldsymbol{\\beta}|\\mathbf{y}, \\mathbf{X})= \\sum_{i=1}^{N}\\{ y_{i}lnF \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right)+  (1-y_{i})ln (1-F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{\\eta}} \\right))  \\}\\]\nTo solve this equation, you need numerical methods\n\nA grid search algorithm that finds the maximum value"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-19",
+    "href": "slides/limdep/index.html#binary-choice-19",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nIn ML environments, the estimated variance of \\(\\boldsymbol{\\hat{\\beta}}\\) is estimated as the negative of the expected value of the Hessian (information matrix) \\[\\hat{Var}(\\boldsymbol{\\hat{\\beta}}) = -E[(\\frac{\\partial^2 lnL}{\\partial\\boldsymbol{\\hat{\\beta}} \\partial \\boldsymbol{\\hat{\\beta}^{'}}})^{-1}]\\] \\[= (\\sum_{i=1}^{n} \\frac{f(\\mathbf{x_{i}^{'}}\\boldsymbol{\\hat{\\beta}})^2 }{ F(\\mathbf{x_{i}^{'}}\\boldsymbol{\\hat{\\beta}})(1- F(\\mathbf{x_{i}^{'}}\\boldsymbol{\\hat{\\beta}}) ) }  \\mathbf{x_{i}x_{i}^{'}} )^{-1}\\]\nwhere \\(F(.)\\) is either the Normal or Logistic CDF, and \\(f(.)\\) is the associated PDF\n\nHypothesis Testing in Probit and Logit\n\nSimple tests for coefficient significance is done by the usual \\(t\\)-test method\n\nAssume \\(\\boldsymbol{\\hat{\\beta}}\\) has normal distribution (asymptotically)\nTest statistic \\(Z = \\frac{\\hat{\\beta}_{k}}{\\hat{SE}(\\hat{\\beta}_{k})}\\)"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-20",
+    "href": "slides/limdep/index.html#binary-choice-20",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nMore complicated tests done using one of 3 methods:\n\nLikelihood Ratio (LR) Test\n\nTest statistic \\(LR = 2[ln\\hat{L}_{U} - ln\\hat{L}_{R}]\\)\n\\(ln\\hat{L}_{R}\\) is log likelihood evaluated at restricted parameter vector\n\nWald (W) Test\n\nTest statistic \\(W = \\hat{g}^{'}[\\hat{G}\\hat{Var}(\\boldsymbol{\\hat{\\beta}})\\hat{G}^{'}]\\hat{g}\\)\n\\(\\hat{g}\\) is a vector of restrictions evaluated at \\(\\boldsymbol{\\hat{\\beta}}\\)\n\\(\\hat{G}\\) is the derivative of a vector of restrictions evaluated at \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nLagrange Multiplier (LM) Test\n\nTest statistic \\(LM = \\hat{d}^{'}[\\hat{Var}(\\boldsymbol{\\hat{\\beta}})]\\hat{d}\\)\n\\(\\hat{d}\\) is the derivative of \\(lnL\\) evaluated at restricted \\(\\boldsymbol{\\hat{\\beta}}\\)\n\n\nRestrictions can be linear or non-linear"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-21",
+    "href": "slides/limdep/index.html#binary-choice-21",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\n\nSource: Kennedy (2008)"
+  },
+  {
+    "objectID": "slides/limdep/index.html#binary-choice-22",
+    "href": "slides/limdep/index.html#binary-choice-22",
+    "title": "E655 - Econometrics",
+    "section": "Binary Choice",
+    "text": "Binary Choice\nGoodness of Fit in Probit and Logit\n\nConfusion Matrix\n\n\n\n\nActual\n\n\n\n\n\n\nPredicted\n0\n1\nTotal\n\n\n0\n# Correct 0\n# Incorrect 1\n# Pred 0\n\n\n1\n# Incorrect 0\n#Correct 1\n# Pred 1\n\n\nTotal\n# True 0\n# True 1\n\n\n\n\nPseudo-\\(R^{2}\\)\n\nMcFadden \\(\\rightarrow\\) \\(R^{2} = 1 - \\frac{ln\\hat{L}_{U}}{ln\\hat{L}_{0}}\\)\n\n\\(ln\\hat{L}_{0}\\) is log-likelihood with no explanatory variables\n\nOthers are possible, but goodness of fit is not incredibly important"
+  },
+  {
+    "objectID": "slides/limdep/index.html#introduction-1",
+    "href": "slides/limdep/index.html#introduction-1",
+    "title": "E655 - Econometrics",
+    "section": "Introduction",
+    "text": "Introduction\n\nMany economic outcomes are qualitative in nature\n\nGrouped into categories\n\nWork or not\nDrive, take bus, cycle to work\nNumber of visits to Doctor\n\n\nPeople sometimes use alternative methods in this context\n\nThough linear regression does still work in many cases\n\nIn this section we cover models for these types of variables"
+  },
+  {
+    "objectID": "slides/limdep/index.html#potential-outcomes",
+    "href": "slides/limdep/index.html#potential-outcomes",
+    "title": "E655 - Econometrics",
+    "section": "Potential Outcomes",
+    "text": "Potential Outcomes\n\nStart with the same potential outcomes setup\n\n\\(y_{1}\\) is the outcome with treatment\n\\(y_{0}\\) is the outcome without treatment\n\\(w\\) is a binary variable with 1 denoting treatment, and 0 no treatment\n\nWe observe \\((y, w)\\), where\n\n\\[y = y_{0} + (y_{1} -y_{0})w\\]\n\nKey difference here is that \\(y_{1}\\) and \\(y_{0}\\) are binary\n\n\\[y_{0} \\in \\{0,1\\}\\] \\[y_{1} \\in \\{0,1\\}\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#regression",
+    "href": "slides/limdep/index.html#regression",
+    "title": "E655 - Econometrics",
+    "section": "Regression",
+    "text": "Regression\n\nThe slope in a regression of \\(y\\) on \\(w\\) is\n\n\\[E(y|w=1) - E(y|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ] + E(y_{0}|w=1) - E(y_{0}|w=0)\\]\n\nFirst part is ATT, second part is selection bias\nMechanics are the same as when we had continuous outcomes\nThere is a difference in interpretation\n\\(y\\) is a Bernoulli random variable,\n\n\\[E(y|w) = 1 \\times Pr(y=1|w) + 0 \\times Pr(y=0|w) = Pr(y=1|w)\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#regression-1",
+    "href": "slides/limdep/index.html#regression-1",
+    "title": "E655 - Econometrics",
+    "section": "Regression",
+    "text": "Regression\n\nSo you can restate the difference in observed means as\n\\[Pr(y=1|w=1) - Pr(y=1|w=0)\\] \\[= \\left [ Pr(y_{1}=1|w=1) - Pr(y_{0}=1|w=1) \\right ] + Pr(y_{0}=1|w=1) - Pr(y_{0}=1|w=0)\\]\nYou can interpret as the difference in response probabilities\nDifference in response probabilities is causal effect if\n\nIndependence of potential outcomes\nMean independence of potential outcomes\nConditional mean independence of potential outcomes"
+  },
+  {
+    "objectID": "slides/limdep/index.html#issues-with-linear-probability-model",
+    "href": "slides/limdep/index.html#issues-with-linear-probability-model",
+    "title": "E655 - Econometrics",
+    "section": "Issues with Linear Probability Model",
+    "text": "Issues with Linear Probability Model\n\nMain problem is predicted probabilities can go outside [0,1] interval\n\nSome chance of nonesense probabilities\n\nMainly a problem of predictions\nIn most economic applications, we care about the slope\n\nSo nonsense predictions are not a big problem"
+  },
+  {
+    "objectID": "slides/limdep/index.html#issues-with-linear-probability-model-1",
+    "href": "slides/limdep/index.html#issues-with-linear-probability-model-1",
+    "title": "E655 - Econometrics",
+    "section": "Issues with Linear Probability Model",
+    "text": "Issues with Linear Probability Model\n\nThe model errors are necessarily heteroskedasticity\nThe population least squares regression of \\(y\\) on \\(w\\) is\n\n\\[y = \\beta_{0} +  w\\beta_{1} + u\\]\n\\[Var[u|w] = Var[y|w] = E[y^2|w] - E[y|w]^2\\]\n\nSince \\(y\\) is binary, \\(y^2 = y\\), so\n\n\\[Var[y|w] = E[y|w] - E[y|w]^2\\]\n\\[= E[y |w] (1-E[y|w])\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#regression-2",
+    "href": "slides/limdep/index.html#regression-2",
+    "title": "E655 - Econometrics",
+    "section": "Regression",
+    "text": "Regression\n\nWhat the above says is that regression still works when the treatment is binary\nCausal effects depend on same assumptions as before\nTo estimate, use OLS regression of \\(y\\) on \\(w\\)\nWhen \\(y\\) is binary, this is called the Linear Probability Model"
+  },
+  {
+    "objectID": "slides/limdep/index.html#issues-with-linear-probability-model-2",
+    "href": "slides/limdep/index.html#issues-with-linear-probability-model-2",
+    "title": "E655 - Econometrics",
+    "section": "Issues with Linear Probability Model",
+    "text": "Issues with Linear Probability Model\n\nFinally \\(E[y|w] = Pr(y=1|w)\\), so\n\n\\[Var[u|w] = Pr(y=1|w) (1-Pr(y=1|w))\\]\n\nThis means that the variance of the error term is a function of \\(w\\)\nIt introduces heteroskedasticity into the model\nSolution: use heteroskedasticity robust standard errors"
+  },
+  {
+    "objectID": "slides/limdep/index.html#linear-probability-model",
+    "href": "slides/limdep/index.html#linear-probability-model",
+    "title": "E655 - Econometrics",
+    "section": "Linear Probability Model",
+    "text": "Linear Probability Model\nPotential Outcomes\n\nStart with the same potential outcomes setup\n\n\\(y_{1}\\) is the outcome with treatment\n\\(y_{0}\\) is the outcome without treatment\n\\(w\\) is a binary variable with 1 denoting treatment, and 0 no treatment\n\nWe observe \\((y, w)\\), where\n\n\\[y = y_{0} + (y_{1} -y_{0})w\\]\n\nKey difference here is that \\(y_{1}\\) and \\(y_{0}\\) are binary\n\n\\[y_{0} \\in \\{0,1\\}\\] \\[y_{1} \\in \\{0,1\\}\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#linear-probability-model-1",
+    "href": "slides/limdep/index.html#linear-probability-model-1",
+    "title": "E655 - Econometrics",
+    "section": "Linear Probability Model",
+    "text": "Linear Probability Model\nRegression\n\nThe slope in a regression of \\(y\\) on \\(w\\) is\n\n\\[E(y|w=1) - E(y|w=0)\\] \\[= \\left [ E(y_{1}|w=1) - E(y_{0}|w=1) \\right ] + E(y_{0}|w=1) - E(y_{0}|w=0)\\]\n\nFirst part is ATT, second part is selection bias\nMechanics are the same as when we had continuous outcomes\nThere is a difference in interpretation\n\\(y\\) is a Bernoulli random variable,\n\n\\[E(y|w) = 1 \\times Pr(y=1|w) + 0 \\times Pr(y=0|w) = Pr(y=1|w)\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#linear-probability-model-2",
+    "href": "slides/limdep/index.html#linear-probability-model-2",
+    "title": "E655 - Econometrics",
+    "section": "Linear Probability Model",
+    "text": "Linear Probability Model\n\nSo you can restate the difference in observed means as\n\\[Pr(y=1|w=1) - Pr(y=1|w=0)\\] \\[= \\left [ Pr(y_{1}=1|w=1) - Pr(y_{0}=1|w=1) \\right ] + Pr(y_{0}=1|w=1) - Pr(y_{0}=1|w=0)\\]\nYou can interpret as the difference in response probabilities\nDifference in response probabilities is causal effect if\n\nIndependence of potential outcomes\nMean independence of potential outcomes\nConditional mean independence of potential outcomes"
+  },
+  {
+    "objectID": "slides/limdep/index.html#linear-probability-model-3",
+    "href": "slides/limdep/index.html#linear-probability-model-3",
+    "title": "E655 - Econometrics",
+    "section": "Linear Probability Model",
+    "text": "Linear Probability Model\n\nWhat the above says is that regression still works when the treatment is binary\nCausal effects depend on same assumptions as before\nTo estimate, use OLS regression of \\(y\\) on \\(w\\)\nWhen \\(y\\) is binary, this is called the Linear Probability Model"
+  },
+  {
+    "objectID": "slides/limdep/index.html#linear-probability-model-4",
+    "href": "slides/limdep/index.html#linear-probability-model-4",
+    "title": "E655 - Econometrics",
+    "section": "Linear Probability Model",
+    "text": "Linear Probability Model\nIssues with Linear Probability Model\n\nMain problem is predicted probabilities can go outside [0,1] interval\n\nSome chance of nonesense probabilities\n\nMainly a problem of predictions\nIn most economic applications, we care about the slope\n\nSo nonsense predictions are not a big problem"
+  },
+  {
+    "objectID": "slides/limdep/index.html#linear-probability-model-5",
+    "href": "slides/limdep/index.html#linear-probability-model-5",
+    "title": "E655 - Econometrics",
+    "section": "Linear Probability Model",
+    "text": "Linear Probability Model\n\nThe model exhibits heteroskedasticity\nThe population least squares regression of \\(y\\) on \\(w\\) is\n\n\\[y = \\beta_{0} +  w\\beta_{1} + u\\]\n\nThe conditional variance of the error is\n\n\\[Var[u|w] = Var[y|w] = E[y^2|w] - E[y|w]^2\\]\n\nSince \\(y\\) is binary, \\(y^2 = y\\), so\n\n\\[Var[y|w] = E[y|w] - E[y|w]^2\\]\n\\[= E[y |w] (1-E[y|w])\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models",
+    "href": "slides/limdep/index.html#nonlinear-models",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\nBackground\n\nIn some cases we may want to fix the predicted probability issue\n\nIf you are doing prediction, for example\n\nOne way to do this is to feed the model through a CDF\nThis is often motivated with an index model\nSuppose we model some latent variable \\(y^*\\) as\n\n\\[y^* = \\beta_{0} + \\beta_{1}w + e\\]\n\nIt is some underlying continuous outcome driving our decisions"
+  },
+  {
+    "objectID": "slides/limdep/index.html#background",
+    "href": "slides/limdep/index.html#background",
+    "title": "E655 - Econometrics",
+    "section": "Background",
+    "text": "Background\n\nIn some cases we may want to fix the predicted probability issue\n\nIf you are doing prediction, for example\n\nOne way to do this is to feed the model through a CDF\nThis is often motivated with an index model\nSuppose we model some latent variable \\(y^*\\) as\n\n\\[y^* = \\beta_{0} + \\beta_{1}w + e\\]\n\nIt is some underlying continuous outcome driving our decisions"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-1",
+    "href": "slides/limdep/index.html#nonlinear-models-1",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\n\nIssue is we do not observe \\(y^*\\)\nInstead, we observe the binary \\(y\\) where\n\n\\[y = 1\\{y^*&gt;0\\}\\]\n\nPlugging the model into this\n\n\\[y = 1\\{\\beta_{0} + \\beta_{1}w +e&gt;0\\}\\]\n\nThe probability that \\(y=1\\) is therefore\n\n\\[Pr(y=1|w) = Pr(\\beta_{0} + \\beta_{1}w +e&gt;0 |w)\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-2",
+    "href": "slides/limdep/index.html#nonlinear-models-2",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\n\nThe random component is \\(e\\), so rearrange to isolate it\n\n\\[Pr(y=1|w) = Pr(e &gt; -\\beta_{0} - \\beta_{1}w |w)\\] \\[ =1 -  F(-\\beta_{0} - \\beta_{1}w)\\] \\[ =G(\\beta_{0} + \\beta_{1}w)\\]\n\n\\(G()\\) is the probability distribution of \\(e\\)\n\n\\(1 - F(-\\beta_{0} - \\beta_{1}w) = F(\\beta_{0} + \\beta_{1}w)\\) because \\(G()\\) is symmetric\n\nThe probability that \\(y\\) equals 1 depends on\n\nTreatment status \\(w\\)\nThe distribution of \\(e\\)\n\nDifferent choices for \\(F()\\) distribution lead to different models"
+  },
+  {
+    "objectID": "slides/limdep/index.html#linear-probability-model-6",
+    "href": "slides/limdep/index.html#linear-probability-model-6",
+    "title": "E655 - Econometrics",
+    "section": "Linear Probability Model",
+    "text": "Linear Probability Model\n\nFinally \\(E[y|w] = Pr(y=1|w)\\), so\n\n\\[Var[u|w] = Pr(y=1|w) (1-Pr(y=1|w))\\]\n\nThis means that the variance of the error term is a function of \\(w\\)\nIt introduces heteroskedasticity into the model\nSolution: use heteroskedasticity robust standard errors"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-3",
+    "href": "slides/limdep/index.html#nonlinear-models-3",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\nProbit Model\n\nAssuming \\(e \\sim \\mathcal{N}(0,\\sigma^{2}_{e})\\) leads to the Probit Model\n\n\\[Pr(y=1|w) = \\Phi \\left(\\frac{\\beta_{0} + \\beta_{1}w}{\\sigma^{2}_{e}} \\right)\\]\n\nwhere\n\n\\[\\Phi (z) =  \\int_{-\\infty}^{z} \\frac{1}{\\sqrt{2\\pi}} e^{\\frac{-v^2}{2}}\\,dv\\]\n\nBecause \\(\\Phi(.)\\) is a CDF, \\(Pr(y=1|w)\\) is always between 0 and 1\n\nThis solves the predicted probability problem"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-4",
+    "href": "slides/limdep/index.html#nonlinear-models-4",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\n\nThe difference in probabilities between treatment and control is\n\n\\[Pr(y=1|w = 1) - Pr(y=1|w=0)\\] \\[=  \\Phi \\left(\\frac{\\beta_{0} + \\beta_{1}}{\\sigma^{2}_{e}} \\right) - \\Phi \\left(\\frac{\\beta_{0}}{\\sigma^{2}_{e}}  \\right)\\]\n\nNotice that \\(\\beta_{1}\\) does not equal the difference in response probabilities\n\nThey are the slopes in the index model\nThe index model parameters are not usually of interest\n\nTo get the difference in response probabilities, feed parameters into the CDF first\nIn nonlinear models, parameters are not “marginal effects”\n\nYou need to separately compute them after estimating the model"
+  },
+  {
+    "objectID": "slides/limdep/index.html#linear-probability-model-7",
+    "href": "slides/limdep/index.html#linear-probability-model-7",
+    "title": "E655 - Econometrics",
+    "section": "Linear Probability Model",
+    "text": "Linear Probability Model"
+  },
+  {
+    "objectID": "slides/limdep/index.html#visualize-binary-choice-models",
+    "href": "slides/limdep/index.html#visualize-binary-choice-models",
+    "title": "E655 - Econometrics",
+    "section": "Visualize Binary Choice Models",
+    "text": "Visualize Binary Choice Models"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-5",
+    "href": "slides/limdep/index.html#nonlinear-models-5",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\n\nIn models with more variables and where they are continuous\n\n\\[Pr(y=1|\\mathbf{x}) = \\Phi \\left(\\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right)\\]\n\nThe marginal effect for continuous variable \\(x_{j}\\)\n\n\\[\\frac{\\partial Pr(y=1|\\mathbf{x})}{\\partial x_{j}} = \\phi \\left(\\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right) \\frac{\\beta_{j}}{\\sigma^{2}_{e}}\\]\n\nThis is a function of the entire vector \\(\\mathbf{x}\\)\n\nYou need to specify their values to get the marginal effect\nNormally people hold them at the mean\nIn theory you can get a distribution of marginal effects"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-6",
+    "href": "slides/limdep/index.html#nonlinear-models-6",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\nLogit Model\n\nAssuming \\(e \\sim \\text{Logistic}(0,\\sigma^{2}_{e})\\) leads to the Logit Model\n\n\\[Pr(y=1|w) = \\Lambda \\left(\\frac{\\beta_{0} + \\beta_{1}w}{\\sigma^{2}_{e}} \\right)\\]\n\nwhere\n\\[\\Lambda (z) =  \\frac{e^z}{1+e^z}\\]\nAgain, because \\(\\Lambda(.)\\) is a CDF, \\(Pr(y=1|w)\\) is always between 0 and 1"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-7",
+    "href": "slides/limdep/index.html#nonlinear-models-7",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\n\nThe observed difference in probabilities is\n\n\\[Pr(y=1|w = 1) - Pr(y=1|w=0)\\] \\[=  \\Lambda \\left(\\frac{\\beta_{0} + \\beta_{1}}{\\sigma^{2}_{e}} \\right) - \\Lambda \\left(\\frac{\\beta_{0}}{\\sigma^{2}_{e}}  \\right)\\]\n\nIn models with more variables and where they are continuous\n\n\\[Pr(y=1|\\mathbf{x}) = \\Lambda \\left(\\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right)\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-8",
+    "href": "slides/limdep/index.html#nonlinear-models-8",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\n\nThe marginal effect for continuous variable \\(x_{j}\\)\n\n\\[\\frac{\\partial Pr(y=1|\\mathbf{x})}{\\partial x_{j}} = \\Lambda \\left(\\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right) \\left( 1-\\Lambda \\left(\\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right) \\right)\\frac{\\beta_{j}}{\\sigma^{2}_{e}}\\]\n\nAgain, this is a function of the full set of variables"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-9",
+    "href": "slides/limdep/index.html#nonlinear-models-9",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\nEstimation of Probit and Logit\n\nBoth models usually estimated by Maximum Likelihood\nMethod maximizes the probability of getting our sample by choosing parameters\n\nTheLikelihood Function is the function of the parameters given the data\n\nThe probability distribution of \\(y_i\\) is\n\n\\[f(y_i| \\mathbf{x_{i}};\\boldsymbol{\\beta})= F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right)^{y_i} \\left(1- F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right) \\right) ^{1-y_{i}}\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-10",
+    "href": "slides/limdep/index.html#nonlinear-models-10",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\n\nThe joint probability of observing the all the \\(y_{i}\\) in the data is\n\n\\[f(\\mathbf{y}| \\mathbf{X};\\boldsymbol{\\beta})=\\Pi_{i=1}^n F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right)^{y_{i}}  \\left(1- F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right) \\right) ^{1-y_{i}}\\]\n\nThe Likelihood Function recasts as a function of the parameters given the data\n\n\\[\\mathcal{L}(\\boldsymbol{\\beta}|\\mathbf{y}, \\mathbf{X})=\\Pi_{i=1}^n F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right)^{y_{i}}  \\left(1- F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right) \\right) ^{1-y_{i}}\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-11",
+    "href": "slides/limdep/index.html#nonlinear-models-11",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\n\nBoth models usually estimated by Maximum Likelihood\nMethod maximizes the joint probability of \\(y\\) values conditional on \\(\\mathbf{x}\\)\n\nThis is called the Likelihood Function\n\nIn the case of a binary \\(y\\), the likelihood function is\n\n\\[f[y| \\mathbf{x};\\boldsymbol{\\beta}]=P[Y_{1} = y_{1}, Y_{2} = y_{2}, \\ldots, Y_{n} = y_{n}|\\mathbf{x_{i}};\\boldsymbol{\\beta}]\\] \\[=\\Pi_{y_{i}=1}F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right) \\Pi_{y_{i}=0} \\left[1-F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right) \\right]\\] \\[=\\Pi_{i=1}^{n} F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right)^{y_{i}} \\left[1-F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right)\\right] ^{1-y_{i}}\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-12",
+    "href": "slides/limdep/index.html#nonlinear-models-12",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\n\nResearchers usually focus on the log of the likelihood instead\n\nIt is a monotonic (increasing) transformation of the likelihood\nThe same parameter vector solves both versions\nLog likelihoods are easier to work with\n\nLog Likelihood \\[ln\\mathcal{L}(\\boldsymbol{\\beta}|\\mathbf{y}, \\mathbf{X})= \\sum_{i=1}^{N}\\{ y_{i}lnF \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right)+  (1-y_{i})ln (1-F \\left(\\frac{\\mathbf{x_{i}}\\boldsymbol{\\beta}}{\\sigma^{2}_{e}} \\right))  \\}\\]\nTo solve this equation, you need numerical methods\n\nA grid search algorithm that finds the maximum value"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-13",
+    "href": "slides/limdep/index.html#nonlinear-models-13",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\n\nIn ML environments, the estimated variance of \\(\\boldsymbol{\\hat{\\beta}}\\) is estimated as the negative of the expected value of the Hessian (information matrix) \\[\\hat{Var}(\\boldsymbol{\\hat{\\beta}}) = -E[(\\frac{\\partial^2 lnL}{\\partial\\boldsymbol{\\hat{\\beta}} \\partial \\boldsymbol{\\hat{\\beta}^{'}}})^{-1}]\\] \\[= (\\sum_{i=1}^{n} \\frac{f(\\mathbf{x_{i}^{'}}\\boldsymbol{\\hat{\\beta}})^2 }{ F(\\mathbf{x_{i}^{'}}\\boldsymbol{\\hat{\\beta}})(1- F(\\mathbf{x_{i}^{'}}\\boldsymbol{\\hat{\\beta}}) ) }  \\mathbf{x_{i}x_{i}^{'}} )^{-1}\\]\nwhere \\(F(.)\\) is either the Normal or Logistic CDF, and \\(f(.)\\) is the associated PDF"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-14",
+    "href": "slides/limdep/index.html#nonlinear-models-14",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-15",
+    "href": "slides/limdep/index.html#nonlinear-models-15",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\nHypothesis Testing in Probit and Logit\n\nSimple tests for coefficient significance is done by the usual \\(t\\)-test method\n\nAssume \\(\\boldsymbol{\\hat{\\beta}}\\) has normal distribution (asymptotically)\nTest statistic \\(Z = \\frac{\\hat{\\beta}_{k}}{\\hat{SE}(\\hat{\\beta}_{k})}\\)"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-16",
+    "href": "slides/limdep/index.html#nonlinear-models-16",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\n\nMore complicated tests done using one of 3 methods:\n\nLikelihood Ratio (LR) Test\n\nTest statistic \\(LR = 2[ln\\hat{L}_{U} - ln\\hat{L}_{R}]\\)\n\\(ln\\hat{L}_{R}\\) is log likelihood evaluated at restricted parameter vector\n\nWald (W) Test\n\nTest statistic \\(W = \\hat{g}^{'}[\\hat{G}\\hat{Var}(\\boldsymbol{\\hat{\\beta}})\\hat{G}^{'}]\\hat{g}\\)\n\\(\\hat{g}\\) is a vector of restrictions evaluated at \\(\\boldsymbol{\\hat{\\beta}}\\)\n\\(\\hat{G}\\) is the derivative of a vector of restrictions evaluated at \\(\\boldsymbol{\\hat{\\beta}}\\)\n\nLagrange Multiplier (LM) Test\n\nTest statistic \\(LM = \\hat{d}^{'}[\\hat{Var}(\\boldsymbol{\\hat{\\beta}})]\\hat{d}\\)\n\\(\\hat{d}\\) is the derivative of \\(lnL\\) evaluated at restricted \\(\\boldsymbol{\\hat{\\beta}}\\)\n\n\nRestrictions can be linear or non-linear"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-17",
+    "href": "slides/limdep/index.html#nonlinear-models-17",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models"
+  },
+  {
+    "objectID": "slides/limdep/index.html#nonlinear-models-18",
+    "href": "slides/limdep/index.html#nonlinear-models-18",
+    "title": "E655 - Econometrics",
+    "section": "Nonlinear Models",
+    "text": "Nonlinear Models\nGoodness of Fit in Probit and Logit\n\nConfusion Matrix\n\n\n\n\nActual\n\n\n\n\n\n\nPredicted\n0\n1\nTotal\n\n\n0\n# Correct 0\n# Incorrect 1\n# Pred 0\n\n\n1\n# Incorrect 0\n#Correct 1\n# Pred 1\n\n\nTotal\n# True 0\n# True 1\n\n\n\n\nPseudo-\\(R^{2}\\)\n\nMcFadden \\(\\rightarrow\\) \\(R^{2} = 1 - \\frac{ln\\hat{L}_{U}}{ln\\hat{L}_{0}}\\)\n\n\\(ln\\hat{L}_{0}\\) is log-likelihood with no explanatory variables\n\nOthers are possible, but goodness of fit is not incredibly important"
+  },
+  {
+    "objectID": "content/limdep.html",
+    "href": "content/limdep.html",
+    "title": "Limited Dependent Variables",
+    "section": "",
+    "text": "Fixed Effects\n\nAP1 Chapter 5\nC Chapter 8\nCT Chapter 21\nHA Chapter 17\nHK Chapter 16\nW1 Chapter 14\nW2 Chapter 10"
+  },
+  {
+    "objectID": "content/limdep.html#readings",
+    "href": "content/limdep.html#readings",
+    "title": "Limited Dependent Variables",
+    "section": "",
+    "text": "Fixed Effects\n\nAP1 Chapter 5\nC Chapter 8\nCT Chapter 21\nHA Chapter 17\nHK Chapter 16\nW1 Chapter 14\nW2 Chapter 10"
+  },
+  {
+    "objectID": "content/limdep.html#slides",
+    "href": "content/limdep.html#slides",
+    "title": "Limited Dependent Variables",
+    "section": "Slides",
+    "text": "Slides\nThe slides are embedded in this page, and you can scroll through them with the arrow keys. If you prefer you can instead pop them out in a new window"
+  },
+  {
+    "objectID": "content/limdep.html#sample-r-code",
+    "href": "content/limdep.html#sample-r-code",
+    "title": "Limited Dependent Variables",
+    "section": "Sample R Code",
+    "text": "Sample R Code\nThe code below goes through an exercise estimating with various panel data approaches under scenarios where the unobserved effect is or is not correlated with the main independent variable, and whether strict exogeneity holds.\n EC655panel.R"
   }
 ]
