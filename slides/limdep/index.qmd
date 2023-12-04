@@ -238,7 +238,7 @@ $$Pr(y=1|w) = Pr(e > -\beta_{0} - \beta_{1}w |w)$$ $$ =1 -  F(-\beta_{0} - \beta
 
 -   $G()$ is the probability distribution of $e$
 
-    -   $1 - F(-\beta_{0} - \beta_{1}w) = F(\beta_{0} + \beta_{1}w)$ because $G()$ is symmetric
+    -   $1 - F(-\beta_{0} - \beta_{1}w) = F(\beta_{0} + \beta_{1}w)$ because $F()$ is symmetric
 
 -   The probability that $y$ equals 1 depends on
 
