@@ -49,7 +49,10 @@ website:
             - text: "Difference in Differences"
               file: content/did.qmd 
             - text: "Panel Data"
-              file: content/paneldata.qmd               
+              file: content/paneldata.qmd     
+            - text: "Limited Dependent Variables"
+              file: content/limdep.qmd                 
+              
 
     - title: "Assignments"
       style: "docked"
