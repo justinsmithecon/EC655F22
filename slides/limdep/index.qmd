@@ -234,9 +234,9 @@ $$Pr(y=1|w) = Pr(\beta_{0} + \beta_{1}w +e>0 |w)$$
 
 -   The random component is $e$, so rearrange to isolate it
 
-$$Pr(y=1|w) = Pr(e > -\beta_{0} - \beta_{1}w |w)$$ $$ =1 -  F(-\beta_{0} - \beta_{1}w)$$ $$ =G(\beta_{0} + \beta_{1}w)$$
+$$Pr(y=1|w) = Pr(e > -\beta_{0} - \beta_{1}w |w)$$ $$ =1 -  F(-\beta_{0} - \beta_{1}w)$$ $$ =F(\beta_{0} + \beta_{1}w)$$
 
--   $G()$ is the probability distribution of $e$
+-   $F()$ is the probability distribution of $e$
 
     -   $1 - F(-\beta_{0} - \beta_{1}w) = F(\beta_{0} + \beta_{1}w)$ because $F()$ is symmetric
 
@@ -324,17 +324,13 @@ $$Pr(y=1|w = 1) - Pr(y=1|w=0)$$ $$=  \Lambda \left(\frac{\beta_{0} + \beta_{1}}{
 
 $$Pr(y=1|\mathbf{x}) = \Lambda \left(\frac{\mathbf{x}\boldsymbol{\beta}}{\sigma^{2}_{e}} \right)$$
 
-
 ## Nonlinear Models
-
 
 -   The marginal effect for continuous variable $x_{j}$
 
 $$\frac{\partial Pr(y=1|\mathbf{x})}{\partial x_{j}} = \Lambda \left(\frac{\mathbf{x}\boldsymbol{\beta}}{\sigma^{2}_{e}} \right) \left( 1-\Lambda \left(\frac{\mathbf{x}\boldsymbol{\beta}}{\sigma^{2}_{e}} \right) \right)\frac{\beta_{j}}{\sigma^{2}_{e}}$$
 
-- Again, this is a function of the full set of variables
-
-
+-   Again, this is a function of the full set of variables
 
 ## Nonlinear Models
 
@@ -350,21 +346,17 @@ $$\frac{\partial Pr(y=1|\mathbf{x})}{\partial x_{j}} = \Lambda \left(\frac{\math
 
 $$f(y_i| \mathbf{x_{i}};\boldsymbol{\beta})= F \left(\frac{\mathbf{x_{i}}\boldsymbol{\beta}}{\sigma^{2}_{e}} \right)^{y_i} \left(1- F \left(\frac{\mathbf{x_{i}}\boldsymbol{\beta}}{\sigma^{2}_{e}} \right) \right) ^{1-y_{i}}$$
 
-
 ## Nonlinear Models
-
 
 -   The joint probability of observing the all the $y_{i}$ in the data is
 
 $$f(\mathbf{y}| \mathbf{X};\boldsymbol{\beta})=\Pi_{i=1}^n F \left(\frac{\mathbf{x_{i}}\boldsymbol{\beta}}{\sigma^{2}_{e}} \right)^{y_{i}}  \left(1- F \left(\frac{\mathbf{x_{i}}\boldsymbol{\beta}}{\sigma^{2}_{e}} \right) \right) ^{1-y_{i}}$$
-
 
 -   The Likelihood Function recasts as a function of the parameters given the data
 
 $$\mathcal{L}(\boldsymbol{\beta}|\mathbf{y}, \mathbf{X})=\Pi_{i=1}^n F \left(\frac{\mathbf{x_{i}}\boldsymbol{\beta}}{\sigma^{2}_{e}} \right)^{y_{i}}  \left(1- F \left(\frac{\mathbf{x_{i}}\boldsymbol{\beta}}{\sigma^{2}_{e}} \right) \right) ^{1-y_{i}}$$
 
 ## Nonlinear Models
-
 
 -   Both models usually estimated by Maximum Likelihood
 
@@ -414,7 +406,6 @@ $$f[y| \mathbf{x};\boldsymbol{\beta}]=P[Y_{1} = y_{1}, Y_{2} = y_{2}, \ldots, Y_
     stat_smooth(geom = "line", method="glm", method.args=list(family=binomial(link="logit")), color = "red", size = 1.5, alpha = .5, se = FALSE) +
     stat_smooth(geom = "line",method="glm", method.args=list(family=binomial(link="probit")), color = "blue", size = 1.5, alpha = .5, se = FALSE) +
     theme_pander() +
-    annotate("text", x=-2, y=.5, label = "LPM") +
     annotate("text", x=-2.5, y=.3, label = "Probit", color = "blue") +
     annotate("text", x=-1.8, y=.1, label = "Logit", color = "red") +
     geom_segment(aes(x = -2.5, y = .28, xend = -2.2, yend = .2), color = "blue", arrow = arrow(length = unit(0.25, "cm"))) +
@@ -483,3 +474,207 @@ $$f[y| \mathbf{x};\boldsymbol{\beta}]=P[Y_{1} = y_{1}, Y_{2} = y_{2}, \ldots, Y_
         -   $ln\hat{L}_{0}$ is log-likelihood with no explanatory variables
 
     -   Others are possible, but goodness of fit is not incredibly important
+
+# Limited Dependent Variables
+
+## Introduction
+
+-   Arises when a continuous dependent variable is limited in its range
+
+    -   Censoring
+
+        -   Income is top-coded at some level for privacy
+
+    -   Corner Solutions
+
+        -   Spending on consumer durables limited below by 0
+
+    -   Incidental Truncation
+
+        -   Wage is not observed for people who do not work
+
+-   You can sometimes use OLS depending on context
+
+-   We will cover models for censoring and corner solutions
+
+## Tobit Model
+
+### Latent Variable
+
+-   We again appeal to a latent variable model
+
+$$y^{*} =  \beta_{0} + \beta_{1}w + e$$
+
+-   Suppose the observed $y$ is
+
+$$y = max \{ 0,y^* \}$$
+
+-   This would be the case for things like consumer purchases
+
+    -   You spend zero or some positive amount
+
+    -   It is naturally bounded below by zero
+
+## Tobit Model
+
+-   Because it is either zero or positive, the expected value of $y$ is
+
+$$E[y|w] = E[y|y>0,w]Pr[y>0|w]$$
+
+-   Taking the difference in the observed $y$, we get
+
+$$E[y|w = 1] -  E[y|w = 0]$$ $$= E[y|y>0,w=1]Pr[y>0|w=1] - E[y|y>0,w=0]Pr[y>0|w=0]$$ $$=(Pr[y>0|w=1]-Pr[y>0|w=1]) E[y|y>0,w = 1]$$ $$+ (E[y|y>0,w = 1]  - E[y|y>0,w = 0]) Pr[y>0|w=0]$$
+
+## Tobit Model
+
+-   There are two key pieces
+
+    -   Participation effect
+
+    -   Conditional on Positive effect
+
+-   In terms of potential outcomes
+
+$$E[y|w = 1] -  E[y|w = 0]$$ $$= E[y_1|w = 1] -  E[y_0|w = 0]$$ $$= E[y_1|w = 1] -  E[y_0|w = 1] + E[y_0|w = 1] -  E[y_0|w = 0]$$
+
+-   The limited dependent variable does not change causal interpretation
+
+    -   As long as potential outcome $y_{0}$ is mean independent of treatment
+
+## Tobit Model
+
+### Conditional on Positive
+
+-   In some contexts people run regressions with just the positive outcomes
+
+    -   If you wanted to analyze participation decision separately
+
+-   Difference in observed $y$ for this group is biased if under random assignment
+
+$$E[y|y>0,w = 1] -  E[y|y>0, w = 0]$$ $$= E[y_1|y_1>0] -  E[y_0|y_0>0]$$ $$= E[y_1|y_1>0] - E[y_0|y_1>0] +  E[y_0|y_1>0] -E[y_0|y_0>0]$$
+
+-   The treatment changes who has positive values of potential outcomes
+
+    -   More subtle form of bias
+
+-   You cannot interpret conditional on positive effects as causal
+
+## Tobit Model
+
+### Model
+
+-   This model is used in the context of censoring and corner solutions
+
+-   We have data on a random sample
+
+-   The outcome is limited in its range
+
+-   There is a mass of observations at 1 or more values
+
+    -   Usually zeroes
+
+    -   Sometimes some upper amount, like income
+
+-   Using OLS may be a bad strategy depending on your goals
+
+    -   Can produce predicted values outside the limited range
+
+## Tobit Model
+
+-   The Tobit model starts with the latent variable model
+
+$$y^{*} = \mathbf{x}\boldsymbol{\beta} + e, \text{ where } e \sim N(0,\sigma^2_{e})$$ $$y = \text{max}(0,y^{*})$$
+
+-   The conditional expectation of interest depends on context
+
+    -   Censored data
+
+        -   $E[y^{*}|\mathbf{x}]$
+
+        -   $y^{*}$ usually has meaning when data are censored
+
+    -   Corner Solutions
+
+        -   $E[y|\mathbf{x}]$ and $E[y|y>0, \mathbf{x}]$
+
+        -   $y_{i}^{*}$ usually has no meaning for corner solutions
+
+        -   This is the most common situation
+
+## Tobit Model
+
+### Estimation
+
+-   Estimate this model by maximum likelihood
+
+-   The likelihood function has two pieces
+
+-   When $y_{i} = 0$
+
+$$Pr(y_{i} = 0| \mathbf{x}) = Pr(y_{i}^{*}<0 |\mathbf{x})$$ $$= Pr(\mathbf{x}\boldsymbol{\beta} +e<0 |\mathbf{x})$$
+
+## Tobit Model
+
+-   Due to symmetry in the distribution of $e$
+
+$$= Pr(e>\mathbf{x}\boldsymbol{\beta}  |\mathbf{x})$$ $$= Pr(\frac{e}{\sigma_{e}}>\frac{\mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}  |\mathbf{x})$$
+
+$$= 1-\Phi\left (  \frac{\mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}  \right)$$
+
+## Tobit Model
+
+-   When $y_{i} > 0$
+
+$$f(y_{i} | y_{i}>0, \mathbf{x}) = \frac{1}{\sigma_{e}} \phi \left ( \frac{ y_{i} - \mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}    \right )$$
+
+-   Combining terms, we can form the likelihood function
+
+$$\mathcal{L}(\boldsymbol{\beta}|\mathbf{y}, \mathbf{X}) =\Pi_{y_{i}=0} \left(1-\Phi\left (  \frac{\mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}  \right) \right ) \Pi_{y_{i}>0} \left( \frac{1}{\sigma_{e}} \phi \left ( \frac{ y_{i} - \mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}    \right ) \right)$$
+
+## Tobit Model
+
+-   The log likelihood is
+
+$$ln\mathcal{L}(\boldsymbol{\beta}|\mathbf{y}, \mathbf{X}) =\sum_{y_{i}=0} ln \left(1-\Phi\left (  \frac{\mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}  \right) \right )  + \sum_{y_{i}>0} ln\left( \frac{1}{\sigma_{e}} \phi \left ( \frac{ y_{i} - \mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}    \right ) \right)$$
+
+-   Maximize this function by choosing the parameter vector $\boldsymbol{\beta}$ and $\sigma_{e}$
+
+## Tobit Model
+
+-   Marginal effects will depend on the context of our estimation
+
+    -   Censored data $$\frac{\partial E[y^{*}|\mathbf{x}]}{\partial x_{k}} = \beta_{k}$$
+
+        -   In a Tobit with censored data, you can interpret the slope directly
+
+    -   Corner Solutions
+
+    -   $\frac{\partial E[y|\mathbf{x}]}{\partial x_{k}} = \Phi(\frac{ \mathbf{x}\boldsymbol{\beta} }{\sigma})\beta_{k}$
+
+    -   $\frac{\partial E[y| y>0,\mathbf{x}]}{\partial x_{k}} = \{1-\lambda(\frac{ \mathbf{x}\boldsymbol{\beta} }{\sigma})[\frac{ \mathbf{x}\boldsymbol{\beta} }{\sigma} + \lambda(\frac{ \mathbf{x}\boldsymbol{\beta} }{\sigma})] \}\beta_{k}$
+
+        -   With corner solutions it depends on what you want
+
+        -   You may want slope for random person, or conditional on $y>0$
+
+## Tobit Model
+
+### Issues with Tobit Model
+
+1.  It must be possible for the dependent variable to take values near the limit
+
+    -   Example: not the case with consumer durables
+
+    -   You either spend zero or a large amount
+
+2.  Intensive and Extensive margins have same parameters
+
+    -   Means the model is relatively inflexible
+
+    -   Can be solved by modelling each separately
+
+3.  Normality assumption
+
+4.  Care must be taken in interpreting the coefficients
+
+    -   Do we care about the effect of $x_{k}$ on $y$ or $y^{*}$?

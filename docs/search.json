@@ -3959,14 +3959,14 @@
     "href": "assignments/assign3.html",
     "title": "Assignment 3",
     "section": "",
-    "text": "In this assignment you are asked to manipulate data, estimate statistical relationships, and interpret the findings. The questions are based on course content we have covered up to now, so if you get stuck I highly recommend going back over that material because the questions are closely related. This includes both the lecture notes and the extra material posted to the course website.\nYou should start this assignment early because it will not be possible (in my opinion) to do well if you start close to the due date. There are parts that you may find difficult; you will want to identify them and leave enough time to ask questions if necessary."
+    "text": "Answer Key\n\n\n\nYou can download the solutions using the links below\n a3solutions.qmd\n a3solutions.pdf"
   },
   {
     "objectID": "assignments/assign3.html#description",
     "href": "assignments/assign3.html#description",
     "title": "Assignment 3",
-    "section": "",
-    "text": "In this assignment you are asked to manipulate data, estimate statistical relationships, and interpret the findings. The questions are based on course content we have covered up to now, so if you get stuck I highly recommend going back over that material because the questions are closely related. This includes both the lecture notes and the extra material posted to the course website.\nYou should start this assignment early because it will not be possible (in my opinion) to do well if you start close to the due date. There are parts that you may find difficult; you will want to identify them and leave enough time to ask questions if necessary."
+    "section": "Description",
+    "text": "Description\nIn this assignment you are asked to manipulate data, estimate statistical relationships, and interpret the findings. The questions are based on course content we have covered up to now, so if you get stuck I highly recommend going back over that material because the questions are closely related. This includes both the lecture notes and the extra material posted to the course website.\nYou should start this assignment early because it will not be possible (in my opinion) to do well if you start close to the due date. There are parts that you may find difficult; you will want to identify them and leave enough time to ask questions if necessary."
   },
   {
     "objectID": "assignments/assign3.html#instructions",
@@ -4428,7 +4428,7 @@
     "href": "slides/limdep/index.html#nonlinear-models-2",
     "title": "E655 - Econometrics",
     "section": "Nonlinear Models",
-    "text": "Nonlinear Models\n\nThe random component is \\(e\\), so rearrange to isolate it\n\n\\[Pr(y=1|w) = Pr(e &gt; -\\beta_{0} - \\beta_{1}w |w)\\] \\[ =1 -  F(-\\beta_{0} - \\beta_{1}w)\\] \\[ =G(\\beta_{0} + \\beta_{1}w)\\]\n\n\\(G()\\) is the probability distribution of \\(e\\)\n\n\\(1 - F(-\\beta_{0} - \\beta_{1}w) = F(\\beta_{0} + \\beta_{1}w)\\) because \\(G()\\) is symmetric\n\nThe probability that \\(y\\) equals 1 depends on\n\nTreatment status \\(w\\)\nThe distribution of \\(e\\)\n\nDifferent choices for \\(F()\\) distribution lead to different models"
+    "text": "Nonlinear Models\n\nThe random component is \\(e\\), so rearrange to isolate it\n\n\\[Pr(y=1|w) = Pr(e &gt; -\\beta_{0} - \\beta_{1}w |w)\\] \\[ =1 -  F(-\\beta_{0} - \\beta_{1}w)\\] \\[ =F(\\beta_{0} + \\beta_{1}w)\\]\n\n\\(F()\\) is the probability distribution of \\(e\\)\n\n\\(1 - F(-\\beta_{0} - \\beta_{1}w) = F(\\beta_{0} + \\beta_{1}w)\\) because \\(F()\\) is symmetric\n\nThe probability that \\(y\\) equals 1 depends on\n\nTreatment status \\(w\\)\nThe distribution of \\(e\\)\n\nDifferent choices for \\(F()\\) distribution lead to different models"
   },
   {
     "objectID": "slides/limdep/index.html#linear-probability-model-6",
@@ -4590,5 +4590,103 @@
     "title": "Limited Dependent Variables",
     "section": "Sample R Code",
     "text": "Sample R Code\nThe code below goes through an exercise estimating with various panel data approaches under scenarios where the unobserved effect is or is not correlated with the main independent variable, and whether strict exogeneity holds.\n EC655panel.R"
+  },
+  {
+    "objectID": "slides/limdep/index.html#introduction-2",
+    "href": "slides/limdep/index.html#introduction-2",
+    "title": "E655 - Econometrics",
+    "section": "Introduction",
+    "text": "Introduction\n\nArises when a continuous dependent variable is limited in its range\n\nCensoring\n\nIncome is top-coded at some level for privacy\n\nCorner Solutions\n\nSpending on consumer durables limited below by 0\n\nIncidental Truncation\n\nWage is not observed for people who do not work\n\n\nYou can sometimes use OLS depending on context\nWe will cover models for censoring and corner solutions"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model",
+    "href": "slides/limdep/index.html#tobit-model",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\nLatent Variable\n\nWe again appeal to a latent variable model\n\n\\[y^{*} =  \\beta_{0} + \\beta_{1}w + e\\]\n\nSuppose the observed \\(y\\) is\n\n\\[y = max \\{ 0,y^* \\}\\]\n\nThis would be the case for things like consumer purchases\n\nYou spend zero or some positive amount\nIt is naturally bounded below by zero"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model-1",
+    "href": "slides/limdep/index.html#tobit-model-1",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\n\nBecause it is either zero or positive, the expected value of \\(y\\) is\n\n\\[E[y|w] = E[y|y&gt;0,w]Pr[y&gt;0|w]\\]\n\nTaking the difference in the observed \\(y\\), we get\n\n\\[E[y|w = 1] -  E[y|w = 0]\\] \\[= E[y|y&gt;0,w=1]Pr[y&gt;0|w=1] - E[y|y&gt;0,w=0]Pr[y&gt;0|w=0]\\] \\[=(Pr[y&gt;0|w=1]-Pr[y&gt;0|w=1]) E[y|y&gt;0,w = 1]\\] \\[+ (E[y|y&gt;0,w = 1]  - E[y|y&gt;0,w = 0]) Pr[y&gt;0|w=0]\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model-2",
+    "href": "slides/limdep/index.html#tobit-model-2",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\n\nThere are two key pieces\n\nParticipation effect\nConditional on Positive effect\n\nIn terms of potential outcomes\n\n\\[E[y|w = 1] -  E[y|w = 0]\\] \\[= E[y_1|w = 1] -  E[y_0|w = 0]\\] \\[= E[y_1|w = 1] -  E[y_0|w = 1] + E[y_0|w = 1] -  E[y_0|w = 0]\\]\n\nThe limited dependent variable does not change causal interpretation\n\nAs long as potential outcome \\(y_{0}\\) is mean independent of treatment"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model-3",
+    "href": "slides/limdep/index.html#tobit-model-3",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\nConditional on Positive\n\nIn some contexts people run regressions with just the positive outcomes\n\nIf you wanted to analyze participation decision separately\n\nDifference in observed \\(y\\) for this group is biased if under random assignment\n\n\\[E[y|y&gt;0,w = 1] -  E[y|y&gt;0, w = 0]\\] \\[= E[y_1|y_1&gt;0] -  E[y_0|y_0&gt;0]\\] \\[= E[y_1|y_1&gt;0] - E[y_0|y_1&gt;0] +  E[y_0|y_1&gt;0] -E[y_0|y_0&gt;0]\\]\n\nThe treatment changes who has positive values of potential outcomes\n\nMore subtle form of bias\n\nYou cannot interpret conditional on positive effects as causal"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model-4",
+    "href": "slides/limdep/index.html#tobit-model-4",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\nModel\n\nThis model is used in the context of censoring and corner solutions\nWe have data on a random sample\nThe outcome is limited in its range\nThere is a mass of observations at 1 or more values\n\nUsually zeroes\nSometimes some upper amount, like income\n\nUsing OLS may be a bad strategy depending on your goals\n\nCan produce predicted values outside the limited range"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model-5",
+    "href": "slides/limdep/index.html#tobit-model-5",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\n\nThe Tobit model starts with the latent variable model\n\n\\[y^{*} = \\mathbf{x}\\boldsymbol{\\beta} + e, \\text{ where } e \\sim N(0,\\sigma^2_{e})\\] \\[y = \\text{max}(0,y^{*})\\]\n\nThe conditional expectation of interest depends on context\n\nCensored data\n\n\\(E[y^{*}|\\mathbf{x}]\\)\n\\(y^{*}\\) usually has meaning when data are censored\n\nCorner Solutions\n\n\\(E[y|\\mathbf{x}]\\) and \\(E[y|y&gt;0, \\mathbf{x}]\\)\n\\(y_{i}^{*}\\) usually has no meaning for corner solutions\nThis is the most common situation"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model-6",
+    "href": "slides/limdep/index.html#tobit-model-6",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\nEstimation\n\nEstimate this model by maximum likelihood\nThe likelihood function has two pieces\nWhen \\(y_{i} = 0\\)\n\n\\[Pr(y_{i} = 0| \\mathbf{x}) = Pr(y_{i}^{*}&lt;0 |\\mathbf{x})\\] \\[= Pr(\\mathbf{x}\\boldsymbol{\\beta} +e&lt;0 |\\mathbf{x})\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model-7",
+    "href": "slides/limdep/index.html#tobit-model-7",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\n\nDue to symmetry in the distribution of \\(e\\)\n\n\\[= Pr(e&gt;\\mathbf{x}\\boldsymbol{\\beta}  |\\mathbf{x})\\] \\[= Pr(\\frac{e}{\\sigma_{e}}&gt;\\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma_{e}}  |\\mathbf{x})\\]\n\\[= 1-\\Phi\\left (  \\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma_{e}}  \\right)\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model-8",
+    "href": "slides/limdep/index.html#tobit-model-8",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\n\nWhen \\(y_{i} &gt; 0\\)\n\n\\[f(y_{i} | y_{i}&gt;0, \\mathbf{x}) = \\frac{1}{\\sigma_{e}} \\phi \\left ( \\frac{ y_{i} - \\mathbf{x}\\boldsymbol{\\beta}}{\\sigma_{e}}    \\right )\\]\n\nCombining terms, we can form the likelihood function\n\n\\[\\mathcal{L}(\\boldsymbol{\\beta}|\\mathbf{y}, \\mathbf{X}) =\\Pi_{y_{i}=0} \\left(1-\\Phi\\left (  \\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma_{e}}  \\right) \\right ) \\Pi_{y_{i}&gt;0} \\left( \\frac{1}{\\sigma_{e}} \\phi \\left ( \\frac{ y_{i} - \\mathbf{x}\\boldsymbol{\\beta}}{\\sigma_{e}}    \\right ) \\right)\\]"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model-9",
+    "href": "slides/limdep/index.html#tobit-model-9",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\n\nThe log likelihood is\n\n\\[ln\\mathcal{L}(\\boldsymbol{\\beta}|\\mathbf{y}, \\mathbf{X}) =\\sum_{y_{i}=0} ln \\left(1-\\Phi\\left (  \\frac{\\mathbf{x}\\boldsymbol{\\beta}}{\\sigma_{e}}  \\right) \\right )  + \\sum_{y_{i}&gt;0} ln\\left( \\frac{1}{\\sigma_{e}} \\phi \\left ( \\frac{ y_{i} - \\mathbf{x}\\boldsymbol{\\beta}}{\\sigma_{e}}    \\right ) \\right)\\]\n\nMaximize this function by choosing the parameter vector \\(\\boldsymbol{\\beta}\\) and \\(\\sigma_{e}\\)"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model-10",
+    "href": "slides/limdep/index.html#tobit-model-10",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\n\nMarginal effects will depend on the context of our estimation\n\nCensored data \\[\\frac{\\partial E[y^{*}|\\mathbf{x}]}{\\partial x_{k}} = \\beta_{k}\\]\n\nIn a Tobit with censored data, you can interpret the slope directly\n\nCorner Solutions\n\\(\\frac{\\partial E[y|\\mathbf{x}]}{\\partial x_{k}} = \\Phi(\\frac{ \\mathbf{x}\\boldsymbol{\\beta} }{\\sigma})\\beta_{k}\\)\n\\(\\frac{\\partial E[y| y&gt;0,\\mathbf{x}]}{\\partial x_{k}} = \\{1-\\lambda(\\frac{ \\mathbf{x}\\boldsymbol{\\beta} }{\\sigma})[\\frac{ \\mathbf{x}\\boldsymbol{\\beta} }{\\sigma} + \\lambda(\\frac{ \\mathbf{x}\\boldsymbol{\\beta} }{\\sigma})] \\}\\beta_{k}\\)\n\nWith corner solutions it depends on what you want\nYou may want slope for random person, or conditional on \\(y&gt;0\\)"
+  },
+  {
+    "objectID": "slides/limdep/index.html#tobit-model-11",
+    "href": "slides/limdep/index.html#tobit-model-11",
+    "title": "E655 - Econometrics",
+    "section": "Tobit Model",
+    "text": "Tobit Model\nIssues with Tobit Model\n\nIt must be possible for the dependent variable to take values near the limit\n\nExample: not the case with consumer durables\nYou either spend zero or a large amount\n\nIntensive and Extensive margins have same parameters\n\nMeans the model is relatively inflexible\nCan be solved by modelling each separately\n\nNormality assumption\nCare must be taken in interpreting the coefficients\n\nDo we care about the effect of \\(x_{k}\\) on \\(y\\) or \\(y^{*}\\)?"
+  },
+  {
+    "objectID": "slides/limdep/index.html",
+    "href": "slides/limdep/index.html",
+    "title": "\nLimited Dependent Variables\n",
+    "section": "",
+    "text": "Limited Dependent Variables"
   }
 ]

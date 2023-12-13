@@ -517,11 +517,11 @@ Fall 2023
 <ul>
 <li>The random component is <span class="math inline">\(e\)</span>, so rearrange to isolate it</li>
 </ul>
-<p><span class="math display">\[Pr(y=1|w) = Pr(e &gt; -\beta_{0} - \beta_{1}w |w)\]</span> <span class="math display">\[ =1 -  F(-\beta_{0} - \beta_{1}w)\]</span> <span class="math display">\[ =G(\beta_{0} + \beta_{1}w)\]</span></p>
+<p><span class="math display">\[Pr(y=1|w) = Pr(e &gt; -\beta_{0} - \beta_{1}w |w)\]</span> <span class="math display">\[ =1 -  F(-\beta_{0} - \beta_{1}w)\]</span> <span class="math display">\[ =F(\beta_{0} + \beta_{1}w)\]</span></p>
 <ul>
-<li><p><span class="math inline">\(G()\)</span> is the probability distribution of <span class="math inline">\(e\)</span></p>
+<li><p><span class="math inline">\(F()\)</span> is the probability distribution of <span class="math inline">\(e\)</span></p>
 <ul>
-<li><span class="math inline">\(1 - F(-\beta_{0} - \beta_{1}w) = F(\beta_{0} + \beta_{1}w)\)</span> because <span class="math inline">\(G()\)</span> is symmetric</li>
+<li><span class="math inline">\(1 - F(-\beta_{0} - \beta_{1}w) = F(\beta_{0} + \beta_{1}w)\)</span> because <span class="math inline">\(F()\)</span> is symmetric</li>
 </ul></li>
 <li><p>The probability that <span class="math inline">\(y\)</span> equals 1 depends on</p>
 <ul>
@@ -772,6 +772,220 @@ Fall 2023
 <li><span class="math inline">\(ln\hat{L}_{0}\)</span> is log-likelihood with no explanatory variables</li>
 </ul></li>
 <li><p>Others are possible, but goodness of fit is not incredibly important</p></li>
+</ul></li>
+</ol>
+</section></section>
+<section>
+<section id="limited-dependent-variables" class="title-slide slide level1">
+<h1>Limited Dependent Variables</h1>
+
+</section>
+<section id="introduction-2" class="slide level2">
+<h2>Introduction</h2>
+<ul>
+<li><p>Arises when a continuous dependent variable is limited in its range</p>
+<ul>
+<li><p>Censoring</p>
+<ul>
+<li>Income is top-coded at some level for privacy</li>
+</ul></li>
+<li><p>Corner Solutions</p>
+<ul>
+<li>Spending on consumer durables limited below by 0</li>
+</ul></li>
+<li><p>Incidental Truncation</p>
+<ul>
+<li>Wage is not observed for people who do not work</li>
+</ul></li>
+</ul></li>
+<li><p>You can sometimes use OLS depending on context</p></li>
+<li><p>We will cover models for censoring and corner solutions</p></li>
+</ul>
+</section>
+<section id="tobit-model" class="slide level2">
+<h2>Tobit Model</h2>
+<h3 id="latent-variable">Latent Variable</h3>
+<ul>
+<li>We again appeal to a latent variable model</li>
+</ul>
+<p><span class="math display">\[y^{*} =  \beta_{0} + \beta_{1}w + e\]</span></p>
+<ul>
+<li>Suppose the observed <span class="math inline">\(y\)</span> is</li>
+</ul>
+<p><span class="math display">\[y = max \{ 0,y^* \}\]</span></p>
+<ul>
+<li><p>This would be the case for things like consumer purchases</p>
+<ul>
+<li><p>You spend zero or some positive amount</p></li>
+<li><p>It is naturally bounded below by zero</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="tobit-model-1" class="slide level2">
+<h2>Tobit Model</h2>
+<ul>
+<li>Because it is either zero or positive, the expected value of <span class="math inline">\(y\)</span> is</li>
+</ul>
+<p><span class="math display">\[E[y|w] = E[y|y&gt;0,w]Pr[y&gt;0|w]\]</span></p>
+<ul>
+<li>Taking the difference in the observed <span class="math inline">\(y\)</span>, we get</li>
+</ul>
+<p><span class="math display">\[E[y|w = 1] -  E[y|w = 0]\]</span> <span class="math display">\[= E[y|y&gt;0,w=1]Pr[y&gt;0|w=1] - E[y|y&gt;0,w=0]Pr[y&gt;0|w=0]\]</span> <span class="math display">\[=(Pr[y&gt;0|w=1]-Pr[y&gt;0|w=1]) E[y|y&gt;0,w = 1]\]</span> <span class="math display">\[+ (E[y|y&gt;0,w = 1]  - E[y|y&gt;0,w = 0]) Pr[y&gt;0|w=0]\]</span></p>
+</section>
+<section id="tobit-model-2" class="slide level2">
+<h2>Tobit Model</h2>
+<ul>
+<li><p>There are two key pieces</p>
+<ul>
+<li><p>Participation effect</p></li>
+<li><p>Conditional on Positive effect</p></li>
+</ul></li>
+<li><p>In terms of potential outcomes</p></li>
+</ul>
+<p><span class="math display">\[E[y|w = 1] -  E[y|w = 0]\]</span> <span class="math display">\[= E[y_1|w = 1] -  E[y_0|w = 0]\]</span> <span class="math display">\[= E[y_1|w = 1] -  E[y_0|w = 1] + E[y_0|w = 1] -  E[y_0|w = 0]\]</span></p>
+<ul>
+<li><p>The limited dependent variable does not change causal interpretation</p>
+<ul>
+<li>As long as potential outcome <span class="math inline">\(y_{0}\)</span> is mean independent of treatment</li>
+</ul></li>
+</ul>
+</section>
+<section id="tobit-model-3" class="slide level2">
+<h2>Tobit Model</h2>
+<h3 id="conditional-on-positive">Conditional on Positive</h3>
+<ul>
+<li><p>In some contexts people run regressions with just the positive outcomes</p>
+<ul>
+<li>If you wanted to analyze participation decision separately</li>
+</ul></li>
+<li><p>Difference in observed <span class="math inline">\(y\)</span> for this group is biased if under random assignment</p></li>
+</ul>
+<p><span class="math display">\[E[y|y&gt;0,w = 1] -  E[y|y&gt;0, w = 0]\]</span> <span class="math display">\[= E[y_1|y_1&gt;0] -  E[y_0|y_0&gt;0]\]</span> <span class="math display">\[= E[y_1|y_1&gt;0] - E[y_0|y_1&gt;0] +  E[y_0|y_1&gt;0] -E[y_0|y_0&gt;0]\]</span></p>
+<ul>
+<li><p>The treatment changes who has positive values of potential outcomes</p>
+<ul>
+<li>More subtle form of bias</li>
+</ul></li>
+<li><p>You cannot interpret conditional on positive effects as causal</p></li>
+</ul>
+</section>
+<section id="tobit-model-4" class="slide level2">
+<h2>Tobit Model</h2>
+<h3 id="model">Model</h3>
+<ul>
+<li><p>This model is used in the context of censoring and corner solutions</p></li>
+<li><p>We have data on a random sample</p></li>
+<li><p>The outcome is limited in its range</p></li>
+<li><p>There is a mass of observations at 1 or more values</p>
+<ul>
+<li><p>Usually zeroes</p></li>
+<li><p>Sometimes some upper amount, like income</p></li>
+</ul></li>
+<li><p>Using OLS may be a bad strategy depending on your goals</p>
+<ul>
+<li>Can produce predicted values outside the limited range</li>
+</ul></li>
+</ul>
+</section>
+<section id="tobit-model-5" class="slide level2">
+<h2>Tobit Model</h2>
+<ul>
+<li>The Tobit model starts with the latent variable model</li>
+</ul>
+<p><span class="math display">\[y^{*} = \mathbf{x}\boldsymbol{\beta} + e, \text{ where } e \sim N(0,\sigma^2_{e})\]</span> <span class="math display">\[y = \text{max}(0,y^{*})\]</span></p>
+<ul>
+<li><p>The conditional expectation of interest depends on context</p>
+<ul>
+<li><p>Censored data</p>
+<ul>
+<li><p><span class="math inline">\(E[y^{*}|\mathbf{x}]\)</span></p></li>
+<li><p><span class="math inline">\(y^{*}\)</span> usually has meaning when data are censored</p></li>
+</ul></li>
+<li><p>Corner Solutions</p>
+<ul>
+<li><p><span class="math inline">\(E[y|\mathbf{x}]\)</span> and <span class="math inline">\(E[y|y&gt;0, \mathbf{x}]\)</span></p></li>
+<li><p><span class="math inline">\(y_{i}^{*}\)</span> usually has no meaning for corner solutions</p></li>
+<li><p>This is the most common situation</p></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="tobit-model-6" class="slide level2">
+<h2>Tobit Model</h2>
+<h3 id="estimation">Estimation</h3>
+<ul>
+<li><p>Estimate this model by maximum likelihood</p></li>
+<li><p>The likelihood function has two pieces</p></li>
+<li><p>When <span class="math inline">\(y_{i} = 0\)</span></p></li>
+</ul>
+<p><span class="math display">\[Pr(y_{i} = 0| \mathbf{x}) = Pr(y_{i}^{*}&lt;0 |\mathbf{x})\]</span> <span class="math display">\[= Pr(\mathbf{x}\boldsymbol{\beta} +e&lt;0 |\mathbf{x})\]</span></p>
+</section>
+<section id="tobit-model-7" class="slide level2">
+<h2>Tobit Model</h2>
+<ul>
+<li>Due to symmetry in the distribution of <span class="math inline">\(e\)</span></li>
+</ul>
+<p><span class="math display">\[= Pr(e&gt;\mathbf{x}\boldsymbol{\beta}  |\mathbf{x})\]</span> <span class="math display">\[= Pr(\frac{e}{\sigma_{e}}&gt;\frac{\mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}  |\mathbf{x})\]</span></p>
+<p><span class="math display">\[= 1-\Phi\left (  \frac{\mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}  \right)\]</span></p>
+</section>
+<section id="tobit-model-8" class="slide level2">
+<h2>Tobit Model</h2>
+<ul>
+<li>When <span class="math inline">\(y_{i} &gt; 0\)</span></li>
+</ul>
+<p><span class="math display">\[f(y_{i} | y_{i}&gt;0, \mathbf{x}) = \frac{1}{\sigma_{e}} \phi \left ( \frac{ y_{i} - \mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}    \right )\]</span></p>
+<ul>
+<li>Combining terms, we can form the likelihood function</li>
+</ul>
+<p><span class="math display">\[\mathcal{L}(\boldsymbol{\beta}|\mathbf{y}, \mathbf{X}) =\Pi_{y_{i}=0} \left(1-\Phi\left (  \frac{\mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}  \right) \right ) \Pi_{y_{i}&gt;0} \left( \frac{1}{\sigma_{e}} \phi \left ( \frac{ y_{i} - \mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}    \right ) \right)\]</span></p>
+</section>
+<section id="tobit-model-9" class="slide level2">
+<h2>Tobit Model</h2>
+<ul>
+<li>The log likelihood is</li>
+</ul>
+<p><span class="math display">\[ln\mathcal{L}(\boldsymbol{\beta}|\mathbf{y}, \mathbf{X}) =\sum_{y_{i}=0} ln \left(1-\Phi\left (  \frac{\mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}  \right) \right )  + \sum_{y_{i}&gt;0} ln\left( \frac{1}{\sigma_{e}} \phi \left ( \frac{ y_{i} - \mathbf{x}\boldsymbol{\beta}}{\sigma_{e}}    \right ) \right)\]</span></p>
+<ul>
+<li>Maximize this function by choosing the parameter vector <span class="math inline">\(\boldsymbol{\beta}\)</span> and <span class="math inline">\(\sigma_{e}\)</span></li>
+</ul>
+</section>
+<section id="tobit-model-10" class="slide level2">
+<h2>Tobit Model</h2>
+<ul>
+<li><p>Marginal effects will depend on the context of our estimation</p>
+<ul>
+<li><p>Censored data <span class="math display">\[\frac{\partial E[y^{*}|\mathbf{x}]}{\partial x_{k}} = \beta_{k}\]</span></p>
+<ul>
+<li>In a Tobit with censored data, you can interpret the slope directly</li>
+</ul></li>
+<li><p>Corner Solutions</p></li>
+<li><p><span class="math inline">\(\frac{\partial E[y|\mathbf{x}]}{\partial x_{k}} = \Phi(\frac{ \mathbf{x}\boldsymbol{\beta} }{\sigma})\beta_{k}\)</span></p></li>
+<li><p><span class="math inline">\(\frac{\partial E[y| y&gt;0,\mathbf{x}]}{\partial x_{k}} = \{1-\lambda(\frac{ \mathbf{x}\boldsymbol{\beta} }{\sigma})[\frac{ \mathbf{x}\boldsymbol{\beta} }{\sigma} + \lambda(\frac{ \mathbf{x}\boldsymbol{\beta} }{\sigma})] \}\beta_{k}\)</span></p>
+<ul>
+<li><p>With corner solutions it depends on what you want</p></li>
+<li><p>You may want slope for random person, or conditional on <span class="math inline">\(y&gt;0\)</span></p></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="tobit-model-11" class="slide level2">
+<h2>Tobit Model</h2>
+<h3 id="issues-with-tobit-model">Issues with Tobit Model</h3>
+<ol type="1">
+<li><p>It must be possible for the dependent variable to take values near the limit</p>
+<ul>
+<li><p>Example: not the case with consumer durables</p></li>
+<li><p>You either spend zero or a large amount</p></li>
+</ul></li>
+<li><p>Intensive and Extensive margins have same parameters</p>
+<ul>
+<li><p>Means the model is relatively inflexible</p></li>
+<li><p>Can be solved by modelling each separately</p></li>
+</ul></li>
+<li><p>Normality assumption</p></li>
+<li><p>Care must be taken in interpreting the coefficients</p>
+<ul>
+<li>Do we care about the effect of <span class="math inline">\(x_{k}\)</span> on <span class="math inline">\(y\)</span> or <span class="math inline">\(y^{*}\)</span>?</li>
 </ul></li>
 </ol>
 
